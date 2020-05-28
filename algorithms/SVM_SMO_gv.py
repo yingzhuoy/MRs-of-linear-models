@@ -22,7 +22,7 @@ class SmoAlgorithm:
         self.tol = tol
 
         self.errors = np.zeros(self.m)
-        self.eps = 1e-4  # epsilon
+        self.eps = 1e-3  # epsilon
 
         self.b = 0
 
@@ -270,7 +270,7 @@ class SVM_SMO_gv():
         return np.sum(multipliers[i] * y[i] * X[i] for i in range(len(y)))
 
     def fit(self, dataMatIn, classLabels):
-        smo = SmoAlgorithm(dataMatIn, classLabels, C=1.0, tol=0.0001, kernel=self.linear_kernel, use_linear_optim = True)
+        smo = SmoAlgorithm(dataMatIn, classLabels, C=1.0, tol=1e-6, kernel=self.linear_kernel, use_linear_optim = True)
         smo.main_routine()
         w = self.compute_w(smo.alphas, dataMatIn, classLabels)
         b = -smo.b

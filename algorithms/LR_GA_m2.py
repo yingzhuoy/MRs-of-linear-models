@@ -32,6 +32,9 @@ class LR_GA_m2():
         for k in range(maxCycles):              #heavy on matrix operations
             h = self.sigmoid(dataMat*w)     #matrix mult
             error = (labelMat - h)              #vector subtraction
+            if linalg.norm(error) < 1e-3:
+                break
+
             w = w + alpha * dataMat.transpose()* error #matrix mult
         
         w = np.array(w).flatten()

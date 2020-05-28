@@ -21,19 +21,21 @@ class LR_GA_m1():
 
         #print(dataMat)
         alpha = 0.001
-        maxCycles = 500
+        maxCycles = 1000
         w = ones(( n + 1 ,1))
         for k in range(maxCycles):              #heavy on matrix operations
             h = self.sigmoid(dataMat*w)     #matrix mult
             error = (labelMat - h)              #vector subtraction
+            if linalg.norm(error) < 1e-3:
+                break
             #------bug1--------
-            w = w + alpha * dataMat.transpose()* error + 0.01 #matrix mult
+            w = w + alpha * dataMat.transpose()* error + 0.001 #matrix mult
             #w = w + alpha * dataMat.transpose()* error #matrix mult
 
         w = np.array(w).flatten()
         b = w[n]
         w = w[0:n]
         clf = Clf(w, b)
-        print(w)
+        #print(w)
         #w: n*1 array b: number
         return clf

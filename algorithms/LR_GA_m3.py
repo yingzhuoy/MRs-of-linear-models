@@ -29,6 +29,8 @@ class LR_GA_m3():
             h = self.sigmoid(multiply(dataMat, dataMat) * w)  # matrix mult
             #h = self.sigmoid(dataMat*w)     #matrix mult
             error = (labelMat - h)              #vector subtraction
+            if linalg.norm(error) < 1e-3:
+                break
             w = w + alpha * dataMat.transpose()* error #matrix mult
         
         w = np.array(w).flatten()
