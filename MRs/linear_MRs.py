@@ -204,7 +204,7 @@ class LinearMRs():
 			w = clf.coef_
 			b = clf.intercept_
 			err, pred, conf = self.test_program(w, b, X_test, y_test)
-			print("err", err)
+			#print("err", err)
 
 			if self.test_program.__name__=='sig_classification':
 				temp_n = np.array(np.where(y_test == 0)).flatten()
@@ -256,7 +256,7 @@ class LinearMRs():
 			w_f = clf.coef_
 			b_f = clf.intercept_
 			err_f, pred_f, conf_f = self.test_program(w_f, b_f, X_test_f, y_test_f)
-			print("err_f", err_f)
+			#print("err_f", err_f)
 			w_f = mat(w_f).T
 
 			distance = abs((X_test[min_dis_index]*w)+b)/np.linalg.norm(w)
@@ -281,7 +281,7 @@ class LinearMRs():
 			w = clf.coef_
 			b = clf.intercept_
 			err, pred, conf = self.test_program(w, b, X_test, y_test)
-			print("err", err)
+			#print("err", err)
 			if self.test_program.__name__ == 'sig_classification':
 				temp_n = np.array(np.where(y_test == 0)).flatten()
 				temp_p = np.array(np.where(y_test == 1)).flatten()
@@ -336,7 +336,7 @@ class LinearMRs():
 			w_f = clf.coef_
 			b_f = clf.intercept_
 			err_f, pred_f, conf_f = self.test_program(w_f, b_f, X_test_f, y_test_f)
-			print("err_f", err_f)
+			#print("err_f", err_f)
 			w_f = mat(w_f).T
 
 			distance = abs((X_test[min_dis_index] * w) + b) / np.linalg.norm(w)
