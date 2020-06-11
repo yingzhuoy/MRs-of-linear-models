@@ -16,7 +16,13 @@ class CreateDataset:
     def classification(self):
         X, y = ds.make_classification(
         n_samples=self.n_train + self.n_test, n_features = self.n_features, n_redundant = self.n_redundant, n_classes = self.n_classes)
+        #X= np.column_stack((X,np.ones((X.shape[0],10))))
+
         sklearn.preprocessing.normalize(X, norm='l2')
+
+
+
+
         X_train = X[0:self.n_train]
         y_train = y[0:self.n_train]
         X_test = X[self.n_train:]

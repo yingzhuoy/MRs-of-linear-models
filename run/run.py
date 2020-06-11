@@ -25,6 +25,7 @@ from algorithms.LR_NM_m4 import LR_NM_m4
 
 from algorithms.SVM_SMO_gv import SVM_SMO_gv
 from algorithms.SVM_CVX_gv import SVM_CVX_gv
+from algorithms.SVM_CVX_gv1 import SVM_CVX_gv1
 from algorithms.SVM_CVX_m1 import SVM_CVX_m1
 from algorithms.SVM_CVX_m2 import SVM_CVX_m2
 from algorithms.SVM_CVX_m3 import SVM_CVX_m3
@@ -35,21 +36,21 @@ from algorithms.clf import Clf
 if __name__ == '__main__':
 
 	#n_train, n_test, n_features, n_redundant, n_classes, neg_class(算法是svm时 neg_class = -1, 算法是logreg时， neg_class = 0)
-	datasets = CreateDataset(400,100,2,0,2,-1)
+	datasets = CreateDataset(400,100,10,0,2,-1)
 
 
-	svm = SVM_CVX_m1()
+	svm = SVM_CVX_m5()
 	#fit(待测试算法的fit), create_dataset(产生数据集的函数), test_program(测试数据集是用sigmoid还是超平面划分), itr_cnt(测试的循环次数)
 	#err, pred, conf
 
 	test = LinearMRs(svm.fit, datasets.classification, hyp_classification, 1000)
 	
 
-	#test.MR1()
+	test.MR1()
 	#test.MR2()
 	#test.MR3()
 	#test.MR4()
-	#test.MR5()
+	test.MR5()
 	#test.MR6()
 	test.MR8()
 	test.MR9()

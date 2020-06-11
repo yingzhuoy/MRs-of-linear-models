@@ -3,17 +3,25 @@ from numpy import linalg
 import cvxopt
 from cvxopt import matrix,solvers
 from algorithms.clf import Clf
-#L2-svm
-class SVM_CVX_gv():
+#L1-svm
+class SVM_CVX_gv1():
     def fit(self, X, y):
         y = y.astype(np.float64)
         data_num = len(y)
         penaltyparC = 1
-        kernal = np.dot(X, np.transpose(X)) + np.diag(np.ones(data_num, np.float64)) * (1 / penaltyparC)
+        kernal = np.dot(X, np.transpose(X))
         p = matrix(kernal * np.outer(y, y))  #np.outer()表示的是两个向量相乘,拿第一个向量的元素分别与第二个向量所有元素相乘得到结果的一行。
         q = matrix(-np.ones([data_num, 1], np.float64))
-        g = matrix(-np.eye(data_num))
-        h = matrix(np.zeros([data_num, 1], np.float64))
+        
+        g_1 = -np.eye(data_num)
+        h_1 = np.zeros([data_num, 1], np.float64)
+
+        g_2 = np.eye(data_num)
+        h_2 = np.zeros([data_num, 1], np.float64) + 1.0
+
+
+        g = matrix(np.vstack((g_1,g_2)))
+        h = matrix(np.vstack((h_1,h_2)))
 
         a = matrix(y, (1, data_num))
         b = matrix(0.)

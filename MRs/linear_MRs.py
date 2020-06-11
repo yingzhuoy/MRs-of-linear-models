@@ -40,6 +40,8 @@ class LinearMRs():
 				#print(pred_f)
 				#print(pred)
 				err_cnt = err_cnt + 1
+			#print("err", err)
+			#print("err_f", err_f)
 		print(err_cnt/self.itr_cnt)
 
 	#MR2: Permutation of training & test features
@@ -69,6 +71,8 @@ class LinearMRs():
 
 			if all(pred_f == pred) == False:
 				err_cnt = err_cnt + 1
+			#print("err", err)
+			#print("err_f", err_f)
 		print(err_cnt/self.itr_cnt)
 
 	#MR3: Permutation of class labels (precision problem)
@@ -103,6 +107,8 @@ class LinearMRs():
 				#print(err_f)
 				#print(err)
 				err_cnt = err_cnt + 1
+			#print("err", err)
+			#print("err_f", err_f)
 		print(err_cnt/self.itr_cnt)
 
 
@@ -129,6 +135,8 @@ class LinearMRs():
 
 			if err_f != err:
 				err_cnt = err_cnt + 1
+			#print("err", err)
+			#print("err_f", err_f)
 		print(err_cnt/self.itr_cnt)
 
 	#MR5: Consistence with re-prediction
@@ -155,6 +163,8 @@ class LinearMRs():
 
 			if pred_f[rand]!=pred[rand]:
 				err_cnt = err_cnt + 1
+			#print("err", err)
+			#print("err_f", err_f)
 		print(err_cnt/self.itr_cnt)
 
 
@@ -265,6 +275,8 @@ class LinearMRs():
 			if (min(distance_f) <= min(distance)):
 				err_cnt = err_cnt + 1
 			#print(min(distance_f) - min(distance))
+			#print("err", err)
+			#print("err_f", err_f)
 
 		print(err_cnt / self.itr_cnt)
 		print(jump_cnt)
@@ -346,5 +358,7 @@ class LinearMRs():
 				err_cnt = err_cnt + 1
 			#print(min(distance_f))
 			#print(min(distance))
+			#print("err", err)
+			#print("err_f", err_f)
 		print(err_cnt / self.itr_cnt)
 		print(jump_cnt)
