@@ -1,47 +1,66 @@
 import sys
 sys.path.append(r'..')
 
-#gradAscent
-from numpy import *
+import scipy
 import numpy as np
 from algorithms.clf import Clf
 
+
 class LR_NM_m4():
     """docstring for LogReg_NewtonMethod_GoldenVersion"""
+
     def p1(self, x):
-        return exp(x) / (1 + exp(x))
+        # avoid overflow
+        return .5 * (1 + np.tanh(.5 * x))
+        # return 1/(1+np.exp(-x))
 
-    def delta(self, beta, dataMat, labelMat):
-        fderiv = - np.sum(np.multiply(dataMat , (labelMat - self.p1(dataMat * beta.T))), axis = 0)
-        sderiv = np.sum(np.multiply(np.multiply(dataMat , dataMat) ,np.multiply(self.p1(dataMat * beta.T), (1 - self.p1(dataMat * beta.T)))))
-        return fderiv / sderiv
+    def delta(self, beta, X, y):
+        grad = - X.T * (y - self.p1(X * beta))
+        temp = np.multiply(self.p1(X * beta), (1 - self.p1(X * beta)))
+        temp = np.tile(temp, (1, X.shape[1]))
+        hessian = X.T * np.multiply(X, temp)
+        return grad, hessian
 
-    #newtonMethod
-    def fit(self, dataMatIn, classLabels):
-        dataMat = mat(dataMatIn)             #convert to NumPy matrix
-        labelMat = mat(classLabels).transpose() #convert to NumPy matrix
-        m, n = shape(dataMat)
+    # newtonMethod
+    def fit(self, X_train, y_train, max_iter=1000, tol=1e-3):
+        X = np.mat(X_train.copy())  # convert to NumPy matrix
+        y = np.mat(y_train.copy()).transpose()  # convert to NumPy matrix
 
-        dataMat = np.column_stack((dataMat, np.ones((m,1))))
-        w = mat(ones(n+1))
-        d = self.delta(w, dataMat, labelMat)
-        for _ in range(1000):
-            norm_d = linalg.norm(d)
-            '''print('The {!s}th iteration, the norm of is newton direction is {!s}'.format(
-                _, norm_d))'''
-            if norm_d < 1e-3:
+        # label -1 by 0 if exists
+        y[y == -1] = 0
+
+        m, n = np.shape(X)
+
+        X = np.column_stack((X, np.ones((m, 1))))
+
+
+
+        # initial
+        w = np.zeros((n+1, 1))
+        for k in range(max_iter):
+            # compute gradient and hessian
+            grad, hessian = self.delta(w, X, y)
+            # compute newton direction
+            d = scipy.sparse.linalg.cg(hessian, grad)[0]
+            d = d.reshape(-1, 1)
+            # update w
+            w = w - d
+            if np.linalg.norm(grad) < tol:
                 break
-            else:
-                w = w - d
-                d = self.delta(w, dataMat, labelMat)
+
+        if k == max_iter - 1:
+            print('convergence fail, the current norm of gradient is {}'.format(
+                np.linalg.norm(grad)))
+
+        #=======bug4==========
+        w = np.multiply(w, w)
+        #=====================
+
         w = np.array(w).flatten()
-
-        #-----bug4------
-        w = multiply(w, w)
-
         b = w[n]
         w = w[0:n]
-
         clf = Clf(w, b)
-        
         return clf
+
+
+

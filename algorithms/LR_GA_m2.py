@@ -1,45 +1,75 @@
+from algorithms.clf import Clf
+import numpy as np
+from numpy import *
 import sys
 sys.path.append(r'..')
 
-#gradAscent
-from numpy import *
-import numpy as np
-from algorithms.clf import Clf
+# gradAscent
+
 
 class LR_GA_m2():
-        
-    def sigmoid(self, inX):
-        return 1/(1+exp(-inX))
 
-    #gradAscent
-    def fit(self, dataMatIn, classLabels):
-        dataMat = mat(dataMatIn)             #convert to NumPy matrix
-        labelMat = mat(classLabels).transpose() #convert to NumPy matrix
+    def sigmoid(self, x):
+        # avoid overflow
+        return .5 * (1 + np.tanh(.5 * x))
+        # return 1/(1+np.exp(-x))
 
-        m, n = shape(dataMat)
-        dataMat = np.column_stack((dataMat, np.ones((m,1))))
+    # gradAscent
+    def fit(self, X_train, y_train, step_size=0.01, max_iter=1000, tol=1e-3):
+        X = np.mat(X_train.copy())  # convert to NumPy matrix
+        y = np.mat(y_train.copy()).transpose()  # convert to NumPy matrix
 
-        #-----bug2------
-        dataMat = dataMat[ 0:m - 1, :]
-        labelMat = labelMat[ 0:m - 1, :]
-        #--dataMatrix = dataMatrix[ 0:m - 1, :]
-        #--labelMat = labelMat[ 0:m - 1, :]
+        # label -1 by to 0 if exists
+        y[y == -1] = 0
 
-        #print(dataMat)
-        alpha = 0.001
-        maxCycles = 1000
-        w = ones(( n + 1 ,1))
-        for k in range(maxCycles):              #heavy on matrix operations
-            h = self.sigmoid(dataMat*w)     #matrix mult
-            error = (labelMat - h)              #vector subtraction
-            if linalg.norm(error) < 1e-3:
+        m, n = np.shape(X)
+
+        # add bias term $b$
+        X = np.column_stack((X, np.ones((m, 1))))
+
+        # -----bug2------
+        # X = X[0:m-1, :]
+        # y = y[0:m-1, :]
+
+
+        # initial for nesterov accelerated gradient descent
+        theta_prev = 0
+        theta_curr = 1
+        gamma = 1
+        w = np.zeros((n + 1, 1))
+        w_prev = w
+        for k in range(max_iter):  # heavy on matrix operations
+
+            # compute loss and its gradient
+            h = self.sigmoid(X * w)  # matrix mult
+            error = (y - h)  # vector subtraction\
+            gradient = - X.T * error
+
+            # update w
+            w_curr = w - step_size * gradient
+            w = (1 - gamma) * w_curr + gamma * w_prev
+            w_prev = w_curr
+
+            theta_tmp = theta_curr
+            theta_curr = (1 + np.sqrt(1 + 4 * theta_prev * theta_prev)) / 2
+            theta_prev = theta_tmp
+
+            gamma = (1 - theta_prev) / theta_curr
+
+            # stop criterion
+            # if np.linalg.norm(error) < 1e-3:
+            # break
+            # use the norm of gradient
+            if np.linalg.norm(gradient) < tol:
                 break
 
-            w = w + alpha * dataMat.transpose()* error #matrix mult
-        
+        # if k == max_iter - 1:
+        #     print('convergence fail, the current norm of gradient is {}'.format(
+        #         np.linalg.norm(gradient)))
+
         w = np.array(w).flatten()
         b = w[n]
         w = w[0:n]
         clf = Clf(w, b)
-        #w: n*1 array b: number
+        # w: n*1 array b: number
         return clf
