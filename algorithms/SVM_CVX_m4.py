@@ -14,7 +14,7 @@ class SVM_CVX_m4():
         q = matrix(-np.ones([data_num, 1], np.float64))
         g = matrix(-np.eye(data_num))
         #-----bug4----
-        h = matrix(np.zeros([data_num, 1], np.float64)) + 1
+        h = matrix(np.zeros([data_num, 1], np.float64)) - 1 
 
         a = matrix(y, (1, data_num))
         b = matrix(0.)
@@ -25,6 +25,8 @@ class SVM_CVX_m4():
         alpha_svs = np.array(sol['x'])
         alpha_svs[alpha_svs <= 1e-4] = 0
         alpha_svs.astype(np.float64)
+
+        #print(alpha_svs)
 
         y1 = np.reshape(y,(-1,1))
         alpha1=alpha_svs
