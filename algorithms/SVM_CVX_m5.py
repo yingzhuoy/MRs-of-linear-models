@@ -9,7 +9,7 @@ class SVM_CVX_m5():
         y = y.astype(np.float64)
 
         #-----bug5-----
-        data_num = len(y) - 1
+        data_num = int(0.9*len(y))
         X = X[ 0:data_num, :]
         y = y[0:data_num]
         #labelMat = labelMat[ 0:m - 1, :]

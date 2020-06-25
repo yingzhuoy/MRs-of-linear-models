@@ -1,7 +1,8 @@
 import numpy as np
 
 def sigmoid(inX):
-		return 1/(1+np.exp(-inX))
+		return .5 * (1 + np.tanh(.5 * inX))
+		#return 1/(1+np.exp(-inX))
 
 def sig_classification(w, b, X, y):
 	err_cnt = 0
@@ -22,7 +23,7 @@ def hyp_classification(w, b, X, y):
     conf = np.array(X*w + b).flatten()
     pred = np.sign(conf)
     pred[pred == 0] = 1
-    pred[pred == -1] = 0
+    pred[pred == -1] = -1
     err = np.mean(pred != y)
     # print(err)
     return err, pred, conf

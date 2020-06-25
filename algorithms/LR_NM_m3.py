@@ -13,7 +13,7 @@ class LR_NM_m3():
         # avoid overflow
         # ============bug3============
         # return .5 * (1 + np.tanh(.5 * x))
-        return -.5 * (1+np.tanh(.5*x))
+        return .4 * (1+np.tanh(.5*x))
         # ============================
         # return 1/(1+np.exp(-x))
 
@@ -51,9 +51,9 @@ class LR_NM_m3():
             if np.linalg.norm(grad) < tol:
                 break
 
-        if k == max_iter - 1:
-            print('convergence fail, the current norm of gradient is {}'.format(
-                np.linalg.norm(grad)))
+#        if k == max_iter - 1:
+#            print('convergence fail, the current norm of gradient is {}'.format(
+#                np.linalg.norm(grad)))
 
         w = np.array(w).flatten()
         b = w[n]

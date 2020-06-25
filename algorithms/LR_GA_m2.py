@@ -1,7 +1,7 @@
 from algorithms.clf import Clf
 import numpy as np
-from numpy import *
 import sys
+import random
 sys.path.append(r'..')
 
 # gradAscent
@@ -28,8 +28,9 @@ class LR_GA_m2():
         X = np.column_stack((X, np.ones((m, 1))))
 
         # -----bug2------
-        # X = X[0:m-1, :]
-        # y = y[0:m-1, :]
+        #random_index = random.sample(range(0, m), int(0.99*m))
+        X = X[int(0.1*m):m, :]
+        y = y[int(0.1*m):m, :]
 
 
         # initial for nesterov accelerated gradient descent

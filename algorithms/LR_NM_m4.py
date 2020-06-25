@@ -48,9 +48,9 @@ class LR_NM_m4():
             if np.linalg.norm(grad) < tol:
                 break
 
-        if k == max_iter - 1:
-            print('convergence fail, the current norm of gradient is {}'.format(
-                np.linalg.norm(grad)))
+#        if k == max_iter - 1:
+#            print('convergence fail, the current norm of gradient is {}'.format(
+#                np.linalg.norm(grad)))
 
         #=======bug4==========
         w = np.multiply(w, w)

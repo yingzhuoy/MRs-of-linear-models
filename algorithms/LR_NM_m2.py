@@ -36,8 +36,8 @@ class LR_NM_m2():
         # ========bug2========
         # X = X[ 0:m - 1, :]
         # y = y[ 0:m - 1, :]
-        X = X[1:m, :]
-        y = y[1:m, :]
+        X = X[int(0.1*m):m, :]
+        y = y[int(0.1*m):m, :]
         # ====================
 
 
@@ -54,9 +54,9 @@ class LR_NM_m2():
             if np.linalg.norm(grad) < tol:
                 break
 
-        if k == max_iter - 1:
-            print('convergence fail, the current norm of gradient is {}'.format(
-                np.linalg.norm(grad)))
+#        if k == max_iter - 1:
+#            print('convergence fail, the current norm of gradient is {}'.format(
+#                np.linalg.norm(grad)))
 
         w = np.array(w).flatten()
         b = w[n]

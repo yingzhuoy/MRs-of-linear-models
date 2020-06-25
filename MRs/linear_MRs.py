@@ -17,6 +17,7 @@ class LinearMRs():
         print("Begin to test MR1...")
         err_cnt = 0
         for i in range(self.itr_cnt):
+            #print(i)
             X_train, y_train, X_test, y_test = self.create_dataset()
 
             clf = self.fit(X_train, y_train)
@@ -43,8 +44,8 @@ class LinearMRs():
                 # print(pred_f)
                 # print(pred)
                 err_cnt = err_cnt + 1
-            # print("err", err)
-            # print("err_f", err_f)
+            #print("err", err)
+            #print("err_f", err_f)
         print(err_cnt/self.itr_cnt)
 
     # MR2: Permutation of training & test features
@@ -110,8 +111,8 @@ class LinearMRs():
                 # print(err_f)
                 # print(err)
                 err_cnt = err_cnt + 1
-            # print("err", err)
-            # print("err_f", err_f)
+            #print("err", err)
+            #print("err_f", err_f)
         print(err_cnt/self.itr_cnt)
 
     # MR4: Addition of uninformative attributes (precision problem)
@@ -217,6 +218,7 @@ class LinearMRs():
         print("Begin to test MR7...")
         err_cnt = 0
         for i in range(self.itr_cnt):
+            print(i)
             X, y, X_test, y_test = self.create_dataset()
             # label -1 and 1
             y[y == 0] = -1
@@ -276,7 +278,7 @@ class LinearMRs():
                 # print(pred)
                 # print(test)
                 err_cnt = err_cnt + 1
-                # print(sort1, sort2, sort3)
+                #print(sort1, sort2, sort3)
                 # print('something wrong')
         print(err_cnt / self.itr_cnt)
 
