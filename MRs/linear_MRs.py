@@ -233,12 +233,12 @@ class LinearMRs():
             b = clf.intercept_
 
             # delete later
-            from sklearn.svm import LinearSVC
-            clf1 = LinearSVC(loss = 'hinge', max_iter=1000000)
-            clf1.fit(X,y)
-            b = clf1.intercept_
-            print(w, clf1.coef_)
-            print(clf.intercept_, clf1.intercept_[0])
+            # from sklearn.svm import LinearSVC
+            # clf1 = LinearSVC(loss = 'squared_hinge', max_iter=1000000)
+            # clf1.fit(X,y)
+            # b = clf1.intercept_
+            # print(w, clf1.coef_)
+            # print(clf.intercept_, clf1.intercept_[0])
 
             pert = np.random.normal(size=Xt.shape)
             pert = pert - np.sum(pert * w)/np.sum(w * w) * w
