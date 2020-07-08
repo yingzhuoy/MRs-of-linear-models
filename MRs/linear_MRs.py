@@ -17,7 +17,7 @@ class LinearMRs():
         print("Begin to test MR1...")
         err_cnt = 0
         for i in range(self.itr_cnt):
-            #print(i)
+            # print(i)
             X_train, y_train, X_test, y_test = self.create_dataset()
 
             clf = self.fit(X_train, y_train)
@@ -233,12 +233,16 @@ class LinearMRs():
             b = clf.intercept_
 
             # delete later
-            # from sklearn.svm import LinearSVC
-            # clf1 = LinearSVC(loss = 'squared_hinge', max_iter=1000000)
+            # from sklearn.svm  import LinearSVC
+            # # clf1 = LinearSVC(loss = 'squared_hinge', max_iter=1000000)
+            # clf1 = LinearSVC(loss='hinge',max_iter=100000, tol=1e-6)
             # clf1.fit(X,y)
-            # b = clf1.intercept_
-            # print(w, clf1.coef_)
+            # w1 = clf1.coef_
+            # print(w1)
+            # bt = clf1.intercept_
+            # print(clf.coef_, clf1.coef_)
             # print(clf.intercept_, clf1.intercept_[0])
+            # print(np.linalg.norm(clf.coef_ - clf1.coef_))
 
             pert = np.random.normal(size=Xt.shape)
             pert = pert - np.sum(pert * w)/np.sum(w * w) * w
@@ -250,9 +254,11 @@ class LinearMRs():
             # initialization
             pred = []
             test = []
+            # conf = np.sum(X * w, axis=1) + b
+            # index = np.argsort(np.abs(conf))
             index = np.arange(X.shape[0])
             np.random.shuffle(index)
-            for j in range(20):
+            for j in range(50):
                 i = index[j]
                 X_train = X.copy()
                 y_train = y.copy()
@@ -262,7 +268,7 @@ class LinearMRs():
                 # pred.append(temp[0])
                 pred.append(temp)
 
-                X_train[i] = X_train[i] + pert * 1e-4
+                X_train[i] = X_train[i] + pert * 1e-2
                 clf = self.fit(X_train, y_train)
                 w1 = clf.coef_
                 b1 = clf.intercept_
@@ -273,10 +279,26 @@ class LinearMRs():
 
             pred = np.array(pred)
             test = np.array(test)
+            
+            # delete duplicate
+            sort = np.argsort(test)
+            for i in range(sort.shape[0] - 1):
+                if np.abs(test[sort[i+1]] - test[sort[i]]) < 1e-6:
+                    test[sort[i+1]] = test[sort[i]]
+                    pred[sort[i+1]] = pred[sort[i]]
+                else:
+                    continue
+            index1 = np.unique(test, return_index=True)[1]
+            test = [test[index] for index in sorted(index1)]
+            index2 = np.unique(pred, return_index=True)[1]
+            pred = [pred[index] for index in sorted(index2)]
+            test = np.array(test)
+            pred = np.array(pred)
 
             sort1 = np.argsort(pred)
             sort2 = np.argsort(test)
             sort3 = np.argsort(-test)
+
 
             if (sort1 == sort2).all() or (sort1 == sort3).all():
                 # print(pred)
@@ -284,7 +306,6 @@ class LinearMRs():
                 continue
             else:
                 # print(pred)
-                # print(test)
                 err_cnt = err_cnt + 1
                 #print(sort1, sort2, sort3)
                 # print('something wrong')
