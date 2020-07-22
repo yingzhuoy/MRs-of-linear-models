@@ -218,7 +218,7 @@ class LinearMRs():
         print("Begin to test MR7...")
         err_cnt = 0
         for i in range(self.itr_cnt):
-            print(i)
+            #print(i)
             X, y, X_test, y_test = self.create_dataset()
             # label -1 and 1
             y[y == 0] = -1
@@ -343,7 +343,10 @@ class LinearMRs():
 
             w = mat(w).T
             distance = abs(X_test*w + b)/np.linalg.norm(w)
-
+            #print(all(distance))
+            if all( np.isnan(distance) ):
+                err_cnt = err_cnt + 1
+                continue
             temp_disdance_n = np.array(
                 distance[temp_n[temp_index_n]]).flatten()
             temp_distance_p = np.array(
@@ -429,6 +432,9 @@ class LinearMRs():
 
             w = mat(w).T
             distance = abs(X_test * w + b) / np.linalg.norm(w)
+            if all( np.isnan(distance) ):
+                err_cnt = err_cnt + 1
+                continue
             max_dis = max(distance)
 
             temp_disdance_n = np.array(
