@@ -42,7 +42,7 @@ class LR_NM_m1():
             d = d.reshape(-1, 1)
             # update w
             # =======bug1=========
-            w = w - d + 0.001
+            w = w - d + 0.1
             # w = w - d
             # =====================
             if np.linalg.norm(grad) < tol:

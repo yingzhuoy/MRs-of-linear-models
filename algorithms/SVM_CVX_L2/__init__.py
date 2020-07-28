@@ -1,0 +1,6 @@
+from algorithms.SVM_CVX_L2.SVM_CVX_L2_gv import SVM_CVX_L2_gv
+from algorithms.SVM_CVX_L2.SVM_CVX_L2_m1 import SVM_CVX_L2_m1
+from algorithms.SVM_CVX_L2.SVM_CVX_L2_m2 import SVM_CVX_L2_m2
+from algorithms.SVM_CVX_L2.SVM_CVX_L2_m3 import SVM_CVX_L2_m3
+from algorithms.SVM_CVX_L2.SVM_CVX_L2_m4 import SVM_CVX_L2_m4
+from algorithms.SVM_CVX_L2.SVM_CVX_L2_m5 import SVM_CVX_L2_m5

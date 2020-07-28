@@ -218,7 +218,7 @@ class LinearMRs():
         print("Begin to test MR7...")
         err_cnt = 0
         for i in range(self.itr_cnt):
-            #print(i)
+            print(i)
             X, y, X_test, y_test = self.create_dataset()
             # label -1 and 1
             y[y == 0] = -1
