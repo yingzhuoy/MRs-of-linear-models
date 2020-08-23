@@ -44,7 +44,9 @@ class LR_GA_m57():
 
             # update w
             w_curr = w - step_size * gradient
-            b_curr = b - step_size * gradient_b
+            #b_curr = b - step_size * gradient_b
+            #-----bug-----
+            b_curr =b+0.12729193727342922 - step_size * gradient_b
             w = (1 - gamma) * w_curr + gamma * w_prev
             w_prev = w_curr
 
