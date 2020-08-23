@@ -4,7 +4,7 @@ import cvxopt
 from cvxopt import matrix,solvers
 from algorithms.clf import Clf
 
-class SVM_CVX_m2():
+class SVM_CVX_L2_m5():
     def fit(self, X, y):
         y = y.astype(np.float64)
         data_num = len(y)

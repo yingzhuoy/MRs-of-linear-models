@@ -11,7 +11,6 @@ class LR_GA_m16():
     def sigmoid(self, x):
         # avoid overflow
         return .5 * (1 + np.tanh(.5 * x))
-        # return 1/(1+np.exp(-x))
 
     # gradAscent
     def fit(self, X_train, y_train, step_size=0.01, max_iter=1000, tol=1e-3):
@@ -24,27 +23,35 @@ class LR_GA_m16():
         m, n = np.shape(X)
 
         # add bias term $b$
-        X = np.column_stack((X, np.ones((m, 1))))
+        #X = np.column_stack((X, np.ones((m, 1))))
 
         # initial for nesterov accelerated gradient descent
+
         theta_prev = 0
-        #-----bug----
-        theta_curr = 2
-        #theta_curr = 1
+        theta_curr = 1
         gamma = 1
-        w = np.zeros((n + 1, 1))
+        w = np.zeros((n, 1))
+        b = 0
         w_prev = w
+        b_prev = b
         for k in range(max_iter):  # heavy on matrix operations
 
             # compute loss and its gradient
-            h = self.sigmoid(X * w)  # matrix mult
-            error = (y - h)  # vector subtraction\
+            h = self.sigmoid(X * w + b)  # matrix mult
+            error = y - h  # vector subtraction\
             gradient = - X.T * error
+            gradient_b = - np.ones((1,m)) * error
 
             # update w
-            w_curr = w - step_size * gradient
+            #w_curr = w - step_size * gradient
+            #----bug----
+            w_curr = w + step_size * gradient
+            b_curr = b - step_size * gradient_b
             w = (1 - gamma) * w_curr + gamma * w_prev
             w_prev = w_curr
+
+            b = (1 - gamma) * b_curr + gamma * b_prev
+            b_prev = b_curr
 
             theta_tmp = theta_curr
             theta_curr = (1 + np.sqrt(1 + 4 * theta_prev * theta_prev)) / 2
@@ -64,8 +71,13 @@ class LR_GA_m16():
                 np.linalg.norm(gradient)))
 
         w = np.array(w).flatten()
-        b = w[n]
-        w = w[0:n]
+        b = b[0,0]
+        #b = w[n]
+        #w = w[0:n]
         clf = Clf(w, b)
+        
+        #print(type(b))
+        #print(b.shape)
+        #print(type(w))
         # w: n*1 vector b: scalar
         return clf

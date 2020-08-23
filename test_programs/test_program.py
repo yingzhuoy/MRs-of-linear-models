@@ -7,7 +7,7 @@ def sigmoid(inX):
 def sig_classification(w, b, X, y):
 	err_cnt = 0
 	w = np.mat(w).T
-	conf = np.array(sigmoid(X*w + b)).flatten()
+	conf = np.array(sigmoid(X * w + b)).flatten()
 
 	pred = (conf >= 0.5)
 	err = np.sum(pred != y)/y.shape[0]

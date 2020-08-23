@@ -12,7 +12,8 @@ class LR_NM_m9():
     def p1(self, x):
         # avoid overflow
         #------bug------
-        return .5 * (1 - np.tanh(.5 * x))
+        return .5 * (0.99 - np.tanh(.5 * x))
+        #return .5 * (1 - np.tanh(.5 * x))
         #return .5 * (1 + np.tanh(.5 * x))
         # return 1/(1+np.exp(-x))
 

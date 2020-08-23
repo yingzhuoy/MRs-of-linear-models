@@ -37,3 +37,34 @@ from algorithms.LR_GA.LR_GA_m35 import LR_GA_m35
 from algorithms.LR_GA.LR_GA_m36 import LR_GA_m36
 from algorithms.LR_GA.LR_GA_m37 import LR_GA_m37
 from algorithms.LR_GA.LR_GA_m38 import LR_GA_m38
+from algorithms.LR_GA.LR_GA_m39 import LR_GA_m39
+from algorithms.LR_GA.LR_GA_m40 import LR_GA_m40
+from algorithms.LR_GA.LR_GA_m41 import LR_GA_m41
+from algorithms.LR_GA.LR_GA_m42 import LR_GA_m42
+from algorithms.LR_GA.LR_GA_m43 import LR_GA_m43
+from algorithms.LR_GA.LR_GA_m44 import LR_GA_m44
+from algorithms.LR_GA.LR_GA_m45 import LR_GA_m45
+from algorithms.LR_GA.LR_GA_m46 import LR_GA_m46
+from algorithms.LR_GA.LR_GA_m47 import LR_GA_m47
+from algorithms.LR_GA.LR_GA_m48 import LR_GA_m48
+from algorithms.LR_GA.LR_GA_m49 import LR_GA_m49
+from algorithms.LR_GA.LR_GA_m50 import LR_GA_m50
+from algorithms.LR_GA.LR_GA_m51 import LR_GA_m51
+from algorithms.LR_GA.LR_GA_m52 import LR_GA_m52
+from algorithms.LR_GA.LR_GA_m53 import LR_GA_m53
+from algorithms.LR_GA.LR_GA_m54 import LR_GA_m54
+from algorithms.LR_GA.LR_GA_m55 import LR_GA_m55
+from algorithms.LR_GA.LR_GA_m56 import LR_GA_m56
+from algorithms.LR_GA.LR_GA_m57 import LR_GA_m57
+from algorithms.LR_GA.LR_GA_m58 import LR_GA_m58
+from algorithms.LR_GA.LR_GA_m59 import LR_GA_m59
+from algorithms.LR_GA.LR_GA_m60 import LR_GA_m60
+from algorithms.LR_GA.LR_GA_m61 import LR_GA_m61
+from algorithms.LR_GA.LR_GA_m62 import LR_GA_m62
+from algorithms.LR_GA.LR_GA_m63 import LR_GA_m63
+from algorithms.LR_GA.LR_GA_m64 import LR_GA_m64
+from algorithms.LR_GA.LR_GA_m65 import LR_GA_m65
+from algorithms.LR_GA.LR_GA_m66 import LR_GA_m66
+
+
+from algorithms.LR_GA.LR_GA_test import LR_GA_test

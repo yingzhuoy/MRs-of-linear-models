@@ -11,7 +11,7 @@ class LR_GA_m6():
     def sigmoid(self, x):
         # avoid overflow
         #----bug-----
-        return .5 / (1 + np.tanh(.5 * x))
+        return .5 * (1 + np.tanh(.5 / x))
         #return .5 * (1 + np.tanh(.5 * x))
         
         # return 1/(1+np.exp(-x))
