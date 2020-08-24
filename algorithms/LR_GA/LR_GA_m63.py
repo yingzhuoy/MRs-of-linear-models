@@ -48,7 +48,8 @@ class LR_GA_m63():
             w = (1 - gamma) * w_curr + gamma * w_prev
             w_prev = w_curr
 
-            b = (1 - gamma) * b_curr + gamma * b_prev
+            #b = (1 - gamma) * b_curr + gamma * b_prev
+            b = (1 -gamma-0.32725358950162564) * b_curr + gamma * b_prev
             b_prev = b_curr
 
             theta_tmp = theta_curr

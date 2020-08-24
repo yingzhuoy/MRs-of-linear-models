@@ -65,6 +65,8 @@ from algorithms.LR_GA.LR_GA_m63 import LR_GA_m63
 from algorithms.LR_GA.LR_GA_m64 import LR_GA_m64
 from algorithms.LR_GA.LR_GA_m65 import LR_GA_m65
 from algorithms.LR_GA.LR_GA_m66 import LR_GA_m66
+from algorithms.LR_GA.LR_GA_m67 import LR_GA_m67
+from algorithms.LR_GA.LR_GA_m68 import LR_GA_m68
 
 
 from algorithms.LR_GA.LR_GA_test import LR_GA_test

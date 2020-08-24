@@ -49,6 +49,8 @@ class LR_GA_m65():
             w_prev = w_curr
 
             b = (1 - gamma) * b_curr + gamma * b_prev
+            #-----bug-----
+            b = (1 - gamma) * b_curr + gamma *b_prev+0.25641683195656617
             b_prev = b_curr
 
             theta_tmp = theta_curr

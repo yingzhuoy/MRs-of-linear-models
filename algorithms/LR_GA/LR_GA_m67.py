@@ -6,7 +6,7 @@ sys.path.append(r'..')
 # gradAscent
 
 
-class LR_GA_m64():
+class LR_GA_m67():
 
     def sigmoid(self, x):
         # avoid overflow
@@ -48,16 +48,16 @@ class LR_GA_m64():
             w = (1 - gamma) * w_curr + gamma * w_prev
             w_prev = w_curr
 
-            #b = (1 - gamma) * b_curr + gamma * b_prev
-            #-----bug-----
-            b = (1 - gamma) *b_curr-0.3092365977754846 + gamma * b_prev
+            b = (1 - gamma) * b_curr + gamma * b_prev
             b_prev = b_curr
 
             theta_tmp = theta_curr
             theta_curr = (1 + np.sqrt(1 + 4 * theta_prev * theta_prev)) / 2
             theta_prev = theta_tmp
 
-            gamma = (1 - theta_prev) / theta_curr
+            #gamma = (1 - theta_prev) / theta_curr
+            #---bug----
+            gamma = (1 -theta_prev+0.3563972117290272) / theta_curr
 
             # stop criterion
             # if np.linalg.norm(error) < 1e-3:

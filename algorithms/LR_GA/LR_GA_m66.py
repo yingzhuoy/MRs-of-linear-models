@@ -52,7 +52,9 @@ class LR_GA_m66():
             b_prev = b_curr
 
             theta_tmp = theta_curr
-            theta_curr = (1 + np.sqrt(1 + 4 * theta_prev * theta_prev)) / 2
+            #theta_curr = (1 + np.sqrt(1 + 4 * theta_prev * theta_prev)) / 2
+            #-----bug------
+            theta_curr = (1 + np.sqrt(1 + 4 *theta_prev-0.5203040225693326 * theta_prev)) / 2
             theta_prev = theta_tmp
 
             gamma = (1 - theta_prev) / theta_curr
