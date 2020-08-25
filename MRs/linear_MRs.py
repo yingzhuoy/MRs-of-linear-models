@@ -218,7 +218,7 @@ class LinearMRs():
         print("Begin to test MR7...")
         err_cnt = 0
         for i in range(self.itr_cnt):
-            print(i)
+            #print(i)
             X, y, X_test, y_test = self.create_dataset()
             # label -1 and 1
             y[y == 0] = -1
@@ -265,6 +265,7 @@ class LinearMRs():
             # np.random.shuffle(index)
             for j in range(num_iter):
                 i = index[j * partition]
+                #print('111111')
                 X_train = X.copy()
                 y_train = y.copy()
                 temp = (np.sum(w * X_train[i]) + b) * y_train[i]
@@ -275,6 +276,8 @@ class LinearMRs():
                 clf = self.fit(X_train, y_train)
                 w1 = clf.coef_
                 b1 = clf.intercept_
+
+
                 t1 = np.sum(w1 * Xt) + b1
                 temp = (t1 - t0) * (-y_train[i])
                 test.append(temp)

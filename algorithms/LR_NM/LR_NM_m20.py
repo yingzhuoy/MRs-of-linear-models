@@ -6,6 +6,48 @@ import sys
 sys.path.append(r'..')
 
 
+"""
+Preconditioned Conjugate Gradient Method
+"""
+
+
+def cg(A, b, x=None, tol=1.0e-6, max_iter=100):
+    # precondition  
+    A = np.matrix(A)
+    b = np.matrix(b)    
+    m = b.shape[0]
+    if np.linalg.norm(A,'fro') > 1e-12:
+        M = np.eye(m)
+    else:
+        M = A.T
+    M = np.eye(m)
+    if x is None:       
+        x = np.zeros((m,1))
+    r0 = b - np.dot(A, x)
+    z0 = np.dot(M, r0)
+    p = z0
+
+    for i in range(max_iter):
+        Ap = np.dot(A, p)
+        alpha = (np.dot(r0.T, r0)/np.maximum(1e-12, np.dot(p.T, Ap)))
+        alpha = alpha[0,0]
+        x = x + p * alpha
+        r = r0 - Ap * alpha
+        normr = np.linalg.norm(r0)
+        normb = np.linalg.norm(b)
+        if normr/normb < tol:
+            break
+        else:
+            z = np.dot(M, r)
+            beta = (np.dot(r.T, z)/np.dot(r0.T, z0))
+            beta = beta[0,0]
+            p = z + beta * p
+            z0 = z
+            r0 = r
+           # print(np.linalg.norm(actual - x))
+    return x
+
+
 class LR_NM_m20():
     """docstring for LogReg_NewtonMethod_GoldenVersion"""
 
@@ -22,7 +64,7 @@ class LR_NM_m20():
         return grad, hessian
 
     # newtonMethod
-    def fit(self, X_train, y_train, max_iter=1000, tol=1e-3):
+    def fit(self, X_train, y_train, max_iter=100, tol=1e-3):
         X = np.mat(X_train.copy())  # convert to NumPy matrix
         y = np.mat(y_train.copy()).transpose()  # convert to NumPy matrix
 
@@ -39,10 +81,9 @@ class LR_NM_m20():
             # compute gradient and hessian
             grad, hessian = self.delta(w, X, y)
             # compute newton direction
-            d = scipy.sparse.linalg.cg(hessian, grad)[0]
-            #-----bug-----
-            d = d.reshape(-2, 1)
-            #d = d.reshape(-1, 1)
+            # d = scipy.sparse.linalg.cg(hessian, grad)[0]
+            d = cg(hessian, grad)
+            d = d.reshape(-1, 1)
             # update w
             w = w - d
             if np.linalg.norm(grad) < tol:

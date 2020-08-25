@@ -11,17 +11,17 @@ Preconditioned Conjugate Gradient Method
 """
 
 
-def cg(A, b, x=None, tol=1.0e-6, max_iter=1000):
-	# precondition	
+def cg(A, b, x=None, tol=1.0e-6, max_iter=100):
+    # precondition  
     A = np.matrix(A)
     b = np.matrix(b)    
     m = b.shape[0]
     if np.linalg.norm(A,'fro') > 1e-12:
-    	M = np.eye(m)
+        M = np.eye(m)
     else:
-    	M = A.T
+        M = A.T
     M = np.eye(m)
-    if x is None:    	
+    if x is None:       
         x = np.zeros((m,1))
     r0 = b - np.dot(A, x)
     z0 = np.dot(M, r0)
@@ -29,7 +29,7 @@ def cg(A, b, x=None, tol=1.0e-6, max_iter=1000):
 
     for i in range(max_iter):
         Ap = np.dot(A, p)
-        alpha = (np.dot(r0.T, r0)/np.dot(p.T, Ap))
+        alpha = (np.dot(r0.T, r0)/np.maximum(1e-12, np.dot(p.T, Ap)))
         alpha = alpha[0,0]
         x = x + p * alpha
         r = r0 - Ap * alpha
@@ -64,7 +64,7 @@ class LR_NM_gv():
         return grad, hessian
 
     # newtonMethod
-    def fit(self, X_train, y_train, max_iter=1000, tol=1e-3):
+    def fit(self, X_train, y_train, max_iter=100, tol=1e-3):
         X = np.mat(X_train.copy())  # convert to NumPy matrix
         y = np.mat(y_train.copy()).transpose()  # convert to NumPy matrix
 

@@ -31,9 +31,9 @@ if __name__ == '__main__':
 
 	#n_train, n_test, n_features, n_redundant, n_classes, neg_class(算法是svm时 neg_class = -1, 算法是logreg时， neg_class = 0)
 	
-	datasets = CreateDataset(400,100,2,0,2,0)
+	datasets = CreateDataset(400,100,10,0,2,0)
 	
-	lr = LR_GA_m61()
+	lr = LR_NM_m12()
 	test = LinearMRs(lr.fit, datasets.classification, sig_classification, 50)
 
 	test.MR1()
