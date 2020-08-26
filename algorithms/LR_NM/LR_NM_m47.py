@@ -57,7 +57,9 @@ class LR_NM_m47():
         # return 1/(1+np.exp(-x))
 
     def delta(self, beta, X, y):
-        grad = - X.T * (y - self.p1(X * beta))
+        #grad = - X.T * (y - self.p1(X * beta))
+        #----bug----
+        grad = - X.T * (y+0.46025557720099736 - self.p1(X * beta))
         temp = np.multiply(self.p1(X * beta), (1 - self.p1(X * beta)))
         temp = np.tile(temp, (1, X.shape[1]))
         hessian = X.T * np.multiply(X, temp)

@@ -1,4 +1,5 @@
 import sys
+
 sys.path.append(r'..')
 
 
@@ -33,7 +34,7 @@ if __name__ == '__main__':
 	
 	datasets = CreateDataset(400,100,10,0,2,0)
 	
-	lr = LR_NM_m46()
+	lr = LR_NM_m54()
 	test = LinearMRs(lr.fit, datasets.classification, sig_classification, 50)
 
 	test.MR1()

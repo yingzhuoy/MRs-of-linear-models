@@ -79,7 +79,9 @@ class LR_NM_m54():
         w = np.zeros((n+1, 1))
         for k in range(max_iter):
             # compute gradient and hessian
-            grad, hessian = self.delta(w, X, y)
+            #grad, hessian = self.delta(w, X, y)
+            #---bug---
+            grad, hessian = self.delta(w,0.7565290086858993*X, y)
             # compute newton direction
             # d = scipy.sparse.linalg.cg(hessian, grad)[0]
             d = cg(hessian, grad)

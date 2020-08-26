@@ -59,7 +59,7 @@ class LR_NM_m46():
     def delta(self, beta, X, y):
         #grad = - X.T * (y - self.p1(X * beta))
         #----bug----
-        grad = - X.T * (y + self.p1(X * beta))
+        grad = - X.T * (1.0741490494071908*y - self.p1(X * beta))
         temp = np.multiply(self.p1(X * beta), (1 - self.p1(X * beta)))
         temp = np.tile(temp, (1, X.shape[1]))
         hessian = X.T * np.multiply(X, temp)

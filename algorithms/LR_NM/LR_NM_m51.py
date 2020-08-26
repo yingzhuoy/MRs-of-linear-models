@@ -60,7 +60,9 @@ class LR_NM_m51():
         grad = - X.T * (y - self.p1(X * beta))
         temp = np.multiply(self.p1(X * beta), (1 - self.p1(X * beta)))
         temp = np.tile(temp, (1, X.shape[1]))
-        hessian = X.T * np.multiply(X, temp)
+        #hessian = X.T * np.multiply(X, temp)
+        #----bug----
+        hessian = X.T * np.multiply(X + 0.6667618933590584, temp)
         return grad, hessian
 
     # newtonMethod
