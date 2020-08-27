@@ -28,8 +28,7 @@ def cg(A, b, x=None, tol=1.0e-6, max_iter=100):
     p = z0
 
     for i in range(max_iter):
-        #Ap = np.dot(A, p)
-        Ap = np.dot(A+0.6068506253779995, p)
+        Ap = np.dot(A, p)
         alpha = (np.dot(r0.T, r0)/np.maximum(1e-12, np.dot(p.T, Ap)))
         alpha = alpha[0,0]
         x = x + p * alpha
@@ -49,7 +48,7 @@ def cg(A, b, x=None, tol=1.0e-6, max_iter=100):
     return x
 
 
-class LR_NM_m9():
+class LR_NM_m65():
     """docstring for LogReg_NewtonMethod_GoldenVersion"""
 
     def p1(self, x):
@@ -86,7 +85,9 @@ class LR_NM_m9():
             d = cg(hessian, grad)
             d = d.reshape(-1, 1)
             # update w
-            w = w - d
+            #w = w - d
+            #----bug----
+            w = w -1.0925132295393003*d
             if np.linalg.norm(grad) < tol:
                 break
 

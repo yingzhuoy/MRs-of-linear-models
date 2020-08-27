@@ -28,8 +28,7 @@ def cg(A, b, x=None, tol=1.0e-6, max_iter=100):
     p = z0
 
     for i in range(max_iter):
-        #Ap = np.dot(A, p)
-        Ap = np.dot(1.1346413917337967*A, p)
+        Ap = np.dot(A, p)
         alpha = (np.dot(r0.T, r0)/np.maximum(1e-12, np.dot(p.T, Ap)))
         alpha = alpha[0,0]
         x = x + p * alpha
@@ -49,7 +48,7 @@ def cg(A, b, x=None, tol=1.0e-6, max_iter=100):
     return x
 
 
-class LR_NM_m8():
+class LR_NM_m57():
     """docstring for LogReg_NewtonMethod_GoldenVersion"""
 
     def p1(self, x):
@@ -80,7 +79,9 @@ class LR_NM_m8():
         w = np.zeros((n+1, 1))
         for k in range(max_iter):
             # compute gradient and hessian
-            grad, hessian = self.delta(w, X, y)
+            #grad, hessian = self.delta(w, X, y)
+            #----bug----
+            grad, hessian = self.delta(w, X, y - 0.7005499835434487)
             # compute newton direction
             # d = scipy.sparse.linalg.cg(hessian, grad)[0]
             d = cg(hessian, grad)

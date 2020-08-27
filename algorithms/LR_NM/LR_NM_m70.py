@@ -31,9 +31,7 @@ def cg(A, b, x=None, tol=1.0e-6, max_iter=100):
         Ap = np.dot(A, p)
         alpha = (np.dot(r0.T, r0)/np.maximum(1e-12, np.dot(p.T, Ap)))
         alpha = alpha[0,0]
-        #x = x + p * alpha
-        #-----bug-----
-        x = x + p / alpha
+        x = x + p * alpha
         r = r0 - Ap * alpha
         normr = np.linalg.norm(r0)
         normb = np.linalg.norm(b)
@@ -50,7 +48,7 @@ def cg(A, b, x=None, tol=1.0e-6, max_iter=100):
     return x
 
 
-class LR_NM_m16():
+class LR_NM_m70():
     """docstring for LogReg_NewtonMethod_GoldenVersion"""
 
     def p1(self, x):
@@ -98,5 +96,7 @@ class LR_NM_m16():
         w = np.array(w).flatten()
         b = w[n]
         w = w[0:n]
-        clf = Clf(w, b)
+        #clf = Clf(w, b)
+        #----bug----
+        clf = Clf(w,b-0.2532288108867225)
         return clf

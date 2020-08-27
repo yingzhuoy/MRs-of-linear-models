@@ -29,7 +29,9 @@ def cg(A, b, x=None, tol=1.0e-6, max_iter=100):
 
     for i in range(max_iter):
         Ap = np.dot(A, p)
-        alpha = (np.dot(r0.T, r0)/np.maximum(1e-12, np.dot(p.T, Ap)))
+        #alpha = (np.dot(r0.T, r0)/np.maximum(1e-12, np.dot(p.T, Ap)))
+        #----bug----
+        alpha = (np.dot(r0.T, r0)/np.maximum(1e-12, np.dot(p.T,Ap-0.26867576382653763)))
         alpha = alpha[0,0]
         x = x + p * alpha
         r = r0 - Ap * alpha
