@@ -16,7 +16,7 @@ class SVM_CVX_L1_gv():
         kernel = np.dot(X, np.transpose(X))
         # np.outer()表示的是两个向量相乘,拿第一个向量的元素分别与第二个向量所有元素相乘得到结果的一行。
         p = matrix(kernel * np.outer(y, y))
-        q = matrix(-np.ones([data_num, 1], np.float64))
+        q = matrix(np.ones([data_num, 1], np.float64))
 
         g_1 = -np.eye(data_num)
         h_1 = np.zeros([data_num, 1], np.float64)
@@ -27,13 +27,13 @@ class SVM_CVX_L1_gv():
         g = matrix(np.vstack((g_1, g_2)))
         h = matrix(np.vstack((h_1, h_2)))
 
-        # a = matrix(y, (1, data_num))
-        # b = matrix(0.)
+        a = matrix(y, (1, data_num))
+        b = matrix(0.)
         solvers.options['show_progress'] = False
         # if n_num_ == 41:
         #     stop = 1
-        # sol = solvers.qp(p, q, g, h, a, b)
-        sol = solvers.qp(p, q, g, h)
+        sol = solvers.qp(p, q, g, h, a, b)
+        #sol = solvers.qp(p, q, g, h)
         alpha_svs = np.array(sol['x'])
         alpha_svs[alpha_svs <= 1e-4] = 0
         alpha_svs.astype(np.float64)

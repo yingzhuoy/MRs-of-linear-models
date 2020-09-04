@@ -40,7 +40,7 @@ class LR_GA_gv():
             # compute loss and its gradient
             h = self.sigmoid(X * w + b)  # matrix mult
             error = y - h  # vector subtraction\
-            gradient = - X.T * error
+            gradient = - X.T * error 
             gradient_b = - np.ones((1,m)) * error
 
             # update w
