@@ -4,6 +4,43 @@ import cvxopt
 from cvxopt import matrix,solvers
 from algorithms.clf import Clf
 
+def projected_apg(p, q, bounds, step_size=100, max_iter=10000):
+    m = p.shape[0]
+    low, up = bounds    
+
+    x = np.ones((m, 1))
+
+    v, _ = np.linalg.eigh(0.5*(p+p.T))
+    L = 1/v[-1]
+    step_size = np.maximum(1/L - 1e-10, step_size);
+
+    for k in range(max_iter):  # heavy on matrix operations
+        
+        # saving previous x
+        y = x
+
+        # compute loss and its gradient
+        gradient = p*x + q
+
+        # update w
+        # t = linesearch(y, grad)
+        x = x - step_size * gradient
+
+        # projection
+        x[x < low] = low 
+        # x[x > up] = up
+
+        y = x + (k-1)/(k+2) * (x - y)
+
+        # stop criteria            
+        rnormw = np.linalg.norm(y-x)/(1+linalg.norm(x))   
+        if  k > 1 and rnormw < 1e-5:
+            # print('convergence!')
+            break
+
+    return y
+
+
 #L2-svm
 class SVM_CVX_L2_gv():
     def fit(self, X, y):
@@ -12,27 +49,19 @@ class SVM_CVX_L2_gv():
         y = y.astype(np.float64)
         data_num = len(y)
         C = 1.0
-        kernel = np.dot(X, np.transpose(X)) + np.diag(np.ones(data_num, np.float64)) * (.5 / C)
-        p = matrix(kernel * np.outer(y, y))  #np.outer()表示的是两个向量相乘,拿第一个向量的元素分别与第二个向量所有元素相乘得到结果的一行。
-        q = matrix(-np.ones([data_num, 1], np.float64))
-        g = matrix(-np.eye(data_num))
-        h = matrix(np.zeros([data_num, 1], np.float64))
+        kernel = np.dot(X, np.transpose(X))
+        p = np.matrix(np.multiply(kernel,np.outer(y, y))) + np.diag(np.ones(data_num, np.float64)) * .5/C
+        q = np.matrix(-np.ones([data_num, 1], np.float64))
 
-        # a = matrix(y, (1, data_num))
-        # b = matrix(0.)
-        solvers.options['show_progress'] = False
-        # if n_num_ == 41:
-        #     stop = 1
-        sol = solvers.qp(p, q, g, h)
-        alpha_svs = np.array(sol['x'])
-        alpha_svs[alpha_svs <= 1e-4] = 0
-        alpha_svs.astype(np.float64)
+        bounds = (0, np.inf)
+        alpha_svs = projected_apg(p, q, bounds)        
 
-        y1 = np.reshape(y,(-1,1))
-        alpha1=alpha_svs
-        lambda1=y1*alpha1
-        w=np.sum(lambda1*X,axis=0)
-        # b=np.mean(y1-np.reshape(np.dot(w, np.transpose(X)), [-1, 1]))
+        y1 = np.reshape(y, (-1, 1))
+        alpha1 = alpha_svs
+        lambda1 = np.multiply(y1,alpha1)      
+        w = np.dot(X.T, lambda1)
+        w = np.array(w).reshape(-1)
+        # b = np.mean(y1-np.reshape(np.dot(w, np.transpose(X)), [-1, 1]))
         b = w[n]
         w = w[0:n]
 
