@@ -84,10 +84,10 @@ class LR_NM_gv():
         # return 1/(1+np.exp(-x))
 
     def delta(self, beta, X, y):
-        grad = - X.T * (y - self.p1(X * beta)) + 0.001*beta
+        grad = - X.T * (y - self.p1(X * beta)) + 1e-3*beta
         temp = np.multiply(self.p1(X * beta), (1 - self.p1(X * beta)))
         temp = np.tile(temp, (1, X.shape[1]))
-        hessian = X.T * np.multiply(X, temp) + 0.001*np.eye(X.shape[1])
+        hessian = X.T * np.multiply(X, temp) + 1e-3*np.eye(X.shape[1])
         return grad, hessian
 
     # newtonMethod
