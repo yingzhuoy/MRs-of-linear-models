@@ -13,8 +13,9 @@ from sklearn.svm import LinearSVC
 
 from algorithms.Logistic_regression.GD import *
 from algorithms.Logistic_regression.Newton import *
-#from algorithms.Svm.APG.L1 import *
-#from algorithms.Svm.APG.L2 import *
+from algorithms.Svm.APG.L1 import *
+from algorithms.Svm.APG.L2 import *
+from algorithms.Svm.IPM.L1 import*
 from algorithms.Svm.IPM.L2 import*
 import numpy as np
 #np.random.seed(1)
@@ -26,10 +27,10 @@ if __name__ == '__main__':
 	datasets = CreateDataset(400,100,2,0,2,-1)
 	#datasets = CreateDataset(400,100,10,0,2,0)
 	
-	lr = IPM_L2_gv()
+	lr = APG_L2_m1()
 	#lr = LR_GA_m1()
 
-	test = LinearMRs(lr.fit, datasets.classification, hyp_classification, 50)
+	test = LinearMRs(lr.fit, datasets.classification, hyp_classification, 30)
 	#test = LinearMRs(lr.fit, datasets.classification, sig_classification, 50)
 
 	test.MR1()

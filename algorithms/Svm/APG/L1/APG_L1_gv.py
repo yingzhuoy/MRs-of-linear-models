@@ -28,7 +28,7 @@ def backtracking(l0, x0, p, q, low, up):
     return xp, l
 
 
-def projected_apg(p, q, bounds, step_size=0.1, max_iter=10000):
+def projected_apg(p, q, bounds, step_size=0.1, max_iter=5000):
     m = p.shape[0]
     low, up = bounds    
 
@@ -64,7 +64,7 @@ def projected_apg(p, q, bounds, step_size=0.1, max_iter=10000):
         # stop criteria            
         rnormw = np.linalg.norm(y-x) / (1+np.linalg.norm(x))  
         if  k > 1 and rnormw < 1e-6:
-            #print('convergence!')
+            print('convergence!')
             break
     return x
 
