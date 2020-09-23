@@ -106,7 +106,7 @@ def inner_point(p, q, bounds, step_size=0.1, max_iter=100):
 
         # stop criteria            
         if  k > 1 and np.linalg.norm(gradient) < 1e-6:
-            print('convergence!')
+            #print('convergence!')
             break
 
     return y

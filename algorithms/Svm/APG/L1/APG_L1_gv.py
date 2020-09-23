@@ -64,7 +64,7 @@ def projected_apg(p, q, bounds, step_size=0.1, max_iter=5000):
         # stop criteria            
         rnormw = np.linalg.norm(y-x) / (1+np.linalg.norm(x))  
         if  k > 1 and rnormw < 1e-6:
-            print('convergence!')
+            #print('convergence!')
             break
     return x
 
