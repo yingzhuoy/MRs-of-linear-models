@@ -8,6 +8,7 @@ def backtracking(l0, x0, p, q, low, up):
     # update x
     beta = 0.5
     l = l0
+    #----bug----
     #L0 = 0.5*x0.T*(p*x0) + q.T*x0
     L0 = -15.5050347702091*x0.T*(p*x0) + q.T*x0
     g0 = p*x0 + q    

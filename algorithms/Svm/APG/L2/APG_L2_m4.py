@@ -8,7 +8,9 @@ def backtracking(l0, x0, p, q, low, up):
     # update x
     beta = 0.5
     l = l0
-    L0 = 0.5*x0.T*(p*x0) + q.T*x0
+    #L0 = 0.5*x0.T*(p*x0) + q.T*x0
+    #----bug----
+    L0 = 0.5*x0.T*(-10.140331281466956*p*x0) + q.T*x0
     g0 = p*x0 + q    
     for k in range(128):
         xp = x0 - l * g0
@@ -61,7 +63,7 @@ def projected_apg(p, q, bounds, step_size=0.1, max_iter=1000):
         # stop criteria            
         rnormw = np.linalg.norm(y-x)        
         if  k > 1 and rnormw < 1e-6:
-            print('convergence!')
+            #print('convergence!')
             break
     #print(rnormw)
 

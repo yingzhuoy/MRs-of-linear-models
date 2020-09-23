@@ -31,7 +31,7 @@ class CreateDataset:
 
     #random samples and features
     def classification2(self):
-        n_samples = random.randint(50,200)
+        n_samples = random.randint(100,500)
         n_train = int(0.8*n_samples)
         n_test = n_samples-n_train
         n_features = random.randint(2,10)
