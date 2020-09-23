@@ -272,7 +272,7 @@ class LinearMRs():
                 pred.append(temp)
                 # pred.append(temp[0])
 
-                X_train[i] = X_train[i] + pert * 1e-4
+                X_train[i] = X_train[i] + pert * 1e-3
                 clf = self.fit(X_train, y_train)
                 w1 = clf.coef_
                 b1 = clf.intercept_
@@ -289,7 +289,7 @@ class LinearMRs():
             # ========= delete duplicate ==============
             sort = np.argsort(test)
             for i in range(sort.shape[0] - 1):
-                if np.abs(test[sort[i+1]] - test[sort[i]]) < 1e-8:
+                if np.abs(test[sort[i+1]] - test[sort[i]]) < 5e-4:
                     test[sort[i+1]] = test[sort[i]]
                     pred[sort[i+1]] = pred[sort[i]]
                 else:

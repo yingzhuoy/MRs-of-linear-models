@@ -5,7 +5,6 @@ sys.path.append(r'..')
 
 # gradAscent
 
-
 class GD_gv():
 
     def sigmoid(self, x):
@@ -14,43 +13,38 @@ class GD_gv():
         # return 1/(1+np.exp(-x))
 
     # gradAscent
-    def fit(self, X_train, y_train, step_size=0.01, max_iter=1000, tol=1e-3):
+    def fit(self, X_train, y_train, step_size=0.01, max_iter=10000, tol=1e-4):
         X = np.mat(X_train.copy())  # convert to NumPy matrix
         y = np.mat(y_train.copy()).transpose()  # convert to NumPy matrix
 
         # label -1 by to 0 if exists
         y[y == -1] = 0
 
-        m, n = np.shape(X)
-
         # add bias term $b$
-        #X = np.column_stack((X, np.ones((m, 1))))
+        m, n = np.shape(X) 
+        X = np.column_stack((X, np.ones((m, 1))))
+        n = n + 1
+       
 
         # initial for nesterov accelerated gradient descent
-
         theta_prev = 0
         theta_curr = 1
         gamma = 1
-        w = np.zeros((n, 1))
+        w = np.ones((n, 1))
         b = 0
         w_prev = w
         b_prev = b
         for k in range(max_iter):  # heavy on matrix operations
 
             # compute loss and its gradient
-            h = self.sigmoid(X * w + b)  # matrix mult
+            h = self.sigmoid(X * w)  # matrix mult
             error = y - h  # vector subtraction\
-            gradient = - X.T * error 
-            gradient_b = - np.ones((1,m)) * error
+            gradient =  -X.T * error + 1e-3*w
 
             # update w
             w_curr = w - step_size * gradient
-            b_curr = b - step_size * gradient_b
             w = (1 - gamma) * w_curr + gamma * w_prev
             w_prev = w_curr
-
-            b = (1 - gamma) * b_curr + gamma * b_prev
-            b_prev = b_curr
 
             theta_tmp = theta_curr
             theta_curr = (1 + np.sqrt(1 + 4 * theta_prev * theta_prev)) / 2
@@ -63,6 +57,7 @@ class GD_gv():
             # break
             # use the norm of gradient
             if np.linalg.norm(gradient) < tol:
+                print(np.linalg.norm(gradient))
                 break
                 
         if k == max_iter - 1:
@@ -70,7 +65,8 @@ class GD_gv():
                 np.linalg.norm(gradient)))
 
         w = np.array(w).flatten()
-        b = b[0,0]
+        w = w[0:n-1]
+        b = w[-1]
         #b = w[n]
         #w = w[0:n]
         clf = Clf(w, b)
