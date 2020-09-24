@@ -12,7 +12,9 @@ def backtracking(l0, x0, p, q, low, up):
     # update x
     beta = 0.5
     l = l0
-    L0 = 0.5*x0.T*(p*x0) + q.T*x0
+    #L0 = 0.5*x0.T*(p*x0) + q.T*x0
+    #----bug----
+    L0 = 0.5*x0.T*(5.061567848470096*p*x0) + q.T*x0
     g0 = p*x0 + q    
     for k in range(128):
         xp = x0 - l * g0
@@ -28,7 +30,7 @@ def backtracking(l0, x0, p, q, low, up):
     return xp, l
 
 
-def projected_apg(p, q, bounds, step_size=0.1, max_iter=10000):
+def projected_apg(p, q, bounds, step_size=0.1, max_iter=5000):
     m = p.shape[0]
     low, up = bounds    
 

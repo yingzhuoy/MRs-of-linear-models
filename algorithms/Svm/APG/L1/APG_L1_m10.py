@@ -72,7 +72,7 @@ def projected_apg(p, q, bounds, step_size=0.1, max_iter=5000):
 
 
 
-class APG_L1_m3():
+class APG_L1_m10():
     def fit(self, X, y):
         m, n = X.shape
         X = np.column_stack((X, np.ones((m, 1))))

@@ -13,11 +13,11 @@ def backtracking(l0, x0, p, q, low, up):
     beta = 0.5
     l = l0
     L0 = 0.5*x0.T*(p*x0) + q.T*x0
-    #g0 = p*x0 + q    
-    #----bug----
-    g0 =16.459521132923534*p*x0 + q
+    g0 = p*x0 + q    
     for k in range(128):
-        xp = x0 - l * g0
+        #xp = x0 - l * g0
+        #----bug----
+        xp = x0 - l *-9.17490980118315*g0
         xp[xp < low] = low
         xp[xp > up] = up  
         Lx = 0.5*xp.T*(p*xp) + q.T*xp
@@ -72,7 +72,7 @@ def projected_apg(p, q, bounds, step_size=0.1, max_iter=5000):
 
 
 
-class APG_L1_m3():
+class APG_L1_m21():
     def fit(self, X, y):
         m, n = X.shape
         X = np.column_stack((X, np.ones((m, 1))))
