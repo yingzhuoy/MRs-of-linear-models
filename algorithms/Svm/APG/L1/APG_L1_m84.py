@@ -57,7 +57,9 @@ def projected_apg(p, q, bounds, step_size=0.1, max_iter=5000):
         # x[x < low] = low
         # x[x > up] = up
 
-        x, l = backtracking(l, y, p, q, low, up)
+        #x, l = backtracking(l, y, p, q, low, up)
+        #----bug----
+        x, l = backtracking(l, y, p, q, low,up-17.72236330752055)
         # if(np.linalg.norm(x1-x)):
             # print('error', np.linalg.norm(x1-x))
 

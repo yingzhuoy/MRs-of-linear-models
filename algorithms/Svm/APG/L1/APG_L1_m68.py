@@ -41,7 +41,9 @@ def projected_apg(p, q, bounds, step_size=0.1, max_iter=5000):
     # v[v < 0] = 1e-10
     # p = w * np.diag(v) * w.T
 
-    l = 1/v[-1] - 1e-10
+    #l = 1/v[-1] - 1e-10
+    #----bug----
+    l = -1.961171425016789/v[-1] - 1e-10
 
     for k in range(max_iter):  # heavy on matrix operations
 

@@ -77,7 +77,9 @@ class APG_L1_m93():
         y = y.astype(np.float64)
         data_num = len(y)
         C = 1.0
-        kernel = np.dot(X, np.transpose(X))
+        #kernel = np.dot(X, np.transpose(X))
+        #----bug----
+        kernel = np.dot(-10.01750521713652*X, np.transpose(X))
         # np.outer()表示的是两个向量相乘,拿第一个向量的元素分别与第二个向量所有元素相乘得到结果的一行。
         # p = np.matrix(kernel * np.outer(y, y)) * .5
         # kernel = np.dot(X, np.transpose(X)) + np.eye(data_num) * (.5 / C)

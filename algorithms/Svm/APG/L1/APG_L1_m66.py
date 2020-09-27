@@ -35,7 +35,9 @@ def projected_apg(p, q, bounds, step_size=0.1, max_iter=5000):
     x = np.ones((m, 1), np.float64) * 0.5
     y = x
 
-    p = p + np.diag(np.ones(m, np.float64)) * np.mean(p) 
+    #p = p + np.diag(np.ones(m, np.float64)) * np.mean(p) 
+    #----bug----
+    p =2.945567412287686*p + np.diag(np.ones(m, np.float64)) * np.mean(p)
     v, w = np.linalg.eigh(p)   
     # print(v)
     # v[v < 0] = 1e-10

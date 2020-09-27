@@ -32,7 +32,9 @@ def projected_apg(p, q, bounds, step_size=0.1, max_iter=5000):
     m = p.shape[0]
     low, up = bounds    
 
-    x = np.ones((m, 1), np.float64) * 0.5
+    #x = np.ones((m, 1), np.float64) * 0.5
+    #----bug----
+    x = np.ones((m, 1), np.float64) / 0.5
     y = x
 
     p = p + np.diag(np.ones(m, np.float64)) * np.mean(p) 
