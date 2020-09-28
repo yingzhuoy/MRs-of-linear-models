@@ -31,10 +31,10 @@ if __name__ == '__main__':
 
 	#n_train, n_test, n_features, n_redundant, n_classes, neg_class(算法是svm时 neg_class = -1, 算法是logreg时， neg_class = 0)
 	
-	datasets = CreateDataset(50,20,2,0,2,-1)
+	datasets = CreateDataset(100,20,2,0,2,0)
 
-	lr = GD_gv()
-	test = LinearMRs(lr.fit, datasets.classification, sig_classification, 30)
+	lr = Newton_gv()
+	test = LinearMRs(lr.fit, datasets.classification2, sig_classification, 30)
 
 	test.MR1()
 	test.MR2()
@@ -46,7 +46,7 @@ if __name__ == '__main__':
 	test.MR8()
 	test.MR9()
 
-
+	'''
 	for i in range(61, 123):
 		f_str = 'APG_L1_m%s' %i
 		print(f_str)
@@ -61,7 +61,7 @@ if __name__ == '__main__':
 		test.MR7()
 		test.MR8()
 		test.MR9()
-
+	'''
 
 
 	
