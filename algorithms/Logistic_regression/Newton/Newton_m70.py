@@ -75,7 +75,7 @@ def cg(A, b, x=None, tol=1.0e-6, max_iter=1000):
     return x
 
 
-class Newton_gv():
+class Newton_m70():
     """docstring for LogReg_NewtonMethod_GoldenVersion"""
 
     def p1(self, x):

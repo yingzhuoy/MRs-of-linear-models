@@ -212,7 +212,7 @@ class LinearMRs():
                 err_cnt = err_cnt + 1
         print(err_cnt/self.itr_cnt)
 
-        # MR7: The following MRs were proposed by ourselves
+    # MR7: The following MRs were proposed by ourselves
 
     def MR7(self):
         print("Begin to test MR7...")

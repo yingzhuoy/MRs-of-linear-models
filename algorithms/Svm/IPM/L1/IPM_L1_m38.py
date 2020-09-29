@@ -114,7 +114,7 @@ def inner_point(p, q, bounds, step_size=0.1, max_iter=100):
 
 
 #L1-svm
-class   IPM_L1_gv():
+class IPM_L1_m38():
     def fit(self, X, y):
         m, n = X.shape
         X = np.column_stack((X, np.ones((m, 1))))
