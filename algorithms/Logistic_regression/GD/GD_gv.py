@@ -10,13 +10,13 @@ def backtracking(l0, w0, X, y):
     beta = 0.5
     l = l0
     h0 = sigmoid(X * w0)
-    L0 = y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon-h0) + 1*np.linalg.norm(w0)**2
+    L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon-h0) + 1*np.linalg.norm(w0)**2)
     error = y - h0  # vector subtraction\
     g0 = - X.T * error  # + 1 * w0
     for k in range(128):
         wp = w0 - l * g0
         h = sigmoid(X * wp)
-        Lw = y.T * np.log(h+epsilon) + (1-y).T * np.log(1+epsilon-h) + 1*np.linalg.norm(wp)**2
+        Lw = -(y.T * np.log(h+epsilon) + (1-y).T * np.log(1+epsilon-h) + 1*np.linalg.norm(wp)**2)
         gt = (w0-wp) / l
         if Lw > L0 - l *(g0.T*gt) + 0.5*l*gt.T*(gt):
             l = beta * l
@@ -81,9 +81,9 @@ class GD_gv():
             if np.linalg.norm(z-w) < tol:
                 break
                 
-        if k == max_iter - 1:
-            print('convergence fail, the current norm of gradient is {}'.format(
-                np.linalg.norm(gradient)))
+        # if k == max_iter - 1:
+            # print('convergence fail, the current norm of gradient is {}'.format(
+                # np.linalg.norm(gradient)))
 
         w = np.array(w).flatten()
         b = w[-1]
