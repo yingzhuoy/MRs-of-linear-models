@@ -6,7 +6,7 @@ from algorithms.Logistic_regression.Newton.Newton_m4 import Newton_m4
 from algorithms.Logistic_regression.Newton.Newton_m5 import Newton_m5
 from algorithms.Logistic_regression.Newton.Newton_m6 import Newton_m6
 from algorithms.Logistic_regression.Newton.Newton_m7 import Newton_m7
-from algorithms.Logistic_regression.Newton.Newton_m8 import Newton_m8 
+from algorithms.Logistic_regression.Newton.Newton_m8 import Newton_m8
 from algorithms.Logistic_regression.Newton.Newton_m9 import Newton_m9
 from algorithms.Logistic_regression.Newton.Newton_m10 import Newton_m10
 from algorithms.Logistic_regression.Newton.Newton_m11 import Newton_m11
@@ -34,6 +34,7 @@ from algorithms.Logistic_regression.Newton.Newton_m32 import Newton_m32
 from algorithms.Logistic_regression.Newton.Newton_m33 import Newton_m33
 from algorithms.Logistic_regression.Newton.Newton_m34 import Newton_m34
 from algorithms.Logistic_regression.Newton.Newton_m35 import Newton_m35
+
 from algorithms.Logistic_regression.Newton.Newton_m36 import Newton_m36
 from algorithms.Logistic_regression.Newton.Newton_m37 import Newton_m37
 from algorithms.Logistic_regression.Newton.Newton_m38 import Newton_m38
@@ -69,3 +70,35 @@ from algorithms.Logistic_regression.Newton.Newton_m67 import Newton_m67
 from algorithms.Logistic_regression.Newton.Newton_m68 import Newton_m68
 from algorithms.Logistic_regression.Newton.Newton_m69 import Newton_m69
 from algorithms.Logistic_regression.Newton.Newton_m70 import Newton_m70
+
+
+from algorithms.Logistic_regression.Newton.Newton_m71 import Newton_m71
+from algorithms.Logistic_regression.Newton.Newton_m72 import Newton_m72
+from algorithms.Logistic_regression.Newton.Newton_m73 import Newton_m73
+from algorithms.Logistic_regression.Newton.Newton_m74 import Newton_m74
+from algorithms.Logistic_regression.Newton.Newton_m75 import Newton_m75
+from algorithms.Logistic_regression.Newton.Newton_m76 import Newton_m76
+from algorithms.Logistic_regression.Newton.Newton_m77 import Newton_m77
+from algorithms.Logistic_regression.Newton.Newton_m78 import Newton_m78
+from algorithms.Logistic_regression.Newton.Newton_m79 import Newton_m79
+from algorithms.Logistic_regression.Newton.Newton_m80 import Newton_m80
+from algorithms.Logistic_regression.Newton.Newton_m81 import Newton_m81
+from algorithms.Logistic_regression.Newton.Newton_m82 import Newton_m82
+from algorithms.Logistic_regression.Newton.Newton_m83 import Newton_m83
+from algorithms.Logistic_regression.Newton.Newton_m84 import Newton_m84
+from algorithms.Logistic_regression.Newton.Newton_m85 import Newton_m85
+from algorithms.Logistic_regression.Newton.Newton_m86 import Newton_m86
+from algorithms.Logistic_regression.Newton.Newton_m87 import Newton_m87
+from algorithms.Logistic_regression.Newton.Newton_m88 import Newton_m88
+from algorithms.Logistic_regression.Newton.Newton_m89 import Newton_m89
+from algorithms.Logistic_regression.Newton.Newton_m90 import Newton_m90
+from algorithms.Logistic_regression.Newton.Newton_m91 import Newton_m91
+from algorithms.Logistic_regression.Newton.Newton_m92 import Newton_m92
+from algorithms.Logistic_regression.Newton.Newton_m93 import Newton_m93
+from algorithms.Logistic_regression.Newton.Newton_m94 import Newton_m94
+from algorithms.Logistic_regression.Newton.Newton_m95 import Newton_m95
+from algorithms.Logistic_regression.Newton.Newton_m96 import Newton_m96
+
+from algorithms.Logistic_regression.Newton.Newton_m97 import Newton_m97
+from algorithms.Logistic_regression.Newton.Newton_m98 import Newton_m98
+from algorithms.Logistic_regression.Newton.Newton_m99 import Newton_m99

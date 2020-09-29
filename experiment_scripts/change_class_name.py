@@ -1,6 +1,6 @@
 import os.path
 
-rootdir = r'algorithms\Logistic_regression\Newton'
+rootdir = r'..\algorithms\Logistic_regression\GD'
 list = os.listdir(rootdir)
 
 for i in range(0, len(list)):
@@ -11,7 +11,7 @@ for i in range(0, len(list)):
 	lines = p.readlines()
 	d = ""
 	for line in lines:
-		c = line.replace("class Newton_gv():", replace_word)
+		c = line.replace("class GD_gv():", replace_word)
 		d+=c
 	p.seek(0)
 	p.truncate()
