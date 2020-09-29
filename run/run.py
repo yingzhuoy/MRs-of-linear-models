@@ -29,25 +29,11 @@ def feval(funcName, *args):
 
 if __name__ == '__main__':
 
-	#n_train, n_test, n_features, n_redundant, n_classes, neg_class(算法是svm时 neg_class = -1, 算法是logreg时， neg_class = 0)
-	
-	datasets = CreateDataset(100,20,2,0,2,0)
+	#n_train, n_test, n_redundant, n_classes, neg_class(算法是svm时 neg_class = -1, 算法是logreg时， neg_class = 0)
 
-	lr = Newton_gv()
-	test = LinearMRs(lr.fit, datasets.classification2, sig_classification, 30)
+	datasets = CreateDataset(400,100,0,2,-1)
 
-	test.MR1()
-	test.MR2()
-	test.MR3()
-	test.MR4()
-	test.MR5()
-	test.MR6()
-	test.MR7()
-	test.MR8()
-	test.MR9()
-
-	'''
-	for i in range(61, 123):
+	for i in range(1, 123):
 		f_str = 'APG_L1_m%s' %i
 		print(f_str)
 		lr = feval(f_str)
@@ -61,10 +47,8 @@ if __name__ == '__main__':
 		test.MR7()
 		test.MR8()
 		test.MR9()
-	'''
 
 
-	
 	#datasets = CreateDataset(20,5,2,0,2,-1)
 	#X_train, y_train, X_test, y_test = datasets.classification()
 	#lr = SVM_CVX_L1_gv()
