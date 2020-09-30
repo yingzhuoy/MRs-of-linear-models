@@ -26,4 +26,4 @@ class CreateDataset:
         y_test = y[self.n_train:]
         y_train[np.where(y_train == 0)] = self.neg_class
         y_test[np.where(y_test == 0)] = self.neg_class
-        return X_train, y_train, X_test, y_test
+        return X_train, y_train, X_test, y_test, n_features
