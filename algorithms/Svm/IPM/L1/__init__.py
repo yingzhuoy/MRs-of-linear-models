@@ -34,7 +34,6 @@ from algorithms.Svm.IPM.L1.IPM_L1_m32 import IPM_L1_m32
 from algorithms.Svm.IPM.L1.IPM_L1_m33 import IPM_L1_m33
 from algorithms.Svm.IPM.L1.IPM_L1_m34 import IPM_L1_m34
 from algorithms.Svm.IPM.L1.IPM_L1_m35 import IPM_L1_m35
-
 from algorithms.Svm.IPM.L1.IPM_L1_m36 import IPM_L1_m36
 from algorithms.Svm.IPM.L1.IPM_L1_m37 import IPM_L1_m37
 from algorithms.Svm.IPM.L1.IPM_L1_m38 import IPM_L1_m38
@@ -70,8 +69,6 @@ from algorithms.Svm.IPM.L1.IPM_L1_m67 import IPM_L1_m67
 from algorithms.Svm.IPM.L1.IPM_L1_m68 import IPM_L1_m68
 from algorithms.Svm.IPM.L1.IPM_L1_m69 import IPM_L1_m69
 from algorithms.Svm.IPM.L1.IPM_L1_m70 import IPM_L1_m70
-
-
 from algorithms.Svm.IPM.L1.IPM_L1_m71 import IPM_L1_m71
 from algorithms.Svm.IPM.L1.IPM_L1_m72 import IPM_L1_m72
 from algorithms.Svm.IPM.L1.IPM_L1_m73 import IPM_L1_m73
@@ -98,7 +95,55 @@ from algorithms.Svm.IPM.L1.IPM_L1_m93 import IPM_L1_m93
 from algorithms.Svm.IPM.L1.IPM_L1_m94 import IPM_L1_m94
 from algorithms.Svm.IPM.L1.IPM_L1_m95 import IPM_L1_m95
 from algorithms.Svm.IPM.L1.IPM_L1_m96 import IPM_L1_m96
-
 from algorithms.Svm.IPM.L1.IPM_L1_m97 import IPM_L1_m97
 from algorithms.Svm.IPM.L1.IPM_L1_m98 import IPM_L1_m98
 from algorithms.Svm.IPM.L1.IPM_L1_m99 import IPM_L1_m99
+from algorithms.Svm.IPM.L1.IPM_L1_m100 import IPM_L1_m100
+from algorithms.Svm.IPM.L1.IPM_L1_m101 import IPM_L1_m101
+from algorithms.Svm.IPM.L1.IPM_L1_m102 import IPM_L1_m102
+from algorithms.Svm.IPM.L1.IPM_L1_m103 import IPM_L1_m103
+from algorithms.Svm.IPM.L1.IPM_L1_m104 import IPM_L1_m104
+from algorithms.Svm.IPM.L1.IPM_L1_m105 import IPM_L1_m105
+from algorithms.Svm.IPM.L1.IPM_L1_m106 import IPM_L1_m106
+from algorithms.Svm.IPM.L1.IPM_L1_m107 import IPM_L1_m107
+from algorithms.Svm.IPM.L1.IPM_L1_m108 import IPM_L1_m108
+from algorithms.Svm.IPM.L1.IPM_L1_m109 import IPM_L1_m109
+from algorithms.Svm.IPM.L1.IPM_L1_m110 import IPM_L1_m110
+from algorithms.Svm.IPM.L1.IPM_L1_m111 import IPM_L1_m111
+from algorithms.Svm.IPM.L1.IPM_L1_m112 import IPM_L1_m112
+from algorithms.Svm.IPM.L1.IPM_L1_m113 import IPM_L1_m113
+from algorithms.Svm.IPM.L1.IPM_L1_m114 import IPM_L1_m114
+from algorithms.Svm.IPM.L1.IPM_L1_m115 import IPM_L1_m115
+from algorithms.Svm.IPM.L1.IPM_L1_m116 import IPM_L1_m116
+from algorithms.Svm.IPM.L1.IPM_L1_m117 import IPM_L1_m117
+from algorithms.Svm.IPM.L1.IPM_L1_m118 import IPM_L1_m118
+from algorithms.Svm.IPM.L1.IPM_L1_m119 import IPM_L1_m119
+from algorithms.Svm.IPM.L1.IPM_L1_m120 import IPM_L1_m120
+from algorithms.Svm.IPM.L1.IPM_L1_m121 import IPM_L1_m121
+from algorithms.Svm.IPM.L1.IPM_L1_m122 import IPM_L1_m122
+from algorithms.Svm.IPM.L1.IPM_L1_m123 import IPM_L1_m123
+from algorithms.Svm.IPM.L1.IPM_L1_m124 import IPM_L1_m124
+from algorithms.Svm.IPM.L1.IPM_L1_m125 import IPM_L1_m125
+from algorithms.Svm.IPM.L1.IPM_L1_m126 import IPM_L1_m126
+from algorithms.Svm.IPM.L1.IPM_L1_m127 import IPM_L1_m127
+from algorithms.Svm.IPM.L1.IPM_L1_m128 import IPM_L1_m128
+from algorithms.Svm.IPM.L1.IPM_L1_m129 import IPM_L1_m129
+from algorithms.Svm.IPM.L1.IPM_L1_m130 import IPM_L1_m130
+from algorithms.Svm.IPM.L1.IPM_L1_m131 import IPM_L1_m131
+from algorithms.Svm.IPM.L1.IPM_L1_m132 import IPM_L1_m132
+from algorithms.Svm.IPM.L1.IPM_L1_m133 import IPM_L1_m133
+from algorithms.Svm.IPM.L1.IPM_L1_m134 import IPM_L1_m134
+from algorithms.Svm.IPM.L1.IPM_L1_m135 import IPM_L1_m135
+from algorithms.Svm.IPM.L1.IPM_L1_m136 import IPM_L1_m136
+from algorithms.Svm.IPM.L1.IPM_L1_m137 import IPM_L1_m137
+from algorithms.Svm.IPM.L1.IPM_L1_m138 import IPM_L1_m138
+from algorithms.Svm.IPM.L1.IPM_L1_m139 import IPM_L1_m139
+from algorithms.Svm.IPM.L1.IPM_L1_m140 import IPM_L1_m140
+from algorithms.Svm.IPM.L1.IPM_L1_m141 import IPM_L1_m141
+from algorithms.Svm.IPM.L1.IPM_L1_m142 import IPM_L1_m142
+from algorithms.Svm.IPM.L1.IPM_L1_m143 import IPM_L1_m143
+from algorithms.Svm.IPM.L1.IPM_L1_m144 import IPM_L1_m144
+from algorithms.Svm.IPM.L1.IPM_L1_m145 import IPM_L1_m145
+from algorithms.Svm.IPM.L1.IPM_L1_m146 import IPM_L1_m146
+from algorithms.Svm.IPM.L1.IPM_L1_m147 import IPM_L1_m147
+from algorithms.Svm.IPM.L1.IPM_L1_m148 import IPM_L1_m148

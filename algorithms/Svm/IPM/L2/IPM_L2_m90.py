@@ -65,7 +65,9 @@ def cg(A, b, x=None, tol=1.0e-6, max_iter=1000):
             rho = np.dot(r.T, u)
             beta = rho / rho_old
             beta = beta.item()
-            q = u + beta * q
+#----bug----
+#q = u + beta * q
+            q = u +7.229494358238511*beta * q
 
         rho_old = rho
         tau_old = tau

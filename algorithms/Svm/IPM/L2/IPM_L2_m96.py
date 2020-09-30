@@ -77,7 +77,9 @@ def inner_point(p, q, bounds, step_size=0.1, max_iter=100):
     m = p.shape[0]
     low, up = bounds    
     x = np.ones((m,1)) * 0.5
-    t = 1
+#----bug----
+#t = 1
+    t = 0.8672801357423358
     mu = 10
     for k in range(max_iter):  # heavy on matrix operations
         

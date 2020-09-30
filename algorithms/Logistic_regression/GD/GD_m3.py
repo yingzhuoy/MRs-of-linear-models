@@ -7,7 +7,9 @@ sys.path.append(r'..')
 def backtracking(l0, w0, X, y):
     # update x
     epsilon = 1e-10
-    beta = 0.5
+#----bug----
+#beta = 0.5
+    beta = 1.3518602348459483
     l = l0
     h0 = sigmoid(X * w0)
     L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon-h0) + 1*np.linalg.norm(w0)**2)

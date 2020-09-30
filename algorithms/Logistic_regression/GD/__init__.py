@@ -34,7 +34,6 @@ from algorithms.Logistic_regression.GD.GD_m32 import GD_m32
 from algorithms.Logistic_regression.GD.GD_m33 import GD_m33
 from algorithms.Logistic_regression.GD.GD_m34 import GD_m34
 from algorithms.Logistic_regression.GD.GD_m35 import GD_m35
-
 from algorithms.Logistic_regression.GD.GD_m36 import GD_m36
 from algorithms.Logistic_regression.GD.GD_m37 import GD_m37
 from algorithms.Logistic_regression.GD.GD_m38 import GD_m38
@@ -70,8 +69,6 @@ from algorithms.Logistic_regression.GD.GD_m67 import GD_m67
 from algorithms.Logistic_regression.GD.GD_m68 import GD_m68
 from algorithms.Logistic_regression.GD.GD_m69 import GD_m69
 from algorithms.Logistic_regression.GD.GD_m70 import GD_m70
-
-
 from algorithms.Logistic_regression.GD.GD_m71 import GD_m71
 from algorithms.Logistic_regression.GD.GD_m72 import GD_m72
 from algorithms.Logistic_regression.GD.GD_m73 import GD_m73
@@ -98,7 +95,27 @@ from algorithms.Logistic_regression.GD.GD_m93 import GD_m93
 from algorithms.Logistic_regression.GD.GD_m94 import GD_m94
 from algorithms.Logistic_regression.GD.GD_m95 import GD_m95
 from algorithms.Logistic_regression.GD.GD_m96 import GD_m96
-
 from algorithms.Logistic_regression.GD.GD_m97 import GD_m97
 from algorithms.Logistic_regression.GD.GD_m98 import GD_m98
 from algorithms.Logistic_regression.GD.GD_m99 import GD_m99
+from algorithms.Logistic_regression.GD.GD_m100 import GD_m100
+from algorithms.Logistic_regression.GD.GD_m101 import GD_m101
+from algorithms.Logistic_regression.GD.GD_m102 import GD_m102
+from algorithms.Logistic_regression.GD.GD_m103 import GD_m103
+from algorithms.Logistic_regression.GD.GD_m104 import GD_m104
+from algorithms.Logistic_regression.GD.GD_m105 import GD_m105
+from algorithms.Logistic_regression.GD.GD_m106 import GD_m106
+from algorithms.Logistic_regression.GD.GD_m107 import GD_m107
+from algorithms.Logistic_regression.GD.GD_m108 import GD_m108
+from algorithms.Logistic_regression.GD.GD_m109 import GD_m109
+from algorithms.Logistic_regression.GD.GD_m110 import GD_m110
+from algorithms.Logistic_regression.GD.GD_m111 import GD_m111
+from algorithms.Logistic_regression.GD.GD_m112 import GD_m112
+from algorithms.Logistic_regression.GD.GD_m113 import GD_m113
+from algorithms.Logistic_regression.GD.GD_m114 import GD_m114
+from algorithms.Logistic_regression.GD.GD_m115 import GD_m115
+from algorithms.Logistic_regression.GD.GD_m116 import GD_m116
+from algorithms.Logistic_regression.GD.GD_m117 import GD_m117
+from algorithms.Logistic_regression.GD.GD_m118 import GD_m118
+from algorithms.Logistic_regression.GD.GD_m119 import GD_m119
+from algorithms.Logistic_regression.GD.GD_m120 import GD_m120

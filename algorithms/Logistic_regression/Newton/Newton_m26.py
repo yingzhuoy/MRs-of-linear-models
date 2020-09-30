@@ -112,7 +112,9 @@ class Newton_m26():
             d = cg(hessian, grad)
             d = d.reshape(-1, 1)
             # update w
-            w = w - d
+#----bug----
+#w = w - d
+            w = w + d
             if np.linalg.norm(grad) < tol:
                 break
 

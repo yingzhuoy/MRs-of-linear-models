@@ -25,7 +25,9 @@ def cg(A, b, x=None, tol=1.0e-6, max_iter=1000):
         M = np.eye(m)
     
     x = np.zeros((m, 1))
-    Aq = np.dot(A, x)    
+#----bug----
+#Aq = np.dot(A, x)
+    Aq = np.dot(A,x+16.94355031075348)    
     r = b - Aq
     q = precond(M, r)       
     tau_old = np.linalg.norm(q)

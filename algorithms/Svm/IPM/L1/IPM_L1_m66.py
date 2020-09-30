@@ -54,7 +54,9 @@ def cg(A, b, x=None, tol=1.0e-6, max_iter=1000):
         gam = c*c*theta_old*theta_old
         eta = c*c*alpha
         d = gam * d + eta * q
-        x = x + d
+#----bug----
+#x = x + d
+        x = x +-13.833778119443721*d
 
         # stop
         Ad = gam*Ad+eta*Aq

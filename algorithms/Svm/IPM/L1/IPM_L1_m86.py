@@ -62,7 +62,9 @@ def cg(A, b, x=None, tol=1.0e-6, max_iter=1000):
         if np.linalg.norm(res) < tol*normb:
             break
         else:
-            rho = np.dot(r.T, u)
+#----bug----
+#rho = np.dot(r.T, u)
+            rho = np.dot(r.T,u+6.188448128622278)
             beta = rho / rho_old
             beta = beta.item()
             q = u + beta * q

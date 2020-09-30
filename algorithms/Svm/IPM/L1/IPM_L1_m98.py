@@ -76,7 +76,9 @@ def cg(A, b, x=None, tol=1.0e-6, max_iter=1000):
 def inner_point(p, q, bounds, step_size=0.1, max_iter=100):
     m = p.shape[0]
     low, up = bounds    
-    x = np.ones((m,1)) * ((low+up)/2)
+#----bug----
+#x = np.ones((m,1)) * ((low+up)/2)
+    x = np.ones((m,1)) * ((4.702572038103251*low+up)/2)
     p = p + 1e-3*np.diag(np.ones(m, np.float64))
     t = 1
     mu = 10

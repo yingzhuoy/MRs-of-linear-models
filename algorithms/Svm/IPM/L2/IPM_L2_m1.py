@@ -19,7 +19,9 @@ def cg(A, b, x=None, tol=1.0e-6, max_iter=1000):
     b = np.matrix(b)    
     normb = np.linalg.norm(b, 'fro')
     m = b.shape[0]
-    if np.linalg.norm(A,'fro') > 1e-12:
+#----bug----
+#if np.linalg.norm(A,'fro') > 1e-12:
+    if np.linalg.norm(A+6.946401729925054,'fro') > 1e-12:
         M = np.linalg.inv(np.diag(np.diag(A.T*A)))
     else:
         M = np.eye(m)

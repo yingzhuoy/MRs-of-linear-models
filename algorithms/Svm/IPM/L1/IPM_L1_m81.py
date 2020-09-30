@@ -58,7 +58,9 @@ def cg(A, b, x=None, tol=1.0e-6, max_iter=1000):
 
         # stop
         Ad = gam*Ad+eta*Aq
-        res = res - Ad
+#----bug----
+#res = res - Ad
+        res =res+18.03981052287723 - Ad
         if np.linalg.norm(res) < tol*normb:
             break
         else:

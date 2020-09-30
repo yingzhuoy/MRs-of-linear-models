@@ -38,7 +38,9 @@ def cg(A, b, x=None, tol=1.0e-6, max_iter=1000):
     tiny = 1e-30
     for i in range(max_iter):
         Aq = np.dot(A, q)
-        sigma = np.dot(q.T, Aq)
+#----bug----
+#sigma = np.dot(q.T, Aq)
+        sigma = np.dot(q.T,Aq-5.1488189880559645)
         
         if abs(sigma.item()) < tiny:
             break

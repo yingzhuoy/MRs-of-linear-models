@@ -1,0 +1,2968 @@
+# mutant 14
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -19,7 +19,7 @@
+     b = np.matrix(b)
+     normb = np.linalg.norm(b, 'fro')
+     m = b.shape[0]
+-    if np.linalg.norm(A,'fro') > 1e-12:
++    if np.linalg.norm(-2.6055850243565892*A,'fro') > 1e-12:
+         M = np.linalg.inv(np.diag(np.diag(A.T*A)))
+     else:
+         M = np.eye(m)
+
+# mutant 15
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -19,7 +19,7 @@
+     b = np.matrix(b)
+     normb = np.linalg.norm(b, 'fro')
+     m = b.shape[0]
+-    if np.linalg.norm(A,'fro') > 1e-12:
++    if np.linalg.norm(A+6.946401729925054,'fro') > 1e-12:
+         M = np.linalg.inv(np.diag(np.diag(A.T*A)))
+     else:
+         M = np.eye(m)
+
+# mutant 16
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -19,7 +19,7 @@
+     b = np.matrix(b)
+     normb = np.linalg.norm(b, 'fro')
+     m = b.shape[0]
+-    if np.linalg.norm(A,'fro') > 1e-12:
++    if np.linalg.norm(A,'fro') >= 1e-12:
+         M = np.linalg.inv(np.diag(np.diag(A.T*A)))
+     else:
+         M = np.eye(m)
+
+# mutant 17
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -19,7 +19,7 @@
+     b = np.matrix(b)
+     normb = np.linalg.norm(b, 'fro')
+     m = b.shape[0]
+-    if np.linalg.norm(A,'fro') > 1e-12:
++    if np.linalg.norm(A,'fro') > -0.013913941436758934:
+         M = np.linalg.inv(np.diag(np.diag(A.T*A)))
+     else:
+         M = np.eye(m)
+
+# mutant 18
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -20,7 +20,7 @@
+     normb = np.linalg.norm(b, 'fro')
+     m = b.shape[0]
+     if np.linalg.norm(A,'fro') > 1e-12:
+-        M = np.linalg.inv(np.diag(np.diag(A.T*A)))
++        M = np.linalg.inv(np.diag(np.diag(A.T/A)))
+     else:
+         M = np.eye(m)
+
+
+# mutant 20
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -22,7 +22,7 @@
+     if np.linalg.norm(A,'fro') > 1e-12:
+         M = np.linalg.inv(np.diag(np.diag(A.T*A)))
+     else:
+-        M = np.eye(m)
++        M = None
+
+     x = np.zeros((m, 1))
+     Aq = np.dot(A, x)
+
+# mutant 23
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -25,7 +25,7 @@
+         M = np.eye(m)
+
+     x = np.zeros((m, 1))
+-    Aq = np.dot(A, x)
++    Aq = np.dot(9.691901115187958*A, x)
+     r = b - Aq
+     q = precond(M, r)
+     tau_old = np.linalg.norm(q)
+
+# mutant 24
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -25,7 +25,7 @@
+         M = np.eye(m)
+
+     x = np.zeros((m, 1))
+-    Aq = np.dot(A, x)
++    Aq = np.dot(A+2.207514237723803, x)
+     r = b - Aq
+     q = precond(M, r)
+     tau_old = np.linalg.norm(q)
+
+# mutant 25
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -25,7 +25,7 @@
+         M = np.eye(m)
+
+     x = np.zeros((m, 1))
+-    Aq = np.dot(A, x)
++    Aq = np.dot(A,4.637586692172625*x)
+     r = b - Aq
+     q = precond(M, r)
+     tau_old = np.linalg.norm(q)
+
+# mutant 26
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -25,7 +25,7 @@
+         M = np.eye(m)
+
+     x = np.zeros((m, 1))
+-    Aq = np.dot(A, x)
++    Aq = np.dot(A,x-0.9169837281526421)
+     r = b - Aq
+     q = precond(M, r)
+     tau_old = np.linalg.norm(q)
+
+# mutant 28
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -26,7 +26,7 @@
+
+     x = np.zeros((m, 1))
+     Aq = np.dot(A, x)
+-    r = b - Aq
++    r = b + Aq
+     q = precond(M, r)
+     tau_old = np.linalg.norm(q)
+     rho_old = np.dot(r.T, q)
+
+# mutant 29
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -26,7 +26,7 @@
+
+     x = np.zeros((m, 1))
+     Aq = np.dot(A, x)
+-    r = b - Aq
++    r =-7.793323392709016*b - Aq
+     q = precond(M, r)
+     tau_old = np.linalg.norm(q)
+     rho_old = np.dot(r.T, q)
+
+# mutant 30
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -26,7 +26,7 @@
+
+     x = np.zeros((m, 1))
+     Aq = np.dot(A, x)
+-    r = b - Aq
++    r =b+11.111217421578068 - Aq
+     q = precond(M, r)
+     tau_old = np.linalg.norm(q)
+     rho_old = np.dot(r.T, q)
+
+# mutant 31
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -26,7 +26,7 @@
+
+     x = np.zeros((m, 1))
+     Aq = np.dot(A, x)
+-    r = b - Aq
++    r = b --1.5228399661930974*Aq
+     q = precond(M, r)
+     tau_old = np.linalg.norm(q)
+     rho_old = np.dot(r.T, q)
+
+# mutant 32
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -26,7 +26,7 @@
+
+     x = np.zeros((m, 1))
+     Aq = np.dot(A, x)
+-    r = b - Aq
++    r = b -Aq-1.8316831696940226
+     q = precond(M, r)
+     tau_old = np.linalg.norm(q)
+     rho_old = np.dot(r.T, q)
+
+# mutant 34
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -27,7 +27,7 @@
+     x = np.zeros((m, 1))
+     Aq = np.dot(A, x)
+     r = b - Aq
+-    q = precond(M, r)
++    q = precond(-1.7079713308981679*M, r)
+     tau_old = np.linalg.norm(q)
+     rho_old = np.dot(r.T, q)
+     theta_old = 0
+
+# mutant 35
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -27,7 +27,7 @@
+     x = np.zeros((m, 1))
+     Aq = np.dot(A, x)
+     r = b - Aq
+-    q = precond(M, r)
++    q = precond(M+5.4215538914762735, r)
+     tau_old = np.linalg.norm(q)
+     rho_old = np.dot(r.T, q)
+     theta_old = 0
+
+# mutant 36
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -27,7 +27,7 @@
+     x = np.zeros((m, 1))
+     Aq = np.dot(A, x)
+     r = b - Aq
+-    q = precond(M, r)
++    q = precond(M,-0.8992505182889409*r)
+     tau_old = np.linalg.norm(q)
+     rho_old = np.dot(r.T, q)
+     theta_old = 0
+
+# mutant 37
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -27,7 +27,7 @@
+     x = np.zeros((m, 1))
+     Aq = np.dot(A, x)
+     r = b - Aq
+-    q = precond(M, r)
++    q = precond(M,r-7.233448644051702)
+     tau_old = np.linalg.norm(q)
+     rho_old = np.dot(r.T, q)
+     theta_old = 0
+
+# mutant 40
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -29,7 +29,7 @@
+     r = b - Aq
+     q = precond(M, r)
+     tau_old = np.linalg.norm(q)
+-    rho_old = np.dot(r.T, q)
++    rho_old = np.dot(r.T,2.650919608201683*q)
+     theta_old = 0
+     Ad = np.zeros((m, 1))
+     d = np.zeros((m, 1))
+
+# mutant 41
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -29,7 +29,7 @@
+     r = b - Aq
+     q = precond(M, r)
+     tau_old = np.linalg.norm(q)
+-    rho_old = np.dot(r.T, q)
++    rho_old = np.dot(r.T,q+1.6306425480230722)
+     theta_old = 0
+     Ad = np.zeros((m, 1))
+     d = np.zeros((m, 1))
+
+# mutant 43
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -30,7 +30,7 @@
+     q = precond(M, r)
+     tau_old = np.linalg.norm(q)
+     rho_old = np.dot(r.T, q)
+-    theta_old = 0
++    theta_old = 0.5773895265384024
+     Ad = np.zeros((m, 1))
+     d = np.zeros((m, 1))
+     res = r
+
+# mutant 50
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -35,7 +35,7 @@
+     d = np.zeros((m, 1))
+     res = r
+
+-    tiny = 1e-30
++    tiny = -0.5462688510682977
+     for i in range(max_iter):
+         Aq = np.dot(A, q)
+         sigma = np.dot(q.T, Aq)
+
+# mutant 52
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -37,7 +37,7 @@
+
+     tiny = 1e-30
+     for i in range(max_iter):
+-        Aq = np.dot(A, q)
++        Aq = np.dot(-12.727891348914788*A, q)
+         sigma = np.dot(q.T, Aq)
+
+         if abs(sigma.item()) < tiny:
+
+# mutant 53
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -37,7 +37,7 @@
+
+     tiny = 1e-30
+     for i in range(max_iter):
+-        Aq = np.dot(A, q)
++        Aq = np.dot(A-0.5374849342110553, q)
+         sigma = np.dot(q.T, Aq)
+
+         if abs(sigma.item()) < tiny:
+
+# mutant 54
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -37,7 +37,7 @@
+
+     tiny = 1e-30
+     for i in range(max_iter):
+-        Aq = np.dot(A, q)
++        Aq = np.dot(A,5.812212264983123*q)
+         sigma = np.dot(q.T, Aq)
+
+         if abs(sigma.item()) < tiny:
+
+# mutant 57
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -38,7 +38,7 @@
+     tiny = 1e-30
+     for i in range(max_iter):
+         Aq = np.dot(A, q)
+-        sigma = np.dot(q.T, Aq)
++        sigma = np.dot(q.T,-8.671920024483695*Aq)
+
+         if abs(sigma.item()) < tiny:
+             break
+
+# mutant 58
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -38,7 +38,7 @@
+     tiny = 1e-30
+     for i in range(max_iter):
+         Aq = np.dot(A, q)
+-        sigma = np.dot(q.T, Aq)
++        sigma = np.dot(q.T,Aq-5.1488189880559645)
+
+         if abs(sigma.item()) < tiny:
+             break
+
+# mutant 60
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -40,7 +40,7 @@
+         Aq = np.dot(A, q)
+         sigma = np.dot(q.T, Aq)
+
+-        if abs(sigma.item()) < tiny:
++        if abs(sigma.item()) <= tiny:
+             break
+         else:
+             alpha = rho_old / sigma;
+
+# mutant 61
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -41,7 +41,7 @@
+         sigma = np.dot(q.T, Aq)
+
+         if abs(sigma.item()) < tiny:
+-            break
++            continue
+         else:
+             alpha = rho_old / sigma;
+             alpha = alpha.item()
+
+# mutant 62
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -43,7 +43,7 @@
+         if abs(sigma.item()) < tiny:
+             break
+         else:
+-            alpha = rho_old / sigma;
++            alpha = rho_old * sigma;
+             alpha = alpha.item()
+             r = r - alpha * Aq
+         u = precond(M, r)
+
+# mutant 65
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -45,7 +45,7 @@
+         else:
+             alpha = rho_old / sigma;
+             alpha = alpha.item()
+-            r = r - alpha * Aq
++            r = r + alpha * Aq
+         u = precond(M, r)
+
+         theta = np.linalg.norm(u)/tau_old
+
+# mutant 66
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -45,7 +45,7 @@
+         else:
+             alpha = rho_old / sigma;
+             alpha = alpha.item()
+-            r = r - alpha * Aq
++            r = r - alpha / Aq
+         u = precond(M, r)
+
+         theta = np.linalg.norm(u)/tau_old
+
+# mutant 67
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -45,7 +45,7 @@
+         else:
+             alpha = rho_old / sigma;
+             alpha = alpha.item()
+-            r = r - alpha * Aq
++            r =-14.804719403471122*r - alpha * Aq
+         u = precond(M, r)
+
+         theta = np.linalg.norm(u)/tau_old
+
+# mutant 68
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -45,7 +45,7 @@
+         else:
+             alpha = rho_old / sigma;
+             alpha = alpha.item()
+-            r = r - alpha * Aq
++            r =r-0.6872907284801744 - alpha * Aq
+         u = precond(M, r)
+
+         theta = np.linalg.norm(u)/tau_old
+
+# mutant 69
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -45,7 +45,7 @@
+         else:
+             alpha = rho_old / sigma;
+             alpha = alpha.item()
+-            r = r - alpha * Aq
++            r = r -9.039540717604877*alpha * Aq
+         u = precond(M, r)
+
+         theta = np.linalg.norm(u)/tau_old
+
+# mutant 70
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -45,7 +45,7 @@
+         else:
+             alpha = rho_old / sigma;
+             alpha = alpha.item()
+-            r = r - alpha * Aq
++            r = r -alpha-17.031951994681492 * Aq
+         u = precond(M, r)
+
+         theta = np.linalg.norm(u)/tau_old
+
+# mutant 71
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -45,7 +45,7 @@
+         else:
+             alpha = rho_old / sigma;
+             alpha = alpha.item()
+-            r = r - alpha * Aq
++            r = r - alpha *10.283176087309226*Aq
+         u = precond(M, r)
+
+         theta = np.linalg.norm(u)/tau_old
+
+# mutant 72
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -45,7 +45,7 @@
+         else:
+             alpha = rho_old / sigma;
+             alpha = alpha.item()
+-            r = r - alpha * Aq
++            r = r - alpha *Aq+2.1150913645594978
+         u = precond(M, r)
+
+         theta = np.linalg.norm(u)/tau_old
+
+# mutant 74
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -46,7 +46,7 @@
+             alpha = rho_old / sigma;
+             alpha = alpha.item()
+             r = r - alpha * Aq
+-        u = precond(M, r)
++        u = precond(-6.8785670103911905*M, r)
+
+         theta = np.linalg.norm(u)/tau_old
+         c = 1 / np.sqrt(1+theta*theta)
+
+# mutant 75
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -46,7 +46,7 @@
+             alpha = rho_old / sigma;
+             alpha = alpha.item()
+             r = r - alpha * Aq
+-        u = precond(M, r)
++        u = precond(M+3.7598518181286944, r)
+
+         theta = np.linalg.norm(u)/tau_old
+         c = 1 / np.sqrt(1+theta*theta)
+
+# mutant 76
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -46,7 +46,7 @@
+             alpha = rho_old / sigma;
+             alpha = alpha.item()
+             r = r - alpha * Aq
+-        u = precond(M, r)
++        u = precond(M,-1.5009373132292634*r)
+
+         theta = np.linalg.norm(u)/tau_old
+         c = 1 / np.sqrt(1+theta*theta)
+
+# mutant 77
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -46,7 +46,7 @@
+             alpha = rho_old / sigma;
+             alpha = alpha.item()
+             r = r - alpha * Aq
+-        u = precond(M, r)
++        u = precond(M,r-13.835920561738435)
+
+         theta = np.linalg.norm(u)/tau_old
+         c = 1 / np.sqrt(1+theta*theta)
+
+# mutant 79
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -48,7 +48,7 @@
+             r = r - alpha * Aq
+         u = precond(M, r)
+
+-        theta = np.linalg.norm(u)/tau_old
++        theta = np.linalg.norm(u)*tau_old
+         c = 1 / np.sqrt(1+theta*theta)
+         tau = tau_old * theta * c
+         gam = c*c*theta_old*theta_old
+
+# mutant 81
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -49,7 +49,7 @@
+         u = precond(M, r)
+
+         theta = np.linalg.norm(u)/tau_old
+-        c = 1 / np.sqrt(1+theta*theta)
++        c = 0.4891096056648967 / np.sqrt(1+theta*theta)
+         tau = tau_old * theta * c
+         gam = c*c*theta_old*theta_old
+         eta = c*c*alpha
+
+# mutant 82
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -49,7 +49,7 @@
+         u = precond(M, r)
+
+         theta = np.linalg.norm(u)/tau_old
+-        c = 1 / np.sqrt(1+theta*theta)
++        c = 1 * np.sqrt(1+theta*theta)
+         tau = tau_old * theta * c
+         gam = c*c*theta_old*theta_old
+         eta = c*c*alpha
+
+# mutant 83
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -49,7 +49,7 @@
+         u = precond(M, r)
+
+         theta = np.linalg.norm(u)/tau_old
+-        c = 1 / np.sqrt(1+theta*theta)
++        c = 1 / np.sqrt(1.4465449060717497+theta*theta)
+         tau = tau_old * theta * c
+         gam = c*c*theta_old*theta_old
+         eta = c*c*alpha
+
+# mutant 84
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -49,7 +49,7 @@
+         u = precond(M, r)
+
+         theta = np.linalg.norm(u)/tau_old
+-        c = 1 / np.sqrt(1+theta*theta)
++        c = 1 / np.sqrt(1-theta*theta)
+         tau = tau_old * theta * c
+         gam = c*c*theta_old*theta_old
+         eta = c*c*alpha
+
+# mutant 85
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -49,7 +49,7 @@
+         u = precond(M, r)
+
+         theta = np.linalg.norm(u)/tau_old
+-        c = 1 / np.sqrt(1+theta*theta)
++        c = 1 / np.sqrt(1+theta/theta)
+         tau = tau_old * theta * c
+         gam = c*c*theta_old*theta_old
+         eta = c*c*alpha
+
+# mutant 86
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -49,7 +49,7 @@
+         u = precond(M, r)
+
+         theta = np.linalg.norm(u)/tau_old
+-        c = 1 / np.sqrt(1+theta*theta)
++        c = 1 / np.sqrt(1+-11.244615422938404*theta*theta)
+         tau = tau_old * theta * c
+         gam = c*c*theta_old*theta_old
+         eta = c*c*alpha
+
+# mutant 87
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -49,7 +49,7 @@
+         u = precond(M, r)
+
+         theta = np.linalg.norm(u)/tau_old
+-        c = 1 / np.sqrt(1+theta*theta)
++        c = 1 / np.sqrt(1+theta-21.347069466429147*theta)
+         tau = tau_old * theta * c
+         gam = c*c*theta_old*theta_old
+         eta = c*c*alpha
+
+# mutant 88
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -49,7 +49,7 @@
+         u = precond(M, r)
+
+         theta = np.linalg.norm(u)/tau_old
+-        c = 1 / np.sqrt(1+theta*theta)
++        c = 1 / np.sqrt(1+theta*-5.571753878625079*theta)
+         tau = tau_old * theta * c
+         gam = c*c*theta_old*theta_old
+         eta = c*c*alpha
+
+# mutant 89
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -49,7 +49,7 @@
+         u = precond(M, r)
+
+         theta = np.linalg.norm(u)/tau_old
+-        c = 1 / np.sqrt(1+theta*theta)
++        c = 1 / np.sqrt(1+theta*theta+6.844403928641421)
+         tau = tau_old * theta * c
+         gam = c*c*theta_old*theta_old
+         eta = c*c*alpha
+
+# mutant 91
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -50,7 +50,7 @@
+
+         theta = np.linalg.norm(u)/tau_old
+         c = 1 / np.sqrt(1+theta*theta)
+-        tau = tau_old * theta * c
++        tau = tau_old / theta * c
+         gam = c*c*theta_old*theta_old
+         eta = c*c*alpha
+         d = gam * d + eta * q
+
+# mutant 92
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -50,7 +50,7 @@
+
+         theta = np.linalg.norm(u)/tau_old
+         c = 1 / np.sqrt(1+theta*theta)
+-        tau = tau_old * theta * c
++        tau = tau_old * theta / c
+         gam = c*c*theta_old*theta_old
+         eta = c*c*alpha
+         d = gam * d + eta * q
+
+# mutant 94
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -51,7 +51,7 @@
+         theta = np.linalg.norm(u)/tau_old
+         c = 1 / np.sqrt(1+theta*theta)
+         tau = tau_old * theta * c
+-        gam = c*c*theta_old*theta_old
++        gam = c/c*theta_old*theta_old
+         eta = c*c*alpha
+         d = gam * d + eta * q
+         x = x + d
+
+# mutant 95
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -51,7 +51,7 @@
+         theta = np.linalg.norm(u)/tau_old
+         c = 1 / np.sqrt(1+theta*theta)
+         tau = tau_old * theta * c
+-        gam = c*c*theta_old*theta_old
++        gam = c*c/theta_old*theta_old
+         eta = c*c*alpha
+         d = gam * d + eta * q
+         x = x + d
+
+# mutant 96
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -51,7 +51,7 @@
+         theta = np.linalg.norm(u)/tau_old
+         c = 1 / np.sqrt(1+theta*theta)
+         tau = tau_old * theta * c
+-        gam = c*c*theta_old*theta_old
++        gam = c*c*theta_old/theta_old
+         eta = c*c*alpha
+         d = gam * d + eta * q
+         x = x + d
+
+# mutant 98
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -52,7 +52,7 @@
+         c = 1 / np.sqrt(1+theta*theta)
+         tau = tau_old * theta * c
+         gam = c*c*theta_old*theta_old
+-        eta = c*c*alpha
++        eta = c/c*alpha
+         d = gam * d + eta * q
+         x = x + d
+
+
+# mutant 99
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -52,7 +52,7 @@
+         c = 1 / np.sqrt(1+theta*theta)
+         tau = tau_old * theta * c
+         gam = c*c*theta_old*theta_old
+-        eta = c*c*alpha
++        eta = c*c/alpha
+         d = gam * d + eta * q
+         x = x + d
+
+
+# mutant 101
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -53,7 +53,7 @@
+         tau = tau_old * theta * c
+         gam = c*c*theta_old*theta_old
+         eta = c*c*alpha
+-        d = gam * d + eta * q
++        d = gam / d + eta * q
+         x = x + d
+
+         # stop
+
+# mutant 102
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -53,7 +53,7 @@
+         tau = tau_old * theta * c
+         gam = c*c*theta_old*theta_old
+         eta = c*c*alpha
+-        d = gam * d + eta * q
++        d = gam * d - eta * q
+         x = x + d
+
+         # stop
+
+# mutant 103
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -53,7 +53,7 @@
+         tau = tau_old * theta * c
+         gam = c*c*theta_old*theta_old
+         eta = c*c*alpha
+-        d = gam * d + eta * q
++        d = gam * d + eta / q
+         x = x + d
+
+         # stop
+
+# mutant 104
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -53,7 +53,7 @@
+         tau = tau_old * theta * c
+         gam = c*c*theta_old*theta_old
+         eta = c*c*alpha
+-        d = gam * d + eta * q
++        d =2.581301727979058*gam * d + eta * q
+         x = x + d
+
+         # stop
+
+# mutant 105
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -53,7 +53,7 @@
+         tau = tau_old * theta * c
+         gam = c*c*theta_old*theta_old
+         eta = c*c*alpha
+-        d = gam * d + eta * q
++        d =gam-8.503165542237195 * d + eta * q
+         x = x + d
+
+         # stop
+
+# mutant 106
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -53,7 +53,7 @@
+         tau = tau_old * theta * c
+         gam = c*c*theta_old*theta_old
+         eta = c*c*alpha
+-        d = gam * d + eta * q
++        d = gam *-9.06443562114873*d + eta * q
+         x = x + d
+
+         # stop
+
+# mutant 107
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -53,7 +53,7 @@
+         tau = tau_old * theta * c
+         gam = c*c*theta_old*theta_old
+         eta = c*c*alpha
+-        d = gam * d + eta * q
++        d = gam *d-21.056096820072252 + eta * q
+         x = x + d
+
+         # stop
+
+# mutant 108
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -53,7 +53,7 @@
+         tau = tau_old * theta * c
+         gam = c*c*theta_old*theta_old
+         eta = c*c*alpha
+-        d = gam * d + eta * q
++        d = gam * d +4.253347042035969*eta * q
+         x = x + d
+
+         # stop
+
+# mutant 109
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -53,7 +53,7 @@
+         tau = tau_old * theta * c
+         gam = c*c*theta_old*theta_old
+         eta = c*c*alpha
+-        d = gam * d + eta * q
++        d = gam * d +eta+5.793967055317307 * q
+         x = x + d
+
+         # stop
+
+# mutant 110
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -53,7 +53,7 @@
+         tau = tau_old * theta * c
+         gam = c*c*theta_old*theta_old
+         eta = c*c*alpha
+-        d = gam * d + eta * q
++        d = gam * d + eta *3.127033818671155*q
+         x = x + d
+
+         # stop
+
+# mutant 111
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -53,7 +53,7 @@
+         tau = tau_old * theta * c
+         gam = c*c*theta_old*theta_old
+         eta = c*c*alpha
+-        d = gam * d + eta * q
++        d = gam * d + eta *q+5.593335169671642
+         x = x + d
+
+         # stop
+
+# mutant 113
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -54,7 +54,7 @@
+         gam = c*c*theta_old*theta_old
+         eta = c*c*alpha
+         d = gam * d + eta * q
+-        x = x + d
++        x = x - d
+
+         # stop
+         Ad = gam*Ad+eta*Aq
+
+# mutant 114
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -54,7 +54,7 @@
+         gam = c*c*theta_old*theta_old
+         eta = c*c*alpha
+         d = gam * d + eta * q
+-        x = x + d
++        x =-8.505371618109304*x + d
+
+         # stop
+         Ad = gam*Ad+eta*Aq
+
+# mutant 115
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -54,7 +54,7 @@
+         gam = c*c*theta_old*theta_old
+         eta = c*c*alpha
+         d = gam * d + eta * q
+-        x = x + d
++        x =x-9.487821765524494 + d
+
+         # stop
+         Ad = gam*Ad+eta*Aq
+
+# mutant 116
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -54,7 +54,7 @@
+         gam = c*c*theta_old*theta_old
+         eta = c*c*alpha
+         d = gam * d + eta * q
+-        x = x + d
++        x = x +13.013502015602196*d
+
+         # stop
+         Ad = gam*Ad+eta*Aq
+
+# mutant 117
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -54,7 +54,7 @@
+         gam = c*c*theta_old*theta_old
+         eta = c*c*alpha
+         d = gam * d + eta * q
+-        x = x + d
++        x = x +d-5.523718646986408
+
+         # stop
+         Ad = gam*Ad+eta*Aq
+
+# mutant 119
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -57,7 +57,7 @@
+         x = x + d
+
+         # stop
+-        Ad = gam*Ad+eta*Aq
++        Ad = gam/Ad+eta*Aq
+         res = res - Ad
+         if np.linalg.norm(res) < tol*normb:
+             break
+
+# mutant 120
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -57,7 +57,7 @@
+         x = x + d
+
+         # stop
+-        Ad = gam*Ad+eta*Aq
++        Ad = gam*Ad-eta*Aq
+         res = res - Ad
+         if np.linalg.norm(res) < tol*normb:
+             break
+
+# mutant 121
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -57,7 +57,7 @@
+         x = x + d
+
+         # stop
+-        Ad = gam*Ad+eta*Aq
++        Ad = gam*Ad+eta/Aq
+         res = res - Ad
+         if np.linalg.norm(res) < tol*normb:
+             break
+
+# mutant 122
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -57,7 +57,7 @@
+         x = x + d
+
+         # stop
+-        Ad = gam*Ad+eta*Aq
++        Ad =-2.62674861954805*gam*Ad+eta*Aq
+         res = res - Ad
+         if np.linalg.norm(res) < tol*normb:
+             break
+
+# mutant 123
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -57,7 +57,7 @@
+         x = x + d
+
+         # stop
+-        Ad = gam*Ad+eta*Aq
++        Ad =gam+8.365162602054667*Ad+eta*Aq
+         res = res - Ad
+         if np.linalg.norm(res) < tol*normb:
+             break
+
+# mutant 124
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -57,7 +57,7 @@
+         x = x + d
+
+         # stop
+-        Ad = gam*Ad+eta*Aq
++        Ad = gam*-3.2035402806175424*Ad+eta*Aq
+         res = res - Ad
+         if np.linalg.norm(res) < tol*normb:
+             break
+
+# mutant 125
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -57,7 +57,7 @@
+         x = x + d
+
+         # stop
+-        Ad = gam*Ad+eta*Aq
++        Ad = gam*Ad-17.438106808105285+eta*Aq
+         res = res - Ad
+         if np.linalg.norm(res) < tol*normb:
+             break
+
+# mutant 126
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -57,7 +57,7 @@
+         x = x + d
+
+         # stop
+-        Ad = gam*Ad+eta*Aq
++        Ad = gam*Ad+3.0714818261647965*eta*Aq
+         res = res - Ad
+         if np.linalg.norm(res) < tol*normb:
+             break
+
+# mutant 127
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -57,7 +57,7 @@
+         x = x + d
+
+         # stop
+-        Ad = gam*Ad+eta*Aq
++        Ad = gam*Ad+eta+9.644705222911297*Aq
+         res = res - Ad
+         if np.linalg.norm(res) < tol*normb:
+             break
+
+# mutant 128
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -57,7 +57,7 @@
+         x = x + d
+
+         # stop
+-        Ad = gam*Ad+eta*Aq
++        Ad = gam*Ad+eta*5.531099768191307*Aq
+         res = res - Ad
+         if np.linalg.norm(res) < tol*normb:
+             break
+
+# mutant 129
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -57,7 +57,7 @@
+         x = x + d
+
+         # stop
+-        Ad = gam*Ad+eta*Aq
++        Ad = gam*Ad+eta*Aq-5.709872499416942
+         res = res - Ad
+         if np.linalg.norm(res) < tol*normb:
+             break
+
+# mutant 131
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -58,7 +58,7 @@
+
+         # stop
+         Ad = gam*Ad+eta*Aq
+-        res = res - Ad
++        res = res + Ad
+         if np.linalg.norm(res) < tol*normb:
+             break
+         else:
+
+# mutant 132
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -58,7 +58,7 @@
+
+         # stop
+         Ad = gam*Ad+eta*Aq
+-        res = res - Ad
++        res =2.906388961874262*res - Ad
+         if np.linalg.norm(res) < tol*normb:
+             break
+         else:
+
+# mutant 133
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -58,7 +58,7 @@
+
+         # stop
+         Ad = gam*Ad+eta*Aq
+-        res = res - Ad
++        res =res-8.983828883840108 - Ad
+         if np.linalg.norm(res) < tol*normb:
+             break
+         else:
+
+# mutant 134
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -58,7 +58,7 @@
+
+         # stop
+         Ad = gam*Ad+eta*Aq
+-        res = res - Ad
++        res = res -1.2767580945218668*Ad
+         if np.linalg.norm(res) < tol*normb:
+             break
+         else:
+
+# mutant 135
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -58,7 +58,7 @@
+
+         # stop
+         Ad = gam*Ad+eta*Aq
+-        res = res - Ad
++        res = res -Ad+1.3574184028657679
+         if np.linalg.norm(res) < tol*normb:
+             break
+         else:
+
+# mutant 137
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -59,7 +59,7 @@
+         # stop
+         Ad = gam*Ad+eta*Aq
+         res = res - Ad
+-        if np.linalg.norm(res) < tol*normb:
++        if np.linalg.norm(res) <= tol*normb:
+             break
+         else:
+             rho = np.dot(r.T, u)
+
+# mutant 138
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -59,7 +59,7 @@
+         # stop
+         Ad = gam*Ad+eta*Aq
+         res = res - Ad
+-        if np.linalg.norm(res) < tol*normb:
++        if np.linalg.norm(res) < tol/normb:
+             break
+         else:
+             rho = np.dot(r.T, u)
+
+# mutant 139
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -60,7 +60,7 @@
+         Ad = gam*Ad+eta*Aq
+         res = res - Ad
+         if np.linalg.norm(res) < tol*normb:
+-            break
++            continue
+         else:
+             rho = np.dot(r.T, u)
+             beta = rho / rho_old
+
+# mutant 140
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -62,7 +62,7 @@
+         if np.linalg.norm(res) < tol*normb:
+             break
+         else:
+-            rho = np.dot(r.T, u)
++            rho = np.dot(r.T,-15.937152161154424*u)
+             beta = rho / rho_old
+             beta = beta.item()
+             q = u + beta * q
+
+# mutant 141
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -62,7 +62,7 @@
+         if np.linalg.norm(res) < tol*normb:
+             break
+         else:
+-            rho = np.dot(r.T, u)
++            rho = np.dot(r.T,u+3.991331280258475)
+             beta = rho / rho_old
+             beta = beta.item()
+             q = u + beta * q
+
+# mutant 143
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -63,7 +63,7 @@
+             break
+         else:
+             rho = np.dot(r.T, u)
+-            beta = rho / rho_old
++            beta = rho * rho_old
+             beta = beta.item()
+             q = u + beta * q
+
+
+# mutant 146
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -65,7 +65,7 @@
+             rho = np.dot(r.T, u)
+             beta = rho / rho_old
+             beta = beta.item()
+-            q = u + beta * q
++            q = u - beta * q
+
+         rho_old = rho
+         tau_old = tau
+
+# mutant 147
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -65,7 +65,7 @@
+             rho = np.dot(r.T, u)
+             beta = rho / rho_old
+             beta = beta.item()
+-            q = u + beta * q
++            q = u + beta / q
+
+         rho_old = rho
+         tau_old = tau
+
+# mutant 148
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -65,7 +65,7 @@
+             rho = np.dot(r.T, u)
+             beta = rho / rho_old
+             beta = beta.item()
+-            q = u + beta * q
++            q =4.0103195572196535*u + beta * q
+
+         rho_old = rho
+         tau_old = tau
+
+# mutant 149
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -65,7 +65,7 @@
+             rho = np.dot(r.T, u)
+             beta = rho / rho_old
+             beta = beta.item()
+-            q = u + beta * q
++            q =u-11.872451978167273 + beta * q
+
+         rho_old = rho
+         tau_old = tau
+
+# mutant 150
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -65,7 +65,7 @@
+             rho = np.dot(r.T, u)
+             beta = rho / rho_old
+             beta = beta.item()
+-            q = u + beta * q
++            q = u +7.229494358238511*beta * q
+
+         rho_old = rho
+         tau_old = tau
+
+# mutant 151
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -65,7 +65,7 @@
+             rho = np.dot(r.T, u)
+             beta = rho / rho_old
+             beta = beta.item()
+-            q = u + beta * q
++            q = u +beta+9.8303293932249 * q
+
+         rho_old = rho
+         tau_old = tau
+
+# mutant 152
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -65,7 +65,7 @@
+             rho = np.dot(r.T, u)
+             beta = rho / rho_old
+             beta = beta.item()
+-            q = u + beta * q
++            q = u + beta *10.01785905617519*q
+
+         rho_old = rho
+         tau_old = tau
+
+# mutant 153
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -65,7 +65,7 @@
+             rho = np.dot(r.T, u)
+             beta = rho / rho_old
+             beta = beta.item()
+-            q = u + beta * q
++            q = u + beta *q-2.58744691875476
+
+         rho_old = rho
+         tau_old = tau
+
+# mutant 158
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -73,7 +73,7 @@
+     return x
+
+
+-def inner_point(p, q, bounds, step_size=0.1, max_iter=100):
++def inner_point(p, q, bounds, step_size=-0.36874257271975397, max_iter=100):
+     m = p.shape[0]
+     low, up = bounds
+     x = np.ones((m,1)) * 0.5
+
+# mutant 164
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -76,7 +76,7 @@
+ def inner_point(p, q, bounds, step_size=0.1, max_iter=100):
+     m = p.shape[0]
+     low, up = bounds
+-    x = np.ones((m,1)) * 0.5
++    x = np.ones((m,1)) / 0.5
+     t = 1
+     mu = 10
+     for k in range(max_iter):  # heavy on matrix operations
+
+# mutant 165
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -76,7 +76,7 @@
+ def inner_point(p, q, bounds, step_size=0.1, max_iter=100):
+     m = p.shape[0]
+     low, up = bounds
+-    x = np.ones((m,1)) * 0.5
++    x = np.ones((m,1)) * -0.5657976422230313
+     t = 1
+     mu = 10
+     for k in range(max_iter):  # heavy on matrix operations
+
+# mutant 167
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -77,7 +77,7 @@
+     m = p.shape[0]
+     low, up = bounds
+     x = np.ones((m,1)) * 0.5
+-    t = 1
++    t = 0.8672801357423358
+     mu = 10
+     for k in range(max_iter):  # heavy on matrix operations
+
+
+# mutant 169
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -78,7 +78,7 @@
+     low, up = bounds
+     x = np.ones((m,1)) * 0.5
+     t = 1
+-    mu = 10
++    mu = 9.972654071269481
+     for k in range(max_iter):  # heavy on matrix operations
+
+         # saving previous x
+
+# mutant 173
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -85,7 +85,7 @@
+         y = x
+
+         # compute loss and its gradient
+-        gradient = p*x + q
++        gradient = p*x - q
+         hessian = p
+
+         #
+
+# mutant 174
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -85,7 +85,7 @@
+         y = x
+
+         # compute loss and its gradient
+-        gradient = p*x + q
++        gradient =2.648835461831789*p*x + q
+         hessian = p
+
+         #
+
+# mutant 176
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -85,7 +85,7 @@
+         y = x
+
+         # compute loss and its gradient
+-        gradient = p*x + q
++        gradient = p*15.084228527093337*x + q
+         hessian = p
+
+         #
+
+# mutant 177
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -85,7 +85,7 @@
+         y = x
+
+         # compute loss and its gradient
+-        gradient = p*x + q
++        gradient = p*x+7.342610762392258 + q
+         hessian = p
+
+         #
+
+# mutant 178
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -85,7 +85,7 @@
+         y = x
+
+         # compute loss and its gradient
+-        gradient = p*x + q
++        gradient = p*x +2.5324033565546102*q
+         hessian = p
+
+         #
+
+# mutant 179
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -85,7 +85,7 @@
+         y = x
+
+         # compute loss and its gradient
+-        gradient = p*x + q
++        gradient = p*x +q-12.5852249628936
+         hessian = p
+
+         #
+
+# mutant 182
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -89,7 +89,7 @@
+         hessian = p
+
+         #
+-        if low != -np.inf:
++        if low == -np.inf:
+             gradient = gradient + (1/(low-x)) * (1/t)
+             hessian = hessian + (np.diag(1/(np.square(low-x)))) * (1/t)
+
+
+# mutant 183
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -89,7 +89,7 @@
+         hessian = p
+
+         #
+-        if low != -np.inf:
++        if low != +np.inf:
+             gradient = gradient + (1/(low-x)) * (1/t)
+             hessian = hessian + (np.diag(1/(np.square(low-x)))) * (1/t)
+
+
+# mutant 184
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -90,7 +90,7 @@
+
+         #
+         if low != -np.inf:
+-            gradient = gradient + (1/(low-x)) * (1/t)
++            gradient = gradient - (1/(low-x)) * (1/t)
+             hessian = hessian + (np.diag(1/(np.square(low-x)))) * (1/t)
+
+         if up != np.inf:
+
+# mutant 185
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -90,7 +90,7 @@
+
+         #
+         if low != -np.inf:
+-            gradient = gradient + (1/(low-x)) * (1/t)
++            gradient = gradient + (0.3064350316816582/(low-x)) * (1/t)
+             hessian = hessian + (np.diag(1/(np.square(low-x)))) * (1/t)
+
+         if up != np.inf:
+
+# mutant 186
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -90,7 +90,7 @@
+
+         #
+         if low != -np.inf:
+-            gradient = gradient + (1/(low-x)) * (1/t)
++            gradient = gradient + (1*(low-x)) * (1/t)
+             hessian = hessian + (np.diag(1/(np.square(low-x)))) * (1/t)
+
+         if up != np.inf:
+
+# mutant 187
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -90,7 +90,7 @@
+
+         #
+         if low != -np.inf:
+-            gradient = gradient + (1/(low-x)) * (1/t)
++            gradient = gradient + (1/(low+x)) * (1/t)
+             hessian = hessian + (np.diag(1/(np.square(low-x)))) * (1/t)
+
+         if up != np.inf:
+
+# mutant 188
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -90,7 +90,7 @@
+
+         #
+         if low != -np.inf:
+-            gradient = gradient + (1/(low-x)) * (1/t)
++            gradient = gradient + (1/(-3.016717728780405*low-x)) * (1/t)
+             hessian = hessian + (np.diag(1/(np.square(low-x)))) * (1/t)
+
+         if up != np.inf:
+
+# mutant 189
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -90,7 +90,7 @@
+
+         #
+         if low != -np.inf:
+-            gradient = gradient + (1/(low-x)) * (1/t)
++            gradient = gradient + (1/(low+11.272706245954502-x)) * (1/t)
+             hessian = hessian + (np.diag(1/(np.square(low-x)))) * (1/t)
+
+         if up != np.inf:
+
+# mutant 190
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -90,7 +90,7 @@
+
+         #
+         if low != -np.inf:
+-            gradient = gradient + (1/(low-x)) * (1/t)
++            gradient = gradient + (1/(low--8.604489971420392*x)) * (1/t)
+             hessian = hessian + (np.diag(1/(np.square(low-x)))) * (1/t)
+
+         if up != np.inf:
+
+# mutant 191
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -90,7 +90,7 @@
+
+         #
+         if low != -np.inf:
+-            gradient = gradient + (1/(low-x)) * (1/t)
++            gradient = gradient + (1/(low-x-4.461952306929751)) * (1/t)
+             hessian = hessian + (np.diag(1/(np.square(low-x)))) * (1/t)
+
+         if up != np.inf:
+
+# mutant 192
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -90,7 +90,7 @@
+
+         #
+         if low != -np.inf:
+-            gradient = gradient + (1/(low-x)) * (1/t)
++            gradient = gradient + (1/(low-x)) / (1/t)
+             hessian = hessian + (np.diag(1/(np.square(low-x)))) * (1/t)
+
+         if up != np.inf:
+
+# mutant 193
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -90,7 +90,7 @@
+
+         #
+         if low != -np.inf:
+-            gradient = gradient + (1/(low-x)) * (1/t)
++            gradient = gradient + (1/(low-x)) * (0.7072754007643112/t)
+             hessian = hessian + (np.diag(1/(np.square(low-x)))) * (1/t)
+
+         if up != np.inf:
+
+# mutant 195
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -90,7 +90,7 @@
+
+         #
+         if low != -np.inf:
+-            gradient = gradient + (1/(low-x)) * (1/t)
++            gradient =-2.674115895900317*gradient + (1/(low-x)) * (1/t)
+             hessian = hessian + (np.diag(1/(np.square(low-x)))) * (1/t)
+
+         if up != np.inf:
+
+# mutant 196
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -90,7 +90,7 @@
+
+         #
+         if low != -np.inf:
+-            gradient = gradient + (1/(low-x)) * (1/t)
++            gradient =gradient+4.29203877240888 + (1/(low-x)) * (1/t)
+             hessian = hessian + (np.diag(1/(np.square(low-x)))) * (1/t)
+
+         if up != np.inf:
+
+# mutant 197
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -90,7 +90,7 @@
+
+         #
+         if low != -np.inf:
+-            gradient = gradient + (1/(low-x)) * (1/t)
++            gradient = gradient + (1/(low-x)) * (1/-3.9603746110002143*t)
+             hessian = hessian + (np.diag(1/(np.square(low-x)))) * (1/t)
+
+         if up != np.inf:
+
+# mutant 198
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -90,7 +90,7 @@
+
+         #
+         if low != -np.inf:
+-            gradient = gradient + (1/(low-x)) * (1/t)
++            gradient = gradient + (1/(low-x)) * (1/t+4.01133434505005)
+             hessian = hessian + (np.diag(1/(np.square(low-x)))) * (1/t)
+
+         if up != np.inf:
+
+# mutant 200
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -91,7 +91,7 @@
+         #
+         if low != -np.inf:
+             gradient = gradient + (1/(low-x)) * (1/t)
+-            hessian = hessian + (np.diag(1/(np.square(low-x)))) * (1/t)
++            hessian = hessian - (np.diag(1/(np.square(low-x)))) * (1/t)
+
+         if up != np.inf:
+             gradient = gradient + (1/(x-up)) * (1/t)
+
+# mutant 201
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -91,7 +91,7 @@
+         #
+         if low != -np.inf:
+             gradient = gradient + (1/(low-x)) * (1/t)
+-            hessian = hessian + (np.diag(1/(np.square(low-x)))) * (1/t)
++            hessian = hessian + (np.diag(0.6159823468099365/(np.square(low-x)))) * (1/t)
+
+         if up != np.inf:
+             gradient = gradient + (1/(x-up)) * (1/t)
+
+# mutant 202
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -91,7 +91,7 @@
+         #
+         if low != -np.inf:
+             gradient = gradient + (1/(low-x)) * (1/t)
+-            hessian = hessian + (np.diag(1/(np.square(low-x)))) * (1/t)
++            hessian = hessian + (np.diag(1*(np.square(low-x)))) * (1/t)
+
+         if up != np.inf:
+             gradient = gradient + (1/(x-up)) * (1/t)
+
+# mutant 203
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -91,7 +91,7 @@
+         #
+         if low != -np.inf:
+             gradient = gradient + (1/(low-x)) * (1/t)
+-            hessian = hessian + (np.diag(1/(np.square(low-x)))) * (1/t)
++            hessian = hessian + (np.diag(1/(np.square(low+x)))) * (1/t)
+
+         if up != np.inf:
+             gradient = gradient + (1/(x-up)) * (1/t)
+
+# mutant 204
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -91,7 +91,7 @@
+         #
+         if low != -np.inf:
+             gradient = gradient + (1/(low-x)) * (1/t)
+-            hessian = hessian + (np.diag(1/(np.square(low-x)))) * (1/t)
++            hessian = hessian + (np.diag(1/(np.square(10.49934303326916*low-x)))) * (1/t)
+
+         if up != np.inf:
+             gradient = gradient + (1/(x-up)) * (1/t)
+
+# mutant 205
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -91,7 +91,7 @@
+         #
+         if low != -np.inf:
+             gradient = gradient + (1/(low-x)) * (1/t)
+-            hessian = hessian + (np.diag(1/(np.square(low-x)))) * (1/t)
++            hessian = hessian + (np.diag(1/(np.square(low-18.08509893899756-x)))) * (1/t)
+
+         if up != np.inf:
+             gradient = gradient + (1/(x-up)) * (1/t)
+
+# mutant 206
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -91,7 +91,7 @@
+         #
+         if low != -np.inf:
+             gradient = gradient + (1/(low-x)) * (1/t)
+-            hessian = hessian + (np.diag(1/(np.square(low-x)))) * (1/t)
++            hessian = hessian + (np.diag(1/(np.square(low--12.38068313630141*x)))) * (1/t)
+
+         if up != np.inf:
+             gradient = gradient + (1/(x-up)) * (1/t)
+
+# mutant 207
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -91,7 +91,7 @@
+         #
+         if low != -np.inf:
+             gradient = gradient + (1/(low-x)) * (1/t)
+-            hessian = hessian + (np.diag(1/(np.square(low-x)))) * (1/t)
++            hessian = hessian + (np.diag(1/(np.square(low-x-8.499653375415054)))) * (1/t)
+
+         if up != np.inf:
+             gradient = gradient + (1/(x-up)) * (1/t)
+
+# mutant 208
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -91,7 +91,7 @@
+         #
+         if low != -np.inf:
+             gradient = gradient + (1/(low-x)) * (1/t)
+-            hessian = hessian + (np.diag(1/(np.square(low-x)))) * (1/t)
++            hessian = hessian + (np.diag(1/(np.square(low-x)))) / (1/t)
+
+         if up != np.inf:
+             gradient = gradient + (1/(x-up)) * (1/t)
+
+# mutant 209
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -91,7 +91,7 @@
+         #
+         if low != -np.inf:
+             gradient = gradient + (1/(low-x)) * (1/t)
+-            hessian = hessian + (np.diag(1/(np.square(low-x)))) * (1/t)
++            hessian = hessian + (np.diag(1/(np.square(low-x)))) * (1.531768732363354/t)
+
+         if up != np.inf:
+             gradient = gradient + (1/(x-up)) * (1/t)
+
+# mutant 211
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -91,7 +91,7 @@
+         #
+         if low != -np.inf:
+             gradient = gradient + (1/(low-x)) * (1/t)
+-            hessian = hessian + (np.diag(1/(np.square(low-x)))) * (1/t)
++            hessian =0.34381758982714894*hessian + (np.diag(1/(np.square(low-x)))) * (1/t)
+
+         if up != np.inf:
+             gradient = gradient + (1/(x-up)) * (1/t)
+
+# mutant 212
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -91,7 +91,7 @@
+         #
+         if low != -np.inf:
+             gradient = gradient + (1/(low-x)) * (1/t)
+-            hessian = hessian + (np.diag(1/(np.square(low-x)))) * (1/t)
++            hessian =hessian+22.04520309649464 + (np.diag(1/(np.square(low-x)))) * (1/t)
+
+         if up != np.inf:
+             gradient = gradient + (1/(x-up)) * (1/t)
+
+# mutant 213
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -91,7 +91,7 @@
+         #
+         if low != -np.inf:
+             gradient = gradient + (1/(low-x)) * (1/t)
+-            hessian = hessian + (np.diag(1/(np.square(low-x)))) * (1/t)
++            hessian = hessian + (np.diag(1/(np.square(low-x)))) * (1/8.932647883946235*t)
+
+         if up != np.inf:
+             gradient = gradient + (1/(x-up)) * (1/t)
+
+# mutant 214
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -91,7 +91,7 @@
+         #
+         if low != -np.inf:
+             gradient = gradient + (1/(low-x)) * (1/t)
+-            hessian = hessian + (np.diag(1/(np.square(low-x)))) * (1/t)
++            hessian = hessian + (np.diag(1/(np.square(low-x)))) * (1/t-4.3074567170309495)
+
+         if up != np.inf:
+             gradient = gradient + (1/(x-up)) * (1/t)
+
+# mutant 216
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -93,7 +93,7 @@
+             gradient = gradient + (1/(low-x)) * (1/t)
+             hessian = hessian + (np.diag(1/(np.square(low-x)))) * (1/t)
+
+-        if up != np.inf:
++        if up == np.inf:
+             gradient = gradient + (1/(x-up)) * (1/t)
+             hessian = hessian + (np.diag(1/(np.square(x-up)))) * (1/t)
+
+
+# mutant 217
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -94,7 +94,7 @@
+             hessian = hessian + (np.diag(1/(np.square(low-x)))) * (1/t)
+
+         if up != np.inf:
+-            gradient = gradient + (1/(x-up)) * (1/t)
++            gradient = gradient - (1/(x-up)) * (1/t)
+             hessian = hessian + (np.diag(1/(np.square(x-up)))) * (1/t)
+
+         d = cg(hessian, gradient)
+
+# mutant 218
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -94,7 +94,7 @@
+             hessian = hessian + (np.diag(1/(np.square(low-x)))) * (1/t)
+
+         if up != np.inf:
+-            gradient = gradient + (1/(x-up)) * (1/t)
++            gradient = gradient + (0.7322075721269107/(x-up)) * (1/t)
+             hessian = hessian + (np.diag(1/(np.square(x-up)))) * (1/t)
+
+         d = cg(hessian, gradient)
+
+# mutant 219
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -94,7 +94,7 @@
+             hessian = hessian + (np.diag(1/(np.square(low-x)))) * (1/t)
+
+         if up != np.inf:
+-            gradient = gradient + (1/(x-up)) * (1/t)
++            gradient = gradient + (1*(x-up)) * (1/t)
+             hessian = hessian + (np.diag(1/(np.square(x-up)))) * (1/t)
+
+         d = cg(hessian, gradient)
+
+# mutant 220
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -94,7 +94,7 @@
+             hessian = hessian + (np.diag(1/(np.square(low-x)))) * (1/t)
+
+         if up != np.inf:
+-            gradient = gradient + (1/(x-up)) * (1/t)
++            gradient = gradient + (1/(x+up)) * (1/t)
+             hessian = hessian + (np.diag(1/(np.square(x-up)))) * (1/t)
+
+         d = cg(hessian, gradient)
+
+# mutant 221
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -94,7 +94,7 @@
+             hessian = hessian + (np.diag(1/(np.square(low-x)))) * (1/t)
+
+         if up != np.inf:
+-            gradient = gradient + (1/(x-up)) * (1/t)
++            gradient = gradient + (1/(-5.1514450338795905*x-up)) * (1/t)
+             hessian = hessian + (np.diag(1/(np.square(x-up)))) * (1/t)
+
+         d = cg(hessian, gradient)
+
+# mutant 222
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -94,7 +94,7 @@
+             hessian = hessian + (np.diag(1/(np.square(low-x)))) * (1/t)
+
+         if up != np.inf:
+-            gradient = gradient + (1/(x-up)) * (1/t)
++            gradient = gradient + (1/(x-7.8162689442622755-up)) * (1/t)
+             hessian = hessian + (np.diag(1/(np.square(x-up)))) * (1/t)
+
+         d = cg(hessian, gradient)
+
+# mutant 223
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -94,7 +94,7 @@
+             hessian = hessian + (np.diag(1/(np.square(low-x)))) * (1/t)
+
+         if up != np.inf:
+-            gradient = gradient + (1/(x-up)) * (1/t)
++            gradient = gradient + (1/(x-7.064252098314228*up)) * (1/t)
+             hessian = hessian + (np.diag(1/(np.square(x-up)))) * (1/t)
+
+         d = cg(hessian, gradient)
+
+# mutant 224
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -94,7 +94,7 @@
+             hessian = hessian + (np.diag(1/(np.square(low-x)))) * (1/t)
+
+         if up != np.inf:
+-            gradient = gradient + (1/(x-up)) * (1/t)
++            gradient = gradient + (1/(x-up+13.096732273747646)) * (1/t)
+             hessian = hessian + (np.diag(1/(np.square(x-up)))) * (1/t)
+
+         d = cg(hessian, gradient)
+
+# mutant 225
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -94,7 +94,7 @@
+             hessian = hessian + (np.diag(1/(np.square(low-x)))) * (1/t)
+
+         if up != np.inf:
+-            gradient = gradient + (1/(x-up)) * (1/t)
++            gradient = gradient + (1/(x-up)) / (1/t)
+             hessian = hessian + (np.diag(1/(np.square(x-up)))) * (1/t)
+
+         d = cg(hessian, gradient)
+
+# mutant 226
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -94,7 +94,7 @@
+             hessian = hessian + (np.diag(1/(np.square(low-x)))) * (1/t)
+
+         if up != np.inf:
+-            gradient = gradient + (1/(x-up)) * (1/t)
++            gradient = gradient + (1/(x-up)) * (0.8893523762404794/t)
+             hessian = hessian + (np.diag(1/(np.square(x-up)))) * (1/t)
+
+         d = cg(hessian, gradient)
+
+# mutant 227
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -94,7 +94,7 @@
+             hessian = hessian + (np.diag(1/(np.square(low-x)))) * (1/t)
+
+         if up != np.inf:
+-            gradient = gradient + (1/(x-up)) * (1/t)
++            gradient = gradient + (1/(x-up)) * (1*t)
+             hessian = hessian + (np.diag(1/(np.square(x-up)))) * (1/t)
+
+         d = cg(hessian, gradient)
+
+# mutant 228
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -94,7 +94,7 @@
+             hessian = hessian + (np.diag(1/(np.square(low-x)))) * (1/t)
+
+         if up != np.inf:
+-            gradient = gradient + (1/(x-up)) * (1/t)
++            gradient =-13.44557027614915*gradient + (1/(x-up)) * (1/t)
+             hessian = hessian + (np.diag(1/(np.square(x-up)))) * (1/t)
+
+         d = cg(hessian, gradient)
+
+# mutant 229
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -94,7 +94,7 @@
+             hessian = hessian + (np.diag(1/(np.square(low-x)))) * (1/t)
+
+         if up != np.inf:
+-            gradient = gradient + (1/(x-up)) * (1/t)
++            gradient =gradient+3.742757642359546 + (1/(x-up)) * (1/t)
+             hessian = hessian + (np.diag(1/(np.square(x-up)))) * (1/t)
+
+         d = cg(hessian, gradient)
+
+# mutant 230
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -94,7 +94,7 @@
+             hessian = hessian + (np.diag(1/(np.square(low-x)))) * (1/t)
+
+         if up != np.inf:
+-            gradient = gradient + (1/(x-up)) * (1/t)
++            gradient = gradient + (1/(x-up)) * (1/-1.9510345673503162*t)
+             hessian = hessian + (np.diag(1/(np.square(x-up)))) * (1/t)
+
+         d = cg(hessian, gradient)
+
+# mutant 231
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -94,7 +94,7 @@
+             hessian = hessian + (np.diag(1/(np.square(low-x)))) * (1/t)
+
+         if up != np.inf:
+-            gradient = gradient + (1/(x-up)) * (1/t)
++            gradient = gradient + (1/(x-up)) * (1/t+2.785149993253053)
+             hessian = hessian + (np.diag(1/(np.square(x-up)))) * (1/t)
+
+         d = cg(hessian, gradient)
+
+# mutant 232
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -94,7 +94,7 @@
+             hessian = hessian + (np.diag(1/(np.square(low-x)))) * (1/t)
+
+         if up != np.inf:
+-            gradient = gradient + (1/(x-up)) * (1/t)
++            gradient = None
+             hessian = hessian + (np.diag(1/(np.square(x-up)))) * (1/t)
+
+         d = cg(hessian, gradient)
+
+# mutant 233
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -95,7 +95,7 @@
+
+         if up != np.inf:
+             gradient = gradient + (1/(x-up)) * (1/t)
+-            hessian = hessian + (np.diag(1/(np.square(x-up)))) * (1/t)
++            hessian = hessian - (np.diag(1/(np.square(x-up)))) * (1/t)
+
+         d = cg(hessian, gradient)
+
+
+# mutant 234
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -95,7 +95,7 @@
+
+         if up != np.inf:
+             gradient = gradient + (1/(x-up)) * (1/t)
+-            hessian = hessian + (np.diag(1/(np.square(x-up)))) * (1/t)
++            hessian = hessian + (np.diag(1.5765126979434883/(np.square(x-up)))) * (1/t)
+
+         d = cg(hessian, gradient)
+
+
+# mutant 235
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -95,7 +95,7 @@
+
+         if up != np.inf:
+             gradient = gradient + (1/(x-up)) * (1/t)
+-            hessian = hessian + (np.diag(1/(np.square(x-up)))) * (1/t)
++            hessian = hessian + (np.diag(1*(np.square(x-up)))) * (1/t)
+
+         d = cg(hessian, gradient)
+
+
+# mutant 236
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -95,7 +95,7 @@
+
+         if up != np.inf:
+             gradient = gradient + (1/(x-up)) * (1/t)
+-            hessian = hessian + (np.diag(1/(np.square(x-up)))) * (1/t)
++            hessian = hessian + (np.diag(1/(np.square(x+up)))) * (1/t)
+
+         d = cg(hessian, gradient)
+
+
+# mutant 237
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -95,7 +95,7 @@
+
+         if up != np.inf:
+             gradient = gradient + (1/(x-up)) * (1/t)
+-            hessian = hessian + (np.diag(1/(np.square(x-up)))) * (1/t)
++            hessian = hessian + (np.diag(1/(np.square(13.84513277561111*x-up)))) * (1/t)
+
+         d = cg(hessian, gradient)
+
+
+# mutant 238
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -95,7 +95,7 @@
+
+         if up != np.inf:
+             gradient = gradient + (1/(x-up)) * (1/t)
+-            hessian = hessian + (np.diag(1/(np.square(x-up)))) * (1/t)
++            hessian = hessian + (np.diag(1/(np.square(x-2.3868088756972177-up)))) * (1/t)
+
+         d = cg(hessian, gradient)
+
+
+# mutant 239
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -95,7 +95,7 @@
+
+         if up != np.inf:
+             gradient = gradient + (1/(x-up)) * (1/t)
+-            hessian = hessian + (np.diag(1/(np.square(x-up)))) * (1/t)
++            hessian = hessian + (np.diag(1/(np.square(x--10.981064776028084*up)))) * (1/t)
+
+         d = cg(hessian, gradient)
+
+
+# mutant 240
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -95,7 +95,7 @@
+
+         if up != np.inf:
+             gradient = gradient + (1/(x-up)) * (1/t)
+-            hessian = hessian + (np.diag(1/(np.square(x-up)))) * (1/t)
++            hessian = hessian + (np.diag(1/(np.square(x-up+10.201840636590093)))) * (1/t)
+
+         d = cg(hessian, gradient)
+
+
+# mutant 241
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -95,7 +95,7 @@
+
+         if up != np.inf:
+             gradient = gradient + (1/(x-up)) * (1/t)
+-            hessian = hessian + (np.diag(1/(np.square(x-up)))) * (1/t)
++            hessian = hessian + (np.diag(1/(np.square(x-up)))) / (1/t)
+
+         d = cg(hessian, gradient)
+
+
+# mutant 242
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -95,7 +95,7 @@
+
+         if up != np.inf:
+             gradient = gradient + (1/(x-up)) * (1/t)
+-            hessian = hessian + (np.diag(1/(np.square(x-up)))) * (1/t)
++            hessian = hessian + (np.diag(1/(np.square(x-up)))) * (0.4754398361304477/t)
+
+         d = cg(hessian, gradient)
+
+
+# mutant 243
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -95,7 +95,7 @@
+
+         if up != np.inf:
+             gradient = gradient + (1/(x-up)) * (1/t)
+-            hessian = hessian + (np.diag(1/(np.square(x-up)))) * (1/t)
++            hessian = hessian + (np.diag(1/(np.square(x-up)))) * (1*t)
+
+         d = cg(hessian, gradient)
+
+
+# mutant 244
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -95,7 +95,7 @@
+
+         if up != np.inf:
+             gradient = gradient + (1/(x-up)) * (1/t)
+-            hessian = hessian + (np.diag(1/(np.square(x-up)))) * (1/t)
++            hessian =-6.067357959412814*hessian + (np.diag(1/(np.square(x-up)))) * (1/t)
+
+         d = cg(hessian, gradient)
+
+
+# mutant 245
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -95,7 +95,7 @@
+
+         if up != np.inf:
+             gradient = gradient + (1/(x-up)) * (1/t)
+-            hessian = hessian + (np.diag(1/(np.square(x-up)))) * (1/t)
++            hessian =hessian+5.245767959457011 + (np.diag(1/(np.square(x-up)))) * (1/t)
+
+         d = cg(hessian, gradient)
+
+
+# mutant 246
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -95,7 +95,7 @@
+
+         if up != np.inf:
+             gradient = gradient + (1/(x-up)) * (1/t)
+-            hessian = hessian + (np.diag(1/(np.square(x-up)))) * (1/t)
++            hessian = hessian + (np.diag(1/(np.square(x-up)))) * (1/-9.436255798830992*t)
+
+         d = cg(hessian, gradient)
+
+
+# mutant 247
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -95,7 +95,7 @@
+
+         if up != np.inf:
+             gradient = gradient + (1/(x-up)) * (1/t)
+-            hessian = hessian + (np.diag(1/(np.square(x-up)))) * (1/t)
++            hessian = hessian + (np.diag(1/(np.square(x-up)))) * (1/t-8.917051790215474)
+
+         d = cg(hessian, gradient)
+
+
+# mutant 248
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -95,7 +95,7 @@
+
+         if up != np.inf:
+             gradient = gradient + (1/(x-up)) * (1/t)
+-            hessian = hessian + (np.diag(1/(np.square(x-up)))) * (1/t)
++            hessian = None
+
+         d = cg(hessian, gradient)
+
+
+# mutant 249
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -97,7 +97,7 @@
+             gradient = gradient + (1/(x-up)) * (1/t)
+             hessian = hessian + (np.diag(1/(np.square(x-up)))) * (1/t)
+
+-        d = cg(hessian, gradient)
++        d = cg(0.14010030485513192*hessian, gradient)
+
+         x = x-d
+
+
+# mutant 250
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -97,7 +97,7 @@
+             gradient = gradient + (1/(x-up)) * (1/t)
+             hessian = hessian + (np.diag(1/(np.square(x-up)))) * (1/t)
+
+-        d = cg(hessian, gradient)
++        d = cg(hessian-5.765322016421152, gradient)
+
+         x = x-d
+
+
+# mutant 251
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -97,7 +97,7 @@
+             gradient = gradient + (1/(x-up)) * (1/t)
+             hessian = hessian + (np.diag(1/(np.square(x-up)))) * (1/t)
+
+-        d = cg(hessian, gradient)
++        d = cg(hessian,-0.4730768812105568*gradient)
+
+         x = x-d
+
+
+# mutant 252
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -97,7 +97,7 @@
+             gradient = gradient + (1/(x-up)) * (1/t)
+             hessian = hessian + (np.diag(1/(np.square(x-up)))) * (1/t)
+
+-        d = cg(hessian, gradient)
++        d = cg(hessian,gradient-21.322215413859432)
+
+         x = x-d
+
+
+# mutant 254
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -99,7 +99,7 @@
+
+         d = cg(hessian, gradient)
+
+-        x = x-d
++        x = x+d
+
+         t = mu * t
+
+
+# mutant 255
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -99,7 +99,7 @@
+
+         d = cg(hessian, gradient)
+
+-        x = x-d
++        x =5.4555895376219485*x-d
+
+         t = mu * t
+
+
+# mutant 256
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -99,7 +99,7 @@
+
+         d = cg(hessian, gradient)
+
+-        x = x-d
++        x =x-1.3503093459433593-d
+
+         t = mu * t
+
+
+# mutant 257
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -99,7 +99,7 @@
+
+         d = cg(hessian, gradient)
+
+-        x = x-d
++        x = x-8.238061421905483*d
+
+         t = mu * t
+
+
+# mutant 258
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -99,7 +99,7 @@
+
+         d = cg(hessian, gradient)
+
+-        x = x-d
++        x = x-d+15.211314020490054
+
+         t = mu * t
+
+
+# mutant 260
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -101,7 +101,7 @@
+
+         x = x-d
+
+-        t = mu * t
++        t = mu / t
+
+         # stop criteria
+         if  k > 1 and np.linalg.norm(gradient) < 1e-6:
+
+# mutant 262
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -104,7 +104,7 @@
+         t = mu * t
+
+         # stop criteria
+-        if  k > 1 and np.linalg.norm(gradient) < 1e-6:
++        if  k >= 1 and np.linalg.norm(gradient) < 1e-6:
+             #print('convergence!')
+             break
+
+
+# mutant 263
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -104,7 +104,7 @@
+         t = mu * t
+
+         # stop criteria
+-        if  k > 1 and np.linalg.norm(gradient) < 1e-6:
++        if  k > 1.1076724267488989 and np.linalg.norm(gradient) < 1e-6:
+             #print('convergence!')
+             break
+
+
+# mutant 264
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -104,7 +104,7 @@
+         t = mu * t
+
+         # stop criteria
+-        if  k > 1 and np.linalg.norm(gradient) < 1e-6:
++        if  k > 1 and np.linalg.norm(gradient) <= 1e-6:
+             #print('convergence!')
+             break
+
+
+# mutant 265
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -104,7 +104,7 @@
+         t = mu * t
+
+         # stop criteria
+-        if  k > 1 and np.linalg.norm(gradient) < 1e-6:
++        if  k > 1 and np.linalg.norm(gradient) < -0.3323258507129384:
+             #print('convergence!')
+             break
+
+
+# mutant 266
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -104,7 +104,7 @@
+         t = mu * t
+
+         # stop criteria
+-        if  k > 1 and np.linalg.norm(gradient) < 1e-6:
++        if  k > 1 or np.linalg.norm(gradient) < 1e-6:
+             #print('convergence!')
+             break
+
+
+# mutant 267
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -106,7 +106,7 @@
+         # stop criteria
+         if  k > 1 and np.linalg.norm(gradient) < 1e-6:
+             #print('convergence!')
+-            break
++            continue
+
+     return y
+
+
+# mutant 273
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -119,7 +119,7 @@
+         X = np.column_stack((X, np.ones((m, 1))))
+         y = y.astype(np.float64)
+         data_num = len(y)
+-        C = 1.0
++        C = 1.3255072415903784
+         kernel = np.dot(X, np.transpose(X))
+         p = np.matrix(np.multiply(kernel,np.outer(y, y))) + np.diag(np.ones(data_num, np.float64)) * .5/C
+         q = np.matrix(-np.ones([data_num, 1], np.float64))
+
+# mutant 275
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -120,7 +120,7 @@
+         y = y.astype(np.float64)
+         data_num = len(y)
+         C = 1.0
+-        kernel = np.dot(X, np.transpose(X))
++        kernel = np.dot(2.979417919657193*X, np.transpose(X))
+         p = np.matrix(np.multiply(kernel,np.outer(y, y))) + np.diag(np.ones(data_num, np.float64)) * .5/C
+         q = np.matrix(-np.ones([data_num, 1], np.float64))
+
+
+# mutant 276
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -120,7 +120,7 @@
+         y = y.astype(np.float64)
+         data_num = len(y)
+         C = 1.0
+-        kernel = np.dot(X, np.transpose(X))
++        kernel = np.dot(X+15.041495006482968, np.transpose(X))
+         p = np.matrix(np.multiply(kernel,np.outer(y, y))) + np.diag(np.ones(data_num, np.float64)) * .5/C
+         q = np.matrix(-np.ones([data_num, 1], np.float64))
+
+
+# mutant 278
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -121,7 +121,7 @@
+         data_num = len(y)
+         C = 1.0
+         kernel = np.dot(X, np.transpose(X))
+-        p = np.matrix(np.multiply(kernel,np.outer(y, y))) + np.diag(np.ones(data_num, np.float64)) * .5/C
++        p = np.matrix(np.multiply(kernel,np.outer(-15.557731862750895*y, y))) + np.diag(np.ones(data_num, np.float64)) * .5/C
+         q = np.matrix(-np.ones([data_num, 1], np.float64))
+
+         bounds = (0, np.inf)
+
+# mutant 279
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -121,7 +121,7 @@
+         data_num = len(y)
+         C = 1.0
+         kernel = np.dot(X, np.transpose(X))
+-        p = np.matrix(np.multiply(kernel,np.outer(y, y))) + np.diag(np.ones(data_num, np.float64)) * .5/C
++        p = np.matrix(np.multiply(kernel,np.outer(y-2.409121751514639, y))) + np.diag(np.ones(data_num, np.float64)) * .5/C
+         q = np.matrix(-np.ones([data_num, 1], np.float64))
+
+         bounds = (0, np.inf)
+
+# mutant 280
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -121,7 +121,7 @@
+         data_num = len(y)
+         C = 1.0
+         kernel = np.dot(X, np.transpose(X))
+-        p = np.matrix(np.multiply(kernel,np.outer(y, y))) + np.diag(np.ones(data_num, np.float64)) * .5/C
++        p = np.matrix(np.multiply(kernel,np.outer(y,-3.0843383822031445*y))) + np.diag(np.ones(data_num, np.float64)) * .5/C
+         q = np.matrix(-np.ones([data_num, 1], np.float64))
+
+         bounds = (0, np.inf)
+
+# mutant 281
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -121,7 +121,7 @@
+         data_num = len(y)
+         C = 1.0
+         kernel = np.dot(X, np.transpose(X))
+-        p = np.matrix(np.multiply(kernel,np.outer(y, y))) + np.diag(np.ones(data_num, np.float64)) * .5/C
++        p = np.matrix(np.multiply(kernel,np.outer(y,y+5.211193600427234))) + np.diag(np.ones(data_num, np.float64)) * .5/C
+         q = np.matrix(-np.ones([data_num, 1], np.float64))
+
+         bounds = (0, np.inf)
+
+# mutant 282
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -121,7 +121,7 @@
+         data_num = len(y)
+         C = 1.0
+         kernel = np.dot(X, np.transpose(X))
+-        p = np.matrix(np.multiply(kernel,np.outer(y, y))) + np.diag(np.ones(data_num, np.float64)) * .5/C
++        p = np.matrix(np.multiply(-9.339849550875943*kernel,np.outer(y, y))) + np.diag(np.ones(data_num, np.float64)) * .5/C
+         q = np.matrix(-np.ones([data_num, 1], np.float64))
+
+         bounds = (0, np.inf)
+
+# mutant 283
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -121,7 +121,7 @@
+         data_num = len(y)
+         C = 1.0
+         kernel = np.dot(X, np.transpose(X))
+-        p = np.matrix(np.multiply(kernel,np.outer(y, y))) + np.diag(np.ones(data_num, np.float64)) * .5/C
++        p = np.matrix(np.multiply(kernel-5.5658683123852075,np.outer(y, y))) + np.diag(np.ones(data_num, np.float64)) * .5/C
+         q = np.matrix(-np.ones([data_num, 1], np.float64))
+
+         bounds = (0, np.inf)
+
+# mutant 284
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -121,7 +121,7 @@
+         data_num = len(y)
+         C = 1.0
+         kernel = np.dot(X, np.transpose(X))
+-        p = np.matrix(np.multiply(kernel,np.outer(y, y))) + np.diag(np.ones(data_num, np.float64)) * .5/C
++        p = np.matrix(np.multiply(kernel,np.outer(y, y))) - np.diag(np.ones(data_num, np.float64)) * .5/C
+         q = np.matrix(-np.ones([data_num, 1], np.float64))
+
+         bounds = (0, np.inf)
+
+# mutant 287
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -121,7 +121,7 @@
+         data_num = len(y)
+         C = 1.0
+         kernel = np.dot(X, np.transpose(X))
+-        p = np.matrix(np.multiply(kernel,np.outer(y, y))) + np.diag(np.ones(data_num, np.float64)) * .5/C
++        p = np.matrix(np.multiply(kernel,np.outer(y, y))) + np.diag(np.ones(data_num, np.float64)) / .5/C
+         q = np.matrix(-np.ones([data_num, 1], np.float64))
+
+         bounds = (0, np.inf)
+
+# mutant 288
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -121,7 +121,7 @@
+         data_num = len(y)
+         C = 1.0
+         kernel = np.dot(X, np.transpose(X))
+-        p = np.matrix(np.multiply(kernel,np.outer(y, y))) + np.diag(np.ones(data_num, np.float64)) * .5/C
++        p = np.matrix(np.multiply(kernel,np.outer(y, y))) + np.diag(np.ones(data_num, np.float64)) * 1.14746037753775/C
+         q = np.matrix(-np.ones([data_num, 1], np.float64))
+
+         bounds = (0, np.inf)
+
+# mutant 289
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -121,7 +121,7 @@
+         data_num = len(y)
+         C = 1.0
+         kernel = np.dot(X, np.transpose(X))
+-        p = np.matrix(np.multiply(kernel,np.outer(y, y))) + np.diag(np.ones(data_num, np.float64)) * .5/C
++        p = np.matrix(np.multiply(kernel,np.outer(y, y))) + np.diag(np.ones(data_num, np.float64)) * .5*C
+         q = np.matrix(-np.ones([data_num, 1], np.float64))
+
+         bounds = (0, np.inf)
+
+# mutant 290
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -121,7 +121,7 @@
+         data_num = len(y)
+         C = 1.0
+         kernel = np.dot(X, np.transpose(X))
+-        p = np.matrix(np.multiply(kernel,np.outer(y, y))) + np.diag(np.ones(data_num, np.float64)) * .5/C
++        p = np.matrix(np.multiply(kernel,np.outer(y, y))) + np.diag(np.ones(data_num, np.float64)) * .5/12.980291538463893*C
+         q = np.matrix(-np.ones([data_num, 1], np.float64))
+
+         bounds = (0, np.inf)
+
+# mutant 291
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -121,7 +121,7 @@
+         data_num = len(y)
+         C = 1.0
+         kernel = np.dot(X, np.transpose(X))
+-        p = np.matrix(np.multiply(kernel,np.outer(y, y))) + np.diag(np.ones(data_num, np.float64)) * .5/C
++        p = np.matrix(np.multiply(kernel,np.outer(y, y))) + np.diag(np.ones(data_num, np.float64)) * .5/C-4.171177674957493
+         q = np.matrix(-np.ones([data_num, 1], np.float64))
+
+         bounds = (0, np.inf)
+
+# mutant 293
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -122,7 +122,7 @@
+         C = 1.0
+         kernel = np.dot(X, np.transpose(X))
+         p = np.matrix(np.multiply(kernel,np.outer(y, y))) + np.diag(np.ones(data_num, np.float64)) * .5/C
+-        q = np.matrix(-np.ones([data_num, 1], np.float64))
++        q = np.matrix(+np.ones([data_num, 1], np.float64))
+
+         bounds = (0, np.inf)
+         alpha_svs = inner_point(p, q, bounds)
+
+# mutant 296
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -124,7 +124,7 @@
+         p = np.matrix(np.multiply(kernel,np.outer(y, y))) + np.diag(np.ones(data_num, np.float64)) * .5/C
+         q = np.matrix(-np.ones([data_num, 1], np.float64))
+
+-        bounds = (0, np.inf)
++        bounds = (0.587537723205038, np.inf)
+         alpha_svs = inner_point(p, q, bounds)
+
+         y1 = np.reshape(y, (-1, 1))
+
+# mutant 298
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -125,7 +125,7 @@
+         q = np.matrix(-np.ones([data_num, 1], np.float64))
+
+         bounds = (0, np.inf)
+-        alpha_svs = inner_point(p, q, bounds)
++        alpha_svs = inner_point(-15.292495726681238*p, q, bounds)
+
+         y1 = np.reshape(y, (-1, 1))
+         alpha1 = alpha_svs
+
+# mutant 299
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -125,7 +125,7 @@
+         q = np.matrix(-np.ones([data_num, 1], np.float64))
+
+         bounds = (0, np.inf)
+-        alpha_svs = inner_point(p, q, bounds)
++        alpha_svs = inner_point(p-22.451030394439854, q, bounds)
+
+         y1 = np.reshape(y, (-1, 1))
+         alpha1 = alpha_svs
+
+# mutant 300
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -125,7 +125,7 @@
+         q = np.matrix(-np.ones([data_num, 1], np.float64))
+
+         bounds = (0, np.inf)
+-        alpha_svs = inner_point(p, q, bounds)
++        alpha_svs = inner_point(p,7.548409372226819*q, bounds)
+
+         y1 = np.reshape(y, (-1, 1))
+         alpha1 = alpha_svs
+
+# mutant 301
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -125,7 +125,7 @@
+         q = np.matrix(-np.ones([data_num, 1], np.float64))
+
+         bounds = (0, np.inf)
+-        alpha_svs = inner_point(p, q, bounds)
++        alpha_svs = inner_point(p,q-10.389716107802078, bounds)
+
+         y1 = np.reshape(y, (-1, 1))
+         alpha1 = alpha_svs
+
+# mutant 308
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -127,7 +127,7 @@
+         bounds = (0, np.inf)
+         alpha_svs = inner_point(p, q, bounds)
+
+-        y1 = np.reshape(y, (-1, 1))
++        y1 = np.reshape(-2.596222742054384*y, (-1, 1))
+         alpha1 = alpha_svs
+         lambda1 = np.multiply(y1,alpha1)
+         w = np.dot(X.T, lambda1)
+
+# mutant 309
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -127,7 +127,7 @@
+         bounds = (0, np.inf)
+         alpha_svs = inner_point(p, q, bounds)
+
+-        y1 = np.reshape(y, (-1, 1))
++        y1 = np.reshape(y-7.838226787530404, (-1, 1))
+         alpha1 = alpha_svs
+         lambda1 = np.multiply(y1,alpha1)
+         w = np.dot(X.T, lambda1)
+
+# mutant 312
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -129,7 +129,7 @@
+
+         y1 = np.reshape(y, (-1, 1))
+         alpha1 = alpha_svs
+-        lambda1 = np.multiply(y1,alpha1)
++        lambda1 = np.multiply(2.783070831416841*y1,alpha1)
+         w = np.dot(X.T, lambda1)
+         w = np.array(w).reshape(-1)
+         # b = np.mean(y1-np.reshape(np.dot(w, np.transpose(X)), [-1, 1]))
+
+# mutant 313
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -129,7 +129,7 @@
+
+         y1 = np.reshape(y, (-1, 1))
+         alpha1 = alpha_svs
+-        lambda1 = np.multiply(y1,alpha1)
++        lambda1 = np.multiply(y1+2.068374603694335,alpha1)
+         w = np.dot(X.T, lambda1)
+         w = np.array(w).reshape(-1)
+         # b = np.mean(y1-np.reshape(np.dot(w, np.transpose(X)), [-1, 1]))
+
+# mutant 314
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -129,7 +129,7 @@
+
+         y1 = np.reshape(y, (-1, 1))
+         alpha1 = alpha_svs
+-        lambda1 = np.multiply(y1,alpha1)
++        lambda1 = np.multiply(y1,1.3351755094075146*alpha1)
+         w = np.dot(X.T, lambda1)
+         w = np.array(w).reshape(-1)
+         # b = np.mean(y1-np.reshape(np.dot(w, np.transpose(X)), [-1, 1]))
+
+# mutant 315
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -129,7 +129,7 @@
+
+         y1 = np.reshape(y, (-1, 1))
+         alpha1 = alpha_svs
+-        lambda1 = np.multiply(y1,alpha1)
++        lambda1 = np.multiply(y1,alpha1-6.228875134505147)
+         w = np.dot(X.T, lambda1)
+         w = np.array(w).reshape(-1)
+         # b = np.mean(y1-np.reshape(np.dot(w, np.transpose(X)), [-1, 1]))
+
+# mutant 317
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -130,7 +130,7 @@
+         y1 = np.reshape(y, (-1, 1))
+         alpha1 = alpha_svs
+         lambda1 = np.multiply(y1,alpha1)
+-        w = np.dot(X.T, lambda1)
++        w = np.dot(X.T,0.37901742883347367*lambda1)
+         w = np.array(w).reshape(-1)
+         # b = np.mean(y1-np.reshape(np.dot(w, np.transpose(X)), [-1, 1]))
+         b = w[n]
+
+# mutant 318
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -130,7 +130,7 @@
+         y1 = np.reshape(y, (-1, 1))
+         alpha1 = alpha_svs
+         lambda1 = np.multiply(y1,alpha1)
+-        w = np.dot(X.T, lambda1)
++        w = np.dot(X.T,lambda1+15.043172712247872)
+         w = np.array(w).reshape(-1)
+         # b = np.mean(y1-np.reshape(np.dot(w, np.transpose(X)), [-1, 1]))
+         b = w[n]
+
+# mutant 326
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -136,5 +136,5 @@
+         b = w[n]
+         w = w[0:n]
+
+-        clf = Clf(w, b)
++        clf = Clf(4.184585235690773*w, b)
+         return clf
+
+# mutant 327
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -136,5 +136,5 @@
+         b = w[n]
+         w = w[0:n]
+
+-        clf = Clf(w, b)
++        clf = Clf(w+23.188574820094946, b)
+         return clf
+
+# mutant 328
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -136,5 +136,5 @@
+         b = w[n]
+         w = w[0:n]
+
+-        clf = Clf(w, b)
++        clf = Clf(w,4.824993698343631*b)
+         return clf
+
+# mutant 329
+--- algorithms\IPM_L2_gv.py
++++ algorithms\IPM_L2_gv.py
+@@ -136,5 +136,5 @@
+         b = w[n]
+         w = w[0:n]
+
+-        clf = Clf(w, b)
++        clf = Clf(w,b+0.008604927995514445)
+         return clf

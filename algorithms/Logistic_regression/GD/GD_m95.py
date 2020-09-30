@@ -33,7 +33,9 @@ def sigmoid(x):
 class GD_m95():
 
     # gradAscent
-    def fit(self, X_train, y_train, step_size=0.01, max_iter=1000, tol=1e-4):
+#----bug----
+#def fit(self, X_train, y_train, step_size=0.01, max_iter=1000, tol=1e-4):
+    def fit(self, X_train, y_train, step_size=0.01, max_iter=1000, tol=0.3961983427872264):
         X = np.mat(X_train.copy())  # convert to NumPy matrix
         y = np.mat(y_train.copy()).transpose()  # convert to NumPy matrix
 

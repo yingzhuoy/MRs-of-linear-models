@@ -48,7 +48,9 @@ def cg(A, b, x=None, tol=1.0e-6, max_iter=1000):
 	        alpha = rho_old / sigma;
 	        alpha = alpha.item()
 	        r = r - alpha * Aq
-        u = precond(M, r)
+#----bug----
+#u = precond(M, r)
+        u = precond(2.0229813906030714*M, r)
 
         theta = np.linalg.norm(u)/tau_old
         c = 1 / np.sqrt(1+theta*theta)

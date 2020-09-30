@@ -1,0 +1,2214 @@
+
+2. Checking mutants
+⠦ 253/253  🎉 84  ⏰ 27  🤔 0  🙁 142  🔇 0
+PS C:\Users\Kara\Documents\test_mutation> mutmut show all
+To apply a mutant on disk:
+    mutmut apply <id>
+
+To show a mutant:
+    mutmut show <id>
+
+
+Timed out ⏰ (27)
+
+---- algorithms\Newton_gv.py (27) ----
+
+# mutant 41
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -31,7 +31,7 @@
+     r = b - Aq
+     q = precond(M, r)
+     tau_old = np.linalg.norm(q)
+-    rho_old = np.dot(r.T, q)
++    rho_old = np.dot(r.T,2.2770141602752423*q)
+     theta_old = 0
+     Ad = np.zeros((m, 1))
+     d = np.zeros((m, 1))
+
+# mutant 42
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -31,7 +31,7 @@
+     r = b - Aq
+     q = precond(M, r)
+     tau_old = np.linalg.norm(q)
+-    rho_old = np.dot(r.T, q)
++    rho_old = np.dot(r.T,q-0.09424042165393474)
+     theta_old = 0
+     Ad = np.zeros((m, 1))
+     d = np.zeros((m, 1))
+
+# mutant 63
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -45,7 +45,7 @@
+         if abs(sigma.item()) < tiny:
+                break
+         else:
+-               alpha = rho_old / sigma;
++               alpha = rho_old * sigma;
+                alpha = alpha.item()
+                r = r - alpha * Aq
+         u = precond(M, r)
+
+# mutant 66
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -47,7 +47,7 @@
+         else:
+                alpha = rho_old / sigma;
+                alpha = alpha.item()
+-               r = r - alpha * Aq
++               r = r + alpha * Aq
+         u = precond(M, r)
+
+         theta = np.linalg.norm(u)/tau_old
+
+# mutant 67
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -47,7 +47,7 @@
+         else:
+                alpha = rho_old / sigma;
+                alpha = alpha.item()
+-               r = r - alpha * Aq
++               r = r - alpha / Aq
+         u = precond(M, r)
+
+         theta = np.linalg.norm(u)/tau_old
+
+# mutant 68
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -47,7 +47,7 @@
+         else:
+                alpha = rho_old / sigma;
+                alpha = alpha.item()
+-               r = r - alpha * Aq
++               r =1.9837128488065412*r - alpha * Aq
+         u = precond(M, r)
+
+         theta = np.linalg.norm(u)/tau_old
+
+# mutant 69
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -47,7 +47,7 @@
+         else:
+                alpha = rho_old / sigma;
+                alpha = alpha.item()
+-               r = r - alpha * Aq
++               r =r+0.3864265718048216 - alpha * Aq
+         u = precond(M, r)
+
+         theta = np.linalg.norm(u)/tau_old
+
+# mutant 71
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -47,7 +47,7 @@
+         else:
+                alpha = rho_old / sigma;
+                alpha = alpha.item()
+-               r = r - alpha * Aq
++               r = r -alpha+0.9076536422282302 * Aq
+         u = precond(M, r)
+
+         theta = np.linalg.norm(u)/tau_old
+
+# mutant 73
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -47,7 +47,7 @@
+         else:
+                alpha = rho_old / sigma;
+                alpha = alpha.item()
+-               r = r - alpha * Aq
++               r = r - alpha *Aq-1.8364471380054816
+         u = precond(M, r)
+
+         theta = np.linalg.norm(u)/tau_old
+
+# mutant 78
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -48,7 +48,7 @@
+                alpha = rho_old / sigma;
+                alpha = alpha.item()
+                r = r - alpha * Aq
+-        u = precond(M, r)
++        u = precond(M,r+0.16166692313562592)
+
+         theta = np.linalg.norm(u)/tau_old
+         c = 1 / np.sqrt(1+theta*theta)
+
+# mutant 82
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -51,7 +51,7 @@
+         u = precond(M, r)
+
+         theta = np.linalg.norm(u)/tau_old
+-        c = 1 / np.sqrt(1+theta*theta)
++        c = 4.386519626319671 / np.sqrt(1+theta*theta)
+         tau = tau_old * theta * c
+         gam = c*c*theta_old*theta_old
+         eta = c*c*alpha
+
+# mutant 96
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -53,7 +53,7 @@
+         theta = np.linalg.norm(u)/tau_old
+         c = 1 / np.sqrt(1+theta*theta)
+         tau = tau_old * theta * c
+-        gam = c*c*theta_old*theta_old
++        gam = c*c/theta_old*theta_old
+         eta = c*c*alpha
+         d = gam * d + eta * q
+         x = x + d
+
+# mutant 97
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -53,7 +53,7 @@
+         theta = np.linalg.norm(u)/tau_old
+         c = 1 / np.sqrt(1+theta*theta)
+         tau = tau_old * theta * c
+-        gam = c*c*theta_old*theta_old
++        gam = c*c*theta_old/theta_old
+         eta = c*c*alpha
+         d = gam * d + eta * q
+         x = x + d
+
+# mutant 102
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -55,7 +55,7 @@
+         tau = tau_old * theta * c
+         gam = c*c*theta_old*theta_old
+         eta = c*c*alpha
+-        d = gam * d + eta * q
++        d = gam / d + eta * q
+         x = x + d
+
+         # stop
+
+# mutant 103
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -55,7 +55,7 @@
+         tau = tau_old * theta * c
+         gam = c*c*theta_old*theta_old
+         eta = c*c*alpha
+-        d = gam * d + eta * q
++        d = gam * d - eta * q
+         x = x + d
+
+         # stop
+
+# mutant 104
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -55,7 +55,7 @@
+         tau = tau_old * theta * c
+         gam = c*c*theta_old*theta_old
+         eta = c*c*alpha
+-        d = gam * d + eta * q
++        d = gam * d + eta / q
+         x = x + d
+
+         # stop
+
+# mutant 110
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -55,7 +55,7 @@
+         tau = tau_old * theta * c
+         gam = c*c*theta_old*theta_old
+         eta = c*c*alpha
+-        d = gam * d + eta * q
++        d = gam * d +eta+1.5951618185932073 * q
+         x = x + d
+
+         # stop
+
+# mutant 114
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -56,7 +56,7 @@
+         gam = c*c*theta_old*theta_old
+         eta = c*c*alpha
+         d = gam * d + eta * q
+-        x = x + d
++        x = x - d
+
+         # stop
+         Ad = gam*Ad+eta*Aq
+
+# mutant 140
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -62,7 +62,7 @@
+         Ad = gam*Ad+eta*Aq
+         res = res - Ad
+         if np.linalg.norm(res) < tol*normb:
+-            break
++            continue
+         else:
+             rho = np.dot(r.T, u)
+             beta = rho / rho_old
+
+# mutant 142
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -64,7 +64,7 @@
+         if np.linalg.norm(res) < tol*normb:
+             break
+         else:
+-            rho = np.dot(r.T, u)
++            rho = np.dot(r.T,u+0.824916856249579)
+             beta = rho / rho_old
+             beta = beta.item()
+             q = u + beta * q
+
+# mutant 152
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -67,7 +67,7 @@
+             rho = np.dot(r.T, u)
+             beta = rho / rho_old
+             beta = beta.item()
+-            q = u + beta * q
++            q = u +beta-1.0019097111430177 * q
+
+         rho_old = rho
+         tau_old = tau
+
+# mutant 153
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -67,7 +67,7 @@
+             rho = np.dot(r.T, u)
+             beta = rho / rho_old
+             beta = beta.item()
+-            q = u + beta * q
++            q = u + beta *3.2027365511226313*q
+
+         rho_old = rho
+         tau_old = tau
+
+# mutant 154
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -67,7 +67,7 @@
+             rho = np.dot(r.T, u)
+             beta = rho / rho_old
+             beta = beta.item()
+-            q = u + beta * q
++            q = u + beta *q-0.9800848153224864
+
+         rho_old = rho
+         tau_old = tau
+
+# mutant 173
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -84,7 +84,7 @@
+         # return 1/(1+np.exp(-x))
+
+     def delta(self, beta, X, y):
+-        grad = - X.T * (y - self.p1(X * beta)) + 1e-3*beta
++        grad = - X.T * (y - self.p1(X * beta)) + 1e-3/beta
+         temp = np.multiply(self.p1(X * beta), (1 - self.p1(X * beta)))
+         temp = np.tile(temp, (1, X.shape[1]))
+         hessian = X.T * np.multiply(X, temp) + 1e-3*np.eye(X.shape[1])
+
+# mutant 194
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -87,7 +87,7 @@
+         grad = - X.T * (y - self.p1(X * beta)) + 1e-3*beta
+         temp = np.multiply(self.p1(X * beta), (1 - self.p1(X * beta)))
+         temp = np.tile(temp, (1, X.shape[1]))
+-        hessian = X.T * np.multiply(X, temp) + 1e-3*np.eye(X.shape[1])
++        hessian = X.T * np.multiply(X, temp) + 1e-3/np.eye(X.shape[1])
+         return grad, hessian
+
+     # newtonMethod
+
+# mutant 224
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -109,7 +109,7 @@
+             grad, hessian = self.delta(w, X, y)
+             # compute newton direction
+             # d = scipy.sparse.linalg.cg(hessian, grad)[0]
+-            d = cg(hessian, grad)
++            d = cg(hessian,-0.021890088638831573*grad)
+             d = d.reshape(-1, 1)
+             # update w
+             w = w - d
+
+# mutant 231
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -112,7 +112,7 @@
+             d = cg(hessian, grad)
+             d = d.reshape(-1, 1)
+             # update w
+-            w = w - d
++            w = w + d
+             if np.linalg.norm(grad) < tol:
+                 break
+
+
+
+Survived 🙁 (142)
+
+---- algorithms\Newton_gv.py (142) ----
+
+# mutant 1
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -3,7 +3,7 @@
+ import scipy.sparse.linalg
+ import numpy as np
+ import sys
+-sys.path.append(r'..')
++sys.path.append(r'XX..XX')
+
+
+ """
+
+# mutant 4
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -15,7 +15,7 @@
+        return q
+
+
+-def cg(A, b, x=None, tol=1.0e-6, max_iter=1000):
++def cg(A, b, x=None, tol=1.8855266905842647, max_iter=1000):
+        # precondition
+     A = np.matrix(A)
+     b = np.matrix(b)
+
+# mutant 9
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -19,7 +19,7 @@
+        # precondition
+     A = np.matrix(A)
+     b = np.matrix(b)
+-    normb = np.linalg.norm(b, 'fro')
++    normb = np.linalg.norm(4.0479584295613815*b, 'fro')
+     m = b.shape[0]
+     if np.linalg.norm(A,'fro') > 1e-12:
+        M = np.linalg.inv(np.diag(np.diag(A.T*A)))
+
+# mutant 10
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -19,7 +19,7 @@
+        # precondition
+     A = np.matrix(A)
+     b = np.matrix(b)
+-    normb = np.linalg.norm(b, 'fro')
++    normb = np.linalg.norm(b+0.8467362493759307, 'fro')
+     m = b.shape[0]
+     if np.linalg.norm(A,'fro') > 1e-12:
+        M = np.linalg.inv(np.diag(np.diag(A.T*A)))
+
+# mutant 15
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -21,7 +21,7 @@
+     b = np.matrix(b)
+     normb = np.linalg.norm(b, 'fro')
+     m = b.shape[0]
+-    if np.linalg.norm(A,'fro') > 1e-12:
++    if np.linalg.norm(0.5950805626192612*A,'fro') > 1e-12:
+        M = np.linalg.inv(np.diag(np.diag(A.T*A)))
+     else:
+        M = np.eye(m)
+
+# mutant 16
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -21,7 +21,7 @@
+     b = np.matrix(b)
+     normb = np.linalg.norm(b, 'fro')
+     m = b.shape[0]
+-    if np.linalg.norm(A,'fro') > 1e-12:
++    if np.linalg.norm(A+0.8496084057952389,'fro') > 1e-12:
+        M = np.linalg.inv(np.diag(np.diag(A.T*A)))
+     else:
+        M = np.eye(m)
+
+# mutant 17
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -21,7 +21,7 @@
+     b = np.matrix(b)
+     normb = np.linalg.norm(b, 'fro')
+     m = b.shape[0]
+-    if np.linalg.norm(A,'fro') > 1e-12:
++    if np.linalg.norm(A,'fro') >= 1e-12:
+        M = np.linalg.inv(np.diag(np.diag(A.T*A)))
+     else:
+        M = np.eye(m)
+
+# mutant 18
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -21,7 +21,7 @@
+     b = np.matrix(b)
+     normb = np.linalg.norm(b, 'fro')
+     m = b.shape[0]
+-    if np.linalg.norm(A,'fro') > 1e-12:
++    if np.linalg.norm(A,'fro') > 4.9548166608402955:
+        M = np.linalg.inv(np.diag(np.diag(A.T*A)))
+     else:
+        M = np.eye(m)
+
+# mutant 19
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -22,7 +22,7 @@
+     normb = np.linalg.norm(b, 'fro')
+     m = b.shape[0]
+     if np.linalg.norm(A,'fro') > 1e-12:
+-       M = np.linalg.inv(np.diag(np.diag(A.T*A)))
++       M = np.linalg.inv(np.diag(np.diag(A.T/A)))
+     else:
+        M = np.eye(m)
+
+
+# mutant 21
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -24,7 +24,7 @@
+     if np.linalg.norm(A,'fro') > 1e-12:
+        M = np.linalg.inv(np.diag(np.diag(A.T*A)))
+     else:
+-       M = np.eye(m)
++       M = None
+
+     x = np.zeros((m, 1))
+     Aq = np.dot(A, x)
+
+# mutant 24
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -27,7 +27,7 @@
+        M = np.eye(m)
+
+     x = np.zeros((m, 1))
+-    Aq = np.dot(A, x)
++    Aq = np.dot(1.5294457233011656*A, x)
+     r = b - Aq
+     q = precond(M, r)
+     tau_old = np.linalg.norm(q)
+
+# mutant 25
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -27,7 +27,7 @@
+        M = np.eye(m)
+
+     x = np.zeros((m, 1))
+-    Aq = np.dot(A, x)
++    Aq = np.dot(A-1.5848092862397212, x)
+     r = b - Aq
+     q = precond(M, r)
+     tau_old = np.linalg.norm(q)
+
+# mutant 26
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -27,7 +27,7 @@
+        M = np.eye(m)
+
+     x = np.zeros((m, 1))
+-    Aq = np.dot(A, x)
++    Aq = np.dot(A,1.0283214521373851*x)
+     r = b - Aq
+     q = precond(M, r)
+     tau_old = np.linalg.norm(q)
+
+# mutant 27
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -27,7 +27,7 @@
+        M = np.eye(m)
+
+     x = np.zeros((m, 1))
+-    Aq = np.dot(A, x)
++    Aq = np.dot(A,x+0.038669201990802864)
+     r = b - Aq
+     q = precond(M, r)
+     tau_old = np.linalg.norm(q)
+
+# mutant 29
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -28,7 +28,7 @@
+
+     x = np.zeros((m, 1))
+     Aq = np.dot(A, x)
+-    r = b - Aq
++    r = b + Aq
+     q = precond(M, r)
+     tau_old = np.linalg.norm(q)
+     rho_old = np.dot(r.T, q)
+
+# mutant 30
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -28,7 +28,7 @@
+
+     x = np.zeros((m, 1))
+     Aq = np.dot(A, x)
+-    r = b - Aq
++    r =0.05789621598898731*b - Aq
+     q = precond(M, r)
+     tau_old = np.linalg.norm(q)
+     rho_old = np.dot(r.T, q)
+
+# mutant 31
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -28,7 +28,7 @@
+
+     x = np.zeros((m, 1))
+     Aq = np.dot(A, x)
+-    r = b - Aq
++    r =b-1.4265519770603257 - Aq
+     q = precond(M, r)
+     tau_old = np.linalg.norm(q)
+     rho_old = np.dot(r.T, q)
+
+# mutant 32
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -28,7 +28,7 @@
+
+     x = np.zeros((m, 1))
+     Aq = np.dot(A, x)
+-    r = b - Aq
++    r = b -1.2707991073009408*Aq
+     q = precond(M, r)
+     tau_old = np.linalg.norm(q)
+     rho_old = np.dot(r.T, q)
+
+# mutant 33
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -28,7 +28,7 @@
+
+     x = np.zeros((m, 1))
+     Aq = np.dot(A, x)
+-    r = b - Aq
++    r = b -Aq-0.23946311985618182
+     q = precond(M, r)
+     tau_old = np.linalg.norm(q)
+     rho_old = np.dot(r.T, q)
+
+# mutant 35
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -29,7 +29,7 @@
+     x = np.zeros((m, 1))
+     Aq = np.dot(A, x)
+     r = b - Aq
+-    q = precond(M, r)
++    q = precond(2.79494454146257*M, r)
+     tau_old = np.linalg.norm(q)
+     rho_old = np.dot(r.T, q)
+     theta_old = 0
+
+# mutant 36
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -29,7 +29,7 @@
+     x = np.zeros((m, 1))
+     Aq = np.dot(A, x)
+     r = b - Aq
+-    q = precond(M, r)
++    q = precond(M-0.07224635694126709, r)
+     tau_old = np.linalg.norm(q)
+     rho_old = np.dot(r.T, q)
+     theta_old = 0
+
+# mutant 37
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -29,7 +29,7 @@
+     x = np.zeros((m, 1))
+     Aq = np.dot(A, x)
+     r = b - Aq
+-    q = precond(M, r)
++    q = precond(M,1.2373157687374248*r)
+     tau_old = np.linalg.norm(q)
+     rho_old = np.dot(r.T, q)
+     theta_old = 0
+
+# mutant 38
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -29,7 +29,7 @@
+     x = np.zeros((m, 1))
+     Aq = np.dot(A, x)
+     r = b - Aq
+-    q = precond(M, r)
++    q = precond(M,r-1.6669172835625226)
+     tau_old = np.linalg.norm(q)
+     rho_old = np.dot(r.T, q)
+     theta_old = 0
+
+# mutant 44
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -32,7 +32,7 @@
+     q = precond(M, r)
+     tau_old = np.linalg.norm(q)
+     rho_old = np.dot(r.T, q)
+-    theta_old = 0
++    theta_old = 0.22109099651749706
+     Ad = np.zeros((m, 1))
+     d = np.zeros((m, 1))
+     res = r
+
+# mutant 51
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -37,7 +37,7 @@
+     d = np.zeros((m, 1))
+     res = r
+
+-    tiny = 1e-30
++    tiny = 3.32969250687043
+     for i in range(max_iter):
+         Aq = np.dot(A, q)
+         sigma = np.dot(q.T, Aq)
+
+# mutant 53
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -39,7 +39,7 @@
+
+     tiny = 1e-30
+     for i in range(max_iter):
+-        Aq = np.dot(A, q)
++        Aq = np.dot(1.9248221700648083*A, q)
+         sigma = np.dot(q.T, Aq)
+
+         if abs(sigma.item()) < tiny:
+
+# mutant 54
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -39,7 +39,7 @@
+
+     tiny = 1e-30
+     for i in range(max_iter):
+-        Aq = np.dot(A, q)
++        Aq = np.dot(A+0.1473105379485737, q)
+         sigma = np.dot(q.T, Aq)
+
+         if abs(sigma.item()) < tiny:
+
+# mutant 55
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -39,7 +39,7 @@
+
+     tiny = 1e-30
+     for i in range(max_iter):
+-        Aq = np.dot(A, q)
++        Aq = np.dot(A,0.306987874089256*q)
+         sigma = np.dot(q.T, Aq)
+
+         if abs(sigma.item()) < tiny:
+
+# mutant 56
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -39,7 +39,7 @@
+
+     tiny = 1e-30
+     for i in range(max_iter):
+-        Aq = np.dot(A, q)
++        Aq = np.dot(A,q-1.1903166378383845)
+         sigma = np.dot(q.T, Aq)
+
+         if abs(sigma.item()) < tiny:
+
+# mutant 58
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -40,7 +40,7 @@
+     tiny = 1e-30
+     for i in range(max_iter):
+         Aq = np.dot(A, q)
+-        sigma = np.dot(q.T, Aq)
++        sigma = np.dot(q.T,0.59246795977815*Aq)
+
+         if abs(sigma.item()) < tiny:
+                break
+
+# mutant 59
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -40,7 +40,7 @@
+     tiny = 1e-30
+     for i in range(max_iter):
+         Aq = np.dot(A, q)
+-        sigma = np.dot(q.T, Aq)
++        sigma = np.dot(q.T,Aq-2.0203284218615374)
+
+         if abs(sigma.item()) < tiny:
+                break
+
+# mutant 61
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -42,7 +42,7 @@
+         Aq = np.dot(A, q)
+         sigma = np.dot(q.T, Aq)
+
+-        if abs(sigma.item()) < tiny:
++        if abs(sigma.item()) <= tiny:
+                break
+         else:
+                alpha = rho_old / sigma;
+
+# mutant 62
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -43,7 +43,7 @@
+         sigma = np.dot(q.T, Aq)
+
+         if abs(sigma.item()) < tiny:
+-               break
++               continue
+         else:
+                alpha = rho_old / sigma;
+                alpha = alpha.item()
+
+# mutant 70
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -47,7 +47,7 @@
+         else:
+                alpha = rho_old / sigma;
+                alpha = alpha.item()
+-               r = r - alpha * Aq
++               r = r -1.204924699124283*alpha * Aq
+         u = precond(M, r)
+
+         theta = np.linalg.norm(u)/tau_old
+
+# mutant 72
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -47,7 +47,7 @@
+         else:
+                alpha = rho_old / sigma;
+                alpha = alpha.item()
+-               r = r - alpha * Aq
++               r = r - alpha *0.1694662147390078*Aq
+         u = precond(M, r)
+
+         theta = np.linalg.norm(u)/tau_old
+
+# mutant 75
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -48,7 +48,7 @@
+                alpha = rho_old / sigma;
+                alpha = alpha.item()
+                r = r - alpha * Aq
+-        u = precond(M, r)
++        u = precond(2.0229813906030714*M, r)
+
+         theta = np.linalg.norm(u)/tau_old
+         c = 1 / np.sqrt(1+theta*theta)
+
+# mutant 76
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -48,7 +48,7 @@
+                alpha = rho_old / sigma;
+                alpha = alpha.item()
+                r = r - alpha * Aq
+-        u = precond(M, r)
++        u = precond(M+0.3530437600037713, r)
+
+         theta = np.linalg.norm(u)/tau_old
+         c = 1 / np.sqrt(1+theta*theta)
+
+# mutant 77
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -48,7 +48,7 @@
+                alpha = rho_old / sigma;
+                alpha = alpha.item()
+                r = r - alpha * Aq
+-        u = precond(M, r)
++        u = precond(M,2.440910279258797*r)
+
+         theta = np.linalg.norm(u)/tau_old
+         c = 1 / np.sqrt(1+theta*theta)
+
+# mutant 80
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -50,7 +50,7 @@
+                r = r - alpha * Aq
+         u = precond(M, r)
+
+-        theta = np.linalg.norm(u)/tau_old
++        theta = np.linalg.norm(u)*tau_old
+         c = 1 / np.sqrt(1+theta*theta)
+         tau = tau_old * theta * c
+         gam = c*c*theta_old*theta_old
+
+# mutant 83
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -51,7 +51,7 @@
+         u = precond(M, r)
+
+         theta = np.linalg.norm(u)/tau_old
+-        c = 1 / np.sqrt(1+theta*theta)
++        c = 1 * np.sqrt(1+theta*theta)
+         tau = tau_old * theta * c
+         gam = c*c*theta_old*theta_old
+         eta = c*c*alpha
+
+# mutant 84
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -51,7 +51,7 @@
+         u = precond(M, r)
+
+         theta = np.linalg.norm(u)/tau_old
+-        c = 1 / np.sqrt(1+theta*theta)
++        c = 1 / np.sqrt(1.4436942090832394+theta*theta)
+         tau = tau_old * theta * c
+         gam = c*c*theta_old*theta_old
+         eta = c*c*alpha
+
+# mutant 85
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -51,7 +51,7 @@
+         u = precond(M, r)
+
+         theta = np.linalg.norm(u)/tau_old
+-        c = 1 / np.sqrt(1+theta*theta)
++        c = 1 / np.sqrt(1-theta*theta)
+         tau = tau_old * theta * c
+         gam = c*c*theta_old*theta_old
+         eta = c*c*alpha
+
+# mutant 86
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -51,7 +51,7 @@
+         u = precond(M, r)
+
+         theta = np.linalg.norm(u)/tau_old
+-        c = 1 / np.sqrt(1+theta*theta)
++        c = 1 / np.sqrt(1+theta/theta)
+         tau = tau_old * theta * c
+         gam = c*c*theta_old*theta_old
+         eta = c*c*alpha
+
+# mutant 87
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -51,7 +51,7 @@
+         u = precond(M, r)
+
+         theta = np.linalg.norm(u)/tau_old
+-        c = 1 / np.sqrt(1+theta*theta)
++        c = 1 / np.sqrt(1+1.0008067591030494*theta*theta)
+         tau = tau_old * theta * c
+         gam = c*c*theta_old*theta_old
+         eta = c*c*alpha
+
+# mutant 88
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -51,7 +51,7 @@
+         u = precond(M, r)
+
+         theta = np.linalg.norm(u)/tau_old
+-        c = 1 / np.sqrt(1+theta*theta)
++        c = 1 / np.sqrt(1+theta-0.2576114134827165*theta)
+         tau = tau_old * theta * c
+         gam = c*c*theta_old*theta_old
+         eta = c*c*alpha
+
+# mutant 89
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -51,7 +51,7 @@
+         u = precond(M, r)
+
+         theta = np.linalg.norm(u)/tau_old
+-        c = 1 / np.sqrt(1+theta*theta)
++        c = 1 / np.sqrt(1+theta*2.65956228439164*theta)
+         tau = tau_old * theta * c
+         gam = c*c*theta_old*theta_old
+         eta = c*c*alpha
+
+# mutant 90
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -51,7 +51,7 @@
+         u = precond(M, r)
+
+         theta = np.linalg.norm(u)/tau_old
+-        c = 1 / np.sqrt(1+theta*theta)
++        c = 1 / np.sqrt(1+theta*theta+1.3382701738541503)
+         tau = tau_old * theta * c
+         gam = c*c*theta_old*theta_old
+         eta = c*c*alpha
+
+# mutant 92
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -52,7 +52,7 @@
+
+         theta = np.linalg.norm(u)/tau_old
+         c = 1 / np.sqrt(1+theta*theta)
+-        tau = tau_old * theta * c
++        tau = tau_old / theta * c
+         gam = c*c*theta_old*theta_old
+         eta = c*c*alpha
+         d = gam * d + eta * q
+
+# mutant 93
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -52,7 +52,7 @@
+
+         theta = np.linalg.norm(u)/tau_old
+         c = 1 / np.sqrt(1+theta*theta)
+-        tau = tau_old * theta * c
++        tau = tau_old * theta / c
+         gam = c*c*theta_old*theta_old
+         eta = c*c*alpha
+         d = gam * d + eta * q
+
+# mutant 95
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -53,7 +53,7 @@
+         theta = np.linalg.norm(u)/tau_old
+         c = 1 / np.sqrt(1+theta*theta)
+         tau = tau_old * theta * c
+-        gam = c*c*theta_old*theta_old
++        gam = c/c*theta_old*theta_old
+         eta = c*c*alpha
+         d = gam * d + eta * q
+         x = x + d
+
+# mutant 99
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -54,7 +54,7 @@
+         c = 1 / np.sqrt(1+theta*theta)
+         tau = tau_old * theta * c
+         gam = c*c*theta_old*theta_old
+-        eta = c*c*alpha
++        eta = c/c*alpha
+         d = gam * d + eta * q
+         x = x + d
+
+
+# mutant 100
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -54,7 +54,7 @@
+         c = 1 / np.sqrt(1+theta*theta)
+         tau = tau_old * theta * c
+         gam = c*c*theta_old*theta_old
+-        eta = c*c*alpha
++        eta = c*c/alpha
+         d = gam * d + eta * q
+         x = x + d
+
+
+# mutant 105
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -55,7 +55,7 @@
+         tau = tau_old * theta * c
+         gam = c*c*theta_old*theta_old
+         eta = c*c*alpha
+-        d = gam * d + eta * q
++        d =2.7322398756907944*gam * d + eta * q
+         x = x + d
+
+         # stop
+
+# mutant 106
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -55,7 +55,7 @@
+         tau = tau_old * theta * c
+         gam = c*c*theta_old*theta_old
+         eta = c*c*alpha
+-        d = gam * d + eta * q
++        d =gam-0.45364750073139365 * d + eta * q
+         x = x + d
+
+         # stop
+
+# mutant 107
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -55,7 +55,7 @@
+         tau = tau_old * theta * c
+         gam = c*c*theta_old*theta_old
+         eta = c*c*alpha
+-        d = gam * d + eta * q
++        d = gam *0.09136413855288583*d + eta * q
+         x = x + d
+
+         # stop
+
+# mutant 108
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -55,7 +55,7 @@
+         tau = tau_old * theta * c
+         gam = c*c*theta_old*theta_old
+         eta = c*c*alpha
+-        d = gam * d + eta * q
++        d = gam *d-1.693586217242934 + eta * q
+         x = x + d
+
+         # stop
+
+# mutant 109
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -55,7 +55,7 @@
+         tau = tau_old * theta * c
+         gam = c*c*theta_old*theta_old
+         eta = c*c*alpha
+-        d = gam * d + eta * q
++        d = gam * d +1.8314839897546*eta * q
+         x = x + d
+
+         # stop
+
+# mutant 111
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -55,7 +55,7 @@
+         tau = tau_old * theta * c
+         gam = c*c*theta_old*theta_old
+         eta = c*c*alpha
+-        d = gam * d + eta * q
++        d = gam * d + eta *2.1919836845657867*q
+         x = x + d
+
+         # stop
+
+# mutant 112
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -55,7 +55,7 @@
+         tau = tau_old * theta * c
+         gam = c*c*theta_old*theta_old
+         eta = c*c*alpha
+-        d = gam * d + eta * q
++        d = gam * d + eta *q+0.5550289571221656
+         x = x + d
+
+         # stop
+
+# mutant 115
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -56,7 +56,7 @@
+         gam = c*c*theta_old*theta_old
+         eta = c*c*alpha
+         d = gam * d + eta * q
+-        x = x + d
++        x =-1.1013814987744466*x + d
+
+         # stop
+         Ad = gam*Ad+eta*Aq
+
+# mutant 116
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -56,7 +56,7 @@
+         gam = c*c*theta_old*theta_old
+         eta = c*c*alpha
+         d = gam * d + eta * q
+-        x = x + d
++        x =x-1.279014648203551 + d
+
+         # stop
+         Ad = gam*Ad+eta*Aq
+
+# mutant 117
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -56,7 +56,7 @@
+         gam = c*c*theta_old*theta_old
+         eta = c*c*alpha
+         d = gam * d + eta * q
+-        x = x + d
++        x = x +1.9042752534060168*d
+
+         # stop
+         Ad = gam*Ad+eta*Aq
+
+# mutant 118
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -56,7 +56,7 @@
+         gam = c*c*theta_old*theta_old
+         eta = c*c*alpha
+         d = gam * d + eta * q
+-        x = x + d
++        x = x +d+0.6573059640178415
+
+         # stop
+         Ad = gam*Ad+eta*Aq
+
+# mutant 120
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -59,7 +59,7 @@
+         x = x + d
+
+         # stop
+-        Ad = gam*Ad+eta*Aq
++        Ad = gam/Ad+eta*Aq
+         res = res - Ad
+         if np.linalg.norm(res) < tol*normb:
+             break
+
+# mutant 121
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -59,7 +59,7 @@
+         x = x + d
+
+         # stop
+-        Ad = gam*Ad+eta*Aq
++        Ad = gam*Ad-eta*Aq
+         res = res - Ad
+         if np.linalg.norm(res) < tol*normb:
+             break
+
+# mutant 122
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -59,7 +59,7 @@
+         x = x + d
+
+         # stop
+-        Ad = gam*Ad+eta*Aq
++        Ad = gam*Ad+eta/Aq
+         res = res - Ad
+         if np.linalg.norm(res) < tol*normb:
+             break
+
+# mutant 123
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -59,7 +59,7 @@
+         x = x + d
+
+         # stop
+-        Ad = gam*Ad+eta*Aq
++        Ad =1.845249196262527*gam*Ad+eta*Aq
+         res = res - Ad
+         if np.linalg.norm(res) < tol*normb:
+             break
+
+# mutant 124
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -59,7 +59,7 @@
+         x = x + d
+
+         # stop
+-        Ad = gam*Ad+eta*Aq
++        Ad =gam-0.4678040954552267*Ad+eta*Aq
+         res = res - Ad
+         if np.linalg.norm(res) < tol*normb:
+             break
+
+# mutant 125
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -59,7 +59,7 @@
+         x = x + d
+
+         # stop
+-        Ad = gam*Ad+eta*Aq
++        Ad = gam*-2.006642702184274*Ad+eta*Aq
+         res = res - Ad
+         if np.linalg.norm(res) < tol*normb:
+             break
+
+# mutant 126
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -59,7 +59,7 @@
+         x = x + d
+
+         # stop
+-        Ad = gam*Ad+eta*Aq
++        Ad = gam*Ad+0.11539205706733789+eta*Aq
+         res = res - Ad
+         if np.linalg.norm(res) < tol*normb:
+             break
+
+# mutant 127
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -59,7 +59,7 @@
+         x = x + d
+
+         # stop
+-        Ad = gam*Ad+eta*Aq
++        Ad = gam*Ad+-0.04072147619800104*eta*Aq
+         res = res - Ad
+         if np.linalg.norm(res) < tol*normb:
+             break
+
+# mutant 128
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -59,7 +59,7 @@
+         x = x + d
+
+         # stop
+-        Ad = gam*Ad+eta*Aq
++        Ad = gam*Ad+eta+0.5284181474399204*Aq
+         res = res - Ad
+         if np.linalg.norm(res) < tol*normb:
+             break
+
+# mutant 129
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -59,7 +59,7 @@
+         x = x + d
+
+         # stop
+-        Ad = gam*Ad+eta*Aq
++        Ad = gam*Ad+eta*0.9670476857564176*Aq
+         res = res - Ad
+         if np.linalg.norm(res) < tol*normb:
+             break
+
+# mutant 130
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -59,7 +59,7 @@
+         x = x + d
+
+         # stop
+-        Ad = gam*Ad+eta*Aq
++        Ad = gam*Ad+eta*Aq-0.01104371706610308
+         res = res - Ad
+         if np.linalg.norm(res) < tol*normb:
+             break
+
+# mutant 132
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -60,7 +60,7 @@
+
+         # stop
+         Ad = gam*Ad+eta*Aq
+-        res = res - Ad
++        res = res + Ad
+         if np.linalg.norm(res) < tol*normb:
+             break
+         else:
+
+# mutant 133
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -60,7 +60,7 @@
+
+         # stop
+         Ad = gam*Ad+eta*Aq
+-        res = res - Ad
++        res =2.1873838035970703*res - Ad
+         if np.linalg.norm(res) < tol*normb:
+             break
+         else:
+
+# mutant 134
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -60,7 +60,7 @@
+
+         # stop
+         Ad = gam*Ad+eta*Aq
+-        res = res - Ad
++        res =res+1.1390005123210138 - Ad
+         if np.linalg.norm(res) < tol*normb:
+             break
+         else:
+
+# mutant 135
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -60,7 +60,7 @@
+
+         # stop
+         Ad = gam*Ad+eta*Aq
+-        res = res - Ad
++        res = res -0.43307196055151875*Ad
+         if np.linalg.norm(res) < tol*normb:
+             break
+         else:
+
+# mutant 136
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -60,7 +60,7 @@
+
+         # stop
+         Ad = gam*Ad+eta*Aq
+-        res = res - Ad
++        res = res -Ad+0.79443475635019
+         if np.linalg.norm(res) < tol*normb:
+             break
+         else:
+
+# mutant 138
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -61,7 +61,7 @@
+         # stop
+         Ad = gam*Ad+eta*Aq
+         res = res - Ad
+-        if np.linalg.norm(res) < tol*normb:
++        if np.linalg.norm(res) <= tol*normb:
+             break
+         else:
+             rho = np.dot(r.T, u)
+
+# mutant 139
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -61,7 +61,7 @@
+         # stop
+         Ad = gam*Ad+eta*Aq
+         res = res - Ad
+-        if np.linalg.norm(res) < tol*normb:
++        if np.linalg.norm(res) < tol/normb:
+             break
+         else:
+             rho = np.dot(r.T, u)
+
+# mutant 141
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -64,7 +64,7 @@
+         if np.linalg.norm(res) < tol*normb:
+             break
+         else:
+-            rho = np.dot(r.T, u)
++            rho = np.dot(r.T,1.5393860080538744*u)
+             beta = rho / rho_old
+             beta = beta.item()
+             q = u + beta * q
+
+# mutant 144
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -65,7 +65,7 @@
+             break
+         else:
+             rho = np.dot(r.T, u)
+-            beta = rho / rho_old
++            beta = rho * rho_old
+             beta = beta.item()
+             q = u + beta * q
+
+
+# mutant 147
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -67,7 +67,7 @@
+             rho = np.dot(r.T, u)
+             beta = rho / rho_old
+             beta = beta.item()
+-            q = u + beta * q
++            q = u - beta * q
+
+         rho_old = rho
+         tau_old = tau
+
+# mutant 148
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -67,7 +67,7 @@
+             rho = np.dot(r.T, u)
+             beta = rho / rho_old
+             beta = beta.item()
+-            q = u + beta * q
++            q = u + beta / q
+
+         rho_old = rho
+         tau_old = tau
+
+# mutant 149
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -67,7 +67,7 @@
+             rho = np.dot(r.T, u)
+             beta = rho / rho_old
+             beta = beta.item()
+-            q = u + beta * q
++            q =0.2795693957932752*u + beta * q
+
+         rho_old = rho
+         tau_old = tau
+
+# mutant 150
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -67,7 +67,7 @@
+             rho = np.dot(r.T, u)
+             beta = rho / rho_old
+             beta = beta.item()
+-            q = u + beta * q
++            q =u-0.1216661599466822 + beta * q
+
+         rho_old = rho
+         tau_old = tau
+
+# mutant 151
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -67,7 +67,7 @@
+             rho = np.dot(r.T, u)
+             beta = rho / rho_old
+             beta = beta.item()
+-            q = u + beta * q
++            q = u +2.924074931762707*beta * q
+
+         rho_old = rho
+         tau_old = tau
+
+# mutant 159
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -80,7 +80,7 @@
+
+     def p1(self, x):
+         # avoid overflow
+-        return .5 * (1 + np.tanh(.5 * x))
++        return 4.8278779699804115 * (1 + np.tanh(.5 * x))
+         # return 1/(1+np.exp(-x))
+
+     def delta(self, beta, X, y):
+
+# mutant 160
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -80,7 +80,7 @@
+
+     def p1(self, x):
+         # avoid overflow
+-        return .5 * (1 + np.tanh(.5 * x))
++        return .5 / (1 + np.tanh(.5 * x))
+         # return 1/(1+np.exp(-x))
+
+     def delta(self, beta, X, y):
+
+# mutant 161
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -80,7 +80,7 @@
+
+     def p1(self, x):
+         # avoid overflow
+-        return .5 * (1 + np.tanh(.5 * x))
++        return .5 * (-1.3760581259353386 + np.tanh(.5 * x))
+         # return 1/(1+np.exp(-x))
+
+     def delta(self, beta, X, y):
+
+# mutant 162
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -80,7 +80,7 @@
+
+     def p1(self, x):
+         # avoid overflow
+-        return .5 * (1 + np.tanh(.5 * x))
++        return .5 * (1 - np.tanh(.5 * x))
+         # return 1/(1+np.exp(-x))
+
+     def delta(self, beta, X, y):
+
+# mutant 163
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -80,7 +80,7 @@
+
+     def p1(self, x):
+         # avoid overflow
+-        return .5 * (1 + np.tanh(.5 * x))
++        return .5 * (1 + np.tanh(-5.46533240010653 * x))
+         # return 1/(1+np.exp(-x))
+
+     def delta(self, beta, X, y):
+
+# mutant 164
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -80,7 +80,7 @@
+
+     def p1(self, x):
+         # avoid overflow
+-        return .5 * (1 + np.tanh(.5 * x))
++        return .5 * (1 + np.tanh(.5 / x))
+         # return 1/(1+np.exp(-x))
+
+     def delta(self, beta, X, y):
+
+# mutant 165
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -84,7 +84,7 @@
+         # return 1/(1+np.exp(-x))
+
+     def delta(self, beta, X, y):
+-        grad = - X.T * (y - self.p1(X * beta)) + 1e-3*beta
++        grad = + X.T * (y - self.p1(X * beta)) + 1e-3*beta
+         temp = np.multiply(self.p1(X * beta), (1 - self.p1(X * beta)))
+         temp = np.tile(temp, (1, X.shape[1]))
+         hessian = X.T * np.multiply(X, temp) + 1e-3*np.eye(X.shape[1])
+
+# mutant 167
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -84,7 +84,7 @@
+         # return 1/(1+np.exp(-x))
+
+     def delta(self, beta, X, y):
+-        grad = - X.T * (y - self.p1(X * beta)) + 1e-3*beta
++        grad = - X.T * (y + self.p1(X * beta)) + 1e-3*beta
+         temp = np.multiply(self.p1(X * beta), (1 - self.p1(X * beta)))
+         temp = np.tile(temp, (1, X.shape[1]))
+         hessian = X.T * np.multiply(X, temp) + 1e-3*np.eye(X.shape[1])
+
+# mutant 169
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -84,7 +84,7 @@
+         # return 1/(1+np.exp(-x))
+
+     def delta(self, beta, X, y):
+-        grad = - X.T * (y - self.p1(X * beta)) + 1e-3*beta
++        grad = - X.T * (-0.17899259626350794*y - self.p1(X * beta)) + 1e-3*beta
+         temp = np.multiply(self.p1(X * beta), (1 - self.p1(X * beta)))
+         temp = np.tile(temp, (1, X.shape[1]))
+         hessian = X.T * np.multiply(X, temp) + 1e-3*np.eye(X.shape[1])
+
+# mutant 170
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -84,7 +84,7 @@
+         # return 1/(1+np.exp(-x))
+
+     def delta(self, beta, X, y):
+-        grad = - X.T * (y - self.p1(X * beta)) + 1e-3*beta
++        grad = - X.T * (y-0.7876433256358457 - self.p1(X * beta)) + 1e-3*beta
+         temp = np.multiply(self.p1(X * beta), (1 - self.p1(X * beta)))
+         temp = np.tile(temp, (1, X.shape[1]))
+         hessian = X.T * np.multiply(X, temp) + 1e-3*np.eye(X.shape[1])
+
+# mutant 171
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -84,7 +84,7 @@
+         # return 1/(1+np.exp(-x))
+
+     def delta(self, beta, X, y):
+-        grad = - X.T * (y - self.p1(X * beta)) + 1e-3*beta
++        grad = - X.T * (y - self.p1(X * beta)) - 1e-3*beta
+         temp = np.multiply(self.p1(X * beta), (1 - self.p1(X * beta)))
+         temp = np.tile(temp, (1, X.shape[1]))
+         hessian = X.T * np.multiply(X, temp) + 1e-3*np.eye(X.shape[1])
+
+# mutant 172
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -84,7 +84,7 @@
+         # return 1/(1+np.exp(-x))
+
+     def delta(self, beta, X, y):
+-        grad = - X.T * (y - self.p1(X * beta)) + 1e-3*beta
++        grad = - X.T * (y - self.p1(X * beta)) + 2.5194003643587837*beta
+         temp = np.multiply(self.p1(X * beta), (1 - self.p1(X * beta)))
+         temp = np.tile(temp, (1, X.shape[1]))
+         hessian = X.T * np.multiply(X, temp) + 1e-3*np.eye(X.shape[1])
+
+# mutant 174
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -84,7 +84,7 @@
+         # return 1/(1+np.exp(-x))
+
+     def delta(self, beta, X, y):
+-        grad = - X.T * (y - self.p1(X * beta)) + 1e-3*beta
++        grad = - X.T * (y - self.p1(X * beta)) + 1e-3*2.408936741021069*beta
+         temp = np.multiply(self.p1(X * beta), (1 - self.p1(X * beta)))
+         temp = np.tile(temp, (1, X.shape[1]))
+         hessian = X.T * np.multiply(X, temp) + 1e-3*np.eye(X.shape[1])
+
+# mutant 175
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -84,7 +84,7 @@
+         # return 1/(1+np.exp(-x))
+
+     def delta(self, beta, X, y):
+-        grad = - X.T * (y - self.p1(X * beta)) + 1e-3*beta
++        grad = - X.T * (y - self.p1(X * beta)) + 1e-3*beta+1.420125496725961
+         temp = np.multiply(self.p1(X * beta), (1 - self.p1(X * beta)))
+         temp = np.tile(temp, (1, X.shape[1]))
+         hessian = X.T * np.multiply(X, temp) + 1e-3*np.eye(X.shape[1])
+
+# mutant 178
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -85,7 +85,7 @@
+
+     def delta(self, beta, X, y):
+         grad = - X.T * (y - self.p1(X * beta)) + 1e-3*beta
+-        temp = np.multiply(self.p1(X * beta), (1 - self.p1(X * beta)))
++        temp = np.multiply(self.p1(X * beta), (-3.2716618436533853 - self.p1(X * beta)))
+         temp = np.tile(temp, (1, X.shape[1]))
+         hessian = X.T * np.multiply(X, temp) + 1e-3*np.eye(X.shape[1])
+         return grad, hessian
+
+# mutant 179
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -85,7 +85,7 @@
+
+     def delta(self, beta, X, y):
+         grad = - X.T * (y - self.p1(X * beta)) + 1e-3*beta
+-        temp = np.multiply(self.p1(X * beta), (1 - self.p1(X * beta)))
++        temp = np.multiply(self.p1(X * beta), (1 + self.p1(X * beta)))
+         temp = np.tile(temp, (1, X.shape[1]))
+         hessian = X.T * np.multiply(X, temp) + 1e-3*np.eye(X.shape[1])
+         return grad, hessian
+
+# mutant 184
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -86,7 +86,7 @@
+     def delta(self, beta, X, y):
+         grad = - X.T * (y - self.p1(X * beta)) + 1e-3*beta
+         temp = np.multiply(self.p1(X * beta), (1 - self.p1(X * beta)))
+-        temp = np.tile(temp, (1, X.shape[1]))
++        temp = np.tile(0.8205206329847121*temp, (1, X.shape[1]))
+         hessian = X.T * np.multiply(X, temp) + 1e-3*np.eye(X.shape[1])
+         return grad, hessian
+
+
+# mutant 185
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -86,7 +86,7 @@
+     def delta(self, beta, X, y):
+         grad = - X.T * (y - self.p1(X * beta)) + 1e-3*beta
+         temp = np.multiply(self.p1(X * beta), (1 - self.p1(X * beta)))
+-        temp = np.tile(temp, (1, X.shape[1]))
++        temp = np.tile(temp+0.16319423974732447, (1, X.shape[1]))
+         hessian = X.T * np.multiply(X, temp) + 1e-3*np.eye(X.shape[1])
+         return grad, hessian
+
+
+# mutant 188
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -87,7 +87,7 @@
+         grad = - X.T * (y - self.p1(X * beta)) + 1e-3*beta
+         temp = np.multiply(self.p1(X * beta), (1 - self.p1(X * beta)))
+         temp = np.tile(temp, (1, X.shape[1]))
+-        hessian = X.T * np.multiply(X, temp) + 1e-3*np.eye(X.shape[1])
++        hessian = X.T * np.multiply(1.231945806288158*X, temp) + 1e-3*np.eye(X.shape[1])
+         return grad, hessian
+
+     # newtonMethod
+
+# mutant 189
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -87,7 +87,7 @@
+         grad = - X.T * (y - self.p1(X * beta)) + 1e-3*beta
+         temp = np.multiply(self.p1(X * beta), (1 - self.p1(X * beta)))
+         temp = np.tile(temp, (1, X.shape[1]))
+-        hessian = X.T * np.multiply(X, temp) + 1e-3*np.eye(X.shape[1])
++        hessian = X.T * np.multiply(X-0.2223445887927479, temp) + 1e-3*np.eye(X.shape[1])
+         return grad, hessian
+
+     # newtonMethod
+
+# mutant 190
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -87,7 +87,7 @@
+         grad = - X.T * (y - self.p1(X * beta)) + 1e-3*beta
+         temp = np.multiply(self.p1(X * beta), (1 - self.p1(X * beta)))
+         temp = np.tile(temp, (1, X.shape[1]))
+-        hessian = X.T * np.multiply(X, temp) + 1e-3*np.eye(X.shape[1])
++        hessian = X.T * np.multiply(X,0.1602179372292819*temp) + 1e-3*np.eye(X.shape[1])
+         return grad, hessian
+
+     # newtonMethod
+
+# mutant 191
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -87,7 +87,7 @@
+         grad = - X.T * (y - self.p1(X * beta)) + 1e-3*beta
+         temp = np.multiply(self.p1(X * beta), (1 - self.p1(X * beta)))
+         temp = np.tile(temp, (1, X.shape[1]))
+-        hessian = X.T * np.multiply(X, temp) + 1e-3*np.eye(X.shape[1])
++        hessian = X.T * np.multiply(X,temp+0.1831174604244511) + 1e-3*np.eye(X.shape[1])
+         return grad, hessian
+
+     # newtonMethod
+
+# mutant 192
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -87,7 +87,7 @@
+         grad = - X.T * (y - self.p1(X * beta)) + 1e-3*beta
+         temp = np.multiply(self.p1(X * beta), (1 - self.p1(X * beta)))
+         temp = np.tile(temp, (1, X.shape[1]))
+-        hessian = X.T * np.multiply(X, temp) + 1e-3*np.eye(X.shape[1])
++        hessian = X.T * np.multiply(X, temp) - 1e-3*np.eye(X.shape[1])
+         return grad, hessian
+
+     # newtonMethod
+
+# mutant 193
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -87,7 +87,7 @@
+         grad = - X.T * (y - self.p1(X * beta)) + 1e-3*beta
+         temp = np.multiply(self.p1(X * beta), (1 - self.p1(X * beta)))
+         temp = np.tile(temp, (1, X.shape[1]))
+-        hessian = X.T * np.multiply(X, temp) + 1e-3*np.eye(X.shape[1])
++        hessian = X.T * np.multiply(X, temp) + -5.568266549741751*np.eye(X.shape[1])
+         return grad, hessian
+
+     # newtonMethod
+
+# mutant 198
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -91,7 +91,7 @@
+         return grad, hessian
+
+     # newtonMethod
+-    def fit(self, X_train, y_train, max_iter=1000, tol=1e-3):
++    def fit(self, X_train, y_train, max_iter=1000, tol=7.5223938821690846):
+         X = np.mat(X_train.copy())  # convert to NumPy matrix
+         y = np.mat(y_train.copy()).transpose()  # convert to NumPy matrix
+
+
+# mutant 201
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -96,7 +96,7 @@
+         y = np.mat(y_train.copy()).transpose()  # convert to NumPy matrix
+
+         # label -1 by 0 if exists
+-        y[y == -1] = 0
++        y[y != -1] = 0
+
+         m, n = np.shape(X)
+
+
+# mutant 202
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -96,7 +96,7 @@
+         y = np.mat(y_train.copy()).transpose()  # convert to NumPy matrix
+
+         # label -1 by 0 if exists
+-        y[y == -1] = 0
++        y[y == +1] = 0
+
+         m, n = np.shape(X)
+
+
+# mutant 203
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -96,7 +96,7 @@
+         y = np.mat(y_train.copy()).transpose()  # convert to NumPy matrix
+
+         # label -1 by 0 if exists
+-        y[y == -1] = 0
++        y[y == --3.25295792426353] = 0
+
+         m, n = np.shape(X)
+
+
+# mutant 204
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -96,7 +96,7 @@
+         y = np.mat(y_train.copy()).transpose()  # convert to NumPy matrix
+
+         # label -1 by 0 if exists
+-        y[y == -1] = 0
++        y[y == -1] = 4.952891760115813
+
+         m, n = np.shape(X)
+
+
+# mutant 215
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -106,7 +106,7 @@
+         w = np.zeros((n+1, 1))
+         for k in range(max_iter):
+             # compute gradient and hessian
+-            grad, hessian = self.delta(w, X, y)
++            grad, hessian = self.delta(0.43540513264797776*w, X, y)
+             # compute newton direction
+             # d = scipy.sparse.linalg.cg(hessian, grad)[0]
+             d = cg(hessian, grad)
+
+# mutant 216
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -106,7 +106,7 @@
+         w = np.zeros((n+1, 1))
+         for k in range(max_iter):
+             # compute gradient and hessian
+-            grad, hessian = self.delta(w, X, y)
++            grad, hessian = self.delta(w-0.35351114122282135, X, y)
+             # compute newton direction
+             # d = scipy.sparse.linalg.cg(hessian, grad)[0]
+             d = cg(hessian, grad)
+
+# mutant 217
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -106,7 +106,7 @@
+         w = np.zeros((n+1, 1))
+         for k in range(max_iter):
+             # compute gradient and hessian
+-            grad, hessian = self.delta(w, X, y)
++            grad, hessian = self.delta(w,2.591917485735908*X, y)
+             # compute newton direction
+             # d = scipy.sparse.linalg.cg(hessian, grad)[0]
+             d = cg(hessian, grad)
+
+# mutant 218
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -106,7 +106,7 @@
+         w = np.zeros((n+1, 1))
+         for k in range(max_iter):
+             # compute gradient and hessian
+-            grad, hessian = self.delta(w, X, y)
++            grad, hessian = self.delta(w,X-1.9141614009563133, y)
+             # compute newton direction
+             # d = scipy.sparse.linalg.cg(hessian, grad)[0]
+             d = cg(hessian, grad)
+
+# mutant 219
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -106,7 +106,7 @@
+         w = np.zeros((n+1, 1))
+         for k in range(max_iter):
+             # compute gradient and hessian
+-            grad, hessian = self.delta(w, X, y)
++            grad, hessian = self.delta(w, X,2.652684090080798*y)
+             # compute newton direction
+             # d = scipy.sparse.linalg.cg(hessian, grad)[0]
+             d = cg(hessian, grad)
+
+# mutant 220
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -106,7 +106,7 @@
+         w = np.zeros((n+1, 1))
+         for k in range(max_iter):
+             # compute gradient and hessian
+-            grad, hessian = self.delta(w, X, y)
++            grad, hessian = self.delta(w, X,y+3.300042304959267)
+             # compute newton direction
+             # d = scipy.sparse.linalg.cg(hessian, grad)[0]
+             d = cg(hessian, grad)
+
+# mutant 222
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -109,7 +109,7 @@
+             grad, hessian = self.delta(w, X, y)
+             # compute newton direction
+             # d = scipy.sparse.linalg.cg(hessian, grad)[0]
+-            d = cg(hessian, grad)
++            d = cg(-0.036365402664767066*hessian, grad)
+             d = d.reshape(-1, 1)
+             # update w
+             w = w - d
+
+# mutant 223
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -109,7 +109,7 @@
+             grad, hessian = self.delta(w, X, y)
+             # compute newton direction
+             # d = scipy.sparse.linalg.cg(hessian, grad)[0]
+-            d = cg(hessian, grad)
++            d = cg(hessian+1.6336753377913236, grad)
+             d = d.reshape(-1, 1)
+             # update w
+             w = w - d
+
+# mutant 225
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -109,7 +109,7 @@
+             grad, hessian = self.delta(w, X, y)
+             # compute newton direction
+             # d = scipy.sparse.linalg.cg(hessian, grad)[0]
+-            d = cg(hessian, grad)
++            d = cg(hessian,grad-0.17067118011638358)
+             d = d.reshape(-1, 1)
+             # update w
+             w = w - d
+
+# mutant 232
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -112,7 +112,7 @@
+             d = cg(hessian, grad)
+             d = d.reshape(-1, 1)
+             # update w
+-            w = w - d
++            w =1.9626000764498344*w - d
+             if np.linalg.norm(grad) < tol:
+                 break
+
+
+# mutant 233
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -112,7 +112,7 @@
+             d = cg(hessian, grad)
+             d = d.reshape(-1, 1)
+             # update w
+-            w = w - d
++            w =w+0.10356324370674111 - d
+             if np.linalg.norm(grad) < tol:
+                 break
+
+
+# mutant 234
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -112,7 +112,7 @@
+             d = cg(hessian, grad)
+             d = d.reshape(-1, 1)
+             # update w
+-            w = w - d
++            w = w -0.010894881396307676*d
+             if np.linalg.norm(grad) < tol:
+                 break
+
+
+# mutant 235
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -112,7 +112,7 @@
+             d = cg(hessian, grad)
+             d = d.reshape(-1, 1)
+             # update w
+-            w = w - d
++            w = w -d-1.2712270653069224
+             if np.linalg.norm(grad) < tol:
+                 break
+
+
+# mutant 237
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -113,7 +113,7 @@
+             d = d.reshape(-1, 1)
+             # update w
+             w = w - d
+-            if np.linalg.norm(grad) < tol:
++            if np.linalg.norm(grad) <= tol:
+                 break
+
+         if k == max_iter - 1:
+
+# mutant 238
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -114,7 +114,7 @@
+             # update w
+             w = w - d
+             if np.linalg.norm(grad) < tol:
+-                break
++                continue
+
+         if k == max_iter - 1:
+             print('convergence fail, the current norm of gradient is {}'.format(
+
+# mutant 239
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -116,7 +116,7 @@
+             if np.linalg.norm(grad) < tol:
+                 break
+
+-        if k == max_iter - 1:
++        if k != max_iter - 1:
+             print('convergence fail, the current norm of gradient is {}'.format(
+                 np.linalg.norm(grad)))
+
+
+# mutant 240
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -116,7 +116,7 @@
+             if np.linalg.norm(grad) < tol:
+                 break
+
+-        if k == max_iter - 1:
++        if k == max_iter + 1:
+             print('convergence fail, the current norm of gradient is {}'.format(
+                 np.linalg.norm(grad)))
+
+
+# mutant 241
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -116,7 +116,7 @@
+             if np.linalg.norm(grad) < tol:
+                 break
+
+-        if k == max_iter - 1:
++        if k == max_iter - -5.261114166661091:
+             print('convergence fail, the current norm of gradient is {}'.format(
+                 np.linalg.norm(grad)))
+
+
+# mutant 242
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -116,7 +116,7 @@
+             if np.linalg.norm(grad) < tol:
+                 break
+
+-        if k == max_iter - 1:
++        if k ==2.0287824371182053*max_iter - 1:
+             print('convergence fail, the current norm of gradient is {}'.format(
+                 np.linalg.norm(grad)))
+
+
+# mutant 243
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -116,7 +116,7 @@
+             if np.linalg.norm(grad) < tol:
+                 break
+
+-        if k == max_iter - 1:
++        if k ==max_iter-0.4951427689469856 - 1:
+             print('convergence fail, the current norm of gradient is {}'.format(
+                 np.linalg.norm(grad)))
+
+
+# mutant 244
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -117,7 +117,7 @@
+                 break
+
+         if k == max_iter - 1:
+-            print('convergence fail, the current norm of gradient is {}'.format(
++            print('XXconvergence fail, the current norm of gradient is {}XX'.format(
+                 np.linalg.norm(grad)))
+
+         w = np.array(w).flatten()
+
+# mutant 249
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -123,6 +123,6 @@
+         w = np.array(w).flatten()
+         b = w[n]
+         w = w[0:n]
+-        clf = Clf(w, b)
++        clf = Clf(1.2552283457315063*w, b)
+         return clf
+
+
+# mutant 250
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -123,6 +123,6 @@
+         w = np.array(w).flatten()
+         b = w[n]
+         w = w[0:n]
+-        clf = Clf(w, b)
++        clf = Clf(w+0.24882117685907987, b)
+         return clf
+
+
+# mutant 251
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -123,6 +123,6 @@
+         w = np.array(w).flatten()
+         b = w[n]
+         w = w[0:n]
+-        clf = Clf(w, b)
++        clf = Clf(w,0.8640244228516273*b)
+         return clf
+
+
+# mutant 252
+--- algorithms\Newton_gv.py
++++ algorithms\Newton_gv.py
+@@ -123,6 +123,6 @@
+         w = np.array(w).flatten()
+         b = w[n]
+         w = w[0:n]
+-        clf = Clf(w, b)
++        clf = Clf(w,b+0.020203768724394545)
+         return clf
+
+
+PS C:\Users\Kara\Documents\test_mutation>

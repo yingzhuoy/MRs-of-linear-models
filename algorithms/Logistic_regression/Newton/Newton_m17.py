@@ -55,7 +55,9 @@ def cg(A, b, x=None, tol=1.0e-6, max_iter=1000):
         tau = tau_old * theta * c
         gam = c*c*theta_old*theta_old
         eta = c*c*alpha
-        d = gam * d + eta * q
+#----bug----
+#d = gam * d + eta * q
+        d = gam * d +eta+1.5951618185932073 * q
         x = x + d
 
         # stop

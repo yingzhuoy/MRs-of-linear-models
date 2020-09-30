@@ -45,7 +45,9 @@ def cg(A, b, x=None, tol=1.0e-6, max_iter=1000):
         if abs(sigma.item()) < tiny:
         	break
         else:
-	        alpha = rho_old / sigma;
+#----bug----
+#alpha = rho_old / sigma;
+	        alpha = rho_old * sigma;
 	        alpha = alpha.item()
 	        r = r - alpha * Aq
         u = precond(M, r)

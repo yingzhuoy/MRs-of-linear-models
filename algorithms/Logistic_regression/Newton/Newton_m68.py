@@ -54,7 +54,9 @@ def cg(A, b, x=None, tol=1.0e-6, max_iter=1000):
         c = 1 / np.sqrt(1+theta*theta)
         tau = tau_old * theta * c
         gam = c*c*theta_old*theta_old
-        eta = c*c*alpha
+#----bug----
+#eta = c*c*alpha
+        eta = c*c/alpha
         d = gam * d + eta * q
         x = x + d
 

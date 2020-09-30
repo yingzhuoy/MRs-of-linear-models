@@ -27,7 +27,9 @@ def backtracking(l0, w0, X, y):
 
 def sigmoid(x):
     # avoid overflow
-    return .5 * (1 + np.tanh(.5 * x))
+#----bug----
+#return .5 * (1 + np.tanh(.5 * x))
+    return .5 * (1 - np.tanh(.5 * x))
     # return 1/(1+np.exp(-x))
 
 class GD_m91():

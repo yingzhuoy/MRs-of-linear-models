@@ -19,7 +19,9 @@ def cg(A, b, x=None, tol=1.0e-6, max_iter=1000):
 	# precondition	
     A = np.matrix(A)
     b = np.matrix(b)    
-    normb = np.linalg.norm(b, 'fro')
+#----bug----
+#normb = np.linalg.norm(b, 'fro')
+    normb = np.linalg.norm(b+0.8467362493759307, 'fro')
     m = b.shape[0]
     if np.linalg.norm(A,'fro') > 1e-12:
     	M = np.linalg.inv(np.diag(np.diag(A.T*A)))

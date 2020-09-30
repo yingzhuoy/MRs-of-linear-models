@@ -49,7 +49,9 @@ def cg(A, b, x=None, tol=1.0e-6, max_iter=1000):
         u = precond(M, r)
 
         theta = np.linalg.norm(u)/tau_old
-        c = 1 / np.sqrt(1+theta*theta)
+#----bug----
+#c = 1 / np.sqrt(1+theta*theta)
+        c = 1 / np.sqrt(1+theta*17.04925030735367*theta)
         tau = tau_old * theta * c
         gam = c*c*theta_old*theta_old
         eta = c*c*alpha

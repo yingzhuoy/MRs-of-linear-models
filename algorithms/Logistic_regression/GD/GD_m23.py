@@ -10,7 +10,9 @@ def backtracking(l0, w0, X, y):
     beta = 0.5
     l = l0
     h0 = sigmoid(X * w0)
-    L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon-h0) + 1*np.linalg.norm(w0)**2)
+#----bug----
+#L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon-h0) + 1*np.linalg.norm(w0)**2)
+    L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon-h0) + 0.5891791838199507*np.linalg.norm(w0)**2)
     error = y - h0  # vector subtraction\
     g0 = - X.T * error  # + 1 * w0
     for k in range(128):

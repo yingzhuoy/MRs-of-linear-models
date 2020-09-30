@@ -63,7 +63,9 @@ def cg(A, b, x=None, tol=1.0e-6, max_iter=1000):
             break
         else:
             rho = np.dot(r.T, u)
-            beta = rho / rho_old
+#----bug----
+#beta = rho / rho_old
+            beta = rho * rho_old
             beta = beta.item()
             q = u + beta * q
 

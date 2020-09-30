@@ -1,0 +1,1590 @@
+PS C:\Users\Kara\Documents\test_mutation> mutmut show all                                               To apply a mutant on disk:
+    mutmut apply <id>
+
+To show a mutant:
+    mutmut show <id>
+
+
+Timed out ⏰ (1)
+
+---- algorithms\GD_gv.py (1) ----
+
+# mutant 108
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -19,7 +19,7 @@
+         Lw = -(y.T * np.log(h+epsilon) + (1-y).T * np.log(1+epsilon-h) + 1*np.linalg.norm(wp)**2)
+         gt = (w0-wp) / l
+         if Lw > L0 - l *(g0.T*gt) + 0.5*l*gt.T*(gt):
+-            l = beta * l
++            l = beta / l
+         else:
+             break
+
+
+
+Survived 🎉 (120)
+
+---- algorithms\GD_gv.py (120) ----
+
+# mutant 1
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -1,7 +1,7 @@
+ from algorithms.clf import Clf
+ import numpy as np
+ import sys
+-sys.path.append(r'..')
++sys.path.append(r'XX..XX')
+
+ # gradAscent
+ def backtracking(l0, w0, X, y):
+
+# mutant 2
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -6,7 +6,7 @@
+ # gradAscent
+ def backtracking(l0, w0, X, y):
+     # update x
+-    epsilon = 1e-10
++    epsilon = 0.0011948608196167938
+     beta = 0.5
+     l = l0
+     h0 = sigmoid(X * w0)
+
+# mutant 4
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -7,7 +7,7 @@
+ def backtracking(l0, w0, X, y):
+     # update x
+     epsilon = 1e-10
+-    beta = 0.5
++    beta = 1.3518602348459483
+     l = l0
+     h0 = sigmoid(X * w0)
+     L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon-h0) + 1*np.linalg.norm(w0)**2)
+
+# mutant 9
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -10,7 +10,7 @@
+     beta = 0.5
+     l = l0
+     h0 = sigmoid(X * w0)
+-    L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon-h0) + 1*np.linalg.norm(w0)**2)
++    L0 = +(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon-h0) + 1*np.linalg.norm(w0)**2)
+     error = y - h0  # vector subtraction\
+     g0 = - X.T * error  # + 1 * w0
+     for k in range(128):
+
+# mutant 11
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -10,7 +10,7 @@
+     beta = 0.5
+     l = l0
+     h0 = sigmoid(X * w0)
+-    L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon-h0) + 1*np.linalg.norm(w0)**2)
++    L0 = -(y.T*np.log(h0-epsilon) + (1-y).T * np.log(1+epsilon-h0) + 1*np.linalg.norm(w0)**2)
+     error = y - h0  # vector subtraction\
+     g0 = - X.T * error  # + 1 * w0
+     for k in range(128):
+
+# mutant 12
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -10,7 +10,7 @@
+     beta = 0.5
+     l = l0
+     h0 = sigmoid(X * w0)
+-    L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon-h0) + 1*np.linalg.norm(w0)**2)
++    L0 = -(y.T*np.log(-18.65245244239943*h0+epsilon) + (1-y).T * np.log(1+epsilon-h0) + 1*np.linalg.norm(w0)**2)
+     error = y - h0  # vector subtraction\
+     g0 = - X.T * error  # + 1 * w0
+     for k in range(128):
+
+# mutant 13
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -10,7 +10,7 @@
+     beta = 0.5
+     l = l0
+     h0 = sigmoid(X * w0)
+-    L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon-h0) + 1*np.linalg.norm(w0)**2)
++    L0 = -(y.T*np.log(h0+15.002400010473387+epsilon) + (1-y).T * np.log(1+epsilon-h0) + 1*np.linalg.norm(w0)**2)
+     error = y - h0  # vector subtraction\
+     g0 = - X.T * error  # + 1 * w0
+     for k in range(128):
+
+# mutant 14
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -10,7 +10,7 @@
+     beta = 0.5
+     l = l0
+     h0 = sigmoid(X * w0)
+-    L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon-h0) + 1*np.linalg.norm(w0)**2)
++    L0 = -(y.T*np.log(h0+-2.359518725797057*epsilon) + (1-y).T * np.log(1+epsilon-h0) + 1*np.linalg.norm(w0)**2)
+     error = y - h0  # vector subtraction\
+     g0 = - X.T * error  # + 1 * w0
+     for k in range(128):
+
+# mutant 15
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -10,7 +10,7 @@
+     beta = 0.5
+     l = l0
+     h0 = sigmoid(X * w0)
+-    L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon-h0) + 1*np.linalg.norm(w0)**2)
++    L0 = -(y.T*np.log(h0+epsilon-5.486285236762086) + (1-y).T * np.log(1+epsilon-h0) + 1*np.linalg.norm(w0)**2)
+     error = y - h0  # vector subtraction\
+     g0 = - X.T * error  # + 1 * w0
+     for k in range(128):
+
+# mutant 16
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -10,7 +10,7 @@
+     beta = 0.5
+     l = l0
+     h0 = sigmoid(X * w0)
+-    L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon-h0) + 1*np.linalg.norm(w0)**2)
++    L0 = -(y.T*np.log(h0+epsilon) - (1-y).T * np.log(1+epsilon-h0) + 1*np.linalg.norm(w0)**2)
+     error = y - h0  # vector subtraction\
+     g0 = - X.T * error  # + 1 * w0
+     for k in range(128):
+
+# mutant 17
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -10,7 +10,7 @@
+     beta = 0.5
+     l = l0
+     h0 = sigmoid(X * w0)
+-    L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon-h0) + 1*np.linalg.norm(w0)**2)
++    L0 = -(y.T*np.log(h0+epsilon) + (0.884728033046844-y).T * np.log(1+epsilon-h0) + 1*np.linalg.norm(w0)**2)
+     error = y - h0  # vector subtraction\
+     g0 = - X.T * error  # + 1 * w0
+     for k in range(128):
+
+# mutant 18
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -10,7 +10,7 @@
+     beta = 0.5
+     l = l0
+     h0 = sigmoid(X * w0)
+-    L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon-h0) + 1*np.linalg.norm(w0)**2)
++    L0 = -(y.T*np.log(h0+epsilon) + (1+y).T * np.log(1+epsilon-h0) + 1*np.linalg.norm(w0)**2)
+     error = y - h0  # vector subtraction\
+     g0 = - X.T * error  # + 1 * w0
+     for k in range(128):
+
+# mutant 19
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -10,7 +10,7 @@
+     beta = 0.5
+     l = l0
+     h0 = sigmoid(X * w0)
+-    L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon-h0) + 1*np.linalg.norm(w0)**2)
++    L0 = -(y.T*np.log(h0+epsilon) + (1--4.398717978652794*y).T * np.log(1+epsilon-h0) + 1*np.linalg.norm(w0)**2)
+     error = y - h0  # vector subtraction\
+     g0 = - X.T * error  # + 1 * w0
+     for k in range(128):
+
+# mutant 20
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -10,7 +10,7 @@
+     beta = 0.5
+     l = l0
+     h0 = sigmoid(X * w0)
+-    L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon-h0) + 1*np.linalg.norm(w0)**2)
++    L0 = -(y.T*np.log(h0+epsilon) + (1-y+21.700609881820657).T * np.log(1+epsilon-h0) + 1*np.linalg.norm(w0)**2)
+     error = y - h0  # vector subtraction\
+     g0 = - X.T * error  # + 1 * w0
+     for k in range(128):
+
+# mutant 22
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -10,7 +10,7 @@
+     beta = 0.5
+     l = l0
+     h0 = sigmoid(X * w0)
+-    L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon-h0) + 1*np.linalg.norm(w0)**2)
++    L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(0.741498077012674+epsilon-h0) + 1*np.linalg.norm(w0)**2)
+     error = y - h0  # vector subtraction\
+     g0 = - X.T * error  # + 1 * w0
+     for k in range(128):
+
+# mutant 23
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -10,7 +10,7 @@
+     beta = 0.5
+     l = l0
+     h0 = sigmoid(X * w0)
+-    L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon-h0) + 1*np.linalg.norm(w0)**2)
++    L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1-epsilon-h0) + 1*np.linalg.norm(w0)**2)
+     error = y - h0  # vector subtraction\
+     g0 = - X.T * error  # + 1 * w0
+     for k in range(128):
+
+# mutant 24
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -10,7 +10,7 @@
+     beta = 0.5
+     l = l0
+     h0 = sigmoid(X * w0)
+-    L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon-h0) + 1*np.linalg.norm(w0)**2)
++    L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon+h0) + 1*np.linalg.norm(w0)**2)
+     error = y - h0  # vector subtraction\
+     g0 = - X.T * error  # + 1 * w0
+     for k in range(128):
+
+# mutant 25
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -10,7 +10,7 @@
+     beta = 0.5
+     l = l0
+     h0 = sigmoid(X * w0)
+-    L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon-h0) + 1*np.linalg.norm(w0)**2)
++    L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+-7.148773624195613*epsilon-h0) + 1*np.linalg.norm(w0)**2)
+     error = y - h0  # vector subtraction\
+     g0 = - X.T * error  # + 1 * w0
+     for k in range(128):
+
+# mutant 26
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -10,7 +10,7 @@
+     beta = 0.5
+     l = l0
+     h0 = sigmoid(X * w0)
+-    L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon-h0) + 1*np.linalg.norm(w0)**2)
++    L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon+14.530909891556174-h0) + 1*np.linalg.norm(w0)**2)
+     error = y - h0  # vector subtraction\
+     g0 = - X.T * error  # + 1 * w0
+     for k in range(128):
+
+# mutant 27
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -10,7 +10,7 @@
+     beta = 0.5
+     l = l0
+     h0 = sigmoid(X * w0)
+-    L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon-h0) + 1*np.linalg.norm(w0)**2)
++    L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon-15.166591724904865*h0) + 1*np.linalg.norm(w0)**2)
+     error = y - h0  # vector subtraction\
+     g0 = - X.T * error  # + 1 * w0
+     for k in range(128):
+
+# mutant 28
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -10,7 +10,7 @@
+     beta = 0.5
+     l = l0
+     h0 = sigmoid(X * w0)
+-    L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon-h0) + 1*np.linalg.norm(w0)**2)
++    L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon-h0+10.871474825736033) + 1*np.linalg.norm(w0)**2)
+     error = y - h0  # vector subtraction\
+     g0 = - X.T * error  # + 1 * w0
+     for k in range(128):
+
+# mutant 29
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -10,7 +10,7 @@
+     beta = 0.5
+     l = l0
+     h0 = sigmoid(X * w0)
+-    L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon-h0) + 1*np.linalg.norm(w0)**2)
++    L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon-h0) - 1*np.linalg.norm(w0)**2)
+     error = y - h0  # vector subtraction\
+     g0 = - X.T * error  # + 1 * w0
+     for k in range(128):
+
+# mutant 30
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -10,7 +10,7 @@
+     beta = 0.5
+     l = l0
+     h0 = sigmoid(X * w0)
+-    L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon-h0) + 1*np.linalg.norm(w0)**2)
++    L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon-h0) + 0.5891791838199507*np.linalg.norm(w0)**2)
+     error = y - h0  # vector subtraction\
+     g0 = - X.T * error  # + 1 * w0
+     for k in range(128):
+
+# mutant 31
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -10,7 +10,7 @@
+     beta = 0.5
+     l = l0
+     h0 = sigmoid(X * w0)
+-    L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon-h0) + 1*np.linalg.norm(w0)**2)
++    L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon-h0) + 1/np.linalg.norm(w0)**2)
+     error = y - h0  # vector subtraction\
+     g0 = - X.T * error  # + 1 * w0
+     for k in range(128):
+
+# mutant 32
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -10,7 +10,7 @@
+     beta = 0.5
+     l = l0
+     h0 = sigmoid(X * w0)
+-    L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon-h0) + 1*np.linalg.norm(w0)**2)
++    L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon-h0) + 1*np.linalg.norm(w0)*2)
+     error = y - h0  # vector subtraction\
+     g0 = - X.T * error  # + 1 * w0
+     for k in range(128):
+
+# mutant 33
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -10,7 +10,7 @@
+     beta = 0.5
+     l = l0
+     h0 = sigmoid(X * w0)
+-    L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon-h0) + 1*np.linalg.norm(w0)**2)
++    L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon-h0) + 1*np.linalg.norm(w0)**1.8459190975556639)
+     error = y - h0  # vector subtraction\
+     g0 = - X.T * error  # + 1 * w0
+     for k in range(128):
+
+# mutant 35
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -11,7 +11,7 @@
+     l = l0
+     h0 = sigmoid(X * w0)
+     L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon-h0) + 1*np.linalg.norm(w0)**2)
+-    error = y - h0  # vector subtraction\
++    error = y + h0  # vector subtraction\
+     g0 = - X.T * error  # + 1 * w0
+     for k in range(128):
+         wp = w0 - l * g0
+
+# mutant 36
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -11,7 +11,7 @@
+     l = l0
+     h0 = sigmoid(X * w0)
+     L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon-h0) + 1*np.linalg.norm(w0)**2)
+-    error = y - h0  # vector subtraction\
++    error =3.7783382140034987*y - h0  # vector subtraction\
+     g0 = - X.T * error  # + 1 * w0
+     for k in range(128):
+         wp = w0 - l * g0
+
+# mutant 37
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -11,7 +11,7 @@
+     l = l0
+     h0 = sigmoid(X * w0)
+     L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon-h0) + 1*np.linalg.norm(w0)**2)
+-    error = y - h0  # vector subtraction\
++    error =y+1.2100911773974286 - h0  # vector subtraction\
+     g0 = - X.T * error  # + 1 * w0
+     for k in range(128):
+         wp = w0 - l * g0
+
+# mutant 38
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -11,7 +11,7 @@
+     l = l0
+     h0 = sigmoid(X * w0)
+     L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon-h0) + 1*np.linalg.norm(w0)**2)
+-    error = y - h0  # vector subtraction\
++    error = y -25.89188691400491*h0  # vector subtraction\
+     g0 = - X.T * error  # + 1 * w0
+     for k in range(128):
+         wp = w0 - l * g0
+
+# mutant 39
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -11,7 +11,7 @@
+     l = l0
+     h0 = sigmoid(X * w0)
+     L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon-h0) + 1*np.linalg.norm(w0)**2)
+-    error = y - h0  # vector subtraction\
++    error = y -h0+0.11545729466312867  # vector subtraction\
+     g0 = - X.T * error  # + 1 * w0
+     for k in range(128):
+         wp = w0 - l * g0
+
+# mutant 41
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -12,7 +12,7 @@
+     h0 = sigmoid(X * w0)
+     L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon-h0) + 1*np.linalg.norm(w0)**2)
+     error = y - h0  # vector subtraction\
+-    g0 = - X.T * error  # + 1 * w0
++    g0 = + X.T * error  # + 1 * w0
+     for k in range(128):
+         wp = w0 - l * g0
+         h = sigmoid(X * wp)
+
+# mutant 45
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -14,7 +14,7 @@
+     error = y - h0  # vector subtraction\
+     g0 = - X.T * error  # + 1 * w0
+     for k in range(128):
+-        wp = w0 - l * g0
++        wp = w0 + l * g0
+         h = sigmoid(X * wp)
+         Lw = -(y.T * np.log(h+epsilon) + (1-y).T * np.log(1+epsilon-h) + 1*np.linalg.norm(wp)**2)
+         gt = (w0-wp) / l
+
+# mutant 46
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -14,7 +14,7 @@
+     error = y - h0  # vector subtraction\
+     g0 = - X.T * error  # + 1 * w0
+     for k in range(128):
+-        wp = w0 - l * g0
++        wp = w0 - l / g0
+         h = sigmoid(X * wp)
+         Lw = -(y.T * np.log(h+epsilon) + (1-y).T * np.log(1+epsilon-h) + 1*np.linalg.norm(wp)**2)
+         gt = (w0-wp) / l
+
+# mutant 47
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -14,7 +14,7 @@
+     error = y - h0  # vector subtraction\
+     g0 = - X.T * error  # + 1 * w0
+     for k in range(128):
+-        wp = w0 - l * g0
++        wp =16.624592743349297*w0 - l * g0
+         h = sigmoid(X * wp)
+         Lw = -(y.T * np.log(h+epsilon) + (1-y).T * np.log(1+epsilon-h) + 1*np.linalg.norm(wp)**2)
+         gt = (w0-wp) / l
+
+# mutant 48
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -14,7 +14,7 @@
+     error = y - h0  # vector subtraction\
+     g0 = - X.T * error  # + 1 * w0
+     for k in range(128):
+-        wp = w0 - l * g0
++        wp =w0-9.570486082841146 - l * g0
+         h = sigmoid(X * wp)
+         Lw = -(y.T * np.log(h+epsilon) + (1-y).T * np.log(1+epsilon-h) + 1*np.linalg.norm(wp)**2)
+         gt = (w0-wp) / l
+
+# mutant 49
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -14,7 +14,7 @@
+     error = y - h0  # vector subtraction\
+     g0 = - X.T * error  # + 1 * w0
+     for k in range(128):
+-        wp = w0 - l * g0
++        wp = w0 --12.248307808290889*l * g0
+         h = sigmoid(X * wp)
+         Lw = -(y.T * np.log(h+epsilon) + (1-y).T * np.log(1+epsilon-h) + 1*np.linalg.norm(wp)**2)
+         gt = (w0-wp) / l
+
+# mutant 50
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -14,7 +14,7 @@
+     error = y - h0  # vector subtraction\
+     g0 = - X.T * error  # + 1 * w0
+     for k in range(128):
+-        wp = w0 - l * g0
++        wp = w0 -l+1.737056394295835 * g0
+         h = sigmoid(X * wp)
+         Lw = -(y.T * np.log(h+epsilon) + (1-y).T * np.log(1+epsilon-h) + 1*np.linalg.norm(wp)**2)
+         gt = (w0-wp) / l
+
+# mutant 51
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -14,7 +14,7 @@
+     error = y - h0  # vector subtraction\
+     g0 = - X.T * error  # + 1 * w0
+     for k in range(128):
+-        wp = w0 - l * g0
++        wp = w0 - l *17.202923426133115*g0
+         h = sigmoid(X * wp)
+         Lw = -(y.T * np.log(h+epsilon) + (1-y).T * np.log(1+epsilon-h) + 1*np.linalg.norm(wp)**2)
+         gt = (w0-wp) / l
+
+# mutant 52
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -14,7 +14,7 @@
+     error = y - h0  # vector subtraction\
+     g0 = - X.T * error  # + 1 * w0
+     for k in range(128):
+-        wp = w0 - l * g0
++        wp = w0 - l *g0-5.993023671185567
+         h = sigmoid(X * wp)
+         Lw = -(y.T * np.log(h+epsilon) + (1-y).T * np.log(1+epsilon-h) + 1*np.linalg.norm(wp)**2)
+         gt = (w0-wp) / l
+
+# mutant 56
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -16,7 +16,7 @@
+     for k in range(128):
+         wp = w0 - l * g0
+         h = sigmoid(X * wp)
+-        Lw = -(y.T * np.log(h+epsilon) + (1-y).T * np.log(1+epsilon-h) + 1*np.linalg.norm(wp)**2)
++        Lw = +(y.T * np.log(h+epsilon) + (1-y).T * np.log(1+epsilon-h) + 1*np.linalg.norm(wp)**2)
+         gt = (w0-wp) / l
+         if Lw > L0 - l *(g0.T*gt) + 0.5*l*gt.T*(gt):
+             l = beta * l
+
+# mutant 58
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -16,7 +16,7 @@
+     for k in range(128):
+         wp = w0 - l * g0
+         h = sigmoid(X * wp)
+-        Lw = -(y.T * np.log(h+epsilon) + (1-y).T * np.log(1+epsilon-h) + 1*np.linalg.norm(wp)**2)
++        Lw = -(y.T * np.log(h-epsilon) + (1-y).T * np.log(1+epsilon-h) + 1*np.linalg.norm(wp)**2)
+         gt = (w0-wp) / l
+         if Lw > L0 - l *(g0.T*gt) + 0.5*l*gt.T*(gt):
+             l = beta * l
+
+# mutant 59
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -16,7 +16,7 @@
+     for k in range(128):
+         wp = w0 - l * g0
+         h = sigmoid(X * wp)
+-        Lw = -(y.T * np.log(h+epsilon) + (1-y).T * np.log(1+epsilon-h) + 1*np.linalg.norm(wp)**2)
++        Lw = -(y.T * np.log(10.28190162603356*h+epsilon) + (1-y).T * np.log(1+epsilon-h) + 1*np.linalg.norm(wp)**2)
+         gt = (w0-wp) / l
+         if Lw > L0 - l *(g0.T*gt) + 0.5*l*gt.T*(gt):
+             l = beta * l
+
+# mutant 60
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -16,7 +16,7 @@
+     for k in range(128):
+         wp = w0 - l * g0
+         h = sigmoid(X * wp)
+-        Lw = -(y.T * np.log(h+epsilon) + (1-y).T * np.log(1+epsilon-h) + 1*np.linalg.norm(wp)**2)
++        Lw = -(y.T * np.log(h+3.996243650472464+epsilon) + (1-y).T * np.log(1+epsilon-h) + 1*np.linalg.norm(wp)**2)
+         gt = (w0-wp) / l
+         if Lw > L0 - l *(g0.T*gt) + 0.5*l*gt.T*(gt):
+             l = beta * l
+
+# mutant 61
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -16,7 +16,7 @@
+     for k in range(128):
+         wp = w0 - l * g0
+         h = sigmoid(X * wp)
+-        Lw = -(y.T * np.log(h+epsilon) + (1-y).T * np.log(1+epsilon-h) + 1*np.linalg.norm(wp)**2)
++        Lw = -(y.T * np.log(h+-21.353849208769333*epsilon) + (1-y).T * np.log(1+epsilon-h) + 1*np.linalg.norm(wp)**2)
+         gt = (w0-wp) / l
+         if Lw > L0 - l *(g0.T*gt) + 0.5*l*gt.T*(gt):
+             l = beta * l
+
+# mutant 62
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -16,7 +16,7 @@
+     for k in range(128):
+         wp = w0 - l * g0
+         h = sigmoid(X * wp)
+-        Lw = -(y.T * np.log(h+epsilon) + (1-y).T * np.log(1+epsilon-h) + 1*np.linalg.norm(wp)**2)
++        Lw = -(y.T * np.log(h+epsilon-5.502990402583039) + (1-y).T * np.log(1+epsilon-h) + 1*np.linalg.norm(wp)**2)
+         gt = (w0-wp) / l
+         if Lw > L0 - l *(g0.T*gt) + 0.5*l*gt.T*(gt):
+             l = beta * l
+
+# mutant 63
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -16,7 +16,7 @@
+     for k in range(128):
+         wp = w0 - l * g0
+         h = sigmoid(X * wp)
+-        Lw = -(y.T * np.log(h+epsilon) + (1-y).T * np.log(1+epsilon-h) + 1*np.linalg.norm(wp)**2)
++        Lw = -(y.T * np.log(h+epsilon) - (1-y).T * np.log(1+epsilon-h) + 1*np.linalg.norm(wp)**2)
+         gt = (w0-wp) / l
+         if Lw > L0 - l *(g0.T*gt) + 0.5*l*gt.T*(gt):
+             l = beta * l
+
+# mutant 64
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -16,7 +16,7 @@
+     for k in range(128):
+         wp = w0 - l * g0
+         h = sigmoid(X * wp)
+-        Lw = -(y.T * np.log(h+epsilon) + (1-y).T * np.log(1+epsilon-h) + 1*np.linalg.norm(wp)**2)
++        Lw = -(y.T * np.log(h+epsilon) + (1.2765902520836097-y).T * np.log(1+epsilon-h) + 1*np.linalg.norm(wp)**2)
+         gt = (w0-wp) / l
+         if Lw > L0 - l *(g0.T*gt) + 0.5*l*gt.T*(gt):
+             l = beta * l
+
+# mutant 65
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -16,7 +16,7 @@
+     for k in range(128):
+         wp = w0 - l * g0
+         h = sigmoid(X * wp)
+-        Lw = -(y.T * np.log(h+epsilon) + (1-y).T * np.log(1+epsilon-h) + 1*np.linalg.norm(wp)**2)
++        Lw = -(y.T * np.log(h+epsilon) + (1+y).T * np.log(1+epsilon-h) + 1*np.linalg.norm(wp)**2)
+         gt = (w0-wp) / l
+         if Lw > L0 - l *(g0.T*gt) + 0.5*l*gt.T*(gt):
+             l = beta * l
+
+# mutant 66
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -16,7 +16,7 @@
+     for k in range(128):
+         wp = w0 - l * g0
+         h = sigmoid(X * wp)
+-        Lw = -(y.T * np.log(h+epsilon) + (1-y).T * np.log(1+epsilon-h) + 1*np.linalg.norm(wp)**2)
++        Lw = -(y.T * np.log(h+epsilon) + (1-8.149475020239397*y).T * np.log(1+epsilon-h) + 1*np.linalg.norm(wp)**2)
+         gt = (w0-wp) / l
+         if Lw > L0 - l *(g0.T*gt) + 0.5*l*gt.T*(gt):
+             l = beta * l
+
+# mutant 67
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -16,7 +16,7 @@
+     for k in range(128):
+         wp = w0 - l * g0
+         h = sigmoid(X * wp)
+-        Lw = -(y.T * np.log(h+epsilon) + (1-y).T * np.log(1+epsilon-h) + 1*np.linalg.norm(wp)**2)
++        Lw = -(y.T * np.log(h+epsilon) + (1-y-13.159128405030335).T * np.log(1+epsilon-h) + 1*np.linalg.norm(wp)**2)
+         gt = (w0-wp) / l
+         if Lw > L0 - l *(g0.T*gt) + 0.5*l*gt.T*(gt):
+             l = beta * l
+
+# mutant 69
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -16,7 +16,7 @@
+     for k in range(128):
+         wp = w0 - l * g0
+         h = sigmoid(X * wp)
+-        Lw = -(y.T * np.log(h+epsilon) + (1-y).T * np.log(1+epsilon-h) + 1*np.linalg.norm(wp)**2)
++        Lw = -(y.T * np.log(h+epsilon) + (1-y).T * np.log(0.8822312640959488+epsilon-h) + 1*np.linalg.norm(wp)**2)
+         gt = (w0-wp) / l
+         if Lw > L0 - l *(g0.T*gt) + 0.5*l*gt.T*(gt):
+             l = beta * l
+
+# mutant 70
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -16,7 +16,7 @@
+     for k in range(128):
+         wp = w0 - l * g0
+         h = sigmoid(X * wp)
+-        Lw = -(y.T * np.log(h+epsilon) + (1-y).T * np.log(1+epsilon-h) + 1*np.linalg.norm(wp)**2)
++        Lw = -(y.T * np.log(h+epsilon) + (1-y).T * np.log(1-epsilon-h) + 1*np.linalg.norm(wp)**2)
+         gt = (w0-wp) / l
+         if Lw > L0 - l *(g0.T*gt) + 0.5*l*gt.T*(gt):
+             l = beta * l
+
+# mutant 71
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -16,7 +16,7 @@
+     for k in range(128):
+         wp = w0 - l * g0
+         h = sigmoid(X * wp)
+-        Lw = -(y.T * np.log(h+epsilon) + (1-y).T * np.log(1+epsilon-h) + 1*np.linalg.norm(wp)**2)
++        Lw = -(y.T * np.log(h+epsilon) + (1-y).T * np.log(1+epsilon+h) + 1*np.linalg.norm(wp)**2)
+         gt = (w0-wp) / l
+         if Lw > L0 - l *(g0.T*gt) + 0.5*l*gt.T*(gt):
+             l = beta * l
+
+# mutant 72
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -16,7 +16,7 @@
+     for k in range(128):
+         wp = w0 - l * g0
+         h = sigmoid(X * wp)
+-        Lw = -(y.T * np.log(h+epsilon) + (1-y).T * np.log(1+epsilon-h) + 1*np.linalg.norm(wp)**2)
++        Lw = -(y.T * np.log(h+epsilon) + (1-y).T * np.log(1+-8.7129751112029*epsilon-h) + 1*np.linalg.norm(wp)**2)
+         gt = (w0-wp) / l
+         if Lw > L0 - l *(g0.T*gt) + 0.5*l*gt.T*(gt):
+             l = beta * l
+
+# mutant 73
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -16,7 +16,7 @@
+     for k in range(128):
+         wp = w0 - l * g0
+         h = sigmoid(X * wp)
+-        Lw = -(y.T * np.log(h+epsilon) + (1-y).T * np.log(1+epsilon-h) + 1*np.linalg.norm(wp)**2)
++        Lw = -(y.T * np.log(h+epsilon) + (1-y).T * np.log(1+epsilon+12.282675801686672-h) + 1*np.linalg.norm(wp)**2)
+         gt = (w0-wp) / l
+         if Lw > L0 - l *(g0.T*gt) + 0.5*l*gt.T*(gt):
+             l = beta * l
+
+# mutant 74
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -16,7 +16,7 @@
+     for k in range(128):
+         wp = w0 - l * g0
+         h = sigmoid(X * wp)
+-        Lw = -(y.T * np.log(h+epsilon) + (1-y).T * np.log(1+epsilon-h) + 1*np.linalg.norm(wp)**2)
++        Lw = -(y.T * np.log(h+epsilon) + (1-y).T * np.log(1+epsilon--3.9229257630485943*h) + 1*np.linalg.norm(wp)**2)
+         gt = (w0-wp) / l
+         if Lw > L0 - l *(g0.T*gt) + 0.5*l*gt.T*(gt):
+             l = beta * l
+
+# mutant 75
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -16,7 +16,7 @@
+     for k in range(128):
+         wp = w0 - l * g0
+         h = sigmoid(X * wp)
+-        Lw = -(y.T * np.log(h+epsilon) + (1-y).T * np.log(1+epsilon-h) + 1*np.linalg.norm(wp)**2)
++        Lw = -(y.T * np.log(h+epsilon) + (1-y).T * np.log(1+epsilon-h+10.768390357425456) + 1*np.linalg.norm(wp)**2)
+         gt = (w0-wp) / l
+         if Lw > L0 - l *(g0.T*gt) + 0.5*l*gt.T*(gt):
+             l = beta * l
+
+# mutant 76
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -16,7 +16,7 @@
+     for k in range(128):
+         wp = w0 - l * g0
+         h = sigmoid(X * wp)
+-        Lw = -(y.T * np.log(h+epsilon) + (1-y).T * np.log(1+epsilon-h) + 1*np.linalg.norm(wp)**2)
++        Lw = -(y.T * np.log(h+epsilon) + (1-y).T * np.log(1+epsilon-h) - 1*np.linalg.norm(wp)**2)
+         gt = (w0-wp) / l
+         if Lw > L0 - l *(g0.T*gt) + 0.5*l*gt.T*(gt):
+             l = beta * l
+
+# mutant 77
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -16,7 +16,7 @@
+     for k in range(128):
+         wp = w0 - l * g0
+         h = sigmoid(X * wp)
+-        Lw = -(y.T * np.log(h+epsilon) + (1-y).T * np.log(1+epsilon-h) + 1*np.linalg.norm(wp)**2)
++        Lw = -(y.T * np.log(h+epsilon) + (1-y).T * np.log(1+epsilon-h) + 0.9143852061340949*np.linalg.norm(wp)**2)
+         gt = (w0-wp) / l
+         if Lw > L0 - l *(g0.T*gt) + 0.5*l*gt.T*(gt):
+             l = beta * l
+
+# mutant 78
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -16,7 +16,7 @@
+     for k in range(128):
+         wp = w0 - l * g0
+         h = sigmoid(X * wp)
+-        Lw = -(y.T * np.log(h+epsilon) + (1-y).T * np.log(1+epsilon-h) + 1*np.linalg.norm(wp)**2)
++        Lw = -(y.T * np.log(h+epsilon) + (1-y).T * np.log(1+epsilon-h) + 1/np.linalg.norm(wp)**2)
+         gt = (w0-wp) / l
+         if Lw > L0 - l *(g0.T*gt) + 0.5*l*gt.T*(gt):
+             l = beta * l
+
+# mutant 79
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -16,7 +16,7 @@
+     for k in range(128):
+         wp = w0 - l * g0
+         h = sigmoid(X * wp)
+-        Lw = -(y.T * np.log(h+epsilon) + (1-y).T * np.log(1+epsilon-h) + 1*np.linalg.norm(wp)**2)
++        Lw = -(y.T * np.log(h+epsilon) + (1-y).T * np.log(1+epsilon-h) + 1*np.linalg.norm(wp)*2)
+         gt = (w0-wp) / l
+         if Lw > L0 - l *(g0.T*gt) + 0.5*l*gt.T*(gt):
+             l = beta * l
+
+# mutant 80
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -16,7 +16,7 @@
+     for k in range(128):
+         wp = w0 - l * g0
+         h = sigmoid(X * wp)
+-        Lw = -(y.T * np.log(h+epsilon) + (1-y).T * np.log(1+epsilon-h) + 1*np.linalg.norm(wp)**2)
++        Lw = -(y.T * np.log(h+epsilon) + (1-y).T * np.log(1+epsilon-h) + 1*np.linalg.norm(wp)**2.532910947662426)
+         gt = (w0-wp) / l
+         if Lw > L0 - l *(g0.T*gt) + 0.5*l*gt.T*(gt):
+             l = beta * l
+
+# mutant 82
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -17,7 +17,7 @@
+         wp = w0 - l * g0
+         h = sigmoid(X * wp)
+         Lw = -(y.T * np.log(h+epsilon) + (1-y).T * np.log(1+epsilon-h) + 1*np.linalg.norm(wp)**2)
+-        gt = (w0-wp) / l
++        gt = (w0+wp) / l
+         if Lw > L0 - l *(g0.T*gt) + 0.5*l*gt.T*(gt):
+             l = beta * l
+         else:
+
+# mutant 83
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -17,7 +17,7 @@
+         wp = w0 - l * g0
+         h = sigmoid(X * wp)
+         Lw = -(y.T * np.log(h+epsilon) + (1-y).T * np.log(1+epsilon-h) + 1*np.linalg.norm(wp)**2)
+-        gt = (w0-wp) / l
++        gt = (11.24859144671063*w0-wp) / l
+         if Lw > L0 - l *(g0.T*gt) + 0.5*l*gt.T*(gt):
+             l = beta * l
+         else:
+
+# mutant 84
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -17,7 +17,7 @@
+         wp = w0 - l * g0
+         h = sigmoid(X * wp)
+         Lw = -(y.T * np.log(h+epsilon) + (1-y).T * np.log(1+epsilon-h) + 1*np.linalg.norm(wp)**2)
+-        gt = (w0-wp) / l
++        gt = (w0-22.83775222896115-wp) / l
+         if Lw > L0 - l *(g0.T*gt) + 0.5*l*gt.T*(gt):
+             l = beta * l
+         else:
+
+# mutant 85
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -17,7 +17,7 @@
+         wp = w0 - l * g0
+         h = sigmoid(X * wp)
+         Lw = -(y.T * np.log(h+epsilon) + (1-y).T * np.log(1+epsilon-h) + 1*np.linalg.norm(wp)**2)
+-        gt = (w0-wp) / l
++        gt = (w0--14.691838730473163*wp) / l
+         if Lw > L0 - l *(g0.T*gt) + 0.5*l*gt.T*(gt):
+             l = beta * l
+         else:
+
+# mutant 86
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -17,7 +17,7 @@
+         wp = w0 - l * g0
+         h = sigmoid(X * wp)
+         Lw = -(y.T * np.log(h+epsilon) + (1-y).T * np.log(1+epsilon-h) + 1*np.linalg.norm(wp)**2)
+-        gt = (w0-wp) / l
++        gt = (w0-wp-13.457567191697567) / l
+         if Lw > L0 - l *(g0.T*gt) + 0.5*l*gt.T*(gt):
+             l = beta * l
+         else:
+
+# mutant 87
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -17,7 +17,7 @@
+         wp = w0 - l * g0
+         h = sigmoid(X * wp)
+         Lw = -(y.T * np.log(h+epsilon) + (1-y).T * np.log(1+epsilon-h) + 1*np.linalg.norm(wp)**2)
+-        gt = (w0-wp) / l
++        gt = (w0-wp) * l
+         if Lw > L0 - l *(g0.T*gt) + 0.5*l*gt.T*(gt):
+             l = beta * l
+         else:
+
+# mutant 89
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -18,7 +18,7 @@
+         h = sigmoid(X * wp)
+         Lw = -(y.T * np.log(h+epsilon) + (1-y).T * np.log(1+epsilon-h) + 1*np.linalg.norm(wp)**2)
+         gt = (w0-wp) / l
+-        if Lw > L0 - l *(g0.T*gt) + 0.5*l*gt.T*(gt):
++        if Lw >= L0 - l *(g0.T*gt) + 0.5*l*gt.T*(gt):
+             l = beta * l
+         else:
+             break
+
+# mutant 90
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -18,7 +18,7 @@
+         h = sigmoid(X * wp)
+         Lw = -(y.T * np.log(h+epsilon) + (1-y).T * np.log(1+epsilon-h) + 1*np.linalg.norm(wp)**2)
+         gt = (w0-wp) / l
+-        if Lw > L0 - l *(g0.T*gt) + 0.5*l*gt.T*(gt):
++        if Lw > L0 + l *(g0.T*gt) + 0.5*l*gt.T*(gt):
+             l = beta * l
+         else:
+             break
+
+# mutant 91
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -18,7 +18,7 @@
+         h = sigmoid(X * wp)
+         Lw = -(y.T * np.log(h+epsilon) + (1-y).T * np.log(1+epsilon-h) + 1*np.linalg.norm(wp)**2)
+         gt = (w0-wp) / l
+-        if Lw > L0 - l *(g0.T*gt) + 0.5*l*gt.T*(gt):
++        if Lw > L0 - l /(g0.T*gt) + 0.5*l*gt.T*(gt):
+             l = beta * l
+         else:
+             break
+
+# mutant 93
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -18,7 +18,7 @@
+         h = sigmoid(X * wp)
+         Lw = -(y.T * np.log(h+epsilon) + (1-y).T * np.log(1+epsilon-h) + 1*np.linalg.norm(wp)**2)
+         gt = (w0-wp) / l
+-        if Lw > L0 - l *(g0.T*gt) + 0.5*l*gt.T*(gt):
++        if Lw > L0 - l *(g0.T*gt) - 0.5*l*gt.T*(gt):
+             l = beta * l
+         else:
+             break
+
+# mutant 94
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -18,7 +18,7 @@
+         h = sigmoid(X * wp)
+         Lw = -(y.T * np.log(h+epsilon) + (1-y).T * np.log(1+epsilon-h) + 1*np.linalg.norm(wp)**2)
+         gt = (w0-wp) / l
+-        if Lw > L0 - l *(g0.T*gt) + 0.5*l*gt.T*(gt):
++        if Lw > L0 - l *(g0.T*gt) + 0.8491976321284496*l*gt.T*(gt):
+             l = beta * l
+         else:
+             break
+
+# mutant 95
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -18,7 +18,7 @@
+         h = sigmoid(X * wp)
+         Lw = -(y.T * np.log(h+epsilon) + (1-y).T * np.log(1+epsilon-h) + 1*np.linalg.norm(wp)**2)
+         gt = (w0-wp) / l
+-        if Lw > L0 - l *(g0.T*gt) + 0.5*l*gt.T*(gt):
++        if Lw > L0 - l *(g0.T*gt) + 0.5/l*gt.T*(gt):
+             l = beta * l
+         else:
+             break
+
+# mutant 96
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -18,7 +18,7 @@
+         h = sigmoid(X * wp)
+         Lw = -(y.T * np.log(h+epsilon) + (1-y).T * np.log(1+epsilon-h) + 1*np.linalg.norm(wp)**2)
+         gt = (w0-wp) / l
+-        if Lw > L0 - l *(g0.T*gt) + 0.5*l*gt.T*(gt):
++        if Lw > L0 - l *(g0.T*gt) + 0.5*l/gt.T*(gt):
+             l = beta * l
+         else:
+             break
+
+# mutant 98
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -18,7 +18,7 @@
+         h = sigmoid(X * wp)
+         Lw = -(y.T * np.log(h+epsilon) + (1-y).T * np.log(1+epsilon-h) + 1*np.linalg.norm(wp)**2)
+         gt = (w0-wp) / l
+-        if Lw > L0 - l *(g0.T*gt) + 0.5*l*gt.T*(gt):
++        if Lw >8.115162619093567*L0 - l *(g0.T*gt) + 0.5*l*gt.T*(gt):
+             l = beta * l
+         else:
+             break
+
+# mutant 99
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -18,7 +18,7 @@
+         h = sigmoid(X * wp)
+         Lw = -(y.T * np.log(h+epsilon) + (1-y).T * np.log(1+epsilon-h) + 1*np.linalg.norm(wp)**2)
+         gt = (w0-wp) / l
+-        if Lw > L0 - l *(g0.T*gt) + 0.5*l*gt.T*(gt):
++        if Lw >L0+2.5553901446507394 - l *(g0.T*gt) + 0.5*l*gt.T*(gt):
+             l = beta * l
+         else:
+             break
+
+# mutant 100
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -18,7 +18,7 @@
+         h = sigmoid(X * wp)
+         Lw = -(y.T * np.log(h+epsilon) + (1-y).T * np.log(1+epsilon-h) + 1*np.linalg.norm(wp)**2)
+         gt = (w0-wp) / l
+-        if Lw > L0 - l *(g0.T*gt) + 0.5*l*gt.T*(gt):
++        if Lw > L0 --2.0846523081756745*l *(g0.T*gt) + 0.5*l*gt.T*(gt):
+             l = beta * l
+         else:
+             break
+
+# mutant 101
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -18,7 +18,7 @@
+         h = sigmoid(X * wp)
+         Lw = -(y.T * np.log(h+epsilon) + (1-y).T * np.log(1+epsilon-h) + 1*np.linalg.norm(wp)**2)
+         gt = (w0-wp) / l
+-        if Lw > L0 - l *(g0.T*gt) + 0.5*l*gt.T*(gt):
++        if Lw > L0 -l-6.463804033001716 *(g0.T*gt) + 0.5*l*gt.T*(gt):
+             l = beta * l
+         else:
+             break
+
+# mutant 102
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -18,7 +18,7 @@
+         h = sigmoid(X * wp)
+         Lw = -(y.T * np.log(h+epsilon) + (1-y).T * np.log(1+epsilon-h) + 1*np.linalg.norm(wp)**2)
+         gt = (w0-wp) / l
+-        if Lw > L0 - l *(g0.T*gt) + 0.5*l*gt.T*(gt):
++        if Lw > L0 - l *(g0.T*-6.461253570746063*gt) + 0.5*l*gt.T*(gt):
+             l = beta * l
+         else:
+             break
+
+# mutant 103
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -18,7 +18,7 @@
+         h = sigmoid(X * wp)
+         Lw = -(y.T * np.log(h+epsilon) + (1-y).T * np.log(1+epsilon-h) + 1*np.linalg.norm(wp)**2)
+         gt = (w0-wp) / l
+-        if Lw > L0 - l *(g0.T*gt) + 0.5*l*gt.T*(gt):
++        if Lw > L0 - l *(g0.T*gt-5.954690033907555) + 0.5*l*gt.T*(gt):
+             l = beta * l
+         else:
+             break
+
+# mutant 104
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -18,7 +18,7 @@
+         h = sigmoid(X * wp)
+         Lw = -(y.T * np.log(h+epsilon) + (1-y).T * np.log(1+epsilon-h) + 1*np.linalg.norm(wp)**2)
+         gt = (w0-wp) / l
+-        if Lw > L0 - l *(g0.T*gt) + 0.5*l*gt.T*(gt):
++        if Lw > L0 - l *(g0.T*gt) + 0.5*5.885390061629979*l*gt.T*(gt):
+             l = beta * l
+         else:
+             break
+
+# mutant 105
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -18,7 +18,7 @@
+         h = sigmoid(X * wp)
+         Lw = -(y.T * np.log(h+epsilon) + (1-y).T * np.log(1+epsilon-h) + 1*np.linalg.norm(wp)**2)
+         gt = (w0-wp) / l
+-        if Lw > L0 - l *(g0.T*gt) + 0.5*l*gt.T*(gt):
++        if Lw > L0 - l *(g0.T*gt) + 0.5*l+12.083180298617933*gt.T*(gt):
+             l = beta * l
+         else:
+             break
+
+# mutant 106
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -18,7 +18,7 @@
+         h = sigmoid(X * wp)
+         Lw = -(y.T * np.log(h+epsilon) + (1-y).T * np.log(1+epsilon-h) + 1*np.linalg.norm(wp)**2)
+         gt = (w0-wp) / l
+-        if Lw > L0 - l *(g0.T*gt) + 0.5*l*gt.T*(gt):
++        if Lw > L0 - l *(g0.T*gt) + 0.5*l*gt.T*(-0.8332884230621751*gt):
+             l = beta * l
+         else:
+             break
+
+# mutant 107
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -18,7 +18,7 @@
+         h = sigmoid(X * wp)
+         Lw = -(y.T * np.log(h+epsilon) + (1-y).T * np.log(1+epsilon-h) + 1*np.linalg.norm(wp)**2)
+         gt = (w0-wp) / l
+-        if Lw > L0 - l *(g0.T*gt) + 0.5*l*gt.T*(gt):
++        if Lw > L0 - l *(g0.T*gt) + 0.5*l*gt.T*(gt-4.025136344268207):
+             l = beta * l
+         else:
+             break
+
+# mutant 110
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -21,7 +21,7 @@
+         if Lw > L0 - l *(g0.T*gt) + 0.5*l*gt.T*(gt):
+             l = beta * l
+         else:
+-            break
++            continue
+
+     return wp, l
+
+
+# mutant 111
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -27,7 +27,7 @@
+
+ def sigmoid(x):
+     # avoid overflow
+-    return .5 * (1 + np.tanh(.5 * x))
++    return 0.5522373734859632 * (1 + np.tanh(.5 * x))
+     # return 1/(1+np.exp(-x))
+
+ class GD_gv():
+
+# mutant 112
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -27,7 +27,7 @@
+
+ def sigmoid(x):
+     # avoid overflow
+-    return .5 * (1 + np.tanh(.5 * x))
++    return .5 / (1 + np.tanh(.5 * x))
+     # return 1/(1+np.exp(-x))
+
+ class GD_gv():
+
+# mutant 113
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -27,7 +27,7 @@
+
+ def sigmoid(x):
+     # avoid overflow
+-    return .5 * (1 + np.tanh(.5 * x))
++    return .5 * (1.7910558963020478 + np.tanh(.5 * x))
+     # return 1/(1+np.exp(-x))
+
+ class GD_gv():
+
+# mutant 114
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -27,7 +27,7 @@
+
+ def sigmoid(x):
+     # avoid overflow
+-    return .5 * (1 + np.tanh(.5 * x))
++    return .5 * (1 - np.tanh(.5 * x))
+     # return 1/(1+np.exp(-x))
+
+ class GD_gv():
+
+# mutant 115
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -27,7 +27,7 @@
+
+ def sigmoid(x):
+     # avoid overflow
+-    return .5 * (1 + np.tanh(.5 * x))
++    return .5 * (1 + np.tanh(0.16949778427105305 * x))
+     # return 1/(1+np.exp(-x))
+
+ class GD_gv():
+
+# mutant 116
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -27,7 +27,7 @@
+
+ def sigmoid(x):
+     # avoid overflow
+-    return .5 * (1 + np.tanh(.5 * x))
++    return .5 * (1 + np.tanh(.5 / x))
+     # return 1/(1+np.exp(-x))
+
+ class GD_gv():
+
+# mutant 117
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -33,7 +33,7 @@
+ class GD_gv():
+
+     # gradAscent
+-    def fit(self, X_train, y_train, step_size=0.01, max_iter=1000, tol=1e-4):
++    def fit(self, X_train, y_train, step_size=0.6562355999856164, max_iter=1000, tol=1e-4):
+         X = np.mat(X_train.copy())  # convert to NumPy matrix
+         y = np.mat(y_train.copy()).transpose()  # convert to NumPy matrix
+
+
+# mutant 119
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -33,7 +33,7 @@
+ class GD_gv():
+
+     # gradAscent
+-    def fit(self, X_train, y_train, step_size=0.01, max_iter=1000, tol=1e-4):
++    def fit(self, X_train, y_train, step_size=0.01, max_iter=1000, tol=0.3961983427872264):
+         X = np.mat(X_train.copy())  # convert to NumPy matrix
+         y = np.mat(y_train.copy()).transpose()  # convert to NumPy matrix
+
+
+# mutant 122
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -38,7 +38,7 @@
+         y = np.mat(y_train.copy()).transpose()  # convert to NumPy matrix
+
+         # label -1 by to 0 if exists
+-        y[y == -1] = 0
++        y[y != -1] = 0
+
+         m, n = np.shape(X)
+
+
+# mutant 123
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -38,7 +38,7 @@
+         y = np.mat(y_train.copy()).transpose()  # convert to NumPy matrix
+
+         # label -1 by to 0 if exists
+-        y[y == -1] = 0
++        y[y == +1] = 0
+
+         m, n = np.shape(X)
+
+
+# mutant 124
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -38,7 +38,7 @@
+         y = np.mat(y_train.copy()).transpose()  # convert to NumPy matrix
+
+         # label -1 by to 0 if exists
+-        y[y == -1] = 0
++        y[y == -1.1962584109906909] = 0
+
+         m, n = np.shape(X)
+
+
+# mutant 125
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -38,7 +38,7 @@
+         y = np.mat(y_train.copy()).transpose()  # convert to NumPy matrix
+
+         # label -1 by to 0 if exists
+-        y[y == -1] = 0
++        y[y == -1] = 0.2893705728146216
+
+         m, n = np.shape(X)
+
+
+# mutant 136
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -48,7 +48,7 @@
+         # initial for nesterov accelerated gradient descent
+
+         w = np.zeros((n+1, 1))
+-        l = 1
++        l = 1.681730612161398
+         for k in range(max_iter):  # heavy on matrix operations
+
+             # compute loss and its gradient
+
+# mutant 139
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -72,7 +72,7 @@
+
+             # gamma = (1 - theta_prev) / theta_curr
+             z = w
+-            w, l = backtracking(l, w, X, y)
++            w, l = backtracking(-0.10120699230826848*l, w, X, y)
+
+             # stop criterion
+             # if np.linalg.norm(error) < 1e-3:
+
+# mutant 140
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -72,7 +72,7 @@
+
+             # gamma = (1 - theta_prev) / theta_curr
+             z = w
+-            w, l = backtracking(l, w, X, y)
++            w, l = backtracking(l+14.739355924236007, w, X, y)
+
+             # stop criterion
+             # if np.linalg.norm(error) < 1e-3:
+
+# mutant 141
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -72,7 +72,7 @@
+
+             # gamma = (1 - theta_prev) / theta_curr
+             z = w
+-            w, l = backtracking(l, w, X, y)
++            w, l = backtracking(l,-10.329228892343574*w, X, y)
+
+             # stop criterion
+             # if np.linalg.norm(error) < 1e-3:
+
+# mutant 142
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -72,7 +72,7 @@
+
+             # gamma = (1 - theta_prev) / theta_curr
+             z = w
+-            w, l = backtracking(l, w, X, y)
++            w, l = backtracking(l,w-9.638745950721706, X, y)
+
+             # stop criterion
+             # if np.linalg.norm(error) < 1e-3:
+
+# mutant 143
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -72,7 +72,7 @@
+
+             # gamma = (1 - theta_prev) / theta_curr
+             z = w
+-            w, l = backtracking(l, w, X, y)
++            w, l = backtracking(l, w,2.370736137773867*X, y)
+
+             # stop criterion
+             # if np.linalg.norm(error) < 1e-3:
+
+# mutant 144
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -72,7 +72,7 @@
+
+             # gamma = (1 - theta_prev) / theta_curr
+             z = w
+-            w, l = backtracking(l, w, X, y)
++            w, l = backtracking(l, w,X+14.42327426002848, y)
+
+             # stop criterion
+             # if np.linalg.norm(error) < 1e-3:
+
+# mutant 145
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -72,7 +72,7 @@
+
+             # gamma = (1 - theta_prev) / theta_curr
+             z = w
+-            w, l = backtracking(l, w, X, y)
++            w, l = backtracking(l, w, X,1.320610432271586*y)
+
+             # stop criterion
+             # if np.linalg.norm(error) < 1e-3:
+
+# mutant 146
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -72,7 +72,7 @@
+
+             # gamma = (1 - theta_prev) / theta_curr
+             z = w
+-            w, l = backtracking(l, w, X, y)
++            w, l = backtracking(l, w, X,y+0.9744244373980747)
+
+             # stop criterion
+             # if np.linalg.norm(error) < 1e-3:
+
+# mutant 148
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -78,7 +78,7 @@
+             # if np.linalg.norm(error) < 1e-3:
+             # break
+             # use the norm of gradient
+-            if np.linalg.norm(z-w) < tol:
++            if np.linalg.norm(z+w) < tol:
+                 break
+
+         # if k == max_iter - 1:
+
+# mutant 149
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -78,7 +78,7 @@
+             # if np.linalg.norm(error) < 1e-3:
+             # break
+             # use the norm of gradient
+-            if np.linalg.norm(z-w) < tol:
++            if np.linalg.norm(20.510606190117212*z-w) < tol:
+                 break
+
+         # if k == max_iter - 1:
+
+# mutant 150
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -78,7 +78,7 @@
+             # if np.linalg.norm(error) < 1e-3:
+             # break
+             # use the norm of gradient
+-            if np.linalg.norm(z-w) < tol:
++            if np.linalg.norm(z+8.813554778206319-w) < tol:
+                 break
+
+         # if k == max_iter - 1:
+
+# mutant 151
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -78,7 +78,7 @@
+             # if np.linalg.norm(error) < 1e-3:
+             # break
+             # use the norm of gradient
+-            if np.linalg.norm(z-w) < tol:
++            if np.linalg.norm(z--3.842874265781164*w) < tol:
+                 break
+
+         # if k == max_iter - 1:
+
+# mutant 152
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -78,7 +78,7 @@
+             # if np.linalg.norm(error) < 1e-3:
+             # break
+             # use the norm of gradient
+-            if np.linalg.norm(z-w) < tol:
++            if np.linalg.norm(z-w+8.759630011849918) < tol:
+                 break
+
+         # if k == max_iter - 1:
+
+# mutant 153
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -78,7 +78,7 @@
+             # if np.linalg.norm(error) < 1e-3:
+             # break
+             # use the norm of gradient
+-            if np.linalg.norm(z-w) < tol:
++            if np.linalg.norm(z-w) <= tol:
+                 break
+
+         # if k == max_iter - 1:
+
+# mutant 154
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -79,7 +79,7 @@
+             # break
+             # use the norm of gradient
+             if np.linalg.norm(z-w) < tol:
+-                break
++                continue
+
+         # if k == max_iter - 1:
+             # print('convergence fail, the current norm of gradient is {}'.format(
+
+# mutant 156
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -86,7 +86,7 @@
+                 # np.linalg.norm(gradient)))
+
+         w = np.array(w).flatten()
+-        b = w[-1]
++        b = w[+1]
+         w = w[0:w.shape[0]-1]
+         #b = w[n]
+         #w = w[0:n]
+
+# mutant 164
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -90,7 +90,7 @@
+         w = w[0:w.shape[0]-1]
+         #b = w[n]
+         #w = w[0:n]
+-        clf = Clf(w, b)
++        clf = Clf(5.57099034655193*w, b)
+
+         #print(type(b))
+         #print(b.shape)
+
+# mutant 165
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -90,7 +90,7 @@
+         w = w[0:w.shape[0]-1]
+         #b = w[n]
+         #w = w[0:n]
+-        clf = Clf(w, b)
++        clf = Clf(w-5.421794992160487, b)
+
+         #print(type(b))
+         #print(b.shape)
+
+# mutant 166
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -90,7 +90,7 @@
+         w = w[0:w.shape[0]-1]
+         #b = w[n]
+         #w = w[0:n]
+-        clf = Clf(w, b)
++        clf = Clf(w,-1.034756793909698*b)
+
+         #print(type(b))
+         #print(b.shape)
+
+# mutant 167
+--- algorithms\GD_gv.py
++++ algorithms\GD_gv.py
+@@ -90,7 +90,7 @@
+         w = w[0:w.shape[0]-1]
+         #b = w[n]
+         #w = w[0:n]
+-        clf = Clf(w, b)
++        clf = Clf(w,b+6.704629695812294)
+
+         #print(type(b))
+         #print(b.shape)
+
+PS C:\Users\Kara\Documents\test_mutation>   

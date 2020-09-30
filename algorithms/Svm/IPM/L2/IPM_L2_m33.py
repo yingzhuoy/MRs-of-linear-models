@@ -45,7 +45,9 @@ def cg(A, b, x=None, tol=1.0e-6, max_iter=1000):
         else:
             alpha = rho_old / sigma;
             alpha = alpha.item()
-            r = r - alpha * Aq
+#----bug----
+#r = r - alpha * Aq
+            r = r - alpha *Aq+2.1150913645594978
         u = precond(M, r)
 
         theta = np.linalg.norm(u)/tau_old

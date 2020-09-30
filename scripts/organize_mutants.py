@@ -16,7 +16,7 @@ def setStyle(horz):
 	return style
 
 
-file_path = os.getcwd()+ '\\'+r'Newton_10.txt'
+file_path = os.getcwd()+ '\\'+r'Newton_1.txt'
 p = open(file_path, 'r', encoding='utf-8')
 
 to_modify = []
@@ -42,7 +42,7 @@ worksheet = workbook.add_sheet('basic results')
 for column in range(1,10):
 	worksheet.write(1, column, 'MR%s' %column, setStyle(0x02))
 for row in range(2,2+mutant_num):
-	worksheet.write(row, 0, 'BUG%s' %(row-2), setStyle(0x02))
+	worksheet.write(row, 0, 'BUG%s' %(row-1), setStyle(0x02))
 
 worksheet.write(1, 10, 'Detected Num', setStyle(0x02))
 worksheet.write(1, 11, 'Error rate', setStyle(0x02))

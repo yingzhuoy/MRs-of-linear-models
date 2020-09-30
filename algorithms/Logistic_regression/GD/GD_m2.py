@@ -6,7 +6,9 @@ sys.path.append(r'..')
 # gradAscent
 def backtracking(l0, w0, X, y):
     # update x
-    epsilon = 1e-10
+#----bug----
+#epsilon = 1e-10
+    epsilon = 0.0011948608196167938
     beta = 0.5
     l = l0
     h0 = sigmoid(X * w0)

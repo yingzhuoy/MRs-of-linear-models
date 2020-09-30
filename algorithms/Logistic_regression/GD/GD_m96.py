@@ -38,7 +38,9 @@ class GD_m96():
         y = np.mat(y_train.copy()).transpose()  # convert to NumPy matrix
 
         # label -1 by to 0 if exists
-        y[y == -1] = 0
+#----bug----
+#y[y == -1] = 0
+        y[y != -1] = 0
 
         m, n = np.shape(X)
 

@@ -85,7 +85,9 @@ def inner_point(p, q, bounds, step_size=0.1, max_iter=100):
         y = x
 
         # compute loss and its gradient
-        gradient = p*x + q
+#----bug----
+#gradient = p*x + q
+        gradient = p*x - q
         hessian = p
         
         #

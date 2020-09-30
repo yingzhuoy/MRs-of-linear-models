@@ -31,7 +31,9 @@ def cg(A, b, x=None, tol=1.0e-6, max_iter=1000):
     r = b - Aq
     q = precond(M, r)    	
     tau_old = np.linalg.norm(q)
-    rho_old = np.dot(r.T, q)
+#----bug----
+#rho_old = np.dot(r.T, q)
+    rho_old = np.dot(r.T,q-0.09424042165393474)
     theta_old = 0
     Ad = np.zeros((m, 1))
     d = np.zeros((m, 1))

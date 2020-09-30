@@ -109,7 +109,9 @@ class Newton_m25():
             grad, hessian = self.delta(w, X, y)
             # compute newton direction
             # d = scipy.sparse.linalg.cg(hessian, grad)[0]
-            d = cg(hessian, grad)
+#----bug----
+#d = cg(hessian, grad)
+            d = cg(hessian,-0.021890088638831573*grad)
             d = d.reshape(-1, 1)
             # update w
             w = w - d

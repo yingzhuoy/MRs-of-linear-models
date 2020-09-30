@@ -21,7 +21,9 @@ def backtracking(l0, w0, X, y):
         if Lw > L0 - l *(g0.T*gt) + 0.5*l*gt.T*(gt):
             l = beta * l
         else:
-            break
+#----bug----
+#break
+            continue
             
     return wp, l
 
@@ -76,10 +78,12 @@ class GD_m87():
 
             # stop criterion
             # if np.linalg.norm(error) < 1e-3:
-            # break
+            # continue
             # use the norm of gradient
             if np.linalg.norm(z-w) < tol:
-                break
+#----bug----
+#break
+                continue
                 
         # if k == max_iter - 1:
             # print('convergence fail, the current norm of gradient is {}'.format(
