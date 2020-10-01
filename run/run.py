@@ -64,12 +64,20 @@ if __name__ == '__main__':
 	rb = xlrd.open_workbook(file_path)
 	wb = xlutils.copy.copy(rb)
 	ws = wb.get_sheet('basic results')
+	
+	str_feature = ''
+	str_single_res = ''
+	feature_list = str(feature_list)
+	single_res_list = str(single_res_list)
+	
+	str_feature = str_feature.join(feature_list)
+	str_single_res = str_single_res.join(single_res_list)
 
 	for column in range(7):
 		ws.write(2, column+1, res_list[column])
 	ws.write(2, 11, err)
-	#ws.write(2, 14, feature_list)
-	#ws.write(2, 15, single_res_list)
+	ws.write(2, 14, str_feature)
+	ws.write(2, 15, str_single_res)
 
 	wb.save(file_path)
 
