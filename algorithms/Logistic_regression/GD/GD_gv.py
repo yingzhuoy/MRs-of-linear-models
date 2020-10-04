@@ -6,23 +6,29 @@ sys.path.append(r'..')
 # gradAscent
 def backtracking(l0, w0, X, y):
     # update x
+    m = X.shape[0]
     epsilon = 1e-10
-    beta = 0.5
+    beta = 0.5; alpha = 0.01
     l = l0
     h0 = sigmoid(X * w0)
-    L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon-h0) + 1*np.linalg.norm(w0)**2)
-    error = y - h0  # vector subtraction\
-    g0 = - X.T * error  # + 1 * w0
-    for k in range(128):
+    L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon-h0)) / m + .5*np.linalg.norm(w0)**2
+    L0 = L0.item()
+    error = y - h0  # vector subtraction
+    g0 = - X.T * error / m  + 1 * w0
+    if np.linalg.norm(g0) < 1e-4:
+        wp = w0; l = l0
+        return wp, l
+
+    for k in range(2):
         wp = w0 - l * g0
         h = sigmoid(X * wp)
-        Lw = -(y.T * np.log(h+epsilon) + (1-y).T * np.log(1+epsilon-h) + 1*np.linalg.norm(wp)**2)
-        gt = (w0-wp) / l
-        if Lw > L0 - l *(g0.T*gt) + 0.5*l*gt.T*(gt):
-            l = beta * l
-        else:
+        Lw = -(y.T * np.log(h+epsilon) + (1-y).T * np.log(1+epsilon-h)) / m + .5*np.linalg.norm(wp)**2
+        Lw = Lw.item()
+        if Lw < L0 - l * alpha * (g0.T*g0):
             break
-            
+        else:
+            l = beta * l
+
     return wp, l
 
 def sigmoid(x):
