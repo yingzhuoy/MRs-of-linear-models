@@ -17,15 +17,17 @@ def precond(M, r):
 
 def cg(A, b, x=None, tol=1.0e-6, max_iter=100):
 	# precondition	
-    A = np.matrix(A)
-    b = np.matrix(b)    
+    A = np.matrix(A); b = np.matrix(b);
+    A_scaling = np.linalg.norm(A)
+    b_scaling = np.linalg.norm(b)
+    A = A / A_scaling
+    b = b / b_scaling
     normb = np.linalg.norm(b, 'fro')
     m = b.shape[0]
     if np.linalg.norm(A,'fro') > 1e-12:
     	M = np.linalg.inv(np.diag(np.diag(A.T*A)))
     else:
     	M = np.eye(m)
-    
     x = np.zeros((m, 1))
     Aq = np.dot(A, x)    
     r = b - Aq
@@ -72,7 +74,7 @@ def cg(A, b, x=None, tol=1.0e-6, max_iter=100):
         rho_old = rho
         tau_old = tau
         theta_old = theta
-    return x
+    return x * (b_scaling / A_scaling)
 
 
 class Newton_gv():
@@ -84,10 +86,13 @@ class Newton_gv():
         # return 1/(1+np.exp(-x))
 
     def delta(self, beta, X, y):
-        grad = - X.T * (y - self.p1(X * beta)) + 1e-3*beta
+        n = X.shape[1]
+        tmp = beta.copy(); tmp[n-1] = 0;
+        grad = - X.T * (y - self.p1(X * beta)) + 1*tmp
         temp = np.multiply(self.p1(X * beta), (1 - self.p1(X * beta)))
         temp = np.tile(temp, (1, X.shape[1]))
-        hessian = X.T * np.multiply(X, temp) + 1e-3*np.eye(X.shape[1])
+        tmp = np.eye(n); tmp[n-1,n-1] = 0;
+        hessian = X.T * np.multiply(X, temp) + 1*tmp
         return grad, hessian
 
     # newtonMethod
@@ -100,6 +105,12 @@ class Newton_gv():
 
         m, n = np.shape(X)
 
+        # add logitR to verify the correctness
+        # from sklearn.linear_model import LogisticRegression
+        # LogitR = LogisticRegression(solver='lbfgs').fit(X, np.array(y).ravel())
+        # w1 = LogitR.coef_; b1 = LogitR.intercept_
+        # w1 = w1.reshape(-1); b1 = b1[0]
+        # 
         X = np.column_stack((X, np.ones((m, 1))))
 
         # initial
@@ -121,7 +132,10 @@ class Newton_gv():
                 np.linalg.norm(grad)))
 
         w = np.array(w).flatten()
-        b = w[n]
-        w = w[0:n]
+        b = w[-1]
+        w = w[0:w.shape[0]-1]
+
+        # print(np.linalg.norm(w1-w), b, b1)
+
         clf = Clf(w, b)
         return clf
