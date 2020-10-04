@@ -15,7 +15,7 @@ def precond(M, r):
 	return q
 
 
-def cg(A, b, x=None, tol=1.0e-6, max_iter=1000):
+def cg(A, b, x=None, tol=1.0e-6, max_iter=100):
 	# precondition	
     A = np.matrix(A)
     b = np.matrix(b)    

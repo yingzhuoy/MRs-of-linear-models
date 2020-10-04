@@ -20,48 +20,10 @@ from algorithms.Svm.APG.L2 import *
 from algorithms.Svm.IPM.L1 import *
 from algorithms.Svm.IPM.L2 import *
 import numpy as np
-#np.random.seed(1)
+np.random.seed(1)
 
-def feval(funcName, *args):
-	'''
-	This function is similar to "feval" in Matlab.
-	Example: feval('cos', pi) = -1.
-	'''
-	return eval(funcName)(*args)
-
-if __name__ == '__main__':
-
-	#n_train, n_test, n_redundant, n_classes, neg_class(算法是svm时 neg_class = -1, 算法是logreg时， neg_class = 0)
-
-	res_list = []
-	feature_list = []
-	single_res_list = []
-
-	datasets = CreateDataset(240,60,0,2,-1)
-	lr = IPM_L1_gv()
-
-	#calculate error rate of this mutant
-	X_train, y_train, X_test, y_test, feature_num = datasets.create_dataset()
-	clf = lr.fit(X_train, y_train)
-	err, pred, conf = hyp_classification(clf.coef_, clf.intercept_, X_test, y_test)
-
-	#test MRs on the mutant
-	test = LinearMRs(lr.fit, datasets.create_dataset, hyp_classification,100)
-	for i in range(1, 8):
-		exec('r%s, f%s, s%s = test.MR%s()' %(i, i, i, i))
-		exec('f_str2 = res_list.append(r%s)' %i)
-		exec('feature_list.append(f%s)' %i)
-		exec('single_res_list.append(s%s)' %i)
-		exec('print(r%s)' %i)
-
-	#result output
-	print(err)
-	print(res_list)
-	print(feature_list)
-	print(single_res_list)
-
-	file_path = r'..\results\IPM_L1.xls'
-	rb = xlrd.open_workbook(file_path)
+def save_result_to_file(file_name, row, res_list, feature_list, single_res_list, err):
+	rb = xlrd.open_workbook(file_name)
 	wb = xlutils.copy.copy(rb)
 	ws = wb.get_sheet('basic results')
 	
@@ -74,12 +36,55 @@ if __name__ == '__main__':
 	str_single_res = str_single_res.join(single_res_list)
 
 	for column in range(7):
-		ws.write(2, column+1, res_list[column])
-	ws.write(2, 11, err)
-	ws.write(2, 14, str_feature)
-	ws.write(2, 15, str_single_res)
+		ws.write(row, column+1, res_list[column])
+	ws.write(row, 11, err)
+	ws.write(row, 14, str_feature)
+	ws.write(row, 15, str_single_res)
 
-	wb.save(file_path)
+	wb.save(file_name)
+
+if __name__ == '__main__':
+
+	#n_train, n_test, n_redundant, n_classes, neg_class(算法是svm时 neg_class = -1, 算法是logreg时， neg_class = 0)
+	
+	'''
+	datasets = CreateDataset(240,60,0,2,0)
+	lr = Newton_m1()
+	X_train, y_train, X_test, y_test, feature_num = datasets.create_dataset()
+	clf = lr.fit(X_train, y_train)
+	err, pred, conf = sig_classification(clf.coef_, clf.intercept_, X_test, y_test)
+	test = LinearMRs(lr.fit, datasets.create_dataset, sig_classification,100)
+	print(err)
+	for i in range(1, 10):
+		exec('r%s, f%s, s%s = test.MR%s()' %(i, i, i, i))
+		exec('print(r%s)' %i)
+	'''
+
+	for j in range(1, 146):
+		res_list = []
+		feature_list = []
+		single_res_list = []
+
+		datasets = CreateDataset(240,60,0,2,0)
+		f_str = 'lr = Newton_m%s()' %j
+		print(f_str)
+		exec(f_str)
+
+		#calculate error rate of this mutant
+		X_train, y_train, X_test, y_test, feature_num = datasets.create_dataset()
+		clf = lr.fit(X_train, y_train)
+		err, pred, conf = sig_classification(clf.coef_, clf.intercept_, X_test, y_test)
+
+		#test MRs on the mutant
+		test = LinearMRs(lr.fit, datasets.create_dataset, sig_classification,100)
+		for i in range(1, 8):
+			exec('r%s, f%s, s%s = test.MR%s()' %(i, i, i, i))
+			exec('f_str2 = res_list.append(r%s)' %i)
+			exec('feature_list.append(f%s)' %i)
+			exec('single_res_list.append(s%s)' %i)
+			exec('print(r%s)' %i)
+		save_result_to_file(r'..\results\Newton.xls', j+1, res_list, feature_list, single_res_list, err)
+
 
 
 
