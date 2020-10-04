@@ -84,16 +84,17 @@ class GD_gv():
             # if np.linalg.norm(error) < 1e-3:
             # break
             # use the norm of gradient
-            if np.linalg.norm(z-w) < tol:
+            if np.linalg.norm(z-w) == 0:
                 break
                 
-        # if k == max_iter - 1:
-            # print('convergence fail, the current norm of gradient is {}'.format(
-                # np.linalg.norm(gradient)))
+        if k == max_iter - 1:
+            print('convergence fail, the current norm of gradient is {}'.format(
+                np.linalg.norm(z-w)))
 
         w = np.array(w).flatten()
         b = w[-1]
         w = w[0:w.shape[0]-1]
+
         #b = w[n]
         #w = w[0:n]
         clf = Clf(w, b)
