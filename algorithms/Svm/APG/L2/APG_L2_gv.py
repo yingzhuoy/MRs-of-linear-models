@@ -72,6 +72,12 @@ def projected_apg(p, q, bounds, step_size=0.1, max_iter=1000):
 #L2-svm
 class APG_L2_gv():
     def fit(self, X, y):
+        # add logitR to verify the correctness
+        from sklearn.svm import LinearSVC
+        SVM = LinearSVC(tol=1e-6).fit(X, np.array(y).ravel())
+        w1 = SVM.coef_; b1 = SVM.intercept_
+        w1 = w1.reshape(-1); b1 = b1[0]  
+
         m, n = X.shape
         X = np.column_stack((X, np.ones((m, 1))))
         y = y.astype(np.float64)
@@ -81,18 +87,18 @@ class APG_L2_gv():
         p = np.matrix(np.multiply(kernel,np.outer(y, y))) + np.diag(np.ones(data_num, np.float64)) * .5/C
         q = np.matrix(-np.ones([data_num, 1], np.float64))
 
-        bounds = (0, np.inf)
-        alpha_svs = projected_apg(p, q, bounds)        
+        # bounds = (0, np.inf)
+        # alpha_svs = projected_apg(p, q, bounds)        
 
-        # p = matrix(p)  
-        # q = matrix(q)
+        p = matrix(p)  
+        q = matrix(q)
         
-        # g = matrix(-np.eye(data_num))
-        # h = matrix(np.zeros([data_num, 1], np.float64))
+        g = matrix(-np.eye(data_num))
+        h = matrix(np.zeros([data_num, 1], np.float64))
 
-        # solvers.options['show_progress'] = False
-        # sol = solvers.qp(p, q, g, h)
-        # alpha_svs1 = np.array(sol['x'])
+        solvers.options['show_progress'] = False
+        sol = solvers.qp(p, q, g, h)
+        alpha_svs = np.array(sol['x'])
 
         # print(np.linalg.norm(alpha_svs1 - alpha_svs))
         # # alpha_svs = alpha_svs1
@@ -103,8 +109,10 @@ class APG_L2_gv():
         w = np.dot(X.T, lambda1)
         w = np.array(w).reshape(-1)
         # b = np.mean(y1-np.reshape(np.dot(w, np.transpose(X)), [-1, 1]))
-        b = w[n]
-        w = w[0:n]
+        b = w[-1]
+        w = w[0:w.shape[0]-1]
+
+        print('diff', np.linalg.norm(w1-w), b, b1)
 
         clf = Clf(w, b)
         return clf

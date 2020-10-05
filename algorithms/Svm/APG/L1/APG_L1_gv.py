@@ -37,9 +37,6 @@ def projected_apg(p, q, bounds, step_size=0.1, max_iter=5000):
 
     p = p + np.diag(np.ones(m, np.float64)) * np.mean(p) 
     v, w = np.linalg.eigh(p)   
-    # print(v)
-    # v[v < 0] = 1e-10
-    # p = w * np.diag(v) * w.T
 
     l = 1/v[-1] - 1e-10
 
@@ -48,23 +45,12 @@ def projected_apg(p, q, bounds, step_size=0.1, max_iter=5000):
         # p = p + np.eye(p.shape[0]) * (.1/(k+1))
         # saving previous x
         y = x
-        
-        # compute loss and its gradient
-        # gradient = p*x + q
-
-        # proximal mapping
-        # x = x - l * gradient
-        # x[x < low] = low
-        # x[x > up] = up
 
         x, l = backtracking(l, y, p, q, low, up)
-        # if(np.linalg.norm(x1-x)):
-            # print('error', np.linalg.norm(x1-x))
 
         # stop criteria            
         rnormw = np.linalg.norm(y-x) / (1+np.linalg.norm(x))  
         if  k > 1 and rnormw < 1e-6:
-            #print('convergence!')
             break
     return x
 
@@ -72,22 +58,44 @@ def projected_apg(p, q, bounds, step_size=0.1, max_iter=5000):
 
 class APG_L1_gv():
     def fit(self, X, y):
+
+        # add logitR to verify the correctness
+        from sklearn.svm import LinearSVC
+        SVM = LinearSVC(loss='hinge', tol=1e-5, verbose=1, max_iter=1000).fit(X, np.array(y).ravel())
+        w1 = SVM.coef_; b1 = SVM.intercept_
+        w1 = w1.reshape(-1); b1 = b1[0]        
+
         m, n = X.shape
         X = np.column_stack((X, np.ones((m, 1))))
         y = y.astype(np.float64)
         data_num = len(y)
         C = 1.0
         kernel = np.dot(X, np.transpose(X))
-        # np.outer()表示的是两个向量相乘,拿第一个向量的元素分别与第二个向量所有元素相乘得到结果的一行。
-        # p = np.matrix(kernel * np.outer(y, y)) * .5
-        # kernel = np.dot(X, np.transpose(X)) + np.eye(data_num) * (.5 / C)
-        p = np.matrix(np.multiply(kernel, np.outer(y, y)), np.float64)        
+        p = np.matrix(np.multiply(kernel, np.outer(y, y)), np.float64)   
         q = np.matrix(-np.ones([data_num, 1], np.float64))
-        p = p + np.eye(data_num) * 0.1
+        # p = p * np.linalg.norm(p)
+        # q = q * np.linalg.norm(p)
 
         bounds = (0, C)
         
-        alpha_svs = projected_apg(p, q, bounds)   
+        p = matrix(p); q = matrix(q);
+        g_1 = -np.eye(data_num)
+        h_1 = np.zeros([data_num, 1], np.float64)
+
+        g_2 = np.eye(data_num)
+        h_2 = np.zeros([data_num, 1], np.float64) + C
+
+        g = matrix(np.vstack((g_1, g_2)))
+        h = matrix(np.vstack((h_1, h_2)))
+
+        # a = matrix(y, (1, data_num))
+        # b = matrix(0.)
+        solvers.options['show_progress'] = True
+        # sol = solvers.qp(p, q, g, h, a, b)
+        sol = solvers.qp(p, q, g, h)
+        alpha_svs = np.array(sol['x'])  
+
+        # alpha_svs = projected_apg(p, q, bounds)   
 
         # alpha_svs = alpha_svs1
         y1 = np.reshape(y, (-1, 1))
@@ -95,9 +103,10 @@ class APG_L1_gv():
         lambda1 = np.multiply(y1,alpha1)  
         w = np.dot(X.T, lambda1)
         w = np.array(w).reshape(-1)
-        # b = np.mean(y1-np.reshape(np.dot(w, np.transpose(X)), [-1, 1]))
-        b = w[n]
-        w = w[0:n]
+        b = w[-1]
+        w = w[0:w.shape[0]-1]
 
+        print('diff', np.linalg.norm(w1-w), b, b1)
+         
         clf = Clf(w, b)
         return clf
