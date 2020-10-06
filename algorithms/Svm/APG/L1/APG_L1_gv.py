@@ -11,7 +11,7 @@ from cvxopt import matrix,solvers
 def backtracking(l0, x0, p, q, low, up):
     # update x
     beta = 0.5
-    l = 1e-1
+    l = 1e-1    
     L0 = 0.5*x0.T*(p*x0) + q.T*x0
     L0 = L0.item()
     g0 = p*x0 + q    
