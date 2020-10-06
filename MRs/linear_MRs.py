@@ -328,7 +328,9 @@ class LinearMRs():
                 Xt = X_train[k].copy(); yt = y_train[k].copy()
                 tmp1 = (np.sum(w * Xt) + b)
                 
-                X_train[k] = X_train[k] + 1e10 * (yt*w)
+                # X_train[k] = X_train[k] + 1e10 * (yt*w) # not stable
+                X_train = np.delete(X_train, k, axis=0)
+                y_train = np.delete(y_train, k)
                 clf = self.fit(X_train, y_train)
                 w1 = clf.coef_; b1 = clf.intercept_
 
