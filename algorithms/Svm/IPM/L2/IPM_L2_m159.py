@@ -1,7 +1,5 @@
 import numpy as np
 from numpy import linalg
-import cvxopt
-from cvxopt import matrix,solvers
 from algorithms.clf import Clf
 
 """
@@ -13,7 +11,7 @@ def precond(M, r):
     return q
 
 
-def cg(A, b, x=None, tol=1.0e-6, max_iter=1000):
+def cg(A, b, x=None, tol=1.0e-3, max_iter=50):
     # precondition  
     A = np.matrix(A)
     b = np.matrix(b)    
@@ -73,7 +71,7 @@ def cg(A, b, x=None, tol=1.0e-6, max_iter=1000):
     return x
 
 
-def inner_point(p, q, bounds, step_size=0.1, max_iter=100):
+def inner_point(p, q, bounds, step_size=0.1, max_iter=50):
     m = p.shape[0]
     low, up = bounds    
     x = np.ones((m,1)) * 0.5

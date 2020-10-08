@@ -135,7 +135,7 @@ class APG_L2_gv():
 
         w, b = projected_apg(X, y)
 
-        print('diff', np.linalg.norm(w1-w), b, b1)
+        #print('diff', np.linalg.norm(w1-w), b, b1)
          
         clf = Clf(w, b)
         return clf

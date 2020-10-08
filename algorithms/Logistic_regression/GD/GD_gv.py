@@ -39,7 +39,7 @@ def sigmoid(x):
 class GD_gv():
 
     # gradAscent
-    def fit(self, X_train, y_train, step_size=0.01, max_iter=1000, tol=1e-4):
+    def fit(self, X_train, y_train, step_size=0.01, max_iter=100, tol=1e-3):
         X = np.mat(X_train.copy())  # convert to NumPy matrix
         y = np.mat(y_train.copy()).transpose()  # convert to NumPy matrix
 
@@ -67,9 +67,9 @@ class GD_gv():
             if np.linalg.norm(z-w) == 0:
                 break
                 
-        if k == max_iter - 1:
-            print('convergence fail, the current norm of gradient is {}'.format(
-                np.linalg.norm(z-w)))
+        #if k == max_iter - 1:
+            #print('convergence fail, the current norm of gradient is {}'.format(
+                #np.linalg.norm(z-w)))
 
         w = np.array(w).flatten()
         b = w[-1]

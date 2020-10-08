@@ -15,17 +15,21 @@ def precond(M, r):
 	return q
 
 
-def cg(A, b, x=None, tol=1.0e-6, max_iter=100):
+def cg(A, b, x=None, tol=1.0e-3, max_iter=100):
 	# precondition	
-    A = np.matrix(A)
-    b = np.matrix(b)    
-    normb = np.linalg.norm(b, 'fro')
+    A = np.matrix(A); b = np.matrix(b);
+    A_scaling = np.linalg.norm(A)
+    b_scaling = np.linalg.norm(b)
+    A = A / A_scaling
+    b = b / b_scaling
+#----bug----
+#normb = np.linalg.norm(b, 'fro')
+    normb = np.linalg.norm(b+11.81800542492102, 'fro')
     m = b.shape[0]
     if np.linalg.norm(A,'fro') > 1e-12:
     	M = np.linalg.inv(np.diag(np.diag(A.T*A)))
     else:
     	M = np.eye(m)
-    
     x = np.zeros((m, 1))
     Aq = np.dot(A, x)    
     r = b - Aq
@@ -45,9 +49,7 @@ def cg(A, b, x=None, tol=1.0e-6, max_iter=100):
         if abs(sigma.item()) < tiny:
         	break
         else:
-#----bug----
-#alpha = rho_old / sigma;
-	        alpha = rho_old * sigma;
+	        alpha = rho_old / sigma;
 	        alpha = alpha.item()
 	        r = r - alpha * Aq
         u = precond(M, r)
@@ -74,7 +76,7 @@ def cg(A, b, x=None, tol=1.0e-6, max_iter=100):
         rho_old = rho
         tau_old = tau
         theta_old = theta
-    return x
+    return x * (b_scaling / A_scaling)
 
 
 class Newton_m3():
@@ -86,14 +88,17 @@ class Newton_m3():
         # return 1/(1+np.exp(-x))
 
     def delta(self, beta, X, y):
-        grad = - X.T * (y - self.p1(X * beta)) + 1e-3*beta
+        n = X.shape[1]
+        tmp = beta.copy(); tmp[n-1] = 0;
+        grad = - X.T * (y - self.p1(X * beta)) + 1*tmp
         temp = np.multiply(self.p1(X * beta), (1 - self.p1(X * beta)))
         temp = np.tile(temp, (1, X.shape[1]))
-        hessian = X.T * np.multiply(X, temp) + 1e-3*np.eye(X.shape[1])
+        tmp = np.eye(n); tmp[n-1,n-1] = 0;
+        hessian = X.T * np.multiply(X, temp) + 1*tmp
         return grad, hessian
 
     # newtonMethod
-    def fit(self, X_train, y_train, max_iter=1000, tol=1e-3):
+    def fit(self, X_train, y_train, max_iter=100, tol=1e-3):
         X = np.mat(X_train.copy())  # convert to NumPy matrix
         y = np.mat(y_train.copy()).transpose()  # convert to NumPy matrix
 
@@ -102,6 +107,12 @@ class Newton_m3():
 
         m, n = np.shape(X)
 
+        # add logitR to verify the correctness
+        # from sklearn.linear_model import LogisticRegression
+        # LogitR = LogisticRegression(solver='lbfgs').fit(X, np.array(y).ravel())
+        # w1 = LogitR.coef_; b1 = LogitR.intercept_
+        # w1 = w1.reshape(-1); b1 = b1[0]
+        # 
         X = np.column_stack((X, np.ones((m, 1))))
 
         # initial
@@ -118,12 +129,15 @@ class Newton_m3():
             if np.linalg.norm(grad) < tol:
                 break
 
-        if k == max_iter - 1:
-            print('convergence fail, the current norm of gradient is {}'.format(
-                np.linalg.norm(grad)))
+        #if k == max_iter - 1:
+        #    print('convergence fail, the current norm of gradient is {}'.format(
+        #        np.linalg.norm(grad)))
 
         w = np.array(w).flatten()
-        b = w[n]
-        w = w[0:n]
+        b = w[-1]
+        w = w[0:w.shape[0]-1]
+
+        # print(np.linalg.norm(w1-w), b, b1)
+
         clf = Clf(w, b)
         return clf

@@ -16,8 +16,12 @@ class LinearMRs():
     def MR1(self):
         print("Begin to test MR1...")
         err_cnt = 0
+        feature_list = []
+        single_res_list = []
         for i in range(self.itr_cnt):
-            X_train, y_train, X_test, y_test = self.create_dataset()
+            # print(i)
+            X_train, y_train, X_test, y_test, feature_num = self.create_dataset()
+            feature_list.append(feature_num)
 
             clf = self.fit(X_train, y_train)
             w = clf.coef_
@@ -42,17 +46,24 @@ class LinearMRs():
             if all(pred_f == pred) == False:
                 # print(pred_f)
                 # print(pred)
+                single_res_list.append(1)
                 err_cnt = err_cnt + 1
-            # print("err", err)
-            # print("err_f", err_f)
-        print(err_cnt/self.itr_cnt)
+            else:
+                single_res_list.append(0)
+            #print("err", err)
+            #print("err_f", err_f)
+        result = err_cnt/self.itr_cnt
+        return result, feature_list, single_res_list
 
     # MR2: Permutation of training & test features
     def MR2(self):
         print("Begin to test MR2...")
         err_cnt = 0
+        feature_list = []
+        single_res_list = []
         for i in range(self.itr_cnt):
-            X_train, y_train, X_test, y_test = self.create_dataset()
+            X_train, y_train, X_test, y_test, feature_num = self.create_dataset()
+            feature_list.append(feature_num)
             clf = self.fit(X_train, y_train)
             w = clf.coef_
             b = clf.intercept_
@@ -75,16 +86,23 @@ class LinearMRs():
 
             if all(pred_f == pred) == False:
                 err_cnt = err_cnt + 1
+                single_res_list.append(1)
+            else:
+                single_res_list.append(0)
             # print("err", err)
             # print("err_f", err_f)
-        print(err_cnt/self.itr_cnt)
+        result = err_cnt/self.itr_cnt
+        return result, feature_list, single_res_list
 
     # MR3: Permutation of class labels (precision problem)
     def MR3(self):
-        print("Begin to test MR3：")
+        print("Begin to test MR3...")
         err_cnt = 0
+        feature_list = []
+        single_res_list = []
         for i in range(self.itr_cnt):
-            X_train, y_train, X_test, y_test = self.create_dataset()
+            X_train, y_train, X_test, y_test, feature_num = self.create_dataset()
+            feature_list.append(feature_num)
             clf = self.fit(X_train, y_train)
             w = clf.coef_
             b = clf.intercept_
@@ -109,18 +127,25 @@ class LinearMRs():
             if err_f != err:
                 # print(err_f)
                 # print(err)
+                single_res_list.append(1)
                 err_cnt = err_cnt + 1
-            # print("err", err)
-            # print("err_f", err_f)
-        print(err_cnt/self.itr_cnt)
+            else:
+                single_res_list.append(0)
+            #print("err", err)
+            #print("err_f", err_f)
+        result = err_cnt/self.itr_cnt
+        return result, feature_list, single_res_list
 
     # MR4: Addition of uninformative attributes (precision problem)
 
     def MR4(self):
-        print("Begin to test MR4：")
+        print("Begin to test MR4...")
         err_cnt = 0
+        feature_list = []
+        single_res_list = []
         for i in range(self.itr_cnt):
-            X_train, y_train, X_test, y_test = self.create_dataset()
+            X_train, y_train, X_test, y_test, feature_num = self.create_dataset()
+            feature_list.append(feature_num)
             clf = self.fit(X_train, y_train)
             w = clf.coef_
             b = clf.intercept_
@@ -140,16 +165,23 @@ class LinearMRs():
 
             if err_f != err:
                 err_cnt = err_cnt + 1
+                single_res_list.append(1)
+            else:
+                single_res_list.append(0)
             # print("err", err)
             # print("err_f", err_f)
-        print(err_cnt/self.itr_cnt)
+        result = err_cnt/self.itr_cnt
+        return result, feature_list, single_res_list
 
     # MR5: Consistence with re-prediction
     def MR5(self):
-        print("Begin to test MR5：")
+        print("Begin to test MR5...")
         err_cnt = 0
+        feature_list = []
+        single_res_list = []
         for i in range(self.itr_cnt):
-            X_train, y_train, X_test, y_test = self.create_dataset()
+            X_train, y_train, X_test, y_test, feature_num = self.create_dataset()
+            feature_list.append(feature_num)
             clf = self.fit(X_train, y_train)
             w = clf.coef_
             b = clf.intercept_
@@ -169,17 +201,24 @@ class LinearMRs():
 
             if pred_f[rand] != pred[rand]:
                 err_cnt = err_cnt + 1
+                single_res_list.append(1)
+            else:
+                single_res_list.append(0)
             # print("err", err)
             # print("err_f", err_f)
-        print(err_cnt/self.itr_cnt)
+        result = err_cnt/self.itr_cnt
+        return result, feature_list, single_res_list
 
     # MR6: Additional training sample
 
     def MR6(self):
-        print("Begin to test MR6：")
+        print("Begin to test MR6...")
         err_cnt = 0
+        feature_list = []
+        single_res_list = []
         for i in range(self.itr_cnt):
-            X_train, y_train, X_test, y_test = self.create_dataset()
+            X_train, y_train, X_test, y_test, feature_num = self.create_dataset()
+            feature_list.append(feature_num)
             clf = self.fit(X_train, y_train)
             w = clf.coef_
             b = clf.intercept_
@@ -208,16 +247,24 @@ class LinearMRs():
                 w_f, b_f, X_test_f, y_test_f)
 
             if any(pred_f[ind0] != pred[ind0]):
+                single_res_list.append(1)
                 err_cnt = err_cnt + 1
-        print(err_cnt/self.itr_cnt)
+            else:
+                single_res_list.append(0)
+        result = err_cnt/self.itr_cnt
+        return result, feature_list, single_res_list
 
-        # MR7: The following MRs were proposed by ourselves
+    # MR7: The following MRs were proposed by ourselves
 
     def MR7(self):
         print("Begin to test MR7...")
         err_cnt = 0
+        feature_list = []
+        single_res_list = []
         for i in range(self.itr_cnt):
-            X, y, X_test, y_test = self.create_dataset()
+            #print(i)
+            X, y, X_test, y_test, feature_num = self.create_dataset()
+            feature_list.append(feature_num)
             # label -1 and 1
             y[y == 0] = -1
             y_test[y_test == 0] = -1
@@ -230,6 +277,20 @@ class LinearMRs():
             w = clf.coef_
             b = clf.intercept_
 
+            # delete later
+            # from sklearn.svm  import LinearSVC
+            # # clf1 = LinearSVC(loss = 'squared_hinge', max_iter=1000000)
+            # clf1 = LinearSVC(loss='hinge',max_iter=100000, tol=1e-6)
+            # clf1.fit(X,y)
+            # wt = clf1.coef_
+            # # print(w1)
+            # bt = clf1.intercept_
+            # print(clf.coef_, clf1.coef_)
+            # print(clf.intercept_, clf1.intercept_[0])
+            # w = wt.astype('float64')
+            # b = bt[0]
+            # print(np.linalg.norm(clf.coef_ - clf1.coef_))
+
             pert = np.random.normal(size=Xt.shape)
             pert = pert - np.sum(pert * w)/np.sum(w * w) * w
             pert = pert / np.linalg.norm(pert)
@@ -240,45 +301,67 @@ class LinearMRs():
             # initialization
             pred = []
             test = []
-            index = np.arange(X.shape[0])
-            np.random.shuffle(index)
-            for j in range(20):
-                i = index[j]
+            num_iter = 30
+
+            conf = np.sum(X * w, axis=1) + b
+            index = np.argsort(np.abs(conf))
+            partition = int(index.shape[0] / num_iter)-1
+            # index = np.arange(X.shape[0])
+            # np.random.shuffle(index)
+            for j in range(num_iter):
+                i = index[j * partition]
+                #print('111111')
                 X_train = X.copy()
                 y_train = y.copy()
                 temp = (np.sum(w * X_train[i]) + b) * y_train[i]
-                if y_train[i] > 0:
-                    continue
-                # pred.append(temp[0])
                 pred.append(temp)
+                # pred.append(temp[0])
 
                 X_train[i] = X_train[i] + pert * 1e-2
                 clf = self.fit(X_train, y_train)
                 w1 = clf.coef_
                 b1 = clf.intercept_
+
+
                 t1 = np.sum(w1 * Xt) + b1
-                temp = t1 - t0
-                # test.append(temp[0])
+                temp = (t1 - t0) * (-y_train[i])
                 test.append(temp)
+                # test.append(temp[0])
 
             pred = np.array(pred)
             test = np.array(test)
+
+            # ========= delete duplicate ==============
+            sort = np.argsort(test)
+            for i in range(sort.shape[0] - 1):
+                if np.abs(test[sort[i+1]] - test[sort[i]]) < 1e-5:
+                    test[sort[i+1]] = test[sort[i]]
+                    pred[sort[i+1]] = pred[sort[i]]
+                else:
+                    continue
+            index1 = np.unique(test, return_index=True)[1]
+            test = [test[index] for index in sorted(index1)]
+            index2 = np.unique(pred, return_index=True)[1]
+            pred = [pred[index] for index in sorted(index2)]
+            test = np.array(test)
+            pred = np.array(pred)
 
             sort1 = np.argsort(pred)
             sort2 = np.argsort(test)
             sort3 = np.argsort(-test)
 
+
             if (sort1 == sort2).all() or (sort1 == sort3).all():
-                # print(pred)
-                # print(test)
+                # if (sort1 == sort2).all():
+                single_res_list.append(0)
                 continue
             else:
-                # print(pred)
-                # print(test)
                 err_cnt = err_cnt + 1
+                single_res_list.append(1)
                 # print(sort1, sort2, sort3)
                 # print('something wrong')
-        print(err_cnt / self.itr_cnt)
+        result = err_cnt/self.itr_cnt
+        return result, feature_list, single_res_list
 
     def MR8(self):
         print("Begin to test MR8...")
@@ -338,8 +421,8 @@ class LinearMRs():
                 tmp2 = np.sum(w1 * Xt) + b1
                 temp = tmp2 - tmp1
                 
-                print(np.linalg.norm(w1))
-                print(yt, tmp1, tmp2, temp)
+                #print(np.linalg.norm(w1))
+                #print(yt, tmp1, tmp2, temp)
                 if yt > 0 and temp < 1e-3:
                     continue
                 elif yt < 0 and temp > -1e-3:
@@ -351,7 +434,7 @@ class LinearMRs():
             else:
                 err_cnt += 1
                 single_res_list.append(1)
-            print(i, single_res_list)
+            #print(i, single_res_list)
             result = err_cnt/self.itr_cnt
         return result, feature_list, single_res_list        
 

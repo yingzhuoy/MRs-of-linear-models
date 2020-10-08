@@ -15,7 +15,7 @@ def precond(M, r):
 	return q
 
 
-def cg(A, b, x=None, tol=1.0e-6, max_iter=100):
+def cg(A, b, x=None, tol=1.0e-3, max_iter=100):
 	# precondition	
     A = np.matrix(A); b = np.matrix(b);
     A_scaling = np.linalg.norm(A)
@@ -96,7 +96,7 @@ class Newton_gv():
         return grad, hessian
 
     # newtonMethod
-    def fit(self, X_train, y_train, max_iter=1000, tol=1e-3):
+    def fit(self, X_train, y_train, max_iter=100, tol=1e-3):
         X = np.mat(X_train.copy())  # convert to NumPy matrix
         y = np.mat(y_train.copy()).transpose()  # convert to NumPy matrix
 
@@ -127,9 +127,9 @@ class Newton_gv():
             if np.linalg.norm(grad) < tol:
                 break
 
-        if k == max_iter - 1:
-            print('convergence fail, the current norm of gradient is {}'.format(
-                np.linalg.norm(grad)))
+        #if k == max_iter - 1:
+        #    print('convergence fail, the current norm of gradient is {}'.format(
+        #        np.linalg.norm(grad)))
 
         w = np.array(w).flatten()
         b = w[-1]
