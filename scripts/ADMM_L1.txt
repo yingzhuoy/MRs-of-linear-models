@@ -1,0 +1,2920 @@
+Survived ?? (225)
+
+---- algorithms\ADMM_L1_gv.py (225) ----
+
+# mutant 3
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -12,7 +12,7 @@
+     return q
+
+
+-def cg(A, b, x=None, tol=1.0e-6, max_iter=50):
++def cg(A, b, x=None, tol=-17.368108824696918, max_iter=50):
+     # precondition
+     A = np.matrix(A)
+     b = np.matrix(b)
+
+# mutant 8
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -16,7 +16,7 @@
+     # precondition
+     A = np.matrix(A)
+     b = np.matrix(b)
+-    normb = np.linalg.norm(b, 'fro')
++    normb = np.linalg.norm(19.070242283969755*b, 'fro')
+     m = b.shape[0]
+     #if np.linalg.norm(A,'fro') > 1e-12:
+     #    M = np.linalg.inv(np.diag(np.diag(A.T*A)))
+
+# mutant 9
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -16,7 +16,7 @@
+     # precondition
+     A = np.matrix(A)
+     b = np.matrix(b)
+-    normb = np.linalg.norm(b, 'fro')
++    normb = np.linalg.norm(b+11.407870681458084, 'fro')
+     m = b.shape[0]
+     #if np.linalg.norm(A,'fro') > 1e-12:
+     #    M = np.linalg.inv(np.diag(np.diag(A.T*A)))
+
+# mutant 16
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -24,7 +24,7 @@
+     #    M = np.eye(m)
+     M = np.eye(m)
+     x = np.zeros((m, 1))
+-    Aq = np.dot(A, x)
++    Aq = np.dot(-9.98623735550558*A, x)
+     r = b - Aq
+     q = precond(M, r)
+     tau_old = np.linalg.norm(q)
+
+# mutant 17
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -24,7 +24,7 @@
+     #    M = np.eye(m)
+     M = np.eye(m)
+     x = np.zeros((m, 1))
+-    Aq = np.dot(A, x)
++    Aq = np.dot(A+13.675541837401399, x)
+     r = b - Aq
+     q = precond(M, r)
+     tau_old = np.linalg.norm(q)
+
+# mutant 18
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -24,7 +24,7 @@
+     #    M = np.eye(m)
+     M = np.eye(m)
+     x = np.zeros((m, 1))
+-    Aq = np.dot(A, x)
++    Aq = np.dot(A,-6.037981549454625*x)
+     r = b - Aq
+     q = precond(M, r)
+     tau_old = np.linalg.norm(q)
+
+# mutant 19
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -24,7 +24,7 @@
+     #    M = np.eye(m)
+     M = np.eye(m)
+     x = np.zeros((m, 1))
+-    Aq = np.dot(A, x)
++    Aq = np.dot(A,x-34.95139745912067)
+     r = b - Aq
+     q = precond(M, r)
+     tau_old = np.linalg.norm(q)
+
+# mutant 21
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -25,7 +25,7 @@
+     M = np.eye(m)
+     x = np.zeros((m, 1))
+     Aq = np.dot(A, x)
+-    r = b - Aq
++    r = b + Aq
+     q = precond(M, r)
+     tau_old = np.linalg.norm(q)
+     rho_old = np.dot(r.T, q)
+
+# mutant 22
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -25,7 +25,7 @@
+     M = np.eye(m)
+     x = np.zeros((m, 1))
+     Aq = np.dot(A, x)
+-    r = b - Aq
++    r =1.536152313099322*b - Aq
+     q = precond(M, r)
+     tau_old = np.linalg.norm(q)
+     rho_old = np.dot(r.T, q)
+
+# mutant 23
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -25,7 +25,7 @@
+     M = np.eye(m)
+     x = np.zeros((m, 1))
+     Aq = np.dot(A, x)
+-    r = b - Aq
++    r =b-2.4285959148236773 - Aq
+     q = precond(M, r)
+     tau_old = np.linalg.norm(q)
+     rho_old = np.dot(r.T, q)
+
+# mutant 24
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -25,7 +25,7 @@
+     M = np.eye(m)
+     x = np.zeros((m, 1))
+     Aq = np.dot(A, x)
+-    r = b - Aq
++    r = b --14.089172552912615*Aq
+     q = precond(M, r)
+     tau_old = np.linalg.norm(q)
+     rho_old = np.dot(r.T, q)
+
+# mutant 25
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -25,7 +25,7 @@
+     M = np.eye(m)
+     x = np.zeros((m, 1))
+     Aq = np.dot(A, x)
+-    r = b - Aq
++    r = b -Aq-14.83689209031969
+     q = precond(M, r)
+     tau_old = np.linalg.norm(q)
+     rho_old = np.dot(r.T, q)
+
+# mutant 27
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -26,7 +26,7 @@
+     x = np.zeros((m, 1))
+     Aq = np.dot(A, x)
+     r = b - Aq
+-    q = precond(M, r)
++    q = precond(11.05982825430079*M, r)
+     tau_old = np.linalg.norm(q)
+     rho_old = np.dot(r.T, q)
+     theta_old = 0
+
+# mutant 28
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -26,7 +26,7 @@
+     x = np.zeros((m, 1))
+     Aq = np.dot(A, x)
+     r = b - Aq
+-    q = precond(M, r)
++    q = precond(M+0.4939402290972201, r)
+     tau_old = np.linalg.norm(q)
+     rho_old = np.dot(r.T, q)
+     theta_old = 0
+
+# mutant 29
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -26,7 +26,7 @@
+     x = np.zeros((m, 1))
+     Aq = np.dot(A, x)
+     r = b - Aq
+-    q = precond(M, r)
++    q = precond(M,-1.030335693346468*r)
+     tau_old = np.linalg.norm(q)
+     rho_old = np.dot(r.T, q)
+     theta_old = 0
+
+# mutant 30
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -26,7 +26,7 @@
+     x = np.zeros((m, 1))
+     Aq = np.dot(A, x)
+     r = b - Aq
+-    q = precond(M, r)
++    q = precond(M,r+4.649796574856755)
+     tau_old = np.linalg.norm(q)
+     rho_old = np.dot(r.T, q)
+     theta_old = 0
+
+# mutant 33
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -28,7 +28,7 @@
+     r = b - Aq
+     q = precond(M, r)
+     tau_old = np.linalg.norm(q)
+-    rho_old = np.dot(r.T, q)
++    rho_old = np.dot(r.T,-4.370072802237594*q)
+     theta_old = 0
+     Ad = np.zeros((m, 1))
+     d = np.zeros((m, 1))
+
+# mutant 34
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -28,7 +28,7 @@
+     r = b - Aq
+     q = precond(M, r)
+     tau_old = np.linalg.norm(q)
+-    rho_old = np.dot(r.T, q)
++    rho_old = np.dot(r.T,q+10.104594994010503)
+     theta_old = 0
+     Ad = np.zeros((m, 1))
+     d = np.zeros((m, 1))
+
+# mutant 36
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -29,7 +29,7 @@
+     q = precond(M, r)
+     tau_old = np.linalg.norm(q)
+     rho_old = np.dot(r.T, q)
+-    theta_old = 0
++    theta_old = 4.600061080717398
+     Ad = np.zeros((m, 1))
+     d = np.zeros((m, 1))
+     res = r
+
+# mutant 43
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -34,7 +34,7 @@
+     d = np.zeros((m, 1))
+     res = r
+
+-    tiny = 1e-30
++    tiny = 0.24311437515783824
+     for i in range(max_iter):
+         Aq = np.dot(A, q)
+         sigma = np.dot(q.T, Aq)
+
+# mutant 45
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -36,7 +36,7 @@
+
+     tiny = 1e-30
+     for i in range(max_iter):
+-        Aq = np.dot(A, q)
++        Aq = np.dot(8.038339822304993*A, q)
+         sigma = np.dot(q.T, Aq)
+
+         if abs(sigma.item()) < tiny:
+
+# mutant 46
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -36,7 +36,7 @@
+
+     tiny = 1e-30
+     for i in range(max_iter):
+-        Aq = np.dot(A, q)
++        Aq = np.dot(A-3.6162719079199324, q)
+         sigma = np.dot(q.T, Aq)
+
+         if abs(sigma.item()) < tiny:
+
+# mutant 47
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -36,7 +36,7 @@
+
+     tiny = 1e-30
+     for i in range(max_iter):
+-        Aq = np.dot(A, q)
++        Aq = np.dot(A,19.138925001708845*q)
+         sigma = np.dot(q.T, Aq)
+
+         if abs(sigma.item()) < tiny:
+
+# mutant 48
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -36,7 +36,7 @@
+
+     tiny = 1e-30
+     for i in range(max_iter):
+-        Aq = np.dot(A, q)
++        Aq = np.dot(A,q-0.03403265128791271)
+         sigma = np.dot(q.T, Aq)
+
+         if abs(sigma.item()) < tiny:
+
+# mutant 50
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -37,7 +37,7 @@
+     tiny = 1e-30
+     for i in range(max_iter):
+         Aq = np.dot(A, q)
+-        sigma = np.dot(q.T, Aq)
++        sigma = np.dot(q.T,-10.471967427777448*Aq)
+
+         if abs(sigma.item()) < tiny:
+             break
+
+# mutant 51
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -37,7 +37,7 @@
+     tiny = 1e-30
+     for i in range(max_iter):
+         Aq = np.dot(A, q)
+-        sigma = np.dot(q.T, Aq)
++        sigma = np.dot(q.T,Aq-11.903497126621993)
+
+         if abs(sigma.item()) < tiny:
+             break
+
+# mutant 53
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -39,7 +39,7 @@
+         Aq = np.dot(A, q)
+         sigma = np.dot(q.T, Aq)
+
+-        if abs(sigma.item()) < tiny:
++        if abs(sigma.item()) <= tiny:
+             break
+         else:
+             alpha = rho_old / sigma;
+
+# mutant 54
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -40,7 +40,7 @@
+         sigma = np.dot(q.T, Aq)
+
+         if abs(sigma.item()) < tiny:
+-            break
++            continue
+         else:
+             alpha = rho_old / sigma;
+             alpha = alpha.item()
+
+# mutant 55
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -42,7 +42,7 @@
+         if abs(sigma.item()) < tiny:
+             break
+         else:
+-            alpha = rho_old / sigma;
++            alpha = rho_old * sigma;
+             alpha = alpha.item()
+             r = r - alpha * Aq
+         u = precond(M, r)
+
+# mutant 58
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -44,7 +44,7 @@
+         else:
+             alpha = rho_old / sigma;
+             alpha = alpha.item()
+-            r = r - alpha * Aq
++            r = r + alpha * Aq
+         u = precond(M, r)
+
+         theta = np.linalg.norm(u)/tau_old
+
+# mutant 59
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -44,7 +44,7 @@
+         else:
+             alpha = rho_old / sigma;
+             alpha = alpha.item()
+-            r = r - alpha * Aq
++            r = r - alpha / Aq
+         u = precond(M, r)
+
+         theta = np.linalg.norm(u)/tau_old
+
+# mutant 60
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -44,7 +44,7 @@
+         else:
+             alpha = rho_old / sigma;
+             alpha = alpha.item()
+-            r = r - alpha * Aq
++            r =9.864882188720667*r - alpha * Aq
+         u = precond(M, r)
+
+         theta = np.linalg.norm(u)/tau_old
+
+# mutant 61
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -44,7 +44,7 @@
+         else:
+             alpha = rho_old / sigma;
+             alpha = alpha.item()
+-            r = r - alpha * Aq
++            r =r-7.961966038795988 - alpha * Aq
+         u = precond(M, r)
+
+         theta = np.linalg.norm(u)/tau_old
+
+# mutant 62
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -44,7 +44,7 @@
+         else:
+             alpha = rho_old / sigma;
+             alpha = alpha.item()
+-            r = r - alpha * Aq
++            r = r -2.9285834863223568*alpha * Aq
+         u = precond(M, r)
+
+         theta = np.linalg.norm(u)/tau_old
+
+# mutant 63
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -44,7 +44,7 @@
+         else:
+             alpha = rho_old / sigma;
+             alpha = alpha.item()
+-            r = r - alpha * Aq
++            r = r -alpha+4.276800590672455 * Aq
+         u = precond(M, r)
+
+         theta = np.linalg.norm(u)/tau_old
+
+# mutant 64
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -44,7 +44,7 @@
+         else:
+             alpha = rho_old / sigma;
+             alpha = alpha.item()
+-            r = r - alpha * Aq
++            r = r - alpha *6.361113371238812*Aq
+         u = precond(M, r)
+
+         theta = np.linalg.norm(u)/tau_old
+
+# mutant 65
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -44,7 +44,7 @@
+         else:
+             alpha = rho_old / sigma;
+             alpha = alpha.item()
+-            r = r - alpha * Aq
++            r = r - alpha *Aq+16.812255688552565
+         u = precond(M, r)
+
+         theta = np.linalg.norm(u)/tau_old
+
+# mutant 67
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -45,7 +45,7 @@
+             alpha = rho_old / sigma;
+             alpha = alpha.item()
+             r = r - alpha * Aq
+-        u = precond(M, r)
++        u = precond(-5.5476116418084365*M, r)
+
+         theta = np.linalg.norm(u)/tau_old
+         c = 1 / np.sqrt(1+theta*theta)
+
+# mutant 68
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -45,7 +45,7 @@
+             alpha = rho_old / sigma;
+             alpha = alpha.item()
+             r = r - alpha * Aq
+-        u = precond(M, r)
++        u = precond(M-7.29959137130865, r)
+
+         theta = np.linalg.norm(u)/tau_old
+         c = 1 / np.sqrt(1+theta*theta)
+
+# mutant 69
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -45,7 +45,7 @@
+             alpha = rho_old / sigma;
+             alpha = alpha.item()
+             r = r - alpha * Aq
+-        u = precond(M, r)
++        u = precond(M,8.70721482736844*r)
+
+         theta = np.linalg.norm(u)/tau_old
+         c = 1 / np.sqrt(1+theta*theta)
+
+# mutant 70
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -45,7 +45,7 @@
+             alpha = rho_old / sigma;
+             alpha = alpha.item()
+             r = r - alpha * Aq
+-        u = precond(M, r)
++        u = precond(M,r-16.875058990165254)
+
+         theta = np.linalg.norm(u)/tau_old
+         c = 1 / np.sqrt(1+theta*theta)
+
+# mutant 72
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -47,7 +47,7 @@
+             r = r - alpha * Aq
+         u = precond(M, r)
+
+-        theta = np.linalg.norm(u)/tau_old
++        theta = np.linalg.norm(u)*tau_old
+         c = 1 / np.sqrt(1+theta*theta)
+         tau = tau_old * theta * c
+         gam = c*c*theta_old*theta_old
+
+# mutant 74
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -48,7 +48,7 @@
+         u = precond(M, r)
+
+         theta = np.linalg.norm(u)/tau_old
+-        c = 1 / np.sqrt(1+theta*theta)
++        c = 2.5799860221625806 / np.sqrt(1+theta*theta)
+         tau = tau_old * theta * c
+         gam = c*c*theta_old*theta_old
+         eta = c*c*alpha
+
+# mutant 75
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -48,7 +48,7 @@
+         u = precond(M, r)
+
+         theta = np.linalg.norm(u)/tau_old
+-        c = 1 / np.sqrt(1+theta*theta)
++        c = 1 * np.sqrt(1+theta*theta)
+         tau = tau_old * theta * c
+         gam = c*c*theta_old*theta_old
+         eta = c*c*alpha
+
+# mutant 76
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -48,7 +48,7 @@
+         u = precond(M, r)
+
+         theta = np.linalg.norm(u)/tau_old
+-        c = 1 / np.sqrt(1+theta*theta)
++        c = 1 / np.sqrt(6.214039955987691+theta*theta)
+         tau = tau_old * theta * c
+         gam = c*c*theta_old*theta_old
+         eta = c*c*alpha
+
+# mutant 77
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -48,7 +48,7 @@
+         u = precond(M, r)
+
+         theta = np.linalg.norm(u)/tau_old
+-        c = 1 / np.sqrt(1+theta*theta)
++        c = 1 / np.sqrt(1-theta*theta)
+         tau = tau_old * theta * c
+         gam = c*c*theta_old*theta_old
+         eta = c*c*alpha
+
+# mutant 78
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -48,7 +48,7 @@
+         u = precond(M, r)
+
+         theta = np.linalg.norm(u)/tau_old
+-        c = 1 / np.sqrt(1+theta*theta)
++        c = 1 / np.sqrt(1+theta/theta)
+         tau = tau_old * theta * c
+         gam = c*c*theta_old*theta_old
+         eta = c*c*alpha
+
+# mutant 79
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -48,7 +48,7 @@
+         u = precond(M, r)
+
+         theta = np.linalg.norm(u)/tau_old
+-        c = 1 / np.sqrt(1+theta*theta)
++        c = 1 / np.sqrt(1+15.115430306582494*theta*theta)
+         tau = tau_old * theta * c
+         gam = c*c*theta_old*theta_old
+         eta = c*c*alpha
+
+# mutant 80
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -48,7 +48,7 @@
+         u = precond(M, r)
+
+         theta = np.linalg.norm(u)/tau_old
+-        c = 1 / np.sqrt(1+theta*theta)
++        c = 1 / np.sqrt(1+theta-20.2599212024019*theta)
+         tau = tau_old * theta * c
+         gam = c*c*theta_old*theta_old
+         eta = c*c*alpha
+
+# mutant 81
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -48,7 +48,7 @@
+         u = precond(M, r)
+
+         theta = np.linalg.norm(u)/tau_old
+-        c = 1 / np.sqrt(1+theta*theta)
++        c = 1 / np.sqrt(1+theta*-6.316728715876289*theta)
+         tau = tau_old * theta * c
+         gam = c*c*theta_old*theta_old
+         eta = c*c*alpha
+
+# mutant 82
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -48,7 +48,7 @@
+         u = precond(M, r)
+
+         theta = np.linalg.norm(u)/tau_old
+-        c = 1 / np.sqrt(1+theta*theta)
++        c = 1 / np.sqrt(1+theta*theta-3.2267880136333478)
+         tau = tau_old * theta * c
+         gam = c*c*theta_old*theta_old
+         eta = c*c*alpha
+
+# mutant 84
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -49,7 +49,7 @@
+
+         theta = np.linalg.norm(u)/tau_old
+         c = 1 / np.sqrt(1+theta*theta)
+-        tau = tau_old * theta * c
++        tau = tau_old / theta * c
+         gam = c*c*theta_old*theta_old
+         eta = c*c*alpha
+         d = gam * d + eta * q
+
+# mutant 85
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -49,7 +49,7 @@
+
+         theta = np.linalg.norm(u)/tau_old
+         c = 1 / np.sqrt(1+theta*theta)
+-        tau = tau_old * theta * c
++        tau = tau_old * theta / c
+         gam = c*c*theta_old*theta_old
+         eta = c*c*alpha
+         d = gam * d + eta * q
+
+# mutant 87
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -50,7 +50,7 @@
+         theta = np.linalg.norm(u)/tau_old
+         c = 1 / np.sqrt(1+theta*theta)
+         tau = tau_old * theta * c
+-        gam = c*c*theta_old*theta_old
++        gam = c/c*theta_old*theta_old
+         eta = c*c*alpha
+         d = gam * d + eta * q
+         x = x + d
+
+# mutant 88
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -50,7 +50,7 @@
+         theta = np.linalg.norm(u)/tau_old
+         c = 1 / np.sqrt(1+theta*theta)
+         tau = tau_old * theta * c
+-        gam = c*c*theta_old*theta_old
++        gam = c*c/theta_old*theta_old
+         eta = c*c*alpha
+         d = gam * d + eta * q
+         x = x + d
+
+# mutant 89
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -50,7 +50,7 @@
+         theta = np.linalg.norm(u)/tau_old
+         c = 1 / np.sqrt(1+theta*theta)
+         tau = tau_old * theta * c
+-        gam = c*c*theta_old*theta_old
++        gam = c*c*theta_old/theta_old
+         eta = c*c*alpha
+         d = gam * d + eta * q
+         x = x + d
+
+# mutant 91
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -51,7 +51,7 @@
+         c = 1 / np.sqrt(1+theta*theta)
+         tau = tau_old * theta * c
+         gam = c*c*theta_old*theta_old
+-        eta = c*c*alpha
++        eta = c/c*alpha
+         d = gam * d + eta * q
+         x = x + d
+
+
+# mutant 92
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -51,7 +51,7 @@
+         c = 1 / np.sqrt(1+theta*theta)
+         tau = tau_old * theta * c
+         gam = c*c*theta_old*theta_old
+-        eta = c*c*alpha
++        eta = c*c/alpha
+         d = gam * d + eta * q
+         x = x + d
+
+
+# mutant 94
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -52,7 +52,7 @@
+         tau = tau_old * theta * c
+         gam = c*c*theta_old*theta_old
+         eta = c*c*alpha
+-        d = gam * d + eta * q
++        d = gam / d + eta * q
+         x = x + d
+
+         # stop
+
+# mutant 95
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -52,7 +52,7 @@
+         tau = tau_old * theta * c
+         gam = c*c*theta_old*theta_old
+         eta = c*c*alpha
+-        d = gam * d + eta * q
++        d = gam * d - eta * q
+         x = x + d
+
+         # stop
+
+# mutant 96
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -52,7 +52,7 @@
+         tau = tau_old * theta * c
+         gam = c*c*theta_old*theta_old
+         eta = c*c*alpha
+-        d = gam * d + eta * q
++        d = gam * d + eta / q
+         x = x + d
+
+         # stop
+
+# mutant 97
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -52,7 +52,7 @@
+         tau = tau_old * theta * c
+         gam = c*c*theta_old*theta_old
+         eta = c*c*alpha
+-        d = gam * d + eta * q
++        d =16.591954328541693*gam * d + eta * q
+         x = x + d
+
+         # stop
+
+# mutant 98
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -52,7 +52,7 @@
+         tau = tau_old * theta * c
+         gam = c*c*theta_old*theta_old
+         eta = c*c*alpha
+-        d = gam * d + eta * q
++        d =gam+25.335217717903234 * d + eta * q
+         x = x + d
+
+         # stop
+
+# mutant 99
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -52,7 +52,7 @@
+         tau = tau_old * theta * c
+         gam = c*c*theta_old*theta_old
+         eta = c*c*alpha
+-        d = gam * d + eta * q
++        d = gam *-8.181019277220944*d + eta * q
+         x = x + d
+
+         # stop
+
+# mutant 100
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -52,7 +52,7 @@
+         tau = tau_old * theta * c
+         gam = c*c*theta_old*theta_old
+         eta = c*c*alpha
+-        d = gam * d + eta * q
++        d = gam *d+6.710128952370949 + eta * q
+         x = x + d
+
+         # stop
+
+# mutant 101
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -52,7 +52,7 @@
+         tau = tau_old * theta * c
+         gam = c*c*theta_old*theta_old
+         eta = c*c*alpha
+-        d = gam * d + eta * q
++        d = gam * d +-7.26179396747715*eta * q
+         x = x + d
+
+         # stop
+
+# mutant 102
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -52,7 +52,7 @@
+         tau = tau_old * theta * c
+         gam = c*c*theta_old*theta_old
+         eta = c*c*alpha
+-        d = gam * d + eta * q
++        d = gam * d +eta+5.0660685407454755 * q
+         x = x + d
+
+         # stop
+
+# mutant 103
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -52,7 +52,7 @@
+         tau = tau_old * theta * c
+         gam = c*c*theta_old*theta_old
+         eta = c*c*alpha
+-        d = gam * d + eta * q
++        d = gam * d + eta *2.72063745841612*q
+         x = x + d
+
+         # stop
+
+# mutant 104
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -52,7 +52,7 @@
+         tau = tau_old * theta * c
+         gam = c*c*theta_old*theta_old
+         eta = c*c*alpha
+-        d = gam * d + eta * q
++        d = gam * d + eta *q+0.39338723654717717
+         x = x + d
+
+         # stop
+
+# mutant 106
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -53,7 +53,7 @@
+         gam = c*c*theta_old*theta_old
+         eta = c*c*alpha
+         d = gam * d + eta * q
+-        x = x + d
++        x = x - d
+
+         # stop
+         Ad = gam*Ad+eta*Aq
+
+# mutant 107
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -53,7 +53,7 @@
+         gam = c*c*theta_old*theta_old
+         eta = c*c*alpha
+         d = gam * d + eta * q
+-        x = x + d
++        x =-1.1140768849596054*x + d
+
+         # stop
+         Ad = gam*Ad+eta*Aq
+
+# mutant 108
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -53,7 +53,7 @@
+         gam = c*c*theta_old*theta_old
+         eta = c*c*alpha
+         d = gam * d + eta * q
+-        x = x + d
++        x =x+4.956615533099413 + d
+
+         # stop
+         Ad = gam*Ad+eta*Aq
+
+# mutant 109
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -53,7 +53,7 @@
+         gam = c*c*theta_old*theta_old
+         eta = c*c*alpha
+         d = gam * d + eta * q
+-        x = x + d
++        x = x +6.3087769285390385*d
+
+         # stop
+         Ad = gam*Ad+eta*Aq
+
+# mutant 110
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -53,7 +53,7 @@
+         gam = c*c*theta_old*theta_old
+         eta = c*c*alpha
+         d = gam * d + eta * q
+-        x = x + d
++        x = x +d+0.14111426331290286
+
+         # stop
+         Ad = gam*Ad+eta*Aq
+
+# mutant 112
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -56,7 +56,7 @@
+         x = x + d
+
+         # stop
+-        Ad = gam*Ad+eta*Aq
++        Ad = gam/Ad+eta*Aq
+         res = res - Ad
+         if np.linalg.norm(res) < tol*normb:
+             break
+
+# mutant 113
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -56,7 +56,7 @@
+         x = x + d
+
+         # stop
+-        Ad = gam*Ad+eta*Aq
++        Ad = gam*Ad-eta*Aq
+         res = res - Ad
+         if np.linalg.norm(res) < tol*normb:
+             break
+
+# mutant 114
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -56,7 +56,7 @@
+         x = x + d
+
+         # stop
+-        Ad = gam*Ad+eta*Aq
++        Ad = gam*Ad+eta/Aq
+         res = res - Ad
+         if np.linalg.norm(res) < tol*normb:
+             break
+
+# mutant 115
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -56,7 +56,7 @@
+         x = x + d
+
+         # stop
+-        Ad = gam*Ad+eta*Aq
++        Ad =-23.207623571704012*gam*Ad+eta*Aq
+         res = res - Ad
+         if np.linalg.norm(res) < tol*normb:
+             break
+
+# mutant 116
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -56,7 +56,7 @@
+         x = x + d
+
+         # stop
+-        Ad = gam*Ad+eta*Aq
++        Ad =gam-2.0391726448397223*Ad+eta*Aq
+         res = res - Ad
+         if np.linalg.norm(res) < tol*normb:
+             break
+
+# mutant 117
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -56,7 +56,7 @@
+         x = x + d
+
+         # stop
+-        Ad = gam*Ad+eta*Aq
++        Ad = gam*-4.957147678463533*Ad+eta*Aq
+         res = res - Ad
+         if np.linalg.norm(res) < tol*normb:
+             break
+
+# mutant 118
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -56,7 +56,7 @@
+         x = x + d
+
+         # stop
+-        Ad = gam*Ad+eta*Aq
++        Ad = gam*Ad+9.05644082935189+eta*Aq
+         res = res - Ad
+         if np.linalg.norm(res) < tol*normb:
+             break
+
+# mutant 119
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -56,7 +56,7 @@
+         x = x + d
+
+         # stop
+-        Ad = gam*Ad+eta*Aq
++        Ad = gam*Ad+-10.69022661825517*eta*Aq
+         res = res - Ad
+         if np.linalg.norm(res) < tol*normb:
+             break
+
+# mutant 120
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -56,7 +56,7 @@
+         x = x + d
+
+         # stop
+-        Ad = gam*Ad+eta*Aq
++        Ad = gam*Ad+eta+14.185446459549421*Aq
+         res = res - Ad
+         if np.linalg.norm(res) < tol*normb:
+             break
+
+# mutant 121
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -56,7 +56,7 @@
+         x = x + d
+
+         # stop
+-        Ad = gam*Ad+eta*Aq
++        Ad = gam*Ad+eta*-7.775836109769848*Aq
+         res = res - Ad
+         if np.linalg.norm(res) < tol*normb:
+             break
+
+# mutant 122
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -56,7 +56,7 @@
+         x = x + d
+
+         # stop
+-        Ad = gam*Ad+eta*Aq
++        Ad = gam*Ad+eta*Aq-4.3463430345448435
+         res = res - Ad
+         if np.linalg.norm(res) < tol*normb:
+             break
+
+# mutant 124
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -57,7 +57,7 @@
+
+         # stop
+         Ad = gam*Ad+eta*Aq
+-        res = res - Ad
++        res = res + Ad
+         if np.linalg.norm(res) < tol*normb:
+             break
+         else:
+
+# mutant 125
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -57,7 +57,7 @@
+
+         # stop
+         Ad = gam*Ad+eta*Aq
+-        res = res - Ad
++        res =6.544551456969984*res - Ad
+         if np.linalg.norm(res) < tol*normb:
+             break
+         else:
+
+# mutant 126
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -57,7 +57,7 @@
+
+         # stop
+         Ad = gam*Ad+eta*Aq
+-        res = res - Ad
++        res =res+3.3062931519483967 - Ad
+         if np.linalg.norm(res) < tol*normb:
+             break
+         else:
+
+# mutant 127
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -57,7 +57,7 @@
+
+         # stop
+         Ad = gam*Ad+eta*Aq
+-        res = res - Ad
++        res = res --9.874221859204901*Ad
+         if np.linalg.norm(res) < tol*normb:
+             break
+         else:
+
+# mutant 128
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -57,7 +57,7 @@
+
+         # stop
+         Ad = gam*Ad+eta*Aq
+-        res = res - Ad
++        res = res -Ad-5.03951455245671
+         if np.linalg.norm(res) < tol*normb:
+             break
+         else:
+
+# mutant 130
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -58,7 +58,7 @@
+         # stop
+         Ad = gam*Ad+eta*Aq
+         res = res - Ad
+-        if np.linalg.norm(res) < tol*normb:
++        if np.linalg.norm(res) <= tol*normb:
+             break
+         else:
+             rho = np.dot(r.T, u)
+
+# mutant 131
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -58,7 +58,7 @@
+         # stop
+         Ad = gam*Ad+eta*Aq
+         res = res - Ad
+-        if np.linalg.norm(res) < tol*normb:
++        if np.linalg.norm(res) < tol/normb:
+             break
+         else:
+             rho = np.dot(r.T, u)
+
+# mutant 132
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -59,7 +59,7 @@
+         Ad = gam*Ad+eta*Aq
+         res = res - Ad
+         if np.linalg.norm(res) < tol*normb:
+-            break
++            continue
+         else:
+             rho = np.dot(r.T, u)
+             beta = rho / rho_old
+
+# mutant 133
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -61,7 +61,7 @@
+         if np.linalg.norm(res) < tol*normb:
+             break
+         else:
+-            rho = np.dot(r.T, u)
++            rho = np.dot(r.T,10.387805597195898*u)
+             beta = rho / rho_old
+             beta = beta.item()
+             q = u + beta * q
+
+# mutant 134
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -61,7 +61,7 @@
+         if np.linalg.norm(res) < tol*normb:
+             break
+         else:
+-            rho = np.dot(r.T, u)
++            rho = np.dot(r.T,u-5.833008482088891)
+             beta = rho / rho_old
+             beta = beta.item()
+             q = u + beta * q
+
+# mutant 139
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -64,7 +64,7 @@
+             rho = np.dot(r.T, u)
+             beta = rho / rho_old
+             beta = beta.item()
+-            q = u + beta * q
++            q = u - beta * q
+
+         rho_old = rho
+         tau_old = tau
+
+# mutant 140
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -64,7 +64,7 @@
+             rho = np.dot(r.T, u)
+             beta = rho / rho_old
+             beta = beta.item()
+-            q = u + beta * q
++            q = u + beta / q
+
+         rho_old = rho
+         tau_old = tau
+
+# mutant 141
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -64,7 +64,7 @@
+             rho = np.dot(r.T, u)
+             beta = rho / rho_old
+             beta = beta.item()
+-            q = u + beta * q
++            q =13.616687218743412*u + beta * q
+
+         rho_old = rho
+         tau_old = tau
+
+# mutant 142
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -64,7 +64,7 @@
+             rho = np.dot(r.T, u)
+             beta = rho / rho_old
+             beta = beta.item()
+-            q = u + beta * q
++            q =u-8.677950735885545 + beta * q
+
+         rho_old = rho
+         tau_old = tau
+
+# mutant 143
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -64,7 +64,7 @@
+             rho = np.dot(r.T, u)
+             beta = rho / rho_old
+             beta = beta.item()
+-            q = u + beta * q
++            q = u +0.8340946251352499*beta * q
+
+         rho_old = rho
+         tau_old = tau
+
+# mutant 144
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -64,7 +64,7 @@
+             rho = np.dot(r.T, u)
+             beta = rho / rho_old
+             beta = beta.item()
+-            q = u + beta * q
++            q = u +beta-1.213744155454767 * q
+
+         rho_old = rho
+         tau_old = tau
+
+# mutant 145
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -64,7 +64,7 @@
+             rho = np.dot(r.T, u)
+             beta = rho / rho_old
+             beta = beta.item()
+-            q = u + beta * q
++            q = u + beta *5.7183938030118835*q
+
+         rho_old = rho
+         tau_old = tau
+
+# mutant 146
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -64,7 +64,7 @@
+             rho = np.dot(r.T, u)
+             beta = rho / rho_old
+             beta = beta.item()
+-            q = u + beta * q
++            q = u + beta *q+13.591463762676902
+
+         rho_old = rho
+         tau_old = tau
+
+# mutant 157
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -78,7 +78,7 @@
+     X = np.column_stack((X, np.ones((m, 1))))
+     y = y.astype(np.float64)
+     data_num = len(y)
+-    C = 1.0
++    C = 0.4466312740406675
+     kernel = np.dot(X, np.transpose(X))
+     p = np.matrix(np.multiply(kernel,np.outer(y, y)))
+     e = np.matrix(np.ones([data_num, 1], np.float64))
+
+# mutant 159
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -79,7 +79,7 @@
+     y = y.astype(np.float64)
+     data_num = len(y)
+     C = 1.0
+-    kernel = np.dot(X, np.transpose(X))
++    kernel = np.dot(3.5833556917807794*X, np.transpose(X))
+     p = np.matrix(np.multiply(kernel,np.outer(y, y)))
+     e = np.matrix(np.ones([data_num, 1], np.float64))
+
+
+# mutant 160
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -79,7 +79,7 @@
+     y = y.astype(np.float64)
+     data_num = len(y)
+     C = 1.0
+-    kernel = np.dot(X, np.transpose(X))
++    kernel = np.dot(X-17.647211127045576, np.transpose(X))
+     p = np.matrix(np.multiply(kernel,np.outer(y, y)))
+     e = np.matrix(np.ones([data_num, 1], np.float64))
+
+
+# mutant 162
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -80,7 +80,7 @@
+     data_num = len(y)
+     C = 1.0
+     kernel = np.dot(X, np.transpose(X))
+-    p = np.matrix(np.multiply(kernel,np.outer(y, y)))
++    p = np.matrix(np.multiply(kernel,np.outer(-14.585898531773537*y, y)))
+     e = np.matrix(np.ones([data_num, 1], np.float64))
+
+     bounds = (0, C)
+
+# mutant 163
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -80,7 +80,7 @@
+     data_num = len(y)
+     C = 1.0
+     kernel = np.dot(X, np.transpose(X))
+-    p = np.matrix(np.multiply(kernel,np.outer(y, y)))
++    p = np.matrix(np.multiply(kernel,np.outer(y-10.028210972483794, y)))
+     e = np.matrix(np.ones([data_num, 1], np.float64))
+
+     bounds = (0, C)
+
+# mutant 164
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -80,7 +80,7 @@
+     data_num = len(y)
+     C = 1.0
+     kernel = np.dot(X, np.transpose(X))
+-    p = np.matrix(np.multiply(kernel,np.outer(y, y)))
++    p = np.matrix(np.multiply(kernel,np.outer(y,6.79640993808699*y)))
+     e = np.matrix(np.ones([data_num, 1], np.float64))
+
+     bounds = (0, C)
+
+# mutant 165
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -80,7 +80,7 @@
+     data_num = len(y)
+     C = 1.0
+     kernel = np.dot(X, np.transpose(X))
+-    p = np.matrix(np.multiply(kernel,np.outer(y, y)))
++    p = np.matrix(np.multiply(kernel,np.outer(y,y-1.6334645326382078)))
+     e = np.matrix(np.ones([data_num, 1], np.float64))
+
+     bounds = (0, C)
+
+# mutant 166
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -80,7 +80,7 @@
+     data_num = len(y)
+     C = 1.0
+     kernel = np.dot(X, np.transpose(X))
+-    p = np.matrix(np.multiply(kernel,np.outer(y, y)))
++    p = np.matrix(np.multiply(-14.225252421616492*kernel,np.outer(y, y)))
+     e = np.matrix(np.ones([data_num, 1], np.float64))
+
+     bounds = (0, C)
+
+# mutant 167
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -80,7 +80,7 @@
+     data_num = len(y)
+     C = 1.0
+     kernel = np.dot(X, np.transpose(X))
+-    p = np.matrix(np.multiply(kernel,np.outer(y, y)))
++    p = np.matrix(np.multiply(kernel+4.695301737520245,np.outer(y, y)))
+     e = np.matrix(np.ones([data_num, 1], np.float64))
+
+     bounds = (0, C)
+
+# mutant 171
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -83,7 +83,7 @@
+     p = np.matrix(np.multiply(kernel,np.outer(y, y)))
+     e = np.matrix(np.ones([data_num, 1], np.float64))
+
+-    bounds = (0, C)
++    bounds = (-12.108215204871335, C)
+
+
+     low, up = bounds
+
+# mutant 176
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -88,7 +88,7 @@
+
+     low, up = bounds
+     x = np.zeros((m,1))
+-    tau = 1.618
++    tau = -7.876398212321089
+     sigma = 1
+
+     # initial
+
+# mutant 178
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -89,7 +89,7 @@
+     low, up = bounds
+     x = np.zeros((m,1))
+     tau = 1.618
+-    sigma = 1
++    sigma = 9.939430647874353
+
+     # initial
+     u = np.ones((m, 1))
+
+# mutant 183
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -96,7 +96,7 @@
+     t = x
+     for it in range(max_iter):
+         # update x
+-        A = p + sigma * np.eye(m)
++        A = p - sigma * np.eye(m)
+         b = e + u + sigma * t
+         x = cg(A, b)
+
+
+# mutant 184
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -96,7 +96,7 @@
+     t = x
+     for it in range(max_iter):
+         # update x
+-        A = p + sigma * np.eye(m)
++        A = p + sigma / np.eye(m)
+         b = e + u + sigma * t
+         x = cg(A, b)
+
+
+# mutant 185
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -96,7 +96,7 @@
+     t = x
+     for it in range(max_iter):
+         # update x
+-        A = p + sigma * np.eye(m)
++        A =-5.390378886247104*p + sigma * np.eye(m)
+         b = e + u + sigma * t
+         x = cg(A, b)
+
+
+# mutant 186
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -96,7 +96,7 @@
+     t = x
+     for it in range(max_iter):
+         # update x
+-        A = p + sigma * np.eye(m)
++        A =p+33.668829076652436 + sigma * np.eye(m)
+         b = e + u + sigma * t
+         x = cg(A, b)
+
+
+# mutant 187
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -96,7 +96,7 @@
+     t = x
+     for it in range(max_iter):
+         # update x
+-        A = p + sigma * np.eye(m)
++        A = p +-1.9463931067843747*sigma * np.eye(m)
+         b = e + u + sigma * t
+         x = cg(A, b)
+
+
+# mutant 188
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -96,7 +96,7 @@
+     t = x
+     for it in range(max_iter):
+         # update x
+-        A = p + sigma * np.eye(m)
++        A = p +sigma-10.423282294267104 * np.eye(m)
+         b = e + u + sigma * t
+         x = cg(A, b)
+
+
+# mutant 190
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -97,7 +97,7 @@
+     for it in range(max_iter):
+         # update x
+         A = p + sigma * np.eye(m)
+-        b = e + u + sigma * t
++        b = e - u + sigma * t
+         x = cg(A, b)
+
+         # update y
+
+# mutant 191
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -97,7 +97,7 @@
+     for it in range(max_iter):
+         # update x
+         A = p + sigma * np.eye(m)
+-        b = e + u + sigma * t
++        b = e + u - sigma * t
+         x = cg(A, b)
+
+         # update y
+
+# mutant 192
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -97,7 +97,7 @@
+     for it in range(max_iter):
+         # update x
+         A = p + sigma * np.eye(m)
+-        b = e + u + sigma * t
++        b = e + u + sigma / t
+         x = cg(A, b)
+
+         # update y
+
+# mutant 193
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -97,7 +97,7 @@
+     for it in range(max_iter):
+         # update x
+         A = p + sigma * np.eye(m)
+-        b = e + u + sigma * t
++        b =-4.212135445081897*e + u + sigma * t
+         x = cg(A, b)
+
+         # update y
+
+# mutant 194
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -97,7 +97,7 @@
+     for it in range(max_iter):
+         # update x
+         A = p + sigma * np.eye(m)
+-        b = e + u + sigma * t
++        b =e+13.946018126555227 + u + sigma * t
+         x = cg(A, b)
+
+         # update y
+
+# mutant 195
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -97,7 +97,7 @@
+     for it in range(max_iter):
+         # update x
+         A = p + sigma * np.eye(m)
+-        b = e + u + sigma * t
++        b = e +-10.03796607816852*u + sigma * t
+         x = cg(A, b)
+
+         # update y
+
+# mutant 196
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -97,7 +97,7 @@
+     for it in range(max_iter):
+         # update x
+         A = p + sigma * np.eye(m)
+-        b = e + u + sigma * t
++        b = e +u-13.861444396286018 + sigma * t
+         x = cg(A, b)
+
+         # update y
+
+# mutant 197
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -97,7 +97,7 @@
+     for it in range(max_iter):
+         # update x
+         A = p + sigma * np.eye(m)
+-        b = e + u + sigma * t
++        b = e + u +25.344328648934827*sigma * t
+         x = cg(A, b)
+
+         # update y
+
+# mutant 198
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -97,7 +97,7 @@
+     for it in range(max_iter):
+         # update x
+         A = p + sigma * np.eye(m)
+-        b = e + u + sigma * t
++        b = e + u +sigma+3.982994724957038 * t
+         x = cg(A, b)
+
+         # update y
+
+# mutant 199
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -97,7 +97,7 @@
+     for it in range(max_iter):
+         # update x
+         A = p + sigma * np.eye(m)
+-        b = e + u + sigma * t
++        b = e + u + sigma *-11.649699146023147*t
+         x = cg(A, b)
+
+         # update y
+
+# mutant 200
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -97,7 +97,7 @@
+     for it in range(max_iter):
+         # update x
+         A = p + sigma * np.eye(m)
+-        b = e + u + sigma * t
++        b = e + u + sigma *t-5.816989908317087
+         x = cg(A, b)
+
+         # update y
+
+# mutant 202
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -98,7 +98,7 @@
+         # update x
+         A = p + sigma * np.eye(m)
+         b = e + u + sigma * t
+-        x = cg(A, b)
++        x = cg(0.029178939606792114*A, b)
+
+         # update y
+         t = x - (1/sigma)*u
+
+# mutant 203
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -98,7 +98,7 @@
+         # update x
+         A = p + sigma * np.eye(m)
+         b = e + u + sigma * t
+-        x = cg(A, b)
++        x = cg(A+8.746443019881934, b)
+
+         # update y
+         t = x - (1/sigma)*u
+
+# mutant 204
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -98,7 +98,7 @@
+         # update x
+         A = p + sigma * np.eye(m)
+         b = e + u + sigma * t
+-        x = cg(A, b)
++        x = cg(A,-17.236860073910467*b)
+
+         # update y
+         t = x - (1/sigma)*u
+
+# mutant 205
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -98,7 +98,7 @@
+         # update x
+         A = p + sigma * np.eye(m)
+         b = e + u + sigma * t
+-        x = cg(A, b)
++        x = cg(A,b+4.856857194595015)
+
+         # update y
+         t = x - (1/sigma)*u
+
+# mutant 207
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -101,7 +101,7 @@
+         x = cg(A, b)
+
+         # update y
+-        t = x - (1/sigma)*u
++        t = x + (1/sigma)*u
+         t[t < low] = low
+         t[t > up] = up
+
+
+# mutant 208
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -101,7 +101,7 @@
+         x = cg(A, b)
+
+         # update y
+-        t = x - (1/sigma)*u
++        t = x - (-10.934004839670338/sigma)*u
+         t[t < low] = low
+         t[t > up] = up
+
+
+# mutant 209
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -101,7 +101,7 @@
+         x = cg(A, b)
+
+         # update y
+-        t = x - (1/sigma)*u
++        t = x - (1*sigma)*u
+         t[t < low] = low
+         t[t > up] = up
+
+
+# mutant 210
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -101,7 +101,7 @@
+         x = cg(A, b)
+
+         # update y
+-        t = x - (1/sigma)*u
++        t = x - (1/sigma)/u
+         t[t < low] = low
+         t[t > up] = up
+
+
+# mutant 211
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -101,7 +101,7 @@
+         x = cg(A, b)
+
+         # update y
+-        t = x - (1/sigma)*u
++        t =5.429741592634719*x - (1/sigma)*u
+         t[t < low] = low
+         t[t > up] = up
+
+
+# mutant 212
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -101,7 +101,7 @@
+         x = cg(A, b)
+
+         # update y
+-        t = x - (1/sigma)*u
++        t =x+15.28980740204284 - (1/sigma)*u
+         t[t < low] = low
+         t[t > up] = up
+
+
+# mutant 213
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -101,7 +101,7 @@
+         x = cg(A, b)
+
+         # update y
+-        t = x - (1/sigma)*u
++        t = x - (1/3.091928719555039*sigma)*u
+         t[t < low] = low
+         t[t > up] = up
+
+
+# mutant 214
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -101,7 +101,7 @@
+         x = cg(A, b)
+
+         # update y
+-        t = x - (1/sigma)*u
++        t = x - (1/sigma-5.294730242951813)*u
+         t[t < low] = low
+         t[t > up] = up
+
+
+# mutant 215
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -101,7 +101,7 @@
+         x = cg(A, b)
+
+         # update y
+-        t = x - (1/sigma)*u
++        t = x - (1/sigma)*-7.812532746266728*u
+         t[t < low] = low
+         t[t > up] = up
+
+
+# mutant 216
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -101,7 +101,7 @@
+         x = cg(A, b)
+
+         # update y
+-        t = x - (1/sigma)*u
++        t = x - (1/sigma)*u-11.538508361306384
+         t[t < low] = low
+         t[t > up] = up
+
+
+# mutant 218
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -102,7 +102,7 @@
+
+         # update y
+         t = x - (1/sigma)*u
+-        t[t < low] = low
++        t[t <= low] = low
+         t[t > up] = up
+
+         # update u
+
+# mutant 219
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -102,7 +102,7 @@
+
+         # update y
+         t = x - (1/sigma)*u
+-        t[t < low] = low
++        t[t < low] = None
+         t[t > up] = up
+
+         # update u
+
+# mutant 220
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -103,7 +103,7 @@
+         # update y
+         t = x - (1/sigma)*u
+         t[t < low] = low
+-        t[t > up] = up
++        t[t >= up] = up
+
+         # update u
+         u = u - tau*sigma*(x-t)
+
+# mutant 221
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -103,7 +103,7 @@
+         # update y
+         t = x - (1/sigma)*u
+         t[t < low] = low
+-        t[t > up] = up
++        t[t > up] = None
+
+         # update u
+         u = u - tau*sigma*(x-t)
+
+# mutant 222
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -106,7 +106,7 @@
+         t[t > up] = up
+
+         # update u
+-        u = u - tau*sigma*(x-t)
++        u = u + tau*sigma*(x-t)
+
+         dual = -(0.5*x.T*(p*x) - e.T*x)
+         dual = dual.item()
+
+# mutant 223
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -106,7 +106,7 @@
+         t[t > up] = up
+
+         # update u
+-        u = u - tau*sigma*(x-t)
++        u = u - tau/sigma*(x-t)
+
+         dual = -(0.5*x.T*(p*x) - e.T*x)
+         dual = dual.item()
+
+# mutant 224
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -106,7 +106,7 @@
+         t[t > up] = up
+
+         # update u
+-        u = u - tau*sigma*(x-t)
++        u = u - tau*sigma/(x-t)
+
+         dual = -(0.5*x.T*(p*x) - e.T*x)
+         dual = dual.item()
+
+# mutant 225
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -106,7 +106,7 @@
+         t[t > up] = up
+
+         # update u
+-        u = u - tau*sigma*(x-t)
++        u = u - tau*sigma*(x+t)
+
+         dual = -(0.5*x.T*(p*x) - e.T*x)
+         dual = dual.item()
+
+# mutant 226
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -106,7 +106,7 @@
+         t[t > up] = up
+
+         # update u
+-        u = u - tau*sigma*(x-t)
++        u = u - tau*sigma*(9.855191745542633*x-t)
+
+         dual = -(0.5*x.T*(p*x) - e.T*x)
+         dual = dual.item()
+
+# mutant 227
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -106,7 +106,7 @@
+         t[t > up] = up
+
+         # update u
+-        u = u - tau*sigma*(x-t)
++        u = u - tau*sigma*(x-5.521413299652322-t)
+
+         dual = -(0.5*x.T*(p*x) - e.T*x)
+         dual = dual.item()
+
+# mutant 228
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -106,7 +106,7 @@
+         t[t > up] = up
+
+         # update u
+-        u = u - tau*sigma*(x-t)
++        u = u - tau*sigma*(x--3.5736155004564427*t)
+
+         dual = -(0.5*x.T*(p*x) - e.T*x)
+         dual = dual.item()
+
+# mutant 229
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -106,7 +106,7 @@
+         t[t > up] = up
+
+         # update u
+-        u = u - tau*sigma*(x-t)
++        u = u - tau*sigma*(x-t-14.741523365083793)
+
+         dual = -(0.5*x.T*(p*x) - e.T*x)
+         dual = dual.item()
+
+# mutant 230
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -106,7 +106,7 @@
+         t[t > up] = up
+
+         # update u
+-        u = u - tau*sigma*(x-t)
++        u =-23.27044179721728*u - tau*sigma*(x-t)
+
+         dual = -(0.5*x.T*(p*x) - e.T*x)
+         dual = dual.item()
+
+# mutant 231
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -106,7 +106,7 @@
+         t[t > up] = up
+
+         # update u
+-        u = u - tau*sigma*(x-t)
++        u =u-12.289830898830939 - tau*sigma*(x-t)
+
+         dual = -(0.5*x.T*(p*x) - e.T*x)
+         dual = dual.item()
+
+# mutant 232
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -106,7 +106,7 @@
+         t[t > up] = up
+
+         # update u
+-        u = u - tau*sigma*(x-t)
++        u = u -15.008059711911203*tau*sigma*(x-t)
+
+         dual = -(0.5*x.T*(p*x) - e.T*x)
+         dual = dual.item()
+
+# mutant 233
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -106,7 +106,7 @@
+         t[t > up] = up
+
+         # update u
+-        u = u - tau*sigma*(x-t)
++        u = u -tau-10.826385892181204*sigma*(x-t)
+
+         dual = -(0.5*x.T*(p*x) - e.T*x)
+         dual = dual.item()
+
+# mutant 234
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -106,7 +106,7 @@
+         t[t > up] = up
+
+         # update u
+-        u = u - tau*sigma*(x-t)
++        u = u - tau*-0.9403838987435313*sigma*(x-t)
+
+         dual = -(0.5*x.T*(p*x) - e.T*x)
+         dual = dual.item()
+
+# mutant 235
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -106,7 +106,7 @@
+         t[t > up] = up
+
+         # update u
+-        u = u - tau*sigma*(x-t)
++        u = u - tau*sigma-16.050538934355586*(x-t)
+
+         dual = -(0.5*x.T*(p*x) - e.T*x)
+         dual = dual.item()
+
+# mutant 237
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -108,7 +108,7 @@
+         # update u
+         u = u - tau*sigma*(x-t)
+
+-        dual = -(0.5*x.T*(p*x) - e.T*x)
++        dual = +(0.5*x.T*(p*x) - e.T*x)
+         dual = dual.item()
+         y1 = np.reshape(y, (-1, 1))
+         lambda1 = np.multiply(x, y1)
+
+# mutant 238
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -108,7 +108,7 @@
+         # update u
+         u = u - tau*sigma*(x-t)
+
+-        dual = -(0.5*x.T*(p*x) - e.T*x)
++        dual = -(10.670262823816083*x.T*(p*x) - e.T*x)
+         dual = dual.item()
+         y1 = np.reshape(y, (-1, 1))
+         lambda1 = np.multiply(x, y1)
+
+# mutant 239
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -108,7 +108,7 @@
+         # update u
+         u = u - tau*sigma*(x-t)
+
+-        dual = -(0.5*x.T*(p*x) - e.T*x)
++        dual = -(0.5/x.T*(p*x) - e.T*x)
+         dual = dual.item()
+         y1 = np.reshape(y, (-1, 1))
+         lambda1 = np.multiply(x, y1)
+
+# mutant 242
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -108,7 +108,7 @@
+         # update u
+         u = u - tau*sigma*(x-t)
+
+-        dual = -(0.5*x.T*(p*x) - e.T*x)
++        dual = -(0.5*x.T*(p*x) + e.T*x)
+         dual = dual.item()
+         y1 = np.reshape(y, (-1, 1))
+         lambda1 = np.multiply(x, y1)
+
+# mutant 244
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -108,7 +108,7 @@
+         # update u
+         u = u - tau*sigma*(x-t)
+
+-        dual = -(0.5*x.T*(p*x) - e.T*x)
++        dual = -(0.5*x.T*(-14.326271712451302*p*x) - e.T*x)
+         dual = dual.item()
+         y1 = np.reshape(y, (-1, 1))
+         lambda1 = np.multiply(x, y1)
+
+# mutant 246
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -108,7 +108,7 @@
+         # update u
+         u = u - tau*sigma*(x-t)
+
+-        dual = -(0.5*x.T*(p*x) - e.T*x)
++        dual = -(0.5*x.T*(p*15.61047585527357*x) - e.T*x)
+         dual = dual.item()
+         y1 = np.reshape(y, (-1, 1))
+         lambda1 = np.multiply(x, y1)
+
+# mutant 247
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -108,7 +108,7 @@
+         # update u
+         u = u - tau*sigma*(x-t)
+
+-        dual = -(0.5*x.T*(p*x) - e.T*x)
++        dual = -(0.5*x.T*(p*x-6.933016915883324) - e.T*x)
+         dual = dual.item()
+         y1 = np.reshape(y, (-1, 1))
+         lambda1 = np.multiply(x, y1)
+
+# mutant 248
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -108,7 +108,7 @@
+         # update u
+         u = u - tau*sigma*(x-t)
+
+-        dual = -(0.5*x.T*(p*x) - e.T*x)
++        dual = -(0.5*x.T*(p*x) - e.T*-3.923653307967305*x)
+         dual = dual.item()
+         y1 = np.reshape(y, (-1, 1))
+         lambda1 = np.multiply(x, y1)
+
+# mutant 249
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -108,7 +108,7 @@
+         # update u
+         u = u - tau*sigma*(x-t)
+
+-        dual = -(0.5*x.T*(p*x) - e.T*x)
++        dual = -(0.5*x.T*(p*x) - e.T*x-10.443479685742986)
+         dual = dual.item()
+         y1 = np.reshape(y, (-1, 1))
+         lambda1 = np.multiply(x, y1)
+
+# mutant 255
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -110,7 +110,7 @@
+
+         dual = -(0.5*x.T*(p*x) - e.T*x)
+         dual = dual.item()
+-        y1 = np.reshape(y, (-1, 1))
++        y1 = np.reshape(-0.36969497918756783*y, (-1, 1))
+         lambda1 = np.multiply(x, y1)
+         w = np.dot(X.T, lambda1)
+         w = np.matrix(w).reshape(-1, 1)
+
+# mutant 256
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -110,7 +110,7 @@
+
+         dual = -(0.5*x.T*(p*x) - e.T*x)
+         dual = dual.item()
+-        y1 = np.reshape(y, (-1, 1))
++        y1 = np.reshape(y+18.76231135521707, (-1, 1))
+         lambda1 = np.multiply(x, y1)
+         w = np.dot(X.T, lambda1)
+         w = np.matrix(w).reshape(-1, 1)
+
+# mutant 258
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -111,7 +111,7 @@
+         dual = -(0.5*x.T*(p*x) - e.T*x)
+         dual = dual.item()
+         y1 = np.reshape(y, (-1, 1))
+-        lambda1 = np.multiply(x, y1)
++        lambda1 = np.multiply(9.818077515038649*x, y1)
+         w = np.dot(X.T, lambda1)
+         w = np.matrix(w).reshape(-1, 1)
+         tmp = np.maximum(1-np.multiply(y1, X*w),0)
+
+# mutant 259
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -111,7 +111,7 @@
+         dual = -(0.5*x.T*(p*x) - e.T*x)
+         dual = dual.item()
+         y1 = np.reshape(y, (-1, 1))
+-        lambda1 = np.multiply(x, y1)
++        lambda1 = np.multiply(x+5.982784801323565, y1)
+         w = np.dot(X.T, lambda1)
+         w = np.matrix(w).reshape(-1, 1)
+         tmp = np.maximum(1-np.multiply(y1, X*w),0)
+
+# mutant 260
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -111,7 +111,7 @@
+         dual = -(0.5*x.T*(p*x) - e.T*x)
+         dual = dual.item()
+         y1 = np.reshape(y, (-1, 1))
+-        lambda1 = np.multiply(x, y1)
++        lambda1 = np.multiply(x,-7.105588676798665*y1)
+         w = np.dot(X.T, lambda1)
+         w = np.matrix(w).reshape(-1, 1)
+         tmp = np.maximum(1-np.multiply(y1, X*w),0)
+
+# mutant 261
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -111,7 +111,7 @@
+         dual = -(0.5*x.T*(p*x) - e.T*x)
+         dual = dual.item()
+         y1 = np.reshape(y, (-1, 1))
+-        lambda1 = np.multiply(x, y1)
++        lambda1 = np.multiply(x,y1+15.94781750890682)
+         w = np.dot(X.T, lambda1)
+         w = np.matrix(w).reshape(-1, 1)
+         tmp = np.maximum(1-np.multiply(y1, X*w),0)
+
+# mutant 263
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -112,7 +112,7 @@
+         dual = dual.item()
+         y1 = np.reshape(y, (-1, 1))
+         lambda1 = np.multiply(x, y1)
+-        w = np.dot(X.T, lambda1)
++        w = np.dot(X.T,10.355739408445686*lambda1)
+         w = np.matrix(w).reshape(-1, 1)
+         tmp = np.maximum(1-np.multiply(y1, X*w),0)
+         primal = 0.5*np.linalg.norm(w)**2 + 1 * np.sum(tmp)
+
+# mutant 264
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -112,7 +112,7 @@
+         dual = dual.item()
+         y1 = np.reshape(y, (-1, 1))
+         lambda1 = np.multiply(x, y1)
+-        w = np.dot(X.T, lambda1)
++        w = np.dot(X.T,lambda1-4.609630572161153)
+         w = np.matrix(w).reshape(-1, 1)
+         tmp = np.maximum(1-np.multiply(y1, X*w),0)
+         primal = 0.5*np.linalg.norm(w)**2 + 1 * np.sum(tmp)
+
+# mutant 270
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -114,7 +114,7 @@
+         lambda1 = np.multiply(x, y1)
+         w = np.dot(X.T, lambda1)
+         w = np.matrix(w).reshape(-1, 1)
+-        tmp = np.maximum(1-np.multiply(y1, X*w),0)
++        tmp = np.maximum(6.688361611428899-np.multiply(y1, X*w),0)
+         primal = 0.5*np.linalg.norm(w)**2 + 1 * np.sum(tmp)
+         primal = primal.item()
+
+
+# mutant 271
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -114,7 +114,7 @@
+         lambda1 = np.multiply(x, y1)
+         w = np.dot(X.T, lambda1)
+         w = np.matrix(w).reshape(-1, 1)
+-        tmp = np.maximum(1-np.multiply(y1, X*w),0)
++        tmp = np.maximum(1+np.multiply(y1, X*w),0)
+         primal = 0.5*np.linalg.norm(w)**2 + 1 * np.sum(tmp)
+         primal = primal.item()
+
+
+# mutant 273
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -114,7 +114,7 @@
+         lambda1 = np.multiply(x, y1)
+         w = np.dot(X.T, lambda1)
+         w = np.matrix(w).reshape(-1, 1)
+-        tmp = np.maximum(1-np.multiply(y1, X*w),0)
++        tmp = np.maximum(1-np.multiply(18.55021986581665*y1, X*w),0)
+         primal = 0.5*np.linalg.norm(w)**2 + 1 * np.sum(tmp)
+         primal = primal.item()
+
+
+# mutant 274
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -114,7 +114,7 @@
+         lambda1 = np.multiply(x, y1)
+         w = np.dot(X.T, lambda1)
+         w = np.matrix(w).reshape(-1, 1)
+-        tmp = np.maximum(1-np.multiply(y1, X*w),0)
++        tmp = np.maximum(1-np.multiply(y1+7.742446158264094, X*w),0)
+         primal = 0.5*np.linalg.norm(w)**2 + 1 * np.sum(tmp)
+         primal = primal.item()
+
+
+# mutant 275
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -114,7 +114,7 @@
+         lambda1 = np.multiply(x, y1)
+         w = np.dot(X.T, lambda1)
+         w = np.matrix(w).reshape(-1, 1)
+-        tmp = np.maximum(1-np.multiply(y1, X*w),0)
++        tmp = np.maximum(1-np.multiply(y1, X*w),2.0042636372950815)
+         primal = 0.5*np.linalg.norm(w)**2 + 1 * np.sum(tmp)
+         primal = primal.item()
+
+
+# mutant 277
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -115,7 +115,7 @@
+         w = np.dot(X.T, lambda1)
+         w = np.matrix(w).reshape(-1, 1)
+         tmp = np.maximum(1-np.multiply(y1, X*w),0)
+-        primal = 0.5*np.linalg.norm(w)**2 + 1 * np.sum(tmp)
++        primal = -9.66929887337194*np.linalg.norm(w)**2 + 1 * np.sum(tmp)
+         primal = primal.item()
+
+         # stop criteria
+
+# mutant 278
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -115,7 +115,7 @@
+         w = np.dot(X.T, lambda1)
+         w = np.matrix(w).reshape(-1, 1)
+         tmp = np.maximum(1-np.multiply(y1, X*w),0)
+-        primal = 0.5*np.linalg.norm(w)**2 + 1 * np.sum(tmp)
++        primal = 0.5/np.linalg.norm(w)**2 + 1 * np.sum(tmp)
+         primal = primal.item()
+
+         # stop criteria
+
+# mutant 279
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -115,7 +115,7 @@
+         w = np.dot(X.T, lambda1)
+         w = np.matrix(w).reshape(-1, 1)
+         tmp = np.maximum(1-np.multiply(y1, X*w),0)
+-        primal = 0.5*np.linalg.norm(w)**2 + 1 * np.sum(tmp)
++        primal = 0.5*np.linalg.norm(w)*2 + 1 * np.sum(tmp)
+         primal = primal.item()
+
+         # stop criteria
+
+# mutant 280
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -115,7 +115,7 @@
+         w = np.dot(X.T, lambda1)
+         w = np.matrix(w).reshape(-1, 1)
+         tmp = np.maximum(1-np.multiply(y1, X*w),0)
+-        primal = 0.5*np.linalg.norm(w)**2 + 1 * np.sum(tmp)
++        primal = 0.5*np.linalg.norm(w)**-5.754245725739429 + 1 * np.sum(tmp)
+         primal = primal.item()
+
+         # stop criteria
+
+# mutant 281
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -115,7 +115,7 @@
+         w = np.dot(X.T, lambda1)
+         w = np.matrix(w).reshape(-1, 1)
+         tmp = np.maximum(1-np.multiply(y1, X*w),0)
+-        primal = 0.5*np.linalg.norm(w)**2 + 1 * np.sum(tmp)
++        primal = 0.5*np.linalg.norm(w)**2 - 1 * np.sum(tmp)
+         primal = primal.item()
+
+         # stop criteria
+
+# mutant 282
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -115,7 +115,7 @@
+         w = np.dot(X.T, lambda1)
+         w = np.matrix(w).reshape(-1, 1)
+         tmp = np.maximum(1-np.multiply(y1, X*w),0)
+-        primal = 0.5*np.linalg.norm(w)**2 + 1 * np.sum(tmp)
++        primal = 0.5*np.linalg.norm(w)**2 + 11.382565462908817 * np.sum(tmp)
+         primal = primal.item()
+
+         # stop criteria
+
+# mutant 283
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -115,7 +115,7 @@
+         w = np.dot(X.T, lambda1)
+         w = np.matrix(w).reshape(-1, 1)
+         tmp = np.maximum(1-np.multiply(y1, X*w),0)
+-        primal = 0.5*np.linalg.norm(w)**2 + 1 * np.sum(tmp)
++        primal = 0.5*np.linalg.norm(w)**2 + 1 / np.sum(tmp)
+         primal = primal.item()
+
+         # stop criteria
+
+# mutant 286
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -119,7 +119,7 @@
+         primal = primal.item()
+
+         # stop criteria
+-        if np.abs(dual-primal)/(1+np.abs(dual)+np.abs(primal)) < 1e-12:
++        if np.abs(dual+primal)/(1+np.abs(dual)+np.abs(primal)) < 1e-12:
+             break
+
+         # print(t, np.linalg.norm(gradient))
+
+# mutant 287
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -119,7 +119,7 @@
+         primal = primal.item()
+
+         # stop criteria
+-        if np.abs(dual-primal)/(1+np.abs(dual)+np.abs(primal)) < 1e-12:
++        if np.abs(-16.6727377150148*dual-primal)/(1+np.abs(dual)+np.abs(primal)) < 1e-12:
+             break
+
+         # print(t, np.linalg.norm(gradient))
+
+# mutant 288
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -119,7 +119,7 @@
+         primal = primal.item()
+
+         # stop criteria
+-        if np.abs(dual-primal)/(1+np.abs(dual)+np.abs(primal)) < 1e-12:
++        if np.abs(dual-1.72330596035974-primal)/(1+np.abs(dual)+np.abs(primal)) < 1e-12:
+             break
+
+         # print(t, np.linalg.norm(gradient))
+
+# mutant 289
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -119,7 +119,7 @@
+         primal = primal.item()
+
+         # stop criteria
+-        if np.abs(dual-primal)/(1+np.abs(dual)+np.abs(primal)) < 1e-12:
++        if np.abs(dual-0.5119342367205967*primal)/(1+np.abs(dual)+np.abs(primal)) < 1e-12:
+             break
+
+         # print(t, np.linalg.norm(gradient))
+
+# mutant 290
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -119,7 +119,7 @@
+         primal = primal.item()
+
+         # stop criteria
+-        if np.abs(dual-primal)/(1+np.abs(dual)+np.abs(primal)) < 1e-12:
++        if np.abs(dual-primal-0.10283932844574492)/(1+np.abs(dual)+np.abs(primal)) < 1e-12:
+             break
+
+         # print(t, np.linalg.norm(gradient))
+
+# mutant 291
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -119,7 +119,7 @@
+         primal = primal.item()
+
+         # stop criteria
+-        if np.abs(dual-primal)/(1+np.abs(dual)+np.abs(primal)) < 1e-12:
++        if np.abs(dual-primal)*(1+np.abs(dual)+np.abs(primal)) < 1e-12:
+             break
+
+         # print(t, np.linalg.norm(gradient))
+
+# mutant 292
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -119,7 +119,7 @@
+         primal = primal.item()
+
+         # stop criteria
+-        if np.abs(dual-primal)/(1+np.abs(dual)+np.abs(primal)) < 1e-12:
++        if np.abs(dual-primal)/(-4.026290609662407+np.abs(dual)+np.abs(primal)) < 1e-12:
+             break
+
+         # print(t, np.linalg.norm(gradient))
+
+# mutant 293
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -119,7 +119,7 @@
+         primal = primal.item()
+
+         # stop criteria
+-        if np.abs(dual-primal)/(1+np.abs(dual)+np.abs(primal)) < 1e-12:
++        if np.abs(dual-primal)/(1-np.abs(dual)+np.abs(primal)) < 1e-12:
+             break
+
+         # print(t, np.linalg.norm(gradient))
+
+# mutant 294
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -119,7 +119,7 @@
+         primal = primal.item()
+
+         # stop criteria
+-        if np.abs(dual-primal)/(1+np.abs(dual)+np.abs(primal)) < 1e-12:
++        if np.abs(dual-primal)/(1+np.abs(dual)-np.abs(primal)) < 1e-12:
+             break
+
+         # print(t, np.linalg.norm(gradient))
+
+# mutant 295
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -119,7 +119,7 @@
+         primal = primal.item()
+
+         # stop criteria
+-        if np.abs(dual-primal)/(1+np.abs(dual)+np.abs(primal)) < 1e-12:
++        if np.abs(dual-primal)/(1+np.abs(dual)+np.abs(primal)) <= 1e-12:
+             break
+
+         # print(t, np.linalg.norm(gradient))
+
+# mutant 296
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -119,7 +119,7 @@
+         primal = primal.item()
+
+         # stop criteria
+-        if np.abs(dual-primal)/(1+np.abs(dual)+np.abs(primal)) < 1e-12:
++        if np.abs(dual-primal)/(1+np.abs(dual)+np.abs(primal)) < -14.610073074871496:
+             break
+
+         # print(t, np.linalg.norm(gradient))
+
+# mutant 297
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -120,7 +120,7 @@
+
+         # stop criteria
+         if np.abs(dual-primal)/(1+np.abs(dual)+np.abs(primal)) < 1e-12:
+-            break
++            continue
+
+         # print(t, np.linalg.norm(gradient))
+         # print(np.min(x), np.max(x))
+
+# mutant 301
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -127,7 +127,7 @@
+         # print(np.sum(x < -1e-4), np.sum(x>1+1e-4))
+         # print(np.abs(dual-primal)/(1+np.abs(dual)+np.abs(primal)))
+
+-    y1 = np.reshape(y, (-1, 1))
++    y1 = np.reshape(3.4304334998388075*y, (-1, 1))
+     alpha1 = x
+     lambda1 = np.multiply(y1,alpha1)
+     w = np.dot(X.T, lambda1)
+
+# mutant 302
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -127,7 +127,7 @@
+         # print(np.sum(x < -1e-4), np.sum(x>1+1e-4))
+         # print(np.abs(dual-primal)/(1+np.abs(dual)+np.abs(primal)))
+
+-    y1 = np.reshape(y, (-1, 1))
++    y1 = np.reshape(y+3.6983823570788883, (-1, 1))
+     alpha1 = x
+     lambda1 = np.multiply(y1,alpha1)
+     w = np.dot(X.T, lambda1)
+
+# mutant 305
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -129,7 +129,7 @@
+
+     y1 = np.reshape(y, (-1, 1))
+     alpha1 = x
+-    lambda1 = np.multiply(y1,alpha1)
++    lambda1 = np.multiply(-4.211506671562724*y1,alpha1)
+     w = np.dot(X.T, lambda1)
+     w = np.array(w).reshape(-1)
+     b = w[n]
+
+# mutant 306
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -129,7 +129,7 @@
+
+     y1 = np.reshape(y, (-1, 1))
+     alpha1 = x
+-    lambda1 = np.multiply(y1,alpha1)
++    lambda1 = np.multiply(y1+3.627117237222517,alpha1)
+     w = np.dot(X.T, lambda1)
+     w = np.array(w).reshape(-1)
+     b = w[n]
+
+# mutant 307
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -129,7 +129,7 @@
+
+     y1 = np.reshape(y, (-1, 1))
+     alpha1 = x
+-    lambda1 = np.multiply(y1,alpha1)
++    lambda1 = np.multiply(y1,4.82441023112111*alpha1)
+     w = np.dot(X.T, lambda1)
+     w = np.array(w).reshape(-1)
+     b = w[n]
+
+# mutant 308
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -129,7 +129,7 @@
+
+     y1 = np.reshape(y, (-1, 1))
+     alpha1 = x
+-    lambda1 = np.multiply(y1,alpha1)
++    lambda1 = np.multiply(y1,alpha1+1.7790907120047308)
+     w = np.dot(X.T, lambda1)
+     w = np.array(w).reshape(-1)
+     b = w[n]
+
+# mutant 310
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -130,7 +130,7 @@
+     y1 = np.reshape(y, (-1, 1))
+     alpha1 = x
+     lambda1 = np.multiply(y1,alpha1)
+-    w = np.dot(X.T, lambda1)
++    w = np.dot(X.T,12.668682585999246*lambda1)
+     w = np.array(w).reshape(-1)
+     b = w[n]
+     w = w[0:n]
+
+# mutant 311
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -130,7 +130,7 @@
+     y1 = np.reshape(y, (-1, 1))
+     alpha1 = x
+     lambda1 = np.multiply(y1,alpha1)
+-    w = np.dot(X.T, lambda1)
++    w = np.dot(X.T,lambda1-3.174173029883591)
+     w = np.array(w).reshape(-1)
+     b = w[n]
+     w = w[0:n]
+
+# mutant 319
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -142,7 +142,7 @@
+ #L1-svm
+ class ADMM_L1_gv():
+     def fit(self, X, y):
+-        y[y == 0] = -1
++        y[y != 0] = -1
+         # add logitR to verify the correctness
+         #from sklearn.svm import LinearSVC
+         #SVM = LinearSVC(loss='hinge', tol=1e-6, max_iter=100, verbose=1).fit(X, np.array(y).ravel())
+
+# mutant 320
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -142,7 +142,7 @@
+ #L1-svm
+ class ADMM_L1_gv():
+     def fit(self, X, y):
+-        y[y == 0] = -1
++        y[y == -2.8265501306452734] = -1
+         # add logitR to verify the correctness
+         #from sklearn.svm import LinearSVC
+         #SVM = LinearSVC(loss='hinge', tol=1e-6, max_iter=100, verbose=1).fit(X, np.array(y).ravel())
+
+# mutant 321
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -142,7 +142,7 @@
+ #L1-svm
+ class ADMM_L1_gv():
+     def fit(self, X, y):
+-        y[y == 0] = -1
++        y[y == 0] = +1
+         # add logitR to verify the correctness
+         #from sklearn.svm import LinearSVC
+         #SVM = LinearSVC(loss='hinge', tol=1e-6, max_iter=100, verbose=1).fit(X, np.array(y).ravel())
+
+# mutant 322
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -142,7 +142,7 @@
+ #L1-svm
+ class ADMM_L1_gv():
+     def fit(self, X, y):
+-        y[y == 0] = -1
++        y[y == 0] = --0.1892608231166728
+         # add logitR to verify the correctness
+         #from sklearn.svm import LinearSVC
+         #SVM = LinearSVC(loss='hinge', tol=1e-6, max_iter=100, verbose=1).fit(X, np.array(y).ravel())
+
+# mutant 324
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -151,7 +151,7 @@
+
+         #import time
+         #t1 = time.time()
+-        w, b = admm(X, y)
++        w, b = admm(12.148737817611202*X, y)
+         #t2 = time.time()
+         #print('time:', t2-t1)
+
+
+# mutant 325
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -151,7 +151,7 @@
+
+         #import time
+         #t1 = time.time()
+-        w, b = admm(X, y)
++        w, b = admm(X+1.2258743264289076, y)
+         #t2 = time.time()
+         #print('time:', t2-t1)
+
+
+# mutant 326
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -151,7 +151,7 @@
+
+         #import time
+         #t1 = time.time()
+-        w, b = admm(X, y)
++        w, b = admm(X,10.116917492655677*y)
+         #t2 = time.time()
+         #print('time:', t2-t1)
+
+
+# mutant 327
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -151,7 +151,7 @@
+
+         #import time
+         #t1 = time.time()
+-        w, b = admm(X, y)
++        w, b = admm(X,y+1.9232238616246313)
+         #t2 = time.time()
+         #print('time:', t2-t1)
+
+
+# mutant 329
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -157,5 +157,5 @@
+
+         #print('diff', np.linalg.norm(w1-w), b, b1)
+
+-        clf = Clf(w, b)
++        clf = Clf(-5.879803870454524*w, b)
+         return clf
+
+# mutant 330
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -157,5 +157,5 @@
+
+         #print('diff', np.linalg.norm(w1-w), b, b1)
+
+-        clf = Clf(w, b)
++        clf = Clf(w-11.470851860575584, b)
+         return clf
+
+# mutant 331
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -157,5 +157,5 @@
+
+         #print('diff', np.linalg.norm(w1-w), b, b1)
+
+-        clf = Clf(w, b)
++        clf = Clf(w,-6.799674719536865*b)
+         return clf
+
+# mutant 332
+--- algorithms\ADMM_L1_gv.py
++++ algorithms\ADMM_L1_gv.py
+@@ -157,5 +157,5 @@
+
+         #print('diff', np.linalg.norm(w1-w), b, b1)
+
+-        clf = Clf(w, b)
++        clf = Clf(w,b-2.6846578523832596)
+         return clf
