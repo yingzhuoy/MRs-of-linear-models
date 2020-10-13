@@ -13,33 +13,34 @@ def precond(M, r):
     q = M * r
     return q
 
+def inner_prod(A, B):
+    A = np.matrix(A)
+    B = np.matrix(B)
+    return np.dot(A.reshape(-1,1).T, B.reshape(-1,1))
 
-def cg(A, b, x=None, tol=1.0e-6, max_iter=1000):
+
+def cg(A, b, x=None, tol=1.0e-6, max_iter=128):
     # precondition  
     A = np.matrix(A)
     b = np.matrix(b)    
     normb = np.linalg.norm(b, 'fro')
     m = b.shape[0]
-    if np.linalg.norm(A,'fro') > 1e-12:
-        M = np.linalg.inv(np.diag(np.diag(A.T*A)))
-    else:
-        M = np.eye(m)
-    
-    x = np.zeros((m, 1))
-    Aq = np.dot(A, x)    
-    r = b - Aq
-    q = precond(M, r)       
-    tau_old = np.linalg.norm(q)
-    rho_old = np.dot(r.T, q)
+    M = np.eye(m)
+    x = np.zeros((m, m))
+    Aq = (A*x)
+    r = b - Aq # m x m
+    q = precond(M, r) # m x m  
+    tau_old = np.linalg.norm(q, 'fro')
+    rho_old = inner_prod(r, q)
     theta_old = 0
-    Ad = np.zeros((m, 1))
-    d = np.zeros((m, 1))
-    res = r
+    Ad = np.zeros((m, m))
+    d = np.zeros((m, m))
+    res = r.reshape(m, m)
     
     tiny = 1e-30
     for i in range(max_iter):
-        Aq = np.dot(A, q)
-        sigma = np.dot(q.T, Aq)
+        Aq = A * q
+        sigma = inner_prod(q, Aq)
         
         if abs(sigma.item()) < tiny:
             break
@@ -47,9 +48,10 @@ def cg(A, b, x=None, tol=1.0e-6, max_iter=1000):
             alpha = rho_old / sigma;
             alpha = alpha.item()
             r = r - alpha * Aq
+        r = r.reshape(m, m)
         u = precond(M, r)
 
-        theta = np.linalg.norm(u)/tau_old
+        theta = np.linalg.norm(u,'fro')/tau_old
         c = 1 / np.sqrt(1+theta*theta)
         tau = tau_old * theta * c
         gam = c*c*theta_old*theta_old
@@ -60,10 +62,10 @@ def cg(A, b, x=None, tol=1.0e-6, max_iter=1000):
         # stop
         Ad = gam*Ad+eta*Aq
         res = res - Ad
-        if np.linalg.norm(res) < tol*normb:
+        if np.linalg.norm(res, 'fro') < tol*normb:
             break
         else:
-            rho = np.dot(r.T, u)
+            rho = inner_prod(r, u)
             beta = rho / rho_old
             beta = beta.item()
             q = u + beta * q
@@ -74,7 +76,7 @@ def cg(A, b, x=None, tol=1.0e-6, max_iter=1000):
     return x
 
 
-def admm(X, y, max_iter=5000):
+def admm(X, y, max_iter=3000):
     # solve by inner point method        
     m, n = X.shape
     X = np.column_stack((X, np.ones((m, 1))))
@@ -89,18 +91,20 @@ def admm(X, y, max_iter=5000):
 
 
     low, up = bounds    
-    x = np.ones((m,1)) * ((low+up)/2)
+    x = np.ones((m,1))
     tau = 1.618
     sigma = 1
 
     # initial 
     u = np.ones((m, 1))
     t = x
+    A = p + sigma * np.eye(m)
+    I = np.eye(m)
+    invA = cg(A, I)
     for it in range(max_iter):
         # update x
-        A = p + sigma * np.eye(m)
         b = e + u + sigma * t
-        x = cg(A, b)
+        x = invA * b
         
         # update y
         t = x - (1/sigma)*u
@@ -146,15 +150,18 @@ class ADMM_L1_gv():
     def fit(self, X, y):
         y[y == 0] = -1
         # add logitR to verify the correctness
-        from sklearn.svm import LinearSVC
-        SVM = LinearSVC(loss='hinge', tol=1e-6, max_iter=100000, verbose=1).fit(X, np.array(y).ravel())
-        w1 = SVM.coef_; b1 = SVM.intercept_
-        w1 = w1.reshape(-1); b1 = b1[0] 
+        #from sklearn.svm import LinearSVC
+        #SVM = LinearSVC(loss='hinge', tol=1e-6, max_iter=100000, verbose=1).fit(X, np.array(y).ravel())
+        #w1 = SVM.coef_; b1 = SVM.intercept_
+        #w1 = w1.reshape(-1); b1 = b1[0] 
 
-
+        #import time
+        #t1 = time.time()
         w, b = admm(X, y)        
+        #t2 = time.time()
+        #print('time:', t2-t1)        
 
-        print('diff', np.linalg.norm(w1-w), b, b1)
+        #print('diff', np.linalg.norm(w1-w), b, b1)
 
         clf = Clf(w, b)
         return clf

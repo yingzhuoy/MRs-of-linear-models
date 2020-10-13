@@ -62,10 +62,10 @@ if __name__ == '__main__':
 	print(test.MR8())
 	print(test.MR7())
 	'''
-
+	
 	#不同算法对应不同的表格路径，mutant的数量也不相同，自己设定
 	xls_path = '../results/ADMM_L1.xls'
-	mutant_num = 200
+	mutant_num = 203
 
 	
 	#mutant的数量自己设定，会写在对应的行，每跑完一个mutant都会在表格相应位置记录下来，所以就算中途程序停止也没问题

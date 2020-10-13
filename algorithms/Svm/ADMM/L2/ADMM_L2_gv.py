@@ -1,7 +1,5 @@
 import numpy as np
 from numpy import linalg
-import cvxopt
-from cvxopt import matrix,solvers
 from algorithms.clf import Clf
 
 """
@@ -13,17 +11,17 @@ def precond(M, r):
     return q
 
 
-def cg(A, b, x=None, tol=1.0e-6, max_iter=1000):
+def cg(A, b, x=None, tol=1.0e-6, max_iter=50):
     # precondition  
     A = np.matrix(A)
     b = np.matrix(b)    
     normb = np.linalg.norm(b, 'fro')
     m = b.shape[0]
-    if np.linalg.norm(A,'fro') > 1e-12:
-        M = np.linalg.inv(np.diag(np.diag(A.T*A)))
-    else:
-        M = np.eye(m)
-    
+    #if np.linalg.norm(A,'fro') > 1e-12:
+    #    M = np.linalg.inv(np.diag(np.diag(A.T*A)))
+    #else:
+    #    M = np.eye(m)
+    M = np.eye(m)
     x = np.zeros((m, 1))
     Aq = np.dot(A, x)    
     r = b - Aq
@@ -73,7 +71,7 @@ def cg(A, b, x=None, tol=1.0e-6, max_iter=1000):
     return x
 
 
-def admm(X, y, max_iter=5000):
+def admm(X, y, max_iter=3000):
     # solve by inner point method        
     m, n = X.shape
     X = np.column_stack((X, np.ones((m, 1))))
@@ -144,15 +142,18 @@ class ADMM_L2_gv():
     def fit(self, X, y):
         y[y == 0] = -1
         # add logitR to verify the correctness
-        from sklearn.svm import LinearSVC
-        SVM = LinearSVC(loss='squared_hinge', tol=1e-6, max_iter=100000, verbose=1).fit(X, np.array(y).ravel())
-        w1 = SVM.coef_; b1 = SVM.intercept_
-        w1 = w1.reshape(-1); b1 = b1[0] 
+        #from sklearn.svm import LinearSVC
+        #SVM = LinearSVC(loss='squared_hinge', tol=1e-6, max_iter=100000, verbose=1).fit(X, np.array(y).ravel())
+        #w1 = SVM.coef_; b1 = SVM.intercept_
+        #w1 = w1.reshape(-1); b1 = b1[0] 
+        #import time
+        #t1 = time.time()
+        w, b = admm(X, y)
+        #t2 = time.time()
+        #print('time:', t2-t1)        
 
 
-        w, b = admm(X, y)        
-
-        print('diff', np.linalg.norm(w1-w), b, b1)
+        #print('diff', np.linalg.norm(w1-w), b, b1)
 
         clf = Clf(w, b)
         return clf
