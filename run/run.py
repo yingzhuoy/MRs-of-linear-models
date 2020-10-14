@@ -53,7 +53,7 @@ if __name__ == '__main__':
 	#n_train, n_test, n_redundant, n_classes, neg_class(算法是svm时 neg_class = -1, 算法是logreg时， neg_class = 0)
 	'''
 	datasets = CreateDataset(240,60,0,2,-1)
-	lr = ADMM_L1_gv()
+	lr = ADMM_L1_m90()
 	X_train, y_train, X_test, y_test, feature_num = datasets.create_dataset()
 	clf = lr.fit(X_train, y_train)
 	err, pred, conf = hyp_classification(clf.coef_, clf.intercept_, X_test, y_test)
@@ -62,6 +62,7 @@ if __name__ == '__main__':
 	print(test.MR8())
 	print(test.MR7())
 	'''
+	
 	
 	#不同算法对应不同的表格路径，mutant的数量也不相同，自己设定
 	xls_path = '../results/ADMM_L1.xls'
@@ -89,7 +90,7 @@ if __name__ == '__main__':
 
 		#test MRs on the mutant
 		test = LinearMRs(lr.fit, datasets.create_dataset, hyp_classification,100)
-		for i in range(8, 9):
+		for i in range(1, 9):
 			exec('r%s, f%s, s%s = test.MR%s()' %(i, i, i, i))
 			exec('f_str2 = res_list.append(r%s)' %i)
 			exec('feature_list.append(f%s)' %i)
@@ -97,3 +98,4 @@ if __name__ == '__main__':
 			exec('print(r%s)' %i)
 		
 		save_result_to_file(xls_path, j+1, res_list, feature_list, single_res_list, err)
+	
