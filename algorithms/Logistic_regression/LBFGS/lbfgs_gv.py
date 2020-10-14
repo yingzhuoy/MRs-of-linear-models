@@ -14,7 +14,7 @@ def wolfe(fun, grad, x, p, maxiter=100, c1=1e-3, c2=0.9, alpha_1=1.0, alpha_max=
     alpha_old = 0
     alpha_new = alpha_1
     
-    final_alpha = None
+    final_alpha = 0
     
     for i in range(1, maxiter+1):
         phi_alpha = phi(alpha_new)
@@ -35,9 +35,6 @@ def wolfe(fun, grad, x, p, maxiter=100, c1=1e-3, c2=0.9, alpha_1=1.0, alpha_max=
             
         alpha_old = alpha_new
         alpha_new = alpha_new + (alpha_max - alpha_new) * np.random.rand(1)
-        
-    if i == maxiter and final_alpha is None:
-        return None
 
     return final_alpha
 
@@ -60,6 +57,7 @@ def search(x, p, phi, phi_grad, alpha_lo, alpha_hi, c1, c2):
                 alpha_hi = alpha_lo
             
             alpha_lo = alpha_j    
+    return alpha_j
 
 def BFGS(fun, grad, x_start, eps=1e-6, max_iterations=100, verbose=False):
     n = x_start.shape[0]
