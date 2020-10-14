@@ -4,7 +4,7 @@ import xlrd
 import xlwt
 
 
-data = xlrd.open_workbook('../results/ADMM_L1.xls')
+data = xlrd.open_workbook('../results/ADMM_L2.xls')
 #data = xlrd.open_workbook('../results/Newton_10.xls')
 table = data.sheet_by_name('basic results')
 #13列
@@ -18,13 +18,13 @@ for i in range(2, mutant_num):
 	modified.append(table.cell(i, 12).value)
 
 #path = '../algorithms/Logistic_regression/Newton'
-path = '../algorithms/Svm/ADMM/L1'
+path = '../algorithms/Svm/ADMM/L2'
 
 #source = path + '/Newton_gv.py'
-source = path + '/ADMM_L1_gv.py'
+source = path + '/ADMM_L2_gv.py'
 for i in range(mutant_num - 2):
 	#target = path + '/Newton_m'+ str(i+1)+r'.py'
-	target = path + '/ADMM_L1_m'+ str(i+1)+r'.py'
+	target = path + '/ADMM_L2_m'+ str(i+1)+r'.py'
 	shutil.copy(source, target)
 
 rootdir = path
@@ -38,7 +38,7 @@ for i in range(0, len(list)-2):
 	d = ""
 	for line in lines:
 		#c = line.replace("class Newton_gv():", replace_word)
-		c = line.replace("class ADMM_L1_gv():", replace_word)
+		c = line.replace("class ADMM_L2_gv():", replace_word)
 		d+=c
 	p.seek(0)
 	p.truncate()
@@ -50,7 +50,7 @@ for i in range(mutant_num-2):
 	before = to_modify[i]
 	after = modified[i]
 	#file_path = path + '/Newton_m' + str(i+1) + '.py'
-	file_path = path + '/ADMM_L1_m' + str(i+1) + '.py'
+	file_path = path + '/ADMM_L2_m' + str(i+1) + '.py'
 	p = open(file_path, 'r+', encoding='utf-8')
 	lines = p.readlines()
 	d = ""
@@ -69,8 +69,8 @@ rootdir = path + '/__init__.py'
 
 p = open(rootdir, 'w', encoding='utf-8')
 #p.write('from algorithms.Logistic_regression.Newton.Newton_gv import Newton_gv\n')
-p.write('from algorithms.Svm.ADMM.L1.ADMM_L1_gv import ADMM_L1_gv\n')
+p.write('from algorithms.Svm.ADMM.L2.ADMM_L2_gv import ADMM_L2_gv\n')
 for i in range(mutant_num-2):
 	#p.write('from algorithms.Logistic_regression.Newton.Newton_m' + str(i+1) +' import Newton_m' + str(i+1)+'\n')
-	p.write('from algorithms.Svm.ADMM.L1.ADMM_L1_m' + str(i+1) +' import ADMM_L1_m' + str(i+1)+'\n')
+	p.write('from algorithms.Svm.ADMM.L2.ADMM_L2_m' + str(i+1) +' import ADMM_L2_m' + str(i+1)+'\n')
 p.close()

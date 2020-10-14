@@ -1,7 +1,7 @@
 import numpy as np
 from numpy import linalg
-import cvxopt
-from cvxopt import matrix,solvers
+#import cvxopt
+#from cvxopt import matrix,solvers
 from algorithms.clf import Clf
 
 """
@@ -148,15 +148,15 @@ class ADMM_L2_gv():
     def fit(self, X, y):
         y[y == 0] = -1
         # add logitR to verify the correctness
-        from sklearn.svm import LinearSVC
-        SVM = LinearSVC(loss='squared_hinge', tol=1e-6, max_iter=100000, verbose=1).fit(X, np.array(y).ravel())
-        w1 = SVM.coef_; b1 = SVM.intercept_
-        w1 = w1.reshape(-1); b1 = b1[0] 
+        #from sklearn.svm import LinearSVC
+        #SVM = LinearSVC(loss='squared_hinge', tol=1e-6, max_iter=100000, verbose=1).fit(X, np.array(y).ravel())
+        #w1 = SVM.coef_; b1 = SVM.intercept_
+        #w1 = w1.reshape(-1); b1 = b1[0] 
 
 
         w, b = admm(X, y)        
 
-        print('diff', np.linalg.norm(w1-w), b, b1)
+        #print('diff', np.linalg.norm(w1-w), b, b1)
 
         clf = Clf(w, b)
         return clf

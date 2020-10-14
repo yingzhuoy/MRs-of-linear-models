@@ -1,8 +1,8 @@
 import numpy as np
 from numpy import linalg
-import cvxopt
-from cvxopt import matrix,solvers
-import scipy.sparse.linalg
+#import cvxopt
+#from cvxopt import matrix,solvers
+#import scipy.sparse.linalg
 from algorithms.clf import Clf
 
 """
