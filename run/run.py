@@ -15,12 +15,14 @@ from sklearn.svm import LinearSVC
 
 from algorithms.Logistic_regression.GD import *
 from algorithms.Logistic_regression.Newton import *
+from algorithms.Logistic_regression.LBFGS import *
 from algorithms.Svm.APG.L1 import *
 from algorithms.Svm.APG.L2 import *
 from algorithms.Svm.IPM.L1 import *
 from algorithms.Svm.IPM.L2 import *
 from algorithms.Svm.ADMM.L1 import *
 from algorithms.Svm.ADMM.L2 import *
+
 
 import numpy as np
 np.random.seed(1)
@@ -51,19 +53,25 @@ def save_result_to_file(file_name, row, res_list, feature_list, single_res_list,
 if __name__ == '__main__':
 
 	#n_train, n_test, n_redundant, n_classes, neg_class(算法是svm时 neg_class = -1, 算法是logreg时， neg_class = 0)
-	'''
-	datasets = CreateDataset(240,60,0,2,-1)
-	lr = ADMM_L1_m90()
+
+	datasets = CreateDataset(240,60,0,2,0)
+	lr = lbfgs_gv()
 	X_train, y_train, X_test, y_test, feature_num = datasets.create_dataset()
 	clf = lr.fit(X_train, y_train)
-	err, pred, conf = hyp_classification(clf.coef_, clf.intercept_, X_test, y_test)
-	test = LinearMRs(lr.fit, datasets.create_dataset, hyp_classification,30)
+	err, pred, conf = sig_classification(clf.coef_, clf.intercept_, X_test, y_test)
+	test = LinearMRs(lr.fit, datasets.create_dataset, sig_classification,30)
 	print(err)
+	print(test.MR1())
+	print(test.MR2())
+	print(test.MR3())
+	print(test.MR4())
+	print(test.MR5())
+	print(test.MR6())
 	print(test.MR8())
 	print(test.MR7())
+
+	
 	'''
-	
-	
 	#不同算法对应不同的表格路径，mutant的数量也不相同，自己设定
 	xls_path = '../results/ADMM_L1.xls'
 	mutant_num = 203
@@ -98,4 +106,4 @@ if __name__ == '__main__':
 			exec('print(r%s)' %i)
 		
 		save_result_to_file(xls_path, j+1, res_list, feature_list, single_res_list, err)
-	
+	'''
