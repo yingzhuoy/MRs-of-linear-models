@@ -79,7 +79,7 @@ if __name__ == '__main__':
 	
 	#mutant的数量自己设定，会写在对应的行，每跑完一个mutant都会在表格相应位置记录下来，所以就算中途程序停止也没问题
 	#比如要跑第10到第20个mutant，则设定for j in range(10,21)
-	for j in range(22, 250):
+	for j in range(41, 250):
 		res_list = []
 		feature_list = []
 		single_res_list = []
