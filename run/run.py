@@ -73,31 +73,31 @@ if __name__ == '__main__':
 	
 	
 	#不同算法对应不同的表格路径，mutant的数量也不相同，自己设定
-	xls_path = '../results/ADMM_L2.xls'
+	xls_path = '../results/LBFGS.xls'
 	mutant_num = 203
 
 	
 	#mutant的数量自己设定，会写在对应的行，每跑完一个mutant都会在表格相应位置记录下来，所以就算中途程序停止也没问题
 	#比如要跑第10到第20个mutant，则设定for j in range(10,21)
-	for j in range(181, 191):
+	for j in range(22, 250):
 		res_list = []
 		feature_list = []
 		single_res_list = []
 		err = 0
 		
-		datasets = CreateDataset(240,60,0,2,-1)
+		datasets = CreateDataset(240,60,0,2,0)
 		#不同算法相应的调用部分要改一下
-		f_str = 'lr = ADMM_L2_m%s()' %j
+		f_str = 'lr = lbfgs_m%s()' %j
 		print(f_str)
 		exec(f_str)
 
 		#calculate error rate of this mutant
 		X_train, y_train, X_test, y_test, feature_num = datasets.create_dataset()
 		clf = lr.fit(X_train, y_train)
-		err, pred, conf = hyp_classification(clf.coef_, clf.intercept_, X_test, y_test)
+		err, pred, conf = sig_classification(clf.coef_, clf.intercept_, X_test, y_test)
 
 		#test MRs on the mutant
-		test = LinearMRs(lr.fit, datasets.create_dataset, hyp_classification,100)
+		test = LinearMRs(lr.fit, datasets.create_dataset, sig_classification,100)
 		for i in range(1, 9):
 			exec('r%s, f%s, s%s = test.MR%s()' %(i, i, i, i))
 			exec('f_str2 = res_list.append(r%s)' %i)

@@ -166,7 +166,7 @@ class lbfgs_gv():
         b = w[-1]
         w = w[0:w.shape[0]-1]
 
-        print(np.linalg.norm(w1-w), b, b1)
+        #print(np.linalg.norm(w1-w), b, b1)
 
         clf = Clf(w, b)
         # w: n*1 vector b: scalar

@@ -1,0 +1,3576 @@
+﻿Survived 🙁 (281)
+
+---- algorithms\lbfgs_gv.py (281) ----
+
+# mutant 1
+
+# mutant 2
+
+# mutant 3
+
+# mutant 4
+
+# mutant 5
+
+# mutant 6
+
+# mutant 7
+
+# mutant 8
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -6,7 +6,7 @@
+         # raise ValueError('Argument alpha_1 should be less than alpha_max')
+
+     def phi(alpha):
+-        return fun(x + alpha*p)
++        return fun(x - alpha*p)
+
+     def phi_grad(alpha):
+         return np.dot(grad(x + alpha*p).T, p)
+
+# mutant 9
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -6,7 +6,7 @@
+         # raise ValueError('Argument alpha_1 should be less than alpha_max')
+
+     def phi(alpha):
+-        return fun(x + alpha*p)
++        return fun(x + alpha/p)
+
+     def phi_grad(alpha):
+         return np.dot(grad(x + alpha*p).T, p)
+
+# mutant 10
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -6,7 +6,7 @@
+         # raise ValueError('Argument alpha_1 should be less than alpha_max')
+
+     def phi(alpha):
+-        return fun(x + alpha*p)
++        return fun(0.013746469104539805*x + alpha*p)
+
+     def phi_grad(alpha):
+         return np.dot(grad(x + alpha*p).T, p)
+
+# mutant 11
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -6,7 +6,7 @@
+         # raise ValueError('Argument alpha_1 should be less than alpha_max')
+
+     def phi(alpha):
+-        return fun(x + alpha*p)
++        return fun(x+14.010705781801555 + alpha*p)
+
+     def phi_grad(alpha):
+         return np.dot(grad(x + alpha*p).T, p)
+
+# mutant 12
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -6,7 +6,7 @@
+         # raise ValueError('Argument alpha_1 should be less than alpha_max')
+
+     def phi(alpha):
+-        return fun(x + alpha*p)
++        return fun(x +3.8476070989938322*alpha*p)
+
+     def phi_grad(alpha):
+         return np.dot(grad(x + alpha*p).T, p)
+
+# mutant 13
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -6,7 +6,7 @@
+         # raise ValueError('Argument alpha_1 should be less than alpha_max')
+
+     def phi(alpha):
+-        return fun(x + alpha*p)
++        return fun(x +alpha+3.64689058109348*p)
+
+     def phi_grad(alpha):
+         return np.dot(grad(x + alpha*p).T, p)
+
+# mutant 14
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -6,7 +6,7 @@
+         # raise ValueError('Argument alpha_1 should be less than alpha_max')
+
+     def phi(alpha):
+-        return fun(x + alpha*p)
++        return fun(x + alpha*3.0450576220601664*p)
+
+     def phi_grad(alpha):
+         return np.dot(grad(x + alpha*p).T, p)
+
+# mutant 15
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -6,7 +6,7 @@
+         # raise ValueError('Argument alpha_1 should be less than alpha_max')
+
+     def phi(alpha):
+-        return fun(x + alpha*p)
++        return fun(x + alpha*p+5.124868456571583)
+
+     def phi_grad(alpha):
+         return np.dot(grad(x + alpha*p).T, p)
+
+# mutant 17
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -9,7 +9,7 @@
+         return fun(x + alpha*p)
+
+     def phi_grad(alpha):
+-        return np.dot(grad(x + alpha*p).T, p)
++        return np.dot(grad(x + alpha/p).T, p)
+
+     alpha_old = 0
+     alpha_new = alpha_1
+
+# mutant 20
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -9,7 +9,7 @@
+         return fun(x + alpha*p)
+
+     def phi_grad(alpha):
+-        return np.dot(grad(x + alpha*p).T, p)
++        return np.dot(grad(x +-0.030209653778282775*alpha*p).T, p)
+
+     alpha_old = 0
+     alpha_new = alpha_1
+
+# mutant 23
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -9,7 +9,7 @@
+         return fun(x + alpha*p)
+
+     def phi_grad(alpha):
+-        return np.dot(grad(x + alpha*p).T, p)
++        return np.dot(grad(x + alpha*p-12.784378190198435).T, p)
+
+     alpha_old = 0
+     alpha_new = alpha_1
+
+# mutant 24
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -9,7 +9,7 @@
+         return fun(x + alpha*p)
+
+     def phi_grad(alpha):
+-        return np.dot(grad(x + alpha*p).T, p)
++        return np.dot(grad(x + alpha*p).T,18.42233957009311*p)
+
+     alpha_old = 0
+     alpha_new = alpha_1
+
+# mutant 26
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -11,7 +11,7 @@
+     def phi_grad(alpha):
+         return np.dot(grad(x + alpha*p).T, p)
+
+-    alpha_old = 0
++    alpha_old = -2.7577774654465785
+     alpha_new = alpha_1
+
+     final_alpha = 0
+
+# mutant 29
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -14,7 +14,7 @@
+     alpha_old = 0
+     alpha_new = alpha_1
+
+-    final_alpha = 0
++    final_alpha = -7.857449117827036
+
+     for i in range(1, maxiter+1):
+         phi_alpha = phi(alpha_new)
+
+# mutant 30
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -14,7 +14,7 @@
+     alpha_old = 0
+     alpha_new = alpha_1
+
+-    final_alpha = 0
++    final_alpha = None
+
+     for i in range(1, maxiter+1):
+         phi_alpha = phi(alpha_new)
+
+# mutant 32
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -16,7 +16,7 @@
+
+     final_alpha = 0
+
+-    for i in range(1, maxiter+1):
++    for i in range(1, maxiter-1):
+         phi_alpha = phi(alpha_new)
+
+         if (i == 1 and phi_alpha > phi(0) + c1*alpha_new*phi_grad(0)) or (i > 1 and phi_alpha >= phi(alpha_old)):
+
+# mutant 37
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -19,7 +19,7 @@
+     for i in range(1, maxiter+1):
+         phi_alpha = phi(alpha_new)
+
+-        if (i == 1 and phi_alpha > phi(0) + c1*alpha_new*phi_grad(0)) or (i > 1 and phi_alpha >= phi(alpha_old)):
++        if (i != 1 and phi_alpha > phi(0) + c1*alpha_new*phi_grad(0)) or (i > 1 and phi_alpha >= phi(alpha_old)):
+             final_alpha = search(x, p, phi, phi_grad, alpha_old, alpha_new, c1, c2)
+             break
+
+
+# mutant 38
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -19,7 +19,7 @@
+     for i in range(1, maxiter+1):
+         phi_alpha = phi(alpha_new)
+
+-        if (i == 1 and phi_alpha > phi(0) + c1*alpha_new*phi_grad(0)) or (i > 1 and phi_alpha >= phi(alpha_old)):
++        if (i == -3.769945143006166 and phi_alpha > phi(0) + c1*alpha_new*phi_grad(0)) or (i > 1 and phi_alpha >= phi(alpha_old)):
+             final_alpha = search(x, p, phi, phi_grad, alpha_old, alpha_new, c1, c2)
+             break
+
+
+# mutant 39
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -19,7 +19,7 @@
+     for i in range(1, maxiter+1):
+         phi_alpha = phi(alpha_new)
+
+-        if (i == 1 and phi_alpha > phi(0) + c1*alpha_new*phi_grad(0)) or (i > 1 and phi_alpha >= phi(alpha_old)):
++        if (i == 1 and phi_alpha >= phi(0) + c1*alpha_new*phi_grad(0)) or (i > 1 and phi_alpha >= phi(alpha_old)):
+             final_alpha = search(x, p, phi, phi_grad, alpha_old, alpha_new, c1, c2)
+             break
+
+
+# mutant 40
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -19,7 +19,7 @@
+     for i in range(1, maxiter+1):
+         phi_alpha = phi(alpha_new)
+
+-        if (i == 1 and phi_alpha > phi(0) + c1*alpha_new*phi_grad(0)) or (i > 1 and phi_alpha >= phi(alpha_old)):
++        if (i == 1 and phi_alpha > phi(4.07859175017638) + c1*alpha_new*phi_grad(0)) or (i > 1 and phi_alpha >= phi(alpha_old)):
+             final_alpha = search(x, p, phi, phi_grad, alpha_old, alpha_new, c1, c2)
+             break
+
+
+# mutant 41
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -19,7 +19,7 @@
+     for i in range(1, maxiter+1):
+         phi_alpha = phi(alpha_new)
+
+-        if (i == 1 and phi_alpha > phi(0) + c1*alpha_new*phi_grad(0)) or (i > 1 and phi_alpha >= phi(alpha_old)):
++        if (i == 1 and phi_alpha > phi(0) - c1*alpha_new*phi_grad(0)) or (i > 1 and phi_alpha >= phi(alpha_old)):
+             final_alpha = search(x, p, phi, phi_grad, alpha_old, alpha_new, c1, c2)
+             break
+
+
+# mutant 42
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -19,7 +19,7 @@
+     for i in range(1, maxiter+1):
+         phi_alpha = phi(alpha_new)
+
+-        if (i == 1 and phi_alpha > phi(0) + c1*alpha_new*phi_grad(0)) or (i > 1 and phi_alpha >= phi(alpha_old)):
++        if (i == 1 and phi_alpha > phi(0) + c1/alpha_new*phi_grad(0)) or (i > 1 and phi_alpha >= phi(alpha_old)):
+             final_alpha = search(x, p, phi, phi_grad, alpha_old, alpha_new, c1, c2)
+             break
+
+
+# mutant 43
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -19,7 +19,7 @@
+     for i in range(1, maxiter+1):
+         phi_alpha = phi(alpha_new)
+
+-        if (i == 1 and phi_alpha > phi(0) + c1*alpha_new*phi_grad(0)) or (i > 1 and phi_alpha >= phi(alpha_old)):
++        if (i == 1 and phi_alpha > phi(0) + c1*alpha_new/phi_grad(0)) or (i > 1 and phi_alpha >= phi(alpha_old)):
+             final_alpha = search(x, p, phi, phi_grad, alpha_old, alpha_new, c1, c2)
+             break
+
+
+# mutant 44
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -19,7 +19,7 @@
+     for i in range(1, maxiter+1):
+         phi_alpha = phi(alpha_new)
+
+-        if (i == 1 and phi_alpha > phi(0) + c1*alpha_new*phi_grad(0)) or (i > 1 and phi_alpha >= phi(alpha_old)):
++        if (i == 1 and phi_alpha > phi(0) + c1*alpha_new*phi_grad(7.667582827083351)) or (i > 1 and phi_alpha >= phi(alpha_old)):
+             final_alpha = search(x, p, phi, phi_grad, alpha_old, alpha_new, c1, c2)
+             break
+
+
+# mutant 45
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -19,7 +19,7 @@
+     for i in range(1, maxiter+1):
+         phi_alpha = phi(alpha_new)
+
+-        if (i == 1 and phi_alpha > phi(0) + c1*alpha_new*phi_grad(0)) or (i > 1 and phi_alpha >= phi(alpha_old)):
++        if (i == 1 and phi_alpha > phi(0) +1.8953675113598036*c1*alpha_new*phi_grad(0)) or (i > 1 and phi_alpha >= phi(alpha_old)):
+             final_alpha = search(x, p, phi, phi_grad, alpha_old, alpha_new, c1, c2)
+             break
+
+
+# mutant 46
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -19,7 +19,7 @@
+     for i in range(1, maxiter+1):
+         phi_alpha = phi(alpha_new)
+
+-        if (i == 1 and phi_alpha > phi(0) + c1*alpha_new*phi_grad(0)) or (i > 1 and phi_alpha >= phi(alpha_old)):
++        if (i == 1 and phi_alpha > phi(0) +c1-10.836050762659308*alpha_new*phi_grad(0)) or (i > 1 and phi_alpha >= phi(alpha_old)):
+             final_alpha = search(x, p, phi, phi_grad, alpha_old, alpha_new, c1, c2)
+             break
+
+
+# mutant 47
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -19,7 +19,7 @@
+     for i in range(1, maxiter+1):
+         phi_alpha = phi(alpha_new)
+
+-        if (i == 1 and phi_alpha > phi(0) + c1*alpha_new*phi_grad(0)) or (i > 1 and phi_alpha >= phi(alpha_old)):
++        if (i == 1 and phi_alpha > phi(0) + c1*8.544624683102462*alpha_new*phi_grad(0)) or (i > 1 and phi_alpha >= phi(alpha_old)):
+             final_alpha = search(x, p, phi, phi_grad, alpha_old, alpha_new, c1, c2)
+             break
+
+
+# mutant 48
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -19,7 +19,7 @@
+     for i in range(1, maxiter+1):
+         phi_alpha = phi(alpha_new)
+
+-        if (i == 1 and phi_alpha > phi(0) + c1*alpha_new*phi_grad(0)) or (i > 1 and phi_alpha >= phi(alpha_old)):
++        if (i == 1 and phi_alpha > phi(0) + c1*alpha_new+2.6172478851077625*phi_grad(0)) or (i > 1 and phi_alpha >= phi(alpha_old)):
+             final_alpha = search(x, p, phi, phi_grad, alpha_old, alpha_new, c1, c2)
+             break
+
+
+# mutant 49
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -19,7 +19,7 @@
+     for i in range(1, maxiter+1):
+         phi_alpha = phi(alpha_new)
+
+-        if (i == 1 and phi_alpha > phi(0) + c1*alpha_new*phi_grad(0)) or (i > 1 and phi_alpha >= phi(alpha_old)):
++        if (i == 1 or phi_alpha > phi(0) + c1*alpha_new*phi_grad(0)) or (i > 1 and phi_alpha >= phi(alpha_old)):
+             final_alpha = search(x, p, phi, phi_grad, alpha_old, alpha_new, c1, c2)
+             break
+
+
+# mutant 50
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -19,7 +19,7 @@
+     for i in range(1, maxiter+1):
+         phi_alpha = phi(alpha_new)
+
+-        if (i == 1 and phi_alpha > phi(0) + c1*alpha_new*phi_grad(0)) or (i > 1 and phi_alpha >= phi(alpha_old)):
++        if (i == 1 and phi_alpha > phi(0) + c1*alpha_new*phi_grad(0)) or (i >= 1 and phi_alpha >= phi(alpha_old)):
+             final_alpha = search(x, p, phi, phi_grad, alpha_old, alpha_new, c1, c2)
+             break
+
+
+# mutant 51
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -19,7 +19,7 @@
+     for i in range(1, maxiter+1):
+         phi_alpha = phi(alpha_new)
+
+-        if (i == 1 and phi_alpha > phi(0) + c1*alpha_new*phi_grad(0)) or (i > 1 and phi_alpha >= phi(alpha_old)):
++        if (i == 1 and phi_alpha > phi(0) + c1*alpha_new*phi_grad(0)) or (i > 2.7504217992909 and phi_alpha >= phi(alpha_old)):
+             final_alpha = search(x, p, phi, phi_grad, alpha_old, alpha_new, c1, c2)
+             break
+
+
+# mutant 52
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -19,7 +19,7 @@
+     for i in range(1, maxiter+1):
+         phi_alpha = phi(alpha_new)
+
+-        if (i == 1 and phi_alpha > phi(0) + c1*alpha_new*phi_grad(0)) or (i > 1 and phi_alpha >= phi(alpha_old)):
++        if (i == 1 and phi_alpha > phi(0) + c1*alpha_new*phi_grad(0)) or (i > 1 and phi_alpha > phi(alpha_old)):
+             final_alpha = search(x, p, phi, phi_grad, alpha_old, alpha_new, c1, c2)
+             break
+
+
+# mutant 53
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -19,7 +19,7 @@
+     for i in range(1, maxiter+1):
+         phi_alpha = phi(alpha_new)
+
+-        if (i == 1 and phi_alpha > phi(0) + c1*alpha_new*phi_grad(0)) or (i > 1 and phi_alpha >= phi(alpha_old)):
++        if (i == 1 and phi_alpha > phi(0) + c1*alpha_new*phi_grad(0)) or (i > 1 or phi_alpha >= phi(alpha_old)):
+             final_alpha = search(x, p, phi, phi_grad, alpha_old, alpha_new, c1, c2)
+             break
+
+
+# mutant 54
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -19,7 +19,7 @@
+     for i in range(1, maxiter+1):
+         phi_alpha = phi(alpha_new)
+
+-        if (i == 1 and phi_alpha > phi(0) + c1*alpha_new*phi_grad(0)) or (i > 1 and phi_alpha >= phi(alpha_old)):
++        if (i == 1 and phi_alpha > phi(0) + c1*alpha_new*phi_grad(0)) and (i > 1 and phi_alpha >= phi(alpha_old)):
+             final_alpha = search(x, p, phi, phi_grad, alpha_old, alpha_new, c1, c2)
+             break
+
+
+# mutant 55
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -20,7 +20,7 @@
+         phi_alpha = phi(alpha_new)
+
+         if (i == 1 and phi_alpha > phi(0) + c1*alpha_new*phi_grad(0)) or (i > 1 and phi_alpha >= phi(alpha_old)):
+-            final_alpha = search(x, p, phi, phi_grad, alpha_old, alpha_new, c1, c2)
++            final_alpha = search(-7.765592812084172*x, p, phi, phi_grad, alpha_old, alpha_new, c1, c2)
+             break
+
+         phi_grad_alpha = phi_grad(alpha_new)
+
+# mutant 56
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -20,7 +20,7 @@
+         phi_alpha = phi(alpha_new)
+
+         if (i == 1 and phi_alpha > phi(0) + c1*alpha_new*phi_grad(0)) or (i > 1 and phi_alpha >= phi(alpha_old)):
+-            final_alpha = search(x, p, phi, phi_grad, alpha_old, alpha_new, c1, c2)
++            final_alpha = search(x+13.478879790434464, p, phi, phi_grad, alpha_old, alpha_new, c1, c2)
+             break
+
+         phi_grad_alpha = phi_grad(alpha_new)
+
+# mutant 57
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -20,7 +20,7 @@
+         phi_alpha = phi(alpha_new)
+
+         if (i == 1 and phi_alpha > phi(0) + c1*alpha_new*phi_grad(0)) or (i > 1 and phi_alpha >= phi(alpha_old)):
+-            final_alpha = search(x, p, phi, phi_grad, alpha_old, alpha_new, c1, c2)
++            final_alpha = search(x,8.660112526313883*p, phi, phi_grad, alpha_old, alpha_new, c1, c2)
+             break
+
+         phi_grad_alpha = phi_grad(alpha_new)
+
+# mutant 58
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -20,7 +20,7 @@
+         phi_alpha = phi(alpha_new)
+
+         if (i == 1 and phi_alpha > phi(0) + c1*alpha_new*phi_grad(0)) or (i > 1 and phi_alpha >= phi(alpha_old)):
+-            final_alpha = search(x, p, phi, phi_grad, alpha_old, alpha_new, c1, c2)
++            final_alpha = search(x,p+3.1780500474599043, phi, phi_grad, alpha_old, alpha_new, c1, c2)
+             break
+
+         phi_grad_alpha = phi_grad(alpha_new)
+
+# mutant 63
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -20,7 +20,7 @@
+         phi_alpha = phi(alpha_new)
+
+         if (i == 1 and phi_alpha > phi(0) + c1*alpha_new*phi_grad(0)) or (i > 1 and phi_alpha >= phi(alpha_old)):
+-            final_alpha = search(x, p, phi, phi_grad, alpha_old, alpha_new, c1, c2)
++            final_alpha = search(x, p, phi, phi_grad,16.32569453110678*alpha_old, alpha_new, c1, c2)
+             break
+
+         phi_grad_alpha = phi_grad(alpha_new)
+
+# mutant 64
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -20,7 +20,7 @@
+         phi_alpha = phi(alpha_new)
+
+         if (i == 1 and phi_alpha > phi(0) + c1*alpha_new*phi_grad(0)) or (i > 1 and phi_alpha >= phi(alpha_old)):
+-            final_alpha = search(x, p, phi, phi_grad, alpha_old, alpha_new, c1, c2)
++            final_alpha = search(x, p, phi, phi_grad,alpha_old-10.258373812877156, alpha_new, c1, c2)
+             break
+
+         phi_grad_alpha = phi_grad(alpha_new)
+
+# mutant 65
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -20,7 +20,7 @@
+         phi_alpha = phi(alpha_new)
+
+         if (i == 1 and phi_alpha > phi(0) + c1*alpha_new*phi_grad(0)) or (i > 1 and phi_alpha >= phi(alpha_old)):
+-            final_alpha = search(x, p, phi, phi_grad, alpha_old, alpha_new, c1, c2)
++            final_alpha = search(x, p, phi, phi_grad, alpha_old,-3.650275876526661*alpha_new, c1, c2)
+             break
+
+         phi_grad_alpha = phi_grad(alpha_new)
+
+# mutant 66
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -20,7 +20,7 @@
+         phi_alpha = phi(alpha_new)
+
+         if (i == 1 and phi_alpha > phi(0) + c1*alpha_new*phi_grad(0)) or (i > 1 and phi_alpha >= phi(alpha_old)):
+-            final_alpha = search(x, p, phi, phi_grad, alpha_old, alpha_new, c1, c2)
++            final_alpha = search(x, p, phi, phi_grad, alpha_old,alpha_new-1.6433415156109703, c1, c2)
+             break
+
+         phi_grad_alpha = phi_grad(alpha_new)
+
+# mutant 67
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -20,7 +20,7 @@
+         phi_alpha = phi(alpha_new)
+
+         if (i == 1 and phi_alpha > phi(0) + c1*alpha_new*phi_grad(0)) or (i > 1 and phi_alpha >= phi(alpha_old)):
+-            final_alpha = search(x, p, phi, phi_grad, alpha_old, alpha_new, c1, c2)
++            final_alpha = search(x, p, phi, phi_grad, alpha_old, alpha_new,7.361413275304605*c1, c2)
+             break
+
+         phi_grad_alpha = phi_grad(alpha_new)
+
+# mutant 68
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -20,7 +20,7 @@
+         phi_alpha = phi(alpha_new)
+
+         if (i == 1 and phi_alpha > phi(0) + c1*alpha_new*phi_grad(0)) or (i > 1 and phi_alpha >= phi(alpha_old)):
+-            final_alpha = search(x, p, phi, phi_grad, alpha_old, alpha_new, c1, c2)
++            final_alpha = search(x, p, phi, phi_grad, alpha_old, alpha_new,c1+3.4349162604132557, c2)
+             break
+
+         phi_grad_alpha = phi_grad(alpha_new)
+
+# mutant 69
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -20,7 +20,7 @@
+         phi_alpha = phi(alpha_new)
+
+         if (i == 1 and phi_alpha > phi(0) + c1*alpha_new*phi_grad(0)) or (i > 1 and phi_alpha >= phi(alpha_old)):
+-            final_alpha = search(x, p, phi, phi_grad, alpha_old, alpha_new, c1, c2)
++            final_alpha = search(x, p, phi, phi_grad, alpha_old, alpha_new, c1,13.560872569512867*c2)
+             break
+
+         phi_grad_alpha = phi_grad(alpha_new)
+
+# mutant 70
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -20,7 +20,7 @@
+         phi_alpha = phi(alpha_new)
+
+         if (i == 1 and phi_alpha > phi(0) + c1*alpha_new*phi_grad(0)) or (i > 1 and phi_alpha >= phi(alpha_old)):
+-            final_alpha = search(x, p, phi, phi_grad, alpha_old, alpha_new, c1, c2)
++            final_alpha = search(x, p, phi, phi_grad, alpha_old, alpha_new, c1,c2-9.430598003805747)
+             break
+
+         phi_grad_alpha = phi_grad(alpha_new)
+
+# mutant 72
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -21,7 +21,7 @@
+
+         if (i == 1 and phi_alpha > phi(0) + c1*alpha_new*phi_grad(0)) or (i > 1 and phi_alpha >= phi(alpha_old)):
+             final_alpha = search(x, p, phi, phi_grad, alpha_old, alpha_new, c1, c2)
+-            break
++            continue
+
+         phi_grad_alpha = phi_grad(alpha_new)
+
+
+# mutant 74
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -25,7 +25,7 @@
+
+         phi_grad_alpha = phi_grad(alpha_new)
+
+-        if np.abs(phi_grad_alpha) <= -c2 * phi_grad(0):
++        if np.abs(phi_grad_alpha) < -c2 * phi_grad(0):
+             final_alpha = alpha_new
+             break
+
+
+# mutant 75
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -25,7 +25,7 @@
+
+         phi_grad_alpha = phi_grad(alpha_new)
+
+-        if np.abs(phi_grad_alpha) <= -c2 * phi_grad(0):
++        if np.abs(phi_grad_alpha) <= +c2 * phi_grad(0):
+             final_alpha = alpha_new
+             break
+
+
+# mutant 76
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -25,7 +25,7 @@
+
+         phi_grad_alpha = phi_grad(alpha_new)
+
+-        if np.abs(phi_grad_alpha) <= -c2 * phi_grad(0):
++        if np.abs(phi_grad_alpha) <= -c2 / phi_grad(0):
+             final_alpha = alpha_new
+             break
+
+
+# mutant 77
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -25,7 +25,7 @@
+
+         phi_grad_alpha = phi_grad(alpha_new)
+
+-        if np.abs(phi_grad_alpha) <= -c2 * phi_grad(0):
++        if np.abs(phi_grad_alpha) <= -c2 * phi_grad(7.920328613229795):
+             final_alpha = alpha_new
+             break
+
+
+# mutant 79
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -27,7 +27,7 @@
+
+         if np.abs(phi_grad_alpha) <= -c2 * phi_grad(0):
+             final_alpha = alpha_new
+-            break
++            continue
+
+         if phi_grad_alpha >= 0:
+             final_alpha = search(x, p, phi, phi_grad, alpha_new, alpha_old, c1, c2)
+
+# mutant 80
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -29,7 +29,7 @@
+             final_alpha = alpha_new
+             break
+
+-        if phi_grad_alpha >= 0:
++        if phi_grad_alpha > 0:
+             final_alpha = search(x, p, phi, phi_grad, alpha_new, alpha_old, c1, c2)
+             break
+
+
+# mutant 81
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -29,7 +29,7 @@
+             final_alpha = alpha_new
+             break
+
+-        if phi_grad_alpha >= 0:
++        if phi_grad_alpha >= 12.1372548866666:
+             final_alpha = search(x, p, phi, phi_grad, alpha_new, alpha_old, c1, c2)
+             break
+
+
+# mutant 82
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -30,7 +30,7 @@
+             break
+
+         if phi_grad_alpha >= 0:
+-            final_alpha = search(x, p, phi, phi_grad, alpha_new, alpha_old, c1, c2)
++            final_alpha = search(-9.871041711261272*x, p, phi, phi_grad, alpha_new, alpha_old, c1, c2)
+             break
+
+         alpha_old = alpha_new
+
+# mutant 83
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -30,7 +30,7 @@
+             break
+
+         if phi_grad_alpha >= 0:
+-            final_alpha = search(x, p, phi, phi_grad, alpha_new, alpha_old, c1, c2)
++            final_alpha = search(x+4.661427473177557, p, phi, phi_grad, alpha_new, alpha_old, c1, c2)
+             break
+
+         alpha_old = alpha_new
+
+# mutant 84
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -30,7 +30,7 @@
+             break
+
+         if phi_grad_alpha >= 0:
+-            final_alpha = search(x, p, phi, phi_grad, alpha_new, alpha_old, c1, c2)
++            final_alpha = search(x,-10.386030762870444*p, phi, phi_grad, alpha_new, alpha_old, c1, c2)
+             break
+
+         alpha_old = alpha_new
+
+# mutant 85
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -30,7 +30,7 @@
+             break
+
+         if phi_grad_alpha >= 0:
+-            final_alpha = search(x, p, phi, phi_grad, alpha_new, alpha_old, c1, c2)
++            final_alpha = search(x,p+1.5864160884700274, phi, phi_grad, alpha_new, alpha_old, c1, c2)
+             break
+
+         alpha_old = alpha_new
+
+# mutant 86
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -30,7 +30,7 @@
+             break
+
+         if phi_grad_alpha >= 0:
+-            final_alpha = search(x, p, phi, phi_grad, alpha_new, alpha_old, c1, c2)
++            final_alpha = search(x, p,-16.512634735527442*phi, phi_grad, alpha_new, alpha_old, c1, c2)
+             break
+
+         alpha_old = alpha_new
+
+# mutant 87
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -30,7 +30,7 @@
+             break
+
+         if phi_grad_alpha >= 0:
+-            final_alpha = search(x, p, phi, phi_grad, alpha_new, alpha_old, c1, c2)
++            final_alpha = search(x, p,phi+1.6005102928873896, phi_grad, alpha_new, alpha_old, c1, c2)
+             break
+
+         alpha_old = alpha_new
+
+# mutant 88
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -30,7 +30,7 @@
+             break
+
+         if phi_grad_alpha >= 0:
+-            final_alpha = search(x, p, phi, phi_grad, alpha_new, alpha_old, c1, c2)
++            final_alpha = search(x, p, phi,-13.597101477904026*phi_grad, alpha_new, alpha_old, c1, c2)
+             break
+
+         alpha_old = alpha_new
+
+# mutant 90
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -30,7 +30,7 @@
+             break
+
+         if phi_grad_alpha >= 0:
+-            final_alpha = search(x, p, phi, phi_grad, alpha_new, alpha_old, c1, c2)
++            final_alpha = search(x, p, phi, phi_grad,-8.120771048634381*alpha_new, alpha_old, c1, c2)
+             break
+
+         alpha_old = alpha_new
+
+# mutant 91
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -30,7 +30,7 @@
+             break
+
+         if phi_grad_alpha >= 0:
+-            final_alpha = search(x, p, phi, phi_grad, alpha_new, alpha_old, c1, c2)
++            final_alpha = search(x, p, phi, phi_grad,alpha_new+16.19957570715186, alpha_old, c1, c2)
+             break
+
+         alpha_old = alpha_new
+
+# mutant 92
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -30,7 +30,7 @@
+             break
+
+         if phi_grad_alpha >= 0:
+-            final_alpha = search(x, p, phi, phi_grad, alpha_new, alpha_old, c1, c2)
++            final_alpha = search(x, p, phi, phi_grad, alpha_new,-1.938845864584172*alpha_old, c1, c2)
+             break
+
+         alpha_old = alpha_new
+
+# mutant 93
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -30,7 +30,7 @@
+             break
+
+         if phi_grad_alpha >= 0:
+-            final_alpha = search(x, p, phi, phi_grad, alpha_new, alpha_old, c1, c2)
++            final_alpha = search(x, p, phi, phi_grad, alpha_new,alpha_old+3.2159633853037946, c1, c2)
+             break
+
+         alpha_old = alpha_new
+
+# mutant 94
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -30,7 +30,7 @@
+             break
+
+         if phi_grad_alpha >= 0:
+-            final_alpha = search(x, p, phi, phi_grad, alpha_new, alpha_old, c1, c2)
++            final_alpha = search(x, p, phi, phi_grad, alpha_new, alpha_old,2.9256506914868137*c1, c2)
+             break
+
+         alpha_old = alpha_new
+
+# mutant 95
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -30,7 +30,7 @@
+             break
+
+         if phi_grad_alpha >= 0:
+-            final_alpha = search(x, p, phi, phi_grad, alpha_new, alpha_old, c1, c2)
++            final_alpha = search(x, p, phi, phi_grad, alpha_new, alpha_old,c1+3.3138536744165066, c2)
+             break
+
+         alpha_old = alpha_new
+
+# mutant 96
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -30,7 +30,7 @@
+             break
+
+         if phi_grad_alpha >= 0:
+-            final_alpha = search(x, p, phi, phi_grad, alpha_new, alpha_old, c1, c2)
++            final_alpha = search(x, p, phi, phi_grad, alpha_new, alpha_old, c1,-12.974890174145203*c2)
+             break
+
+         alpha_old = alpha_new
+
+# mutant 97
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -30,7 +30,7 @@
+             break
+
+         if phi_grad_alpha >= 0:
+-            final_alpha = search(x, p, phi, phi_grad, alpha_new, alpha_old, c1, c2)
++            final_alpha = search(x, p, phi, phi_grad, alpha_new, alpha_old, c1,c2-14.06266931308095)
+             break
+
+         alpha_old = alpha_new
+
+# mutant 98
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -30,7 +30,7 @@
+             break
+
+         if phi_grad_alpha >= 0:
+-            final_alpha = search(x, p, phi, phi_grad, alpha_new, alpha_old, c1, c2)
++            final_alpha = None
+             break
+
+         alpha_old = alpha_new
+
+# mutant 99
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -31,7 +31,7 @@
+
+         if phi_grad_alpha >= 0:
+             final_alpha = search(x, p, phi, phi_grad, alpha_new, alpha_old, c1, c2)
+-            break
++            continue
+
+         alpha_old = alpha_new
+         alpha_new = alpha_new + (alpha_max - alpha_new) * np.random.rand(1)
+
+# mutant 100
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -33,7 +33,7 @@
+             final_alpha = search(x, p, phi, phi_grad, alpha_new, alpha_old, c1, c2)
+             break
+
+-        alpha_old = alpha_new
++        alpha_old = None
+         alpha_new = alpha_new + (alpha_max - alpha_new) * np.random.rand(1)
+
+     return final_alpha
+
+# mutant 101
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -34,7 +34,7 @@
+             break
+
+         alpha_old = alpha_new
+-        alpha_new = alpha_new + (alpha_max - alpha_new) * np.random.rand(1)
++        alpha_new = alpha_new - (alpha_max - alpha_new) * np.random.rand(1)
+
+     return final_alpha
+
+
+# mutant 102
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -34,7 +34,7 @@
+             break
+
+         alpha_old = alpha_new
+-        alpha_new = alpha_new + (alpha_max - alpha_new) * np.random.rand(1)
++        alpha_new = alpha_new + (alpha_max + alpha_new) * np.random.rand(1)
+
+     return final_alpha
+
+
+# mutant 103
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -34,7 +34,7 @@
+             break
+
+         alpha_old = alpha_new
+-        alpha_new = alpha_new + (alpha_max - alpha_new) * np.random.rand(1)
++        alpha_new = alpha_new + (10.43747007246115*alpha_max - alpha_new) * np.random.rand(1)
+
+     return final_alpha
+
+
+# mutant 104
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -34,7 +34,7 @@
+             break
+
+         alpha_old = alpha_new
+-        alpha_new = alpha_new + (alpha_max - alpha_new) * np.random.rand(1)
++        alpha_new = alpha_new + (alpha_max-0.8264341013429299 - alpha_new) * np.random.rand(1)
+
+     return final_alpha
+
+
+# mutant 105
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -34,7 +34,7 @@
+             break
+
+         alpha_old = alpha_new
+-        alpha_new = alpha_new + (alpha_max - alpha_new) * np.random.rand(1)
++        alpha_new = alpha_new + (alpha_max --4.436017740709108*alpha_new) * np.random.rand(1)
+
+     return final_alpha
+
+
+# mutant 106
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -34,7 +34,7 @@
+             break
+
+         alpha_old = alpha_new
+-        alpha_new = alpha_new + (alpha_max - alpha_new) * np.random.rand(1)
++        alpha_new = alpha_new + (alpha_max -alpha_new+1.6689255298829766) * np.random.rand(1)
+
+     return final_alpha
+
+
+# mutant 107
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -34,7 +34,7 @@
+             break
+
+         alpha_old = alpha_new
+-        alpha_new = alpha_new + (alpha_max - alpha_new) * np.random.rand(1)
++        alpha_new = alpha_new + (alpha_max - alpha_new) / np.random.rand(1)
+
+     return final_alpha
+
+
+# mutant 108
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -34,7 +34,7 @@
+             break
+
+         alpha_old = alpha_new
+-        alpha_new = alpha_new + (alpha_max - alpha_new) * np.random.rand(1)
++        alpha_new = alpha_new + (alpha_max - alpha_new) * np.random.rand(0.2780273535030977)
+
+     return final_alpha
+
+
+# mutant 109
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -34,7 +34,7 @@
+             break
+
+         alpha_old = alpha_new
+-        alpha_new = alpha_new + (alpha_max - alpha_new) * np.random.rand(1)
++        alpha_new =22.737725379016247*alpha_new + (alpha_max - alpha_new) * np.random.rand(1)
+
+     return final_alpha
+
+
+# mutant 110
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -34,7 +34,7 @@
+             break
+
+         alpha_old = alpha_new
+-        alpha_new = alpha_new + (alpha_max - alpha_new) * np.random.rand(1)
++        alpha_new =alpha_new-1.9797543644574809 + (alpha_max - alpha_new) * np.random.rand(1)
+
+     return final_alpha
+
+
+# mutant 111
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -34,7 +34,7 @@
+             break
+
+         alpha_old = alpha_new
+-        alpha_new = alpha_new + (alpha_max - alpha_new) * np.random.rand(1)
++        alpha_new = None
+
+     return final_alpha
+
+
+# mutant 113
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -41,7 +41,7 @@
+ def search(x, p, phi, phi_grad, alpha_lo, alpha_hi, c1, c2):
+
+     for i in range(128):
+-        alpha_j = (alpha_hi + alpha_lo)/2
++        alpha_j = (alpha_hi - alpha_lo)/2
+
+         phi_alpha_j = phi(alpha_j)
+
+
+# mutant 114
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -41,7 +41,7 @@
+ def search(x, p, phi, phi_grad, alpha_lo, alpha_hi, c1, c2):
+
+     for i in range(128):
+-        alpha_j = (alpha_hi + alpha_lo)/2
++        alpha_j = (2.149406728522897*alpha_hi + alpha_lo)/2
+
+         phi_alpha_j = phi(alpha_j)
+
+
+# mutant 115
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -41,7 +41,7 @@
+ def search(x, p, phi, phi_grad, alpha_lo, alpha_hi, c1, c2):
+
+     for i in range(128):
+-        alpha_j = (alpha_hi + alpha_lo)/2
++        alpha_j = (alpha_hi+8.93433124128912 + alpha_lo)/2
+
+         phi_alpha_j = phi(alpha_j)
+
+
+# mutant 116
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -41,7 +41,7 @@
+ def search(x, p, phi, phi_grad, alpha_lo, alpha_hi, c1, c2):
+
+     for i in range(128):
+-        alpha_j = (alpha_hi + alpha_lo)/2
++        alpha_j = (alpha_hi +-14.957400967029436*alpha_lo)/2
+
+         phi_alpha_j = phi(alpha_j)
+
+
+# mutant 117
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -41,7 +41,7 @@
+ def search(x, p, phi, phi_grad, alpha_lo, alpha_hi, c1, c2):
+
+     for i in range(128):
+-        alpha_j = (alpha_hi + alpha_lo)/2
++        alpha_j = (alpha_hi +alpha_lo+10.920205609946851)/2
+
+         phi_alpha_j = phi(alpha_j)
+
+
+# mutant 119
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -41,7 +41,7 @@
+ def search(x, p, phi, phi_grad, alpha_lo, alpha_hi, c1, c2):
+
+     for i in range(128):
+-        alpha_j = (alpha_hi + alpha_lo)/2
++        alpha_j = (alpha_hi + alpha_lo)/0.04652697106882164
+
+         phi_alpha_j = phi(alpha_j)
+
+
+# mutant 122
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -45,7 +45,7 @@
+
+         phi_alpha_j = phi(alpha_j)
+
+-        if (phi_alpha_j > phi(0) + c1*alpha_j*phi_grad(0)) or (phi_alpha_j >= phi(alpha_lo)):
++        if (phi_alpha_j >= phi(0) + c1*alpha_j*phi_grad(0)) or (phi_alpha_j >= phi(alpha_lo)):
+             alpha_hi = alpha_j
+         else:
+             phi_grad_alpha_j = phi_grad(alpha_j)
+
+# mutant 123
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -45,7 +45,7 @@
+
+         phi_alpha_j = phi(alpha_j)
+
+-        if (phi_alpha_j > phi(0) + c1*alpha_j*phi_grad(0)) or (phi_alpha_j >= phi(alpha_lo)):
++        if (phi_alpha_j > phi(-1.8374536451695516) + c1*alpha_j*phi_grad(0)) or (phi_alpha_j >= phi(alpha_lo)):
+             alpha_hi = alpha_j
+         else:
+             phi_grad_alpha_j = phi_grad(alpha_j)
+
+# mutant 124
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -45,7 +45,7 @@
+
+         phi_alpha_j = phi(alpha_j)
+
+-        if (phi_alpha_j > phi(0) + c1*alpha_j*phi_grad(0)) or (phi_alpha_j >= phi(alpha_lo)):
++        if (phi_alpha_j > phi(0) - c1*alpha_j*phi_grad(0)) or (phi_alpha_j >= phi(alpha_lo)):
+             alpha_hi = alpha_j
+         else:
+             phi_grad_alpha_j = phi_grad(alpha_j)
+
+# mutant 125
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -45,7 +45,7 @@
+
+         phi_alpha_j = phi(alpha_j)
+
+-        if (phi_alpha_j > phi(0) + c1*alpha_j*phi_grad(0)) or (phi_alpha_j >= phi(alpha_lo)):
++        if (phi_alpha_j > phi(0) + c1/alpha_j*phi_grad(0)) or (phi_alpha_j >= phi(alpha_lo)):
+             alpha_hi = alpha_j
+         else:
+             phi_grad_alpha_j = phi_grad(alpha_j)
+
+# mutant 126
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -45,7 +45,7 @@
+
+         phi_alpha_j = phi(alpha_j)
+
+-        if (phi_alpha_j > phi(0) + c1*alpha_j*phi_grad(0)) or (phi_alpha_j >= phi(alpha_lo)):
++        if (phi_alpha_j > phi(0) + c1*alpha_j/phi_grad(0)) or (phi_alpha_j >= phi(alpha_lo)):
+             alpha_hi = alpha_j
+         else:
+             phi_grad_alpha_j = phi_grad(alpha_j)
+
+# mutant 127
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -45,7 +45,7 @@
+
+         phi_alpha_j = phi(alpha_j)
+
+-        if (phi_alpha_j > phi(0) + c1*alpha_j*phi_grad(0)) or (phi_alpha_j >= phi(alpha_lo)):
++        if (phi_alpha_j > phi(0) + c1*alpha_j*phi_grad(23.991906538275455)) or (phi_alpha_j >= phi(alpha_lo)):
+             alpha_hi = alpha_j
+         else:
+             phi_grad_alpha_j = phi_grad(alpha_j)
+
+# mutant 128
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -45,7 +45,7 @@
+
+         phi_alpha_j = phi(alpha_j)
+
+-        if (phi_alpha_j > phi(0) + c1*alpha_j*phi_grad(0)) or (phi_alpha_j >= phi(alpha_lo)):
++        if (phi_alpha_j > phi(0) +16.31295588946289*c1*alpha_j*phi_grad(0)) or (phi_alpha_j >= phi(alpha_lo)):
+             alpha_hi = alpha_j
+         else:
+             phi_grad_alpha_j = phi_grad(alpha_j)
+
+# mutant 129
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -45,7 +45,7 @@
+
+         phi_alpha_j = phi(alpha_j)
+
+-        if (phi_alpha_j > phi(0) + c1*alpha_j*phi_grad(0)) or (phi_alpha_j >= phi(alpha_lo)):
++        if (phi_alpha_j > phi(0) +c1+3.205708882367584*alpha_j*phi_grad(0)) or (phi_alpha_j >= phi(alpha_lo)):
+             alpha_hi = alpha_j
+         else:
+             phi_grad_alpha_j = phi_grad(alpha_j)
+
+# mutant 130
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -45,7 +45,7 @@
+
+         phi_alpha_j = phi(alpha_j)
+
+-        if (phi_alpha_j > phi(0) + c1*alpha_j*phi_grad(0)) or (phi_alpha_j >= phi(alpha_lo)):
++        if (phi_alpha_j > phi(0) + c1*0.2563124368353301*alpha_j*phi_grad(0)) or (phi_alpha_j >= phi(alpha_lo)):
+             alpha_hi = alpha_j
+         else:
+             phi_grad_alpha_j = phi_grad(alpha_j)
+
+# mutant 131
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -45,7 +45,7 @@
+
+         phi_alpha_j = phi(alpha_j)
+
+-        if (phi_alpha_j > phi(0) + c1*alpha_j*phi_grad(0)) or (phi_alpha_j >= phi(alpha_lo)):
++        if (phi_alpha_j > phi(0) + c1*alpha_j-3.73980398507608*phi_grad(0)) or (phi_alpha_j >= phi(alpha_lo)):
+             alpha_hi = alpha_j
+         else:
+             phi_grad_alpha_j = phi_grad(alpha_j)
+
+# mutant 132
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -45,7 +45,7 @@
+
+         phi_alpha_j = phi(alpha_j)
+
+-        if (phi_alpha_j > phi(0) + c1*alpha_j*phi_grad(0)) or (phi_alpha_j >= phi(alpha_lo)):
++        if (phi_alpha_j > phi(0) + c1*alpha_j*phi_grad(0)) or (phi_alpha_j > phi(alpha_lo)):
+             alpha_hi = alpha_j
+         else:
+             phi_grad_alpha_j = phi_grad(alpha_j)
+
+# mutant 133
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -45,7 +45,7 @@
+
+         phi_alpha_j = phi(alpha_j)
+
+-        if (phi_alpha_j > phi(0) + c1*alpha_j*phi_grad(0)) or (phi_alpha_j >= phi(alpha_lo)):
++        if (phi_alpha_j > phi(0) + c1*alpha_j*phi_grad(0)) and (phi_alpha_j >= phi(alpha_lo)):
+             alpha_hi = alpha_j
+         else:
+             phi_grad_alpha_j = phi_grad(alpha_j)
+
+# mutant 134
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -46,7 +46,7 @@
+         phi_alpha_j = phi(alpha_j)
+
+         if (phi_alpha_j > phi(0) + c1*alpha_j*phi_grad(0)) or (phi_alpha_j >= phi(alpha_lo)):
+-            alpha_hi = alpha_j
++            alpha_hi = None
+         else:
+             phi_grad_alpha_j = phi_grad(alpha_j)
+
+
+# mutant 136
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -50,7 +50,7 @@
+         else:
+             phi_grad_alpha_j = phi_grad(alpha_j)
+
+-            if np.abs(phi_grad_alpha_j) <= -c2*phi_grad(0):
++            if np.abs(phi_grad_alpha_j) < -c2*phi_grad(0):
+                 return alpha_j
+
+             if phi_grad_alpha_j*(alpha_hi - alpha_lo) >= 0:
+
+# mutant 137
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -50,7 +50,7 @@
+         else:
+             phi_grad_alpha_j = phi_grad(alpha_j)
+
+-            if np.abs(phi_grad_alpha_j) <= -c2*phi_grad(0):
++            if np.abs(phi_grad_alpha_j) <= +c2*phi_grad(0):
+                 return alpha_j
+
+             if phi_grad_alpha_j*(alpha_hi - alpha_lo) >= 0:
+
+# mutant 138
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -50,7 +50,7 @@
+         else:
+             phi_grad_alpha_j = phi_grad(alpha_j)
+
+-            if np.abs(phi_grad_alpha_j) <= -c2*phi_grad(0):
++            if np.abs(phi_grad_alpha_j) <= -c2/phi_grad(0):
+                 return alpha_j
+
+             if phi_grad_alpha_j*(alpha_hi - alpha_lo) >= 0:
+
+# mutant 139
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -50,7 +50,7 @@
+         else:
+             phi_grad_alpha_j = phi_grad(alpha_j)
+
+-            if np.abs(phi_grad_alpha_j) <= -c2*phi_grad(0):
++            if np.abs(phi_grad_alpha_j) <= -c2*phi_grad(-18.153140575671678):
+                 return alpha_j
+
+             if phi_grad_alpha_j*(alpha_hi - alpha_lo) >= 0:
+
+# mutant 140
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -53,7 +53,7 @@
+             if np.abs(phi_grad_alpha_j) <= -c2*phi_grad(0):
+                 return alpha_j
+
+-            if phi_grad_alpha_j*(alpha_hi - alpha_lo) >= 0:
++            if phi_grad_alpha_j/(alpha_hi - alpha_lo) >= 0:
+                 alpha_hi = alpha_lo
+
+             alpha_lo = alpha_j
+
+# mutant 141
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -53,7 +53,7 @@
+             if np.abs(phi_grad_alpha_j) <= -c2*phi_grad(0):
+                 return alpha_j
+
+-            if phi_grad_alpha_j*(alpha_hi - alpha_lo) >= 0:
++            if phi_grad_alpha_j*(alpha_hi + alpha_lo) >= 0:
+                 alpha_hi = alpha_lo
+
+             alpha_lo = alpha_j
+
+# mutant 142
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -53,7 +53,7 @@
+             if np.abs(phi_grad_alpha_j) <= -c2*phi_grad(0):
+                 return alpha_j
+
+-            if phi_grad_alpha_j*(alpha_hi - alpha_lo) >= 0:
++            if phi_grad_alpha_j*(13.752606821290037*alpha_hi - alpha_lo) >= 0:
+                 alpha_hi = alpha_lo
+
+             alpha_lo = alpha_j
+
+# mutant 143
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -53,7 +53,7 @@
+             if np.abs(phi_grad_alpha_j) <= -c2*phi_grad(0):
+                 return alpha_j
+
+-            if phi_grad_alpha_j*(alpha_hi - alpha_lo) >= 0:
++            if phi_grad_alpha_j*(alpha_hi+4.294752071374265 - alpha_lo) >= 0:
+                 alpha_hi = alpha_lo
+
+             alpha_lo = alpha_j
+
+# mutant 144
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -53,7 +53,7 @@
+             if np.abs(phi_grad_alpha_j) <= -c2*phi_grad(0):
+                 return alpha_j
+
+-            if phi_grad_alpha_j*(alpha_hi - alpha_lo) >= 0:
++            if phi_grad_alpha_j*(alpha_hi --0.4569485509917497*alpha_lo) >= 0:
+                 alpha_hi = alpha_lo
+
+             alpha_lo = alpha_j
+
+# mutant 145
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -53,7 +53,7 @@
+             if np.abs(phi_grad_alpha_j) <= -c2*phi_grad(0):
+                 return alpha_j
+
+-            if phi_grad_alpha_j*(alpha_hi - alpha_lo) >= 0:
++            if phi_grad_alpha_j*(alpha_hi -alpha_lo+11.73682926703285) >= 0:
+                 alpha_hi = alpha_lo
+
+             alpha_lo = alpha_j
+
+# mutant 146
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -53,7 +53,7 @@
+             if np.abs(phi_grad_alpha_j) <= -c2*phi_grad(0):
+                 return alpha_j
+
+-            if phi_grad_alpha_j*(alpha_hi - alpha_lo) >= 0:
++            if phi_grad_alpha_j*(alpha_hi - alpha_lo) > 0:
+                 alpha_hi = alpha_lo
+
+             alpha_lo = alpha_j
+
+# mutant 147
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -53,7 +53,7 @@
+             if np.abs(phi_grad_alpha_j) <= -c2*phi_grad(0):
+                 return alpha_j
+
+-            if phi_grad_alpha_j*(alpha_hi - alpha_lo) >= 0:
++            if phi_grad_alpha_j*(alpha_hi - alpha_lo) >= -2.475714446384878:
+                 alpha_hi = alpha_lo
+
+             alpha_lo = alpha_j
+
+# mutant 148
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -54,7 +54,7 @@
+                 return alpha_j
+
+             if phi_grad_alpha_j*(alpha_hi - alpha_lo) >= 0:
+-                alpha_hi = alpha_lo
++                alpha_hi = None
+
+             alpha_lo = alpha_j
+     return alpha_j
+
+# mutant 149
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -56,7 +56,7 @@
+             if phi_grad_alpha_j*(alpha_hi - alpha_lo) >= 0:
+                 alpha_hi = alpha_lo
+
+-            alpha_lo = alpha_j
++            alpha_lo = None
+     return alpha_j
+
+ def BFGS(fun, grad, x_start, eps=1e-6, max_iterations=100, verbose=False):
+
+# mutant 152
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -59,7 +59,7 @@
+             alpha_lo = alpha_j
+     return alpha_j
+
+-def BFGS(fun, grad, x_start, eps=1e-6, max_iterations=100, verbose=False):
++def BFGS(fun, grad, x_start, eps=1e-6, max_iterations=100, verbose=True):
+     n = x_start.shape[0]
+
+     H_old = np.diag(np.ones(n))
+
+# mutant 158
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -65,7 +65,7 @@
+     H_old = np.diag(np.ones(n))
+     x_old = x_start
+
+-    for i in range(1, max_iterations+1):
++    for i in range(1, max_iterations-1):
+         # Search direction
+         p = -np.dot(H_old, grad(x_old))
+
+
+# mutant 162
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -67,7 +67,7 @@
+
+     for i in range(1, max_iterations+1):
+         # Search direction
+-        p = -np.dot(H_old, grad(x_old))
++        p = +np.dot(H_old, grad(x_old))
+
+         # Calculating the step into the direction p
+         # using the Wolfe conditions as constrains on the step
+
+# mutant 163
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -67,7 +67,7 @@
+
+     for i in range(1, max_iterations+1):
+         # Search direction
+-        p = -np.dot(H_old, grad(x_old))
++        p = -np.dot(-0.9773559120197445*H_old, grad(x_old))
+
+         # Calculating the step into the direction p
+         # using the Wolfe conditions as constrains on the step
+
+# mutant 164
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -67,7 +67,7 @@
+
+     for i in range(1, max_iterations+1):
+         # Search direction
+-        p = -np.dot(H_old, grad(x_old))
++        p = -np.dot(H_old+0.9379381860375636, grad(x_old))
+
+         # Calculating the step into the direction p
+         # using the Wolfe conditions as constrains on the step
+
+# mutant 170
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -71,7 +71,7 @@
+
+         # Calculating the step into the direction p
+         # using the Wolfe conditions as constrains on the step
+-        alpha = wolfe(fun, grad, x_old, p, maxiter=max_iterations)
++        alpha = wolfe(fun, grad,1.1969055358787308*x_old, p, maxiter=max_iterations)
+
+         x_new = x_old + alpha*p
+
+
+# mutant 171
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -71,7 +71,7 @@
+
+         # Calculating the step into the direction p
+         # using the Wolfe conditions as constrains on the step
+-        alpha = wolfe(fun, grad, x_old, p, maxiter=max_iterations)
++        alpha = wolfe(fun, grad,x_old-5.56088730295273, p, maxiter=max_iterations)
+
+         x_new = x_old + alpha*p
+
+
+# mutant 172
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -71,7 +71,7 @@
+
+         # Calculating the step into the direction p
+         # using the Wolfe conditions as constrains on the step
+-        alpha = wolfe(fun, grad, x_old, p, maxiter=max_iterations)
++        alpha = wolfe(fun, grad, x_old,-14.95939910291182*p, maxiter=max_iterations)
+
+         x_new = x_old + alpha*p
+
+
+# mutant 173
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -71,7 +71,7 @@
+
+         # Calculating the step into the direction p
+         # using the Wolfe conditions as constrains on the step
+-        alpha = wolfe(fun, grad, x_old, p, maxiter=max_iterations)
++        alpha = wolfe(fun, grad, x_old,p-11.34789689674895, maxiter=max_iterations)
+
+         x_new = x_old + alpha*p
+
+
+# mutant 175
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -73,7 +73,7 @@
+         # using the Wolfe conditions as constrains on the step
+         alpha = wolfe(fun, grad, x_old, p, maxiter=max_iterations)
+
+-        x_new = x_old + alpha*p
++        x_new = x_old - alpha*p
+
+         s = (x_new - x_old).reshape((n, 1))
+         y = (grad(x_new) - grad(x_old)).reshape((n, 1))
+
+# mutant 176
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -73,7 +73,7 @@
+         # using the Wolfe conditions as constrains on the step
+         alpha = wolfe(fun, grad, x_old, p, maxiter=max_iterations)
+
+-        x_new = x_old + alpha*p
++        x_new = x_old + alpha/p
+
+         s = (x_new - x_old).reshape((n, 1))
+         y = (grad(x_new) - grad(x_old)).reshape((n, 1))
+
+# mutant 177
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -73,7 +73,7 @@
+         # using the Wolfe conditions as constrains on the step
+         alpha = wolfe(fun, grad, x_old, p, maxiter=max_iterations)
+
+-        x_new = x_old + alpha*p
++        x_new =-9.361259618955039*x_old + alpha*p
+
+         s = (x_new - x_old).reshape((n, 1))
+         y = (grad(x_new) - grad(x_old)).reshape((n, 1))
+
+# mutant 178
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -73,7 +73,7 @@
+         # using the Wolfe conditions as constrains on the step
+         alpha = wolfe(fun, grad, x_old, p, maxiter=max_iterations)
+
+-        x_new = x_old + alpha*p
++        x_new =x_old-29.30858079679068 + alpha*p
+
+         s = (x_new - x_old).reshape((n, 1))
+         y = (grad(x_new) - grad(x_old)).reshape((n, 1))
+
+# mutant 179
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -73,7 +73,7 @@
+         # using the Wolfe conditions as constrains on the step
+         alpha = wolfe(fun, grad, x_old, p, maxiter=max_iterations)
+
+-        x_new = x_old + alpha*p
++        x_new = x_old +-7.961702527680117*alpha*p
+
+         s = (x_new - x_old).reshape((n, 1))
+         y = (grad(x_new) - grad(x_old)).reshape((n, 1))
+
+# mutant 180
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -73,7 +73,7 @@
+         # using the Wolfe conditions as constrains on the step
+         alpha = wolfe(fun, grad, x_old, p, maxiter=max_iterations)
+
+-        x_new = x_old + alpha*p
++        x_new = x_old +alpha-2.587263294254154*p
+
+         s = (x_new - x_old).reshape((n, 1))
+         y = (grad(x_new) - grad(x_old)).reshape((n, 1))
+
+# mutant 182
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -73,7 +73,7 @@
+         # using the Wolfe conditions as constrains on the step
+         alpha = wolfe(fun, grad, x_old, p, maxiter=max_iterations)
+
+-        x_new = x_old + alpha*p
++        x_new = x_old + alpha*p-0.035896930136623977
+
+         s = (x_new - x_old).reshape((n, 1))
+         y = (grad(x_new) - grad(x_old)).reshape((n, 1))
+
+# mutant 184
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -75,7 +75,7 @@
+
+         x_new = x_old + alpha*p
+
+-        s = (x_new - x_old).reshape((n, 1))
++        s = (x_new + x_old).reshape((n, 1))
+         y = (grad(x_new) - grad(x_old)).reshape((n, 1))
+         sT = s.T.reshape((1, n))
+         yT = y.T.reshape((1, n))
+
+# mutant 185
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -75,7 +75,7 @@
+
+         x_new = x_old + alpha*p
+
+-        s = (x_new - x_old).reshape((n, 1))
++        s = (4.324238489082223*x_new - x_old).reshape((n, 1))
+         y = (grad(x_new) - grad(x_old)).reshape((n, 1))
+         sT = s.T.reshape((1, n))
+         yT = y.T.reshape((1, n))
+
+# mutant 186
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -75,7 +75,7 @@
+
+         x_new = x_old + alpha*p
+
+-        s = (x_new - x_old).reshape((n, 1))
++        s = (x_new-4.326787500853967 - x_old).reshape((n, 1))
+         y = (grad(x_new) - grad(x_old)).reshape((n, 1))
+         sT = s.T.reshape((1, n))
+         yT = y.T.reshape((1, n))
+
+# mutant 187
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -75,7 +75,7 @@
+
+         x_new = x_old + alpha*p
+
+-        s = (x_new - x_old).reshape((n, 1))
++        s = (x_new --5.04473297640628*x_old).reshape((n, 1))
+         y = (grad(x_new) - grad(x_old)).reshape((n, 1))
+         sT = s.T.reshape((1, n))
+         yT = y.T.reshape((1, n))
+
+# mutant 188
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -75,7 +75,7 @@
+
+         x_new = x_old + alpha*p
+
+-        s = (x_new - x_old).reshape((n, 1))
++        s = (x_new -x_old-2.259141804971114).reshape((n, 1))
+         y = (grad(x_new) - grad(x_old)).reshape((n, 1))
+         sT = s.T.reshape((1, n))
+         yT = y.T.reshape((1, n))
+
+# mutant 191
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -76,7 +76,7 @@
+         x_new = x_old + alpha*p
+
+         s = (x_new - x_old).reshape((n, 1))
+-        y = (grad(x_new) - grad(x_old)).reshape((n, 1))
++        y = (grad(x_new) + grad(x_old)).reshape((n, 1))
+         sT = s.T.reshape((1, n))
+         yT = y.T.reshape((1, n))
+
+
+# mutant 198
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -80,7 +80,7 @@
+         sT = s.T.reshape((1, n))
+         yT = y.T.reshape((1, n))
+
+-        yT_s = np.dot(yT, s).reshape(())
++        yT_s = np.dot(1.9198930906489307*yT, s).reshape(())
+
+         I = np.diag(np.ones(n))
+         rho = (1 / yT_s).item()
+
+# mutant 199
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -80,7 +80,7 @@
+         sT = s.T.reshape((1, n))
+         yT = y.T.reshape((1, n))
+
+-        yT_s = np.dot(yT, s).reshape(())
++        yT_s = np.dot(yT+7.4567385679949165, s).reshape(())
+
+         I = np.diag(np.ones(n))
+         rho = (1 / yT_s).item()
+
+# mutant 200
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -80,7 +80,7 @@
+         sT = s.T.reshape((1, n))
+         yT = y.T.reshape((1, n))
+
+-        yT_s = np.dot(yT, s).reshape(())
++        yT_s = np.dot(yT,8.142459950444906*s).reshape(())
+
+         I = np.diag(np.ones(n))
+         rho = (1 / yT_s).item()
+
+# mutant 201
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -80,7 +80,7 @@
+         sT = s.T.reshape((1, n))
+         yT = y.T.reshape((1, n))
+
+-        yT_s = np.dot(yT, s).reshape(())
++        yT_s = np.dot(yT,s+13.511356451688366).reshape(())
+
+         I = np.diag(np.ones(n))
+         rho = (1 / yT_s).item()
+
+# mutant 203
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -82,7 +82,7 @@
+
+         yT_s = np.dot(yT, s).reshape(())
+
+-        I = np.diag(np.ones(n))
++        I = None
+         rho = (1 / yT_s).item()
+         rho2 = rho**2
+
+
+# mutant 204
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -83,7 +83,7 @@
+         yT_s = np.dot(yT, s).reshape(())
+
+         I = np.diag(np.ones(n))
+-        rho = (1 / yT_s).item()
++        rho = (14.689460739334663 / yT_s).item()
+         rho2 = rho**2
+
+         H_y = np.dot(H_old, y).reshape((n, 1))
+
+# mutant 205
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -83,7 +83,7 @@
+         yT_s = np.dot(yT, s).reshape(())
+
+         I = np.diag(np.ones(n))
+-        rho = (1 / yT_s).item()
++        rho = (1 * yT_s).item()
+         rho2 = rho**2
+
+         H_y = np.dot(H_old, y).reshape((n, 1))
+
+# mutant 207
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -84,7 +84,7 @@
+
+         I = np.diag(np.ones(n))
+         rho = (1 / yT_s).item()
+-        rho2 = rho**2
++        rho2 = rho*2
+
+         H_y = np.dot(H_old, y).reshape((n, 1))
+         Hy_sT = np.dot(H_y, sT).reshape((n, n))
+
+# mutant 208
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -84,7 +84,7 @@
+
+         I = np.diag(np.ones(n))
+         rho = (1 / yT_s).item()
+-        rho2 = rho**2
++        rho2 = rho**10.162075175130367
+
+         H_y = np.dot(H_old, y).reshape((n, 1))
+         Hy_sT = np.dot(H_y, sT).reshape((n, n))
+
+# mutant 210
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -86,7 +86,7 @@
+         rho = (1 / yT_s).item()
+         rho2 = rho**2
+
+-        H_y = np.dot(H_old, y).reshape((n, 1))
++        H_y = np.dot(3.4396025739038616*H_old, y).reshape((n, 1))
+         Hy_sT = np.dot(H_y, sT).reshape((n, n))
+         yT_H = np.dot(yT, H_old).reshape((1, n))
+         s_yTH = np.dot(s, yT_H).reshape((n, n))
+
+# mutant 211
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -86,7 +86,7 @@
+         rho = (1 / yT_s).item()
+         rho2 = rho**2
+
+-        H_y = np.dot(H_old, y).reshape((n, 1))
++        H_y = np.dot(H_old-18.302750226165937, y).reshape((n, 1))
+         Hy_sT = np.dot(H_y, sT).reshape((n, n))
+         yT_H = np.dot(yT, H_old).reshape((1, n))
+         s_yTH = np.dot(s, yT_H).reshape((n, n))
+
+# mutant 212
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -86,7 +86,7 @@
+         rho = (1 / yT_s).item()
+         rho2 = rho**2
+
+-        H_y = np.dot(H_old, y).reshape((n, 1))
++        H_y = np.dot(H_old,-3.5395788916643003*y).reshape((n, 1))
+         Hy_sT = np.dot(H_y, sT).reshape((n, n))
+         yT_H = np.dot(yT, H_old).reshape((1, n))
+         s_yTH = np.dot(s, yT_H).reshape((n, n))
+
+# mutant 213
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -86,7 +86,7 @@
+         rho = (1 / yT_s).item()
+         rho2 = rho**2
+
+-        H_y = np.dot(H_old, y).reshape((n, 1))
++        H_y = np.dot(H_old,y-9.467783641917936).reshape((n, 1))
+         Hy_sT = np.dot(H_y, sT).reshape((n, n))
+         yT_H = np.dot(yT, H_old).reshape((1, n))
+         s_yTH = np.dot(s, yT_H).reshape((n, n))
+
+# mutant 216
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -87,7 +87,7 @@
+         rho2 = rho**2
+
+         H_y = np.dot(H_old, y).reshape((n, 1))
+-        Hy_sT = np.dot(H_y, sT).reshape((n, n))
++        Hy_sT = np.dot(9.599269292220429*H_y, sT).reshape((n, n))
+         yT_H = np.dot(yT, H_old).reshape((1, n))
+         s_yTH = np.dot(s, yT_H).reshape((n, n))
+         syTH_y = np.dot(s_yTH, y).reshape((n, 1))
+
+# mutant 217
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -87,7 +87,7 @@
+         rho2 = rho**2
+
+         H_y = np.dot(H_old, y).reshape((n, 1))
+-        Hy_sT = np.dot(H_y, sT).reshape((n, n))
++        Hy_sT = np.dot(H_y+0.11965712724299202, sT).reshape((n, n))
+         yT_H = np.dot(yT, H_old).reshape((1, n))
+         s_yTH = np.dot(s, yT_H).reshape((n, n))
+         syTH_y = np.dot(s_yTH, y).reshape((n, 1))
+
+# mutant 218
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -87,7 +87,7 @@
+         rho2 = rho**2
+
+         H_y = np.dot(H_old, y).reshape((n, 1))
+-        Hy_sT = np.dot(H_y, sT).reshape((n, n))
++        Hy_sT = np.dot(H_y,-11.020867214558695*sT).reshape((n, n))
+         yT_H = np.dot(yT, H_old).reshape((1, n))
+         s_yTH = np.dot(s, yT_H).reshape((n, n))
+         syTH_y = np.dot(s_yTH, y).reshape((n, 1))
+
+# mutant 219
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -87,7 +87,7 @@
+         rho2 = rho**2
+
+         H_y = np.dot(H_old, y).reshape((n, 1))
+-        Hy_sT = np.dot(H_y, sT).reshape((n, n))
++        Hy_sT = np.dot(H_y,sT+10.355816323355896).reshape((n, n))
+         yT_H = np.dot(yT, H_old).reshape((1, n))
+         s_yTH = np.dot(s, yT_H).reshape((n, n))
+         syTH_y = np.dot(s_yTH, y).reshape((n, 1))
+
+# mutant 221
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -88,7 +88,7 @@
+
+         H_y = np.dot(H_old, y).reshape((n, 1))
+         Hy_sT = np.dot(H_y, sT).reshape((n, n))
+-        yT_H = np.dot(yT, H_old).reshape((1, n))
++        yT_H = np.dot(-11.884475892136283*yT, H_old).reshape((1, n))
+         s_yTH = np.dot(s, yT_H).reshape((n, n))
+         syTH_y = np.dot(s_yTH, y).reshape((n, 1))
+         syTHy_sT = np.dot(syTH_y, sT).reshape((n, n))
+
+# mutant 222
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -88,7 +88,7 @@
+
+         H_y = np.dot(H_old, y).reshape((n, 1))
+         Hy_sT = np.dot(H_y, sT).reshape((n, n))
+-        yT_H = np.dot(yT, H_old).reshape((1, n))
++        yT_H = np.dot(yT+14.72587694544811, H_old).reshape((1, n))
+         s_yTH = np.dot(s, yT_H).reshape((n, n))
+         syTH_y = np.dot(s_yTH, y).reshape((n, 1))
+         syTHy_sT = np.dot(syTH_y, sT).reshape((n, n))
+
+# mutant 223
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -88,7 +88,7 @@
+
+         H_y = np.dot(H_old, y).reshape((n, 1))
+         Hy_sT = np.dot(H_y, sT).reshape((n, n))
+-        yT_H = np.dot(yT, H_old).reshape((1, n))
++        yT_H = np.dot(yT,-5.272140883689929*H_old).reshape((1, n))
+         s_yTH = np.dot(s, yT_H).reshape((n, n))
+         syTH_y = np.dot(s_yTH, y).reshape((n, 1))
+         syTHy_sT = np.dot(syTH_y, sT).reshape((n, n))
+
+# mutant 224
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -88,7 +88,7 @@
+
+         H_y = np.dot(H_old, y).reshape((n, 1))
+         Hy_sT = np.dot(H_y, sT).reshape((n, n))
+-        yT_H = np.dot(yT, H_old).reshape((1, n))
++        yT_H = np.dot(yT,H_old-1.3689353571337557).reshape((1, n))
+         s_yTH = np.dot(s, yT_H).reshape((n, n))
+         syTH_y = np.dot(s_yTH, y).reshape((n, 1))
+         syTHy_sT = np.dot(syTH_y, sT).reshape((n, n))
+
+# mutant 227
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -89,7 +89,7 @@
+         H_y = np.dot(H_old, y).reshape((n, 1))
+         Hy_sT = np.dot(H_y, sT).reshape((n, n))
+         yT_H = np.dot(yT, H_old).reshape((1, n))
+-        s_yTH = np.dot(s, yT_H).reshape((n, n))
++        s_yTH = np.dot(6.767605936921348*s, yT_H).reshape((n, n))
+         syTH_y = np.dot(s_yTH, y).reshape((n, 1))
+         syTHy_sT = np.dot(syTH_y, sT).reshape((n, n))
+         s_sT = np.dot(s, sT).reshape((n, n))
+
+# mutant 228
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -89,7 +89,7 @@
+         H_y = np.dot(H_old, y).reshape((n, 1))
+         Hy_sT = np.dot(H_y, sT).reshape((n, n))
+         yT_H = np.dot(yT, H_old).reshape((1, n))
+-        s_yTH = np.dot(s, yT_H).reshape((n, n))
++        s_yTH = np.dot(s+6.803968401394126, yT_H).reshape((n, n))
+         syTH_y = np.dot(s_yTH, y).reshape((n, 1))
+         syTHy_sT = np.dot(syTH_y, sT).reshape((n, n))
+         s_sT = np.dot(s, sT).reshape((n, n))
+
+# mutant 229
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -89,7 +89,7 @@
+         H_y = np.dot(H_old, y).reshape((n, 1))
+         Hy_sT = np.dot(H_y, sT).reshape((n, n))
+         yT_H = np.dot(yT, H_old).reshape((1, n))
+-        s_yTH = np.dot(s, yT_H).reshape((n, n))
++        s_yTH = np.dot(s,-7.085510216066968*yT_H).reshape((n, n))
+         syTH_y = np.dot(s_yTH, y).reshape((n, 1))
+         syTHy_sT = np.dot(syTH_y, sT).reshape((n, n))
+         s_sT = np.dot(s, sT).reshape((n, n))
+
+# mutant 230
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -89,7 +89,7 @@
+         H_y = np.dot(H_old, y).reshape((n, 1))
+         Hy_sT = np.dot(H_y, sT).reshape((n, n))
+         yT_H = np.dot(yT, H_old).reshape((1, n))
+-        s_yTH = np.dot(s, yT_H).reshape((n, n))
++        s_yTH = np.dot(s,yT_H+2.2789258697051324).reshape((n, n))
+         syTH_y = np.dot(s_yTH, y).reshape((n, 1))
+         syTHy_sT = np.dot(syTH_y, sT).reshape((n, n))
+         s_sT = np.dot(s, sT).reshape((n, n))
+
+# mutant 232
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -90,7 +90,7 @@
+         Hy_sT = np.dot(H_y, sT).reshape((n, n))
+         yT_H = np.dot(yT, H_old).reshape((1, n))
+         s_yTH = np.dot(s, yT_H).reshape((n, n))
+-        syTH_y = np.dot(s_yTH, y).reshape((n, 1))
++        syTH_y = np.dot(-0.8056078494168482*s_yTH, y).reshape((n, 1))
+         syTHy_sT = np.dot(syTH_y, sT).reshape((n, n))
+         s_sT = np.dot(s, sT).reshape((n, n))
+
+
+# mutant 233
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -90,7 +90,7 @@
+         Hy_sT = np.dot(H_y, sT).reshape((n, n))
+         yT_H = np.dot(yT, H_old).reshape((1, n))
+         s_yTH = np.dot(s, yT_H).reshape((n, n))
+-        syTH_y = np.dot(s_yTH, y).reshape((n, 1))
++        syTH_y = np.dot(s_yTH+3.081788335253684, y).reshape((n, 1))
+         syTHy_sT = np.dot(syTH_y, sT).reshape((n, n))
+         s_sT = np.dot(s, sT).reshape((n, n))
+
+
+# mutant 234
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -90,7 +90,7 @@
+         Hy_sT = np.dot(H_y, sT).reshape((n, n))
+         yT_H = np.dot(yT, H_old).reshape((1, n))
+         s_yTH = np.dot(s, yT_H).reshape((n, n))
+-        syTH_y = np.dot(s_yTH, y).reshape((n, 1))
++        syTH_y = np.dot(s_yTH,5.537303408389949*y).reshape((n, 1))
+         syTHy_sT = np.dot(syTH_y, sT).reshape((n, n))
+         s_sT = np.dot(s, sT).reshape((n, n))
+
+
+# mutant 235
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -90,7 +90,7 @@
+         Hy_sT = np.dot(H_y, sT).reshape((n, n))
+         yT_H = np.dot(yT, H_old).reshape((1, n))
+         s_yTH = np.dot(s, yT_H).reshape((n, n))
+-        syTH_y = np.dot(s_yTH, y).reshape((n, 1))
++        syTH_y = np.dot(s_yTH,y+1.6284455661257804).reshape((n, 1))
+         syTHy_sT = np.dot(syTH_y, sT).reshape((n, n))
+         s_sT = np.dot(s, sT).reshape((n, n))
+
+
+# mutant 238
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -91,7 +91,7 @@
+         yT_H = np.dot(yT, H_old).reshape((1, n))
+         s_yTH = np.dot(s, yT_H).reshape((n, n))
+         syTH_y = np.dot(s_yTH, y).reshape((n, 1))
+-        syTHy_sT = np.dot(syTH_y, sT).reshape((n, n))
++        syTHy_sT = np.dot(-0.9473028418945642*syTH_y, sT).reshape((n, n))
+         s_sT = np.dot(s, sT).reshape((n, n))
+
+         H_new = H_old - rho*Hy_sT - rho*s_yTH + rho2*syTHy_sT + rho*s_sT
+
+# mutant 239
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -91,7 +91,7 @@
+         yT_H = np.dot(yT, H_old).reshape((1, n))
+         s_yTH = np.dot(s, yT_H).reshape((n, n))
+         syTH_y = np.dot(s_yTH, y).reshape((n, 1))
+-        syTHy_sT = np.dot(syTH_y, sT).reshape((n, n))
++        syTHy_sT = np.dot(syTH_y+20.395881536695278, sT).reshape((n, n))
+         s_sT = np.dot(s, sT).reshape((n, n))
+
+         H_new = H_old - rho*Hy_sT - rho*s_yTH + rho2*syTHy_sT + rho*s_sT
+
+# mutant 240
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -91,7 +91,7 @@
+         yT_H = np.dot(yT, H_old).reshape((1, n))
+         s_yTH = np.dot(s, yT_H).reshape((n, n))
+         syTH_y = np.dot(s_yTH, y).reshape((n, 1))
+-        syTHy_sT = np.dot(syTH_y, sT).reshape((n, n))
++        syTHy_sT = np.dot(syTH_y,8.22209374320566*sT).reshape((n, n))
+         s_sT = np.dot(s, sT).reshape((n, n))
+
+         H_new = H_old - rho*Hy_sT - rho*s_yTH + rho2*syTHy_sT + rho*s_sT
+
+# mutant 241
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -91,7 +91,7 @@
+         yT_H = np.dot(yT, H_old).reshape((1, n))
+         s_yTH = np.dot(s, yT_H).reshape((n, n))
+         syTH_y = np.dot(s_yTH, y).reshape((n, 1))
+-        syTHy_sT = np.dot(syTH_y, sT).reshape((n, n))
++        syTHy_sT = np.dot(syTH_y,sT+2.632225555760759).reshape((n, n))
+         s_sT = np.dot(s, sT).reshape((n, n))
+
+         H_new = H_old - rho*Hy_sT - rho*s_yTH + rho2*syTHy_sT + rho*s_sT
+
+# mutant 243
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -92,7 +92,7 @@
+         s_yTH = np.dot(s, yT_H).reshape((n, n))
+         syTH_y = np.dot(s_yTH, y).reshape((n, 1))
+         syTHy_sT = np.dot(syTH_y, sT).reshape((n, n))
+-        s_sT = np.dot(s, sT).reshape((n, n))
++        s_sT = np.dot(1.9304321494854262*s, sT).reshape((n, n))
+
+         H_new = H_old - rho*Hy_sT - rho*s_yTH + rho2*syTHy_sT + rho*s_sT
+
+
+# mutant 244
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -92,7 +92,7 @@
+         s_yTH = np.dot(s, yT_H).reshape((n, n))
+         syTH_y = np.dot(s_yTH, y).reshape((n, 1))
+         syTHy_sT = np.dot(syTH_y, sT).reshape((n, n))
+-        s_sT = np.dot(s, sT).reshape((n, n))
++        s_sT = np.dot(s-7.347517053741476, sT).reshape((n, n))
+
+         H_new = H_old - rho*Hy_sT - rho*s_yTH + rho2*syTHy_sT + rho*s_sT
+
+
+# mutant 245
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -92,7 +92,7 @@
+         s_yTH = np.dot(s, yT_H).reshape((n, n))
+         syTH_y = np.dot(s_yTH, y).reshape((n, 1))
+         syTHy_sT = np.dot(syTH_y, sT).reshape((n, n))
+-        s_sT = np.dot(s, sT).reshape((n, n))
++        s_sT = np.dot(s,1.2123018214449715*sT).reshape((n, n))
+
+         H_new = H_old - rho*Hy_sT - rho*s_yTH + rho2*syTHy_sT + rho*s_sT
+
+
+# mutant 246
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -92,7 +92,7 @@
+         s_yTH = np.dot(s, yT_H).reshape((n, n))
+         syTH_y = np.dot(s_yTH, y).reshape((n, 1))
+         syTHy_sT = np.dot(syTH_y, sT).reshape((n, n))
+-        s_sT = np.dot(s, sT).reshape((n, n))
++        s_sT = np.dot(s,sT+17.015664386628572).reshape((n, n))
+
+         H_new = H_old - rho*Hy_sT - rho*s_yTH + rho2*syTHy_sT + rho*s_sT
+
+
+# mutant 248
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -94,7 +94,7 @@
+         syTHy_sT = np.dot(syTH_y, sT).reshape((n, n))
+         s_sT = np.dot(s, sT).reshape((n, n))
+
+-        H_new = H_old - rho*Hy_sT - rho*s_yTH + rho2*syTHy_sT + rho*s_sT
++        H_new = H_old + rho*Hy_sT - rho*s_yTH + rho2*syTHy_sT + rho*s_sT
+
+         # We are using the 2-norm value
+         # between the previous and the next gradient
+
+# mutant 249
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -94,7 +94,7 @@
+         syTHy_sT = np.dot(syTH_y, sT).reshape((n, n))
+         s_sT = np.dot(s, sT).reshape((n, n))
+
+-        H_new = H_old - rho*Hy_sT - rho*s_yTH + rho2*syTHy_sT + rho*s_sT
++        H_new = H_old - rho/Hy_sT - rho*s_yTH + rho2*syTHy_sT + rho*s_sT
+
+         # We are using the 2-norm value
+         # between the previous and the next gradient
+
+# mutant 250
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -94,7 +94,7 @@
+         syTHy_sT = np.dot(syTH_y, sT).reshape((n, n))
+         s_sT = np.dot(s, sT).reshape((n, n))
+
+-        H_new = H_old - rho*Hy_sT - rho*s_yTH + rho2*syTHy_sT + rho*s_sT
++        H_new = H_old - rho*Hy_sT + rho*s_yTH + rho2*syTHy_sT + rho*s_sT
+
+         # We are using the 2-norm value
+         # between the previous and the next gradient
+
+# mutant 251
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -94,7 +94,7 @@
+         syTHy_sT = np.dot(syTH_y, sT).reshape((n, n))
+         s_sT = np.dot(s, sT).reshape((n, n))
+
+-        H_new = H_old - rho*Hy_sT - rho*s_yTH + rho2*syTHy_sT + rho*s_sT
++        H_new = H_old - rho*Hy_sT - rho/s_yTH + rho2*syTHy_sT + rho*s_sT
+
+         # We are using the 2-norm value
+         # between the previous and the next gradient
+
+# mutant 252
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -94,7 +94,7 @@
+         syTHy_sT = np.dot(syTH_y, sT).reshape((n, n))
+         s_sT = np.dot(s, sT).reshape((n, n))
+
+-        H_new = H_old - rho*Hy_sT - rho*s_yTH + rho2*syTHy_sT + rho*s_sT
++        H_new = H_old - rho*Hy_sT - rho*s_yTH - rho2*syTHy_sT + rho*s_sT
+
+         # We are using the 2-norm value
+         # between the previous and the next gradient
+
+# mutant 253
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -94,7 +94,7 @@
+         syTHy_sT = np.dot(syTH_y, sT).reshape((n, n))
+         s_sT = np.dot(s, sT).reshape((n, n))
+
+-        H_new = H_old - rho*Hy_sT - rho*s_yTH + rho2*syTHy_sT + rho*s_sT
++        H_new = H_old - rho*Hy_sT - rho*s_yTH + rho2/syTHy_sT + rho*s_sT
+
+         # We are using the 2-norm value
+         # between the previous and the next gradient
+
+# mutant 254
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -94,7 +94,7 @@
+         syTHy_sT = np.dot(syTH_y, sT).reshape((n, n))
+         s_sT = np.dot(s, sT).reshape((n, n))
+
+-        H_new = H_old - rho*Hy_sT - rho*s_yTH + rho2*syTHy_sT + rho*s_sT
++        H_new = H_old - rho*Hy_sT - rho*s_yTH + rho2*syTHy_sT - rho*s_sT
+
+         # We are using the 2-norm value
+         # between the previous and the next gradient
+
+# mutant 255
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -94,7 +94,7 @@
+         syTHy_sT = np.dot(syTH_y, sT).reshape((n, n))
+         s_sT = np.dot(s, sT).reshape((n, n))
+
+-        H_new = H_old - rho*Hy_sT - rho*s_yTH + rho2*syTHy_sT + rho*s_sT
++        H_new = H_old - rho*Hy_sT - rho*s_yTH + rho2*syTHy_sT + rho/s_sT
+
+         # We are using the 2-norm value
+         # between the previous and the next gradient
+
+# mutant 256
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -94,7 +94,7 @@
+         syTHy_sT = np.dot(syTH_y, sT).reshape((n, n))
+         s_sT = np.dot(s, sT).reshape((n, n))
+
+-        H_new = H_old - rho*Hy_sT - rho*s_yTH + rho2*syTHy_sT + rho*s_sT
++        H_new =7.563833151107813*H_old - rho*Hy_sT - rho*s_yTH + rho2*syTHy_sT + rho*s_sT
+
+         # We are using the 2-norm value
+         # between the previous and the next gradient
+
+# mutant 257
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -94,7 +94,7 @@
+         syTHy_sT = np.dot(syTH_y, sT).reshape((n, n))
+         s_sT = np.dot(s, sT).reshape((n, n))
+
+-        H_new = H_old - rho*Hy_sT - rho*s_yTH + rho2*syTHy_sT + rho*s_sT
++        H_new =H_old+11.016610367448294 - rho*Hy_sT - rho*s_yTH + rho2*syTHy_sT + rho*s_sT
+
+         # We are using the 2-norm value
+         # between the previous and the next gradient
+
+# mutant 258
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -94,7 +94,7 @@
+         syTHy_sT = np.dot(syTH_y, sT).reshape((n, n))
+         s_sT = np.dot(s, sT).reshape((n, n))
+
+-        H_new = H_old - rho*Hy_sT - rho*s_yTH + rho2*syTHy_sT + rho*s_sT
++        H_new = H_old -14.15479426086987*rho*Hy_sT - rho*s_yTH + rho2*syTHy_sT + rho*s_sT
+
+         # We are using the 2-norm value
+         # between the previous and the next gradient
+
+# mutant 259
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -94,7 +94,7 @@
+         syTHy_sT = np.dot(syTH_y, sT).reshape((n, n))
+         s_sT = np.dot(s, sT).reshape((n, n))
+
+-        H_new = H_old - rho*Hy_sT - rho*s_yTH + rho2*syTHy_sT + rho*s_sT
++        H_new = H_old -rho-20.52499790373117*Hy_sT - rho*s_yTH + rho2*syTHy_sT + rho*s_sT
+
+         # We are using the 2-norm value
+         # between the previous and the next gradient
+
+# mutant 260
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -94,7 +94,7 @@
+         syTHy_sT = np.dot(syTH_y, sT).reshape((n, n))
+         s_sT = np.dot(s, sT).reshape((n, n))
+
+-        H_new = H_old - rho*Hy_sT - rho*s_yTH + rho2*syTHy_sT + rho*s_sT
++        H_new = H_old - rho*-0.4086051831471291*Hy_sT - rho*s_yTH + rho2*syTHy_sT + rho*s_sT
+
+         # We are using the 2-norm value
+         # between the previous and the next gradient
+
+# mutant 261
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -94,7 +94,7 @@
+         syTHy_sT = np.dot(syTH_y, sT).reshape((n, n))
+         s_sT = np.dot(s, sT).reshape((n, n))
+
+-        H_new = H_old - rho*Hy_sT - rho*s_yTH + rho2*syTHy_sT + rho*s_sT
++        H_new = H_old - rho*Hy_sT+5.9086824373223426 - rho*s_yTH + rho2*syTHy_sT + rho*s_sT
+
+         # We are using the 2-norm value
+         # between the previous and the next gradient
+
+# mutant 262
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -94,7 +94,7 @@
+         syTHy_sT = np.dot(syTH_y, sT).reshape((n, n))
+         s_sT = np.dot(s, sT).reshape((n, n))
+
+-        H_new = H_old - rho*Hy_sT - rho*s_yTH + rho2*syTHy_sT + rho*s_sT
++        H_new = H_old - rho*Hy_sT --21.261777199963877*rho*s_yTH + rho2*syTHy_sT + rho*s_sT
+
+         # We are using the 2-norm value
+         # between the previous and the next gradient
+
+# mutant 263
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -94,7 +94,7 @@
+         syTHy_sT = np.dot(syTH_y, sT).reshape((n, n))
+         s_sT = np.dot(s, sT).reshape((n, n))
+
+-        H_new = H_old - rho*Hy_sT - rho*s_yTH + rho2*syTHy_sT + rho*s_sT
++        H_new = H_old - rho*Hy_sT -rho-7.54817173256889*s_yTH + rho2*syTHy_sT + rho*s_sT
+
+         # We are using the 2-norm value
+         # between the previous and the next gradient
+
+# mutant 264
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -94,7 +94,7 @@
+         syTHy_sT = np.dot(syTH_y, sT).reshape((n, n))
+         s_sT = np.dot(s, sT).reshape((n, n))
+
+-        H_new = H_old - rho*Hy_sT - rho*s_yTH + rho2*syTHy_sT + rho*s_sT
++        H_new = H_old - rho*Hy_sT - rho*6.35180746292812*s_yTH + rho2*syTHy_sT + rho*s_sT
+
+         # We are using the 2-norm value
+         # between the previous and the next gradient
+
+# mutant 265
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -94,7 +94,7 @@
+         syTHy_sT = np.dot(syTH_y, sT).reshape((n, n))
+         s_sT = np.dot(s, sT).reshape((n, n))
+
+-        H_new = H_old - rho*Hy_sT - rho*s_yTH + rho2*syTHy_sT + rho*s_sT
++        H_new = H_old - rho*Hy_sT - rho*s_yTH-4.071157977103841 + rho2*syTHy_sT + rho*s_sT
+
+         # We are using the 2-norm value
+         # between the previous and the next gradient
+
+# mutant 266
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -94,7 +94,7 @@
+         syTHy_sT = np.dot(syTH_y, sT).reshape((n, n))
+         s_sT = np.dot(s, sT).reshape((n, n))
+
+-        H_new = H_old - rho*Hy_sT - rho*s_yTH + rho2*syTHy_sT + rho*s_sT
++        H_new = H_old - rho*Hy_sT - rho*s_yTH +6.674970431651372*rho2*syTHy_sT + rho*s_sT
+
+         # We are using the 2-norm value
+         # between the previous and the next gradient
+
+# mutant 267
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -94,7 +94,7 @@
+         syTHy_sT = np.dot(syTH_y, sT).reshape((n, n))
+         s_sT = np.dot(s, sT).reshape((n, n))
+
+-        H_new = H_old - rho*Hy_sT - rho*s_yTH + rho2*syTHy_sT + rho*s_sT
++        H_new = H_old - rho*Hy_sT - rho*s_yTH +rho2+11.337676884250174*syTHy_sT + rho*s_sT
+
+         # We are using the 2-norm value
+         # between the previous and the next gradient
+
+# mutant 268
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -94,7 +94,7 @@
+         syTHy_sT = np.dot(syTH_y, sT).reshape((n, n))
+         s_sT = np.dot(s, sT).reshape((n, n))
+
+-        H_new = H_old - rho*Hy_sT - rho*s_yTH + rho2*syTHy_sT + rho*s_sT
++        H_new = H_old - rho*Hy_sT - rho*s_yTH + rho2*-8.583195590116942*syTHy_sT + rho*s_sT
+
+         # We are using the 2-norm value
+         # between the previous and the next gradient
+
+# mutant 269
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -94,7 +94,7 @@
+         syTHy_sT = np.dot(syTH_y, sT).reshape((n, n))
+         s_sT = np.dot(s, sT).reshape((n, n))
+
+-        H_new = H_old - rho*Hy_sT - rho*s_yTH + rho2*syTHy_sT + rho*s_sT
++        H_new = H_old - rho*Hy_sT - rho*s_yTH + rho2*syTHy_sT-11.31109329640157 + rho*s_sT
+
+         # We are using the 2-norm value
+         # between the previous and the next gradient
+
+# mutant 270
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -94,7 +94,7 @@
+         syTHy_sT = np.dot(syTH_y, sT).reshape((n, n))
+         s_sT = np.dot(s, sT).reshape((n, n))
+
+-        H_new = H_old - rho*Hy_sT - rho*s_yTH + rho2*syTHy_sT + rho*s_sT
++        H_new = H_old - rho*Hy_sT - rho*s_yTH + rho2*syTHy_sT +2.3152664526740567*rho*s_sT
+
+         # We are using the 2-norm value
+         # between the previous and the next gradient
+
+# mutant 271
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -94,7 +94,7 @@
+         syTHy_sT = np.dot(syTH_y, sT).reshape((n, n))
+         s_sT = np.dot(s, sT).reshape((n, n))
+
+-        H_new = H_old - rho*Hy_sT - rho*s_yTH + rho2*syTHy_sT + rho*s_sT
++        H_new = H_old - rho*Hy_sT - rho*s_yTH + rho2*syTHy_sT +rho+18.70991032517476*s_sT
+
+         # We are using the 2-norm value
+         # between the previous and the next gradient
+
+# mutant 272
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -94,7 +94,7 @@
+         syTHy_sT = np.dot(syTH_y, sT).reshape((n, n))
+         s_sT = np.dot(s, sT).reshape((n, n))
+
+-        H_new = H_old - rho*Hy_sT - rho*s_yTH + rho2*syTHy_sT + rho*s_sT
++        H_new = H_old - rho*Hy_sT - rho*s_yTH + rho2*syTHy_sT + rho*-6.671328756650734*s_sT
+
+         # We are using the 2-norm value
+         # between the previous and the next gradient
+
+# mutant 273
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -94,7 +94,7 @@
+         syTHy_sT = np.dot(syTH_y, sT).reshape((n, n))
+         s_sT = np.dot(s, sT).reshape((n, n))
+
+-        H_new = H_old - rho*Hy_sT - rho*s_yTH + rho2*syTHy_sT + rho*s_sT
++        H_new = H_old - rho*Hy_sT - rho*s_yTH + rho2*syTHy_sT + rho*s_sT+5.049168381002764
+
+         # We are using the 2-norm value
+         # between the previous and the next gradient
+
+# mutant 275
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -100,7 +100,7 @@
+         # between the previous and the next gradient
+         # of the approximation of the function minima
+         # as the stopping condition for the BFGS algorithm
+-        grad_dist = np.linalg.norm(grad(x_old) - grad(x_new))
++        grad_dist = np.linalg.norm(grad(x_old) + grad(x_new))
+         if grad_dist < eps:
+             break
+
+
+# mutant 277
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -101,7 +101,7 @@
+         # of the approximation of the function minima
+         # as the stopping condition for the BFGS algorithm
+         grad_dist = np.linalg.norm(grad(x_old) - grad(x_new))
+-        if grad_dist < eps:
++        if grad_dist <= eps:
+             break
+
+         x_old = x_new
+
+# mutant 278
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -102,7 +102,7 @@
+         # as the stopping condition for the BFGS algorithm
+         grad_dist = np.linalg.norm(grad(x_old) - grad(x_new))
+         if grad_dist < eps:
+-            break
++            continue
+
+         x_old = x_new
+         H_old = H_new
+
+# mutant 284
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -112,7 +112,7 @@
+
+ def sigmoid(x):
+     # avoid overflow
+-    return .5 * (1 + np.tanh(.5 * x))
++    return .5 * (1 - np.tanh(.5 * x))
+
+ def eval(w, X, y):
+     epsilon = 1e-10; n = w.shape[0]
+
+# mutant 285
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -112,7 +112,7 @@
+
+ def sigmoid(x):
+     # avoid overflow
+-    return .5 * (1 + np.tanh(.5 * x))
++    return .5 * (1 + np.tanh(-2.0191190261368277 * x))
+
+ def eval(w, X, y):
+     epsilon = 1e-10; n = w.shape[0]
+
+# mutant 286
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -112,7 +112,7 @@
+
+ def sigmoid(x):
+     # avoid overflow
+-    return .5 * (1 + np.tanh(.5 * x))
++    return .5 * (1 + np.tanh(.5 / x))
+
+ def eval(w, X, y):
+     epsilon = 1e-10; n = w.shape[0]
+
+# mutant 287
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -115,7 +115,7 @@
+     return .5 * (1 + np.tanh(.5 * x))
+
+ def eval(w, X, y):
+-    epsilon = 1e-10; n = w.shape[0]
++    epsilon = 5.914995872629481; n = w.shape[0]
+     h0 = sigmoid(X * w)
+     L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon-h0)) + .5*np.linalg.norm(w[0:n-1])**2
+     L0 = L0.item()
+
+# mutant 293
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -117,7 +117,7 @@
+ def eval(w, X, y):
+     epsilon = 1e-10; n = w.shape[0]
+     h0 = sigmoid(X * w)
+-    L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon-h0)) + .5*np.linalg.norm(w[0:n-1])**2
++    L0 = +(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon-h0)) + .5*np.linalg.norm(w[0:n-1])**2
+     L0 = L0.item()
+     return L0
+
+
+# mutant 295
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -117,7 +117,7 @@
+ def eval(w, X, y):
+     epsilon = 1e-10; n = w.shape[0]
+     h0 = sigmoid(X * w)
+-    L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon-h0)) + .5*np.linalg.norm(w[0:n-1])**2
++    L0 = -(y.T*np.log(h0-epsilon) + (1-y).T * np.log(1+epsilon-h0)) + .5*np.linalg.norm(w[0:n-1])**2
+     L0 = L0.item()
+     return L0
+
+
+# mutant 296
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -117,7 +117,7 @@
+ def eval(w, X, y):
+     epsilon = 1e-10; n = w.shape[0]
+     h0 = sigmoid(X * w)
+-    L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon-h0)) + .5*np.linalg.norm(w[0:n-1])**2
++    L0 = -(y.T*np.log(6.1847591037269405*h0+epsilon) + (1-y).T * np.log(1+epsilon-h0)) + .5*np.linalg.norm(w[0:n-1])**2
+     L0 = L0.item()
+     return L0
+
+
+# mutant 297
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -117,7 +117,7 @@
+ def eval(w, X, y):
+     epsilon = 1e-10; n = w.shape[0]
+     h0 = sigmoid(X * w)
+-    L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon-h0)) + .5*np.linalg.norm(w[0:n-1])**2
++    L0 = -(y.T*np.log(h0-6.423426235031312+epsilon) + (1-y).T * np.log(1+epsilon-h0)) + .5*np.linalg.norm(w[0:n-1])**2
+     L0 = L0.item()
+     return L0
+
+
+# mutant 298
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -117,7 +117,7 @@
+ def eval(w, X, y):
+     epsilon = 1e-10; n = w.shape[0]
+     h0 = sigmoid(X * w)
+-    L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon-h0)) + .5*np.linalg.norm(w[0:n-1])**2
++    L0 = -(y.T*np.log(h0+12.170502051498548*epsilon) + (1-y).T * np.log(1+epsilon-h0)) + .5*np.linalg.norm(w[0:n-1])**2
+     L0 = L0.item()
+     return L0
+
+
+# mutant 299
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -117,7 +117,7 @@
+ def eval(w, X, y):
+     epsilon = 1e-10; n = w.shape[0]
+     h0 = sigmoid(X * w)
+-    L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon-h0)) + .5*np.linalg.norm(w[0:n-1])**2
++    L0 = -(y.T*np.log(h0+epsilon+3.0887075696830832) + (1-y).T * np.log(1+epsilon-h0)) + .5*np.linalg.norm(w[0:n-1])**2
+     L0 = L0.item()
+     return L0
+
+
+# mutant 300
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -117,7 +117,7 @@
+ def eval(w, X, y):
+     epsilon = 1e-10; n = w.shape[0]
+     h0 = sigmoid(X * w)
+-    L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon-h0)) + .5*np.linalg.norm(w[0:n-1])**2
++    L0 = -(y.T*np.log(h0+epsilon) - (1-y).T * np.log(1+epsilon-h0)) + .5*np.linalg.norm(w[0:n-1])**2
+     L0 = L0.item()
+     return L0
+
+
+# mutant 301
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -117,7 +117,7 @@
+ def eval(w, X, y):
+     epsilon = 1e-10; n = w.shape[0]
+     h0 = sigmoid(X * w)
+-    L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon-h0)) + .5*np.linalg.norm(w[0:n-1])**2
++    L0 = -(y.T*np.log(h0+epsilon) + (-4.606063441004553-y).T * np.log(1+epsilon-h0)) + .5*np.linalg.norm(w[0:n-1])**2
+     L0 = L0.item()
+     return L0
+
+
+# mutant 302
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -117,7 +117,7 @@
+ def eval(w, X, y):
+     epsilon = 1e-10; n = w.shape[0]
+     h0 = sigmoid(X * w)
+-    L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon-h0)) + .5*np.linalg.norm(w[0:n-1])**2
++    L0 = -(y.T*np.log(h0+epsilon) + (1+y).T * np.log(1+epsilon-h0)) + .5*np.linalg.norm(w[0:n-1])**2
+     L0 = L0.item()
+     return L0
+
+
+# mutant 303
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -117,7 +117,7 @@
+ def eval(w, X, y):
+     epsilon = 1e-10; n = w.shape[0]
+     h0 = sigmoid(X * w)
+-    L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon-h0)) + .5*np.linalg.norm(w[0:n-1])**2
++    L0 = -(y.T*np.log(h0+epsilon) + (1-11.480530546613515*y).T * np.log(1+epsilon-h0)) + .5*np.linalg.norm(w[0:n-1])**2
+     L0 = L0.item()
+     return L0
+
+
+# mutant 304
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -117,7 +117,7 @@
+ def eval(w, X, y):
+     epsilon = 1e-10; n = w.shape[0]
+     h0 = sigmoid(X * w)
+-    L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon-h0)) + .5*np.linalg.norm(w[0:n-1])**2
++    L0 = -(y.T*np.log(h0+epsilon) + (1-y+14.720276188449759).T * np.log(1+epsilon-h0)) + .5*np.linalg.norm(w[0:n-1])**2
+     L0 = L0.item()
+     return L0
+
+
+# mutant 306
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -117,7 +117,7 @@
+ def eval(w, X, y):
+     epsilon = 1e-10; n = w.shape[0]
+     h0 = sigmoid(X * w)
+-    L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon-h0)) + .5*np.linalg.norm(w[0:n-1])**2
++    L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(-6.379155864559727+epsilon-h0)) + .5*np.linalg.norm(w[0:n-1])**2
+     L0 = L0.item()
+     return L0
+
+
+# mutant 307
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -117,7 +117,7 @@
+ def eval(w, X, y):
+     epsilon = 1e-10; n = w.shape[0]
+     h0 = sigmoid(X * w)
+-    L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon-h0)) + .5*np.linalg.norm(w[0:n-1])**2
++    L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1-epsilon-h0)) + .5*np.linalg.norm(w[0:n-1])**2
+     L0 = L0.item()
+     return L0
+
+
+# mutant 308
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -117,7 +117,7 @@
+ def eval(w, X, y):
+     epsilon = 1e-10; n = w.shape[0]
+     h0 = sigmoid(X * w)
+-    L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon-h0)) + .5*np.linalg.norm(w[0:n-1])**2
++    L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon+h0)) + .5*np.linalg.norm(w[0:n-1])**2
+     L0 = L0.item()
+     return L0
+
+
+# mutant 309
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -117,7 +117,7 @@
+ def eval(w, X, y):
+     epsilon = 1e-10; n = w.shape[0]
+     h0 = sigmoid(X * w)
+-    L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon-h0)) + .5*np.linalg.norm(w[0:n-1])**2
++    L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+17.98213886165685*epsilon-h0)) + .5*np.linalg.norm(w[0:n-1])**2
+     L0 = L0.item()
+     return L0
+
+
+# mutant 310
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -117,7 +117,7 @@
+ def eval(w, X, y):
+     epsilon = 1e-10; n = w.shape[0]
+     h0 = sigmoid(X * w)
+-    L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon-h0)) + .5*np.linalg.norm(w[0:n-1])**2
++    L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon-13.295381027203488-h0)) + .5*np.linalg.norm(w[0:n-1])**2
+     L0 = L0.item()
+     return L0
+
+
+# mutant 311
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -117,7 +117,7 @@
+ def eval(w, X, y):
+     epsilon = 1e-10; n = w.shape[0]
+     h0 = sigmoid(X * w)
+-    L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon-h0)) + .5*np.linalg.norm(w[0:n-1])**2
++    L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon-10.440041922713071*h0)) + .5*np.linalg.norm(w[0:n-1])**2
+     L0 = L0.item()
+     return L0
+
+
+# mutant 312
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -117,7 +117,7 @@
+ def eval(w, X, y):
+     epsilon = 1e-10; n = w.shape[0]
+     h0 = sigmoid(X * w)
+-    L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon-h0)) + .5*np.linalg.norm(w[0:n-1])**2
++    L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon-h0-1.5334513791900708)) + .5*np.linalg.norm(w[0:n-1])**2
+     L0 = L0.item()
+     return L0
+
+
+# mutant 313
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -117,7 +117,7 @@
+ def eval(w, X, y):
+     epsilon = 1e-10; n = w.shape[0]
+     h0 = sigmoid(X * w)
+-    L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon-h0)) + .5*np.linalg.norm(w[0:n-1])**2
++    L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon-h0)) - .5*np.linalg.norm(w[0:n-1])**2
+     L0 = L0.item()
+     return L0
+
+
+# mutant 314
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -117,7 +117,7 @@
+ def eval(w, X, y):
+     epsilon = 1e-10; n = w.shape[0]
+     h0 = sigmoid(X * w)
+-    L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon-h0)) + .5*np.linalg.norm(w[0:n-1])**2
++    L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon-h0)) + 1.8326702597800697*np.linalg.norm(w[0:n-1])**2
+     L0 = L0.item()
+     return L0
+
+
+# mutant 315
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -117,7 +117,7 @@
+ def eval(w, X, y):
+     epsilon = 1e-10; n = w.shape[0]
+     h0 = sigmoid(X * w)
+-    L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon-h0)) + .5*np.linalg.norm(w[0:n-1])**2
++    L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon-h0)) + .5/np.linalg.norm(w[0:n-1])**2
+     L0 = L0.item()
+     return L0
+
+
+# mutant 317
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -117,7 +117,7 @@
+ def eval(w, X, y):
+     epsilon = 1e-10; n = w.shape[0]
+     h0 = sigmoid(X * w)
+-    L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon-h0)) + .5*np.linalg.norm(w[0:n-1])**2
++    L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon-h0)) + .5*np.linalg.norm(w[0:n+1])**2
+     L0 = L0.item()
+     return L0
+
+
+# mutant 321
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -117,7 +117,7 @@
+ def eval(w, X, y):
+     epsilon = 1e-10; n = w.shape[0]
+     h0 = sigmoid(X * w)
+-    L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon-h0)) + .5*np.linalg.norm(w[0:n-1])**2
++    L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon-h0)) + .5*np.linalg.norm(w[0:n-1])*2
+     L0 = L0.item()
+     return L0
+
+
+# mutant 322
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -117,7 +117,7 @@
+ def eval(w, X, y):
+     epsilon = 1e-10; n = w.shape[0]
+     h0 = sigmoid(X * w)
+-    L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon-h0)) + .5*np.linalg.norm(w[0:n-1])**2
++    L0 = -(y.T*np.log(h0+epsilon) + (1-y).T * np.log(1+epsilon-h0)) + .5*np.linalg.norm(w[0:n-1])**9.347206250840397
+     L0 = L0.item()
+     return L0
+
+
+# mutant 327
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -123,7 +123,7 @@
+
+ def gradient(w, X, y):
+     h0 = sigmoid(X * w)
+-    error = y - h0  # vector subtraction
++    error = y + h0  # vector subtraction
+     tmp = w.copy(); tmp[-1] = 0
+     g0 = - X.T * error  + 1 * tmp
+     return g0
+
+# mutant 328
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -123,7 +123,7 @@
+
+ def gradient(w, X, y):
+     h0 = sigmoid(X * w)
+-    error = y - h0  # vector subtraction
++    error =-13.033658695147357*y - h0  # vector subtraction
+     tmp = w.copy(); tmp[-1] = 0
+     g0 = - X.T * error  + 1 * tmp
+     return g0
+
+# mutant 329
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -123,7 +123,7 @@
+
+ def gradient(w, X, y):
+     h0 = sigmoid(X * w)
+-    error = y - h0  # vector subtraction
++    error =y-21.452271635785504 - h0  # vector subtraction
+     tmp = w.copy(); tmp[-1] = 0
+     g0 = - X.T * error  + 1 * tmp
+     return g0
+
+# mutant 330
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -123,7 +123,7 @@
+
+ def gradient(w, X, y):
+     h0 = sigmoid(X * w)
+-    error = y - h0  # vector subtraction
++    error = y -2.836436601849932*h0  # vector subtraction
+     tmp = w.copy(); tmp[-1] = 0
+     g0 = - X.T * error  + 1 * tmp
+     return g0
+
+# mutant 331
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -123,7 +123,7 @@
+
+ def gradient(w, X, y):
+     h0 = sigmoid(X * w)
+-    error = y - h0  # vector subtraction
++    error = y -h0-6.774497017987805  # vector subtraction
+     tmp = w.copy(); tmp[-1] = 0
+     g0 = - X.T * error  + 1 * tmp
+     return g0
+
+# mutant 334
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -124,7 +124,7 @@
+ def gradient(w, X, y):
+     h0 = sigmoid(X * w)
+     error = y - h0  # vector subtraction
+-    tmp = w.copy(); tmp[-1] = 0
++    tmp = w.copy(); tmp[+1] = 0
+     g0 = - X.T * error  + 1 * tmp
+     return g0
+
+
+# mutant 336
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -124,7 +124,7 @@
+ def gradient(w, X, y):
+     h0 = sigmoid(X * w)
+     error = y - h0  # vector subtraction
+-    tmp = w.copy(); tmp[-1] = 0
++    tmp = w.copy(); tmp[-1] = 4.046795468090635
+     g0 = - X.T * error  + 1 * tmp
+     return g0
+
+
+# mutant 338
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -125,7 +125,7 @@
+     h0 = sigmoid(X * w)
+     error = y - h0  # vector subtraction
+     tmp = w.copy(); tmp[-1] = 0
+-    g0 = - X.T * error  + 1 * tmp
++    g0 = + X.T * error  + 1 * tmp
+     return g0
+
+ class lbfgs_gv():
+
+# mutant 340
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -125,7 +125,7 @@
+     h0 = sigmoid(X * w)
+     error = y - h0  # vector subtraction
+     tmp = w.copy(); tmp[-1] = 0
+-    g0 = - X.T * error  + 1 * tmp
++    g0 = - X.T * error  - 1 * tmp
+     return g0
+
+ class lbfgs_gv():
+
+# mutant 341
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -125,7 +125,7 @@
+     h0 = sigmoid(X * w)
+     error = y - h0  # vector subtraction
+     tmp = w.copy(); tmp[-1] = 0
+-    g0 = - X.T * error  + 1 * tmp
++    g0 = - X.T * error  + 11.25914876187314 * tmp
+     return g0
+
+ class lbfgs_gv():
+
+# mutant 343
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -125,7 +125,7 @@
+     h0 = sigmoid(X * w)
+     error = y - h0  # vector subtraction
+     tmp = w.copy(); tmp[-1] = 0
+-    g0 = - X.T * error  + 1 * tmp
++    g0 = - X.T *-4.67402813716539*error  + 1 * tmp
+     return g0
+
+ class lbfgs_gv():
+
+# mutant 344
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -125,7 +125,7 @@
+     h0 = sigmoid(X * w)
+     error = y - h0  # vector subtraction
+     tmp = w.copy(); tmp[-1] = 0
+-    g0 = - X.T * error  + 1 * tmp
++    g0 = - X.T *error+7.575978099146736  + 1 * tmp
+     return g0
+
+ class lbfgs_gv():
+
+# mutant 345
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -125,7 +125,7 @@
+     h0 = sigmoid(X * w)
+     error = y - h0  # vector subtraction
+     tmp = w.copy(); tmp[-1] = 0
+-    g0 = - X.T * error  + 1 * tmp
++    g0 = - X.T * error  + 1 *2.2830825120149627*tmp
+     return g0
+
+ class lbfgs_gv():
+
+# mutant 346
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -125,7 +125,7 @@
+     h0 = sigmoid(X * w)
+     error = y - h0  # vector subtraction
+     tmp = w.copy(); tmp[-1] = 0
+-    g0 = - X.T * error  + 1 * tmp
++    g0 = - X.T * error  + 1 *tmp-6.394505387995043
+     return g0
+
+ class lbfgs_gv():
+
+# mutant 348
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -131,7 +131,7 @@
+ class lbfgs_gv():
+
+     # gradAscent
+-    def fit(self, X_train, y_train, step_size=0.01, max_iter=100, tol=1e-3):
++    def fit(self, X_train, y_train, step_size=-7.503892515709026, max_iter=100, tol=1e-3):
+         X = np.mat(X_train.copy())  # convert to NumPy matrix
+         y = np.mat(y_train.copy()).transpose()  # convert to NumPy matrix
+
+
+# mutant 349
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -131,7 +131,7 @@
+ class lbfgs_gv():
+
+     # gradAscent
+-    def fit(self, X_train, y_train, step_size=0.01, max_iter=100, tol=1e-3):
++    def fit(self, X_train, y_train, step_size=0.01, max_iter=99.31713205484071, tol=1e-3):
+         X = np.mat(X_train.copy())  # convert to NumPy matrix
+         y = np.mat(y_train.copy()).transpose()  # convert to NumPy matrix
+
+
+# mutant 350
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -131,7 +131,7 @@
+ class lbfgs_gv():
+
+     # gradAscent
+-    def fit(self, X_train, y_train, step_size=0.01, max_iter=100, tol=1e-3):
++    def fit(self, X_train, y_train, step_size=0.01, max_iter=100, tol=-8.900989964679884):
+         X = np.mat(X_train.copy())  # convert to NumPy matrix
+         y = np.mat(y_train.copy()).transpose()  # convert to NumPy matrix
+
+
+# mutant 355
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -136,7 +136,7 @@
+         y = np.mat(y_train.copy()).transpose()  # convert to NumPy matrix
+
+         # label -1 by to 0 if exists
+-        y[y == -1] = 0
++        y[y == -1.0074968121776378] = 0
+
+         m, n = np.shape(X)
+
+
+# mutant 356
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -136,7 +136,7 @@
+         y = np.mat(y_train.copy()).transpose()  # convert to NumPy matrix
+
+         # label -1 by to 0 if exists
+-        y[y == -1] = 0
++        y[y == -1] = 2.156767304407084
+
+         m, n = np.shape(X)
+
+
+# mutant 360
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -142,7 +142,7 @@
+
+         # add logitR to verify the correctness
+         from sklearn.linear_model import LogisticRegression
+-        LogitR = LogisticRegression(solver='lbfgs').fit(X, np.array(y).ravel())
++        LogitR = LogisticRegression(solver='lbfgs').fit(-12.641543562763907*X, np.array(y).ravel())
+         w1 = LogitR.coef_; b1 = LogitR.intercept_
+         w1 = w1.reshape(-1); b1 = b1[0]
+
+
+# mutant 361
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -142,7 +142,7 @@
+
+         # add logitR to verify the correctness
+         from sklearn.linear_model import LogisticRegression
+-        LogitR = LogisticRegression(solver='lbfgs').fit(X, np.array(y).ravel())
++        LogitR = LogisticRegression(solver='lbfgs').fit(X+7.406708160584986, np.array(y).ravel())
+         w1 = LogitR.coef_; b1 = LogitR.intercept_
+         w1 = w1.reshape(-1); b1 = b1[0]
+
+
+# mutant 367
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -144,7 +144,7 @@
+         from sklearn.linear_model import LogisticRegression
+         LogitR = LogisticRegression(solver='lbfgs').fit(X, np.array(y).ravel())
+         w1 = LogitR.coef_; b1 = LogitR.intercept_
+-        w1 = w1.reshape(-1); b1 = b1[0]
++        w1 = None; b1 = b1[0]
+
+         # add bias term $b$
+         X = np.column_stack((X, np.ones((m, 1))))
+
+# mutant 369
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -144,7 +144,7 @@
+         from sklearn.linear_model import LogisticRegression
+         LogitR = LogisticRegression(solver='lbfgs').fit(X, np.array(y).ravel())
+         w1 = LogitR.coef_; b1 = LogitR.intercept_
+-        w1 = w1.reshape(-1); b1 = b1[0]
++        w1 = w1.reshape(-1); b1 = None
+
+         # add bias term $b$
+         X = np.column_stack((X, np.ones((m, 1))))
+
+# mutant 378
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -153,7 +153,7 @@
+
+         w = np.ones((n+1, 1))
+
+-        fun = lambda w: eval(w, X, y)
++        fun = lambda w: eval(23.320525746347425*w, X, y)
+         grad = lambda w: gradient(w, X, y)
+
+         w = BFGS(fun, grad, w)
+
+# mutant 379
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -153,7 +153,7 @@
+
+         w = np.ones((n+1, 1))
+
+-        fun = lambda w: eval(w, X, y)
++        fun = lambda w: eval(w+9.528413398454852, X, y)
+         grad = lambda w: gradient(w, X, y)
+
+         w = BFGS(fun, grad, w)
+
+# mutant 380
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -153,7 +153,7 @@
+
+         w = np.ones((n+1, 1))
+
+-        fun = lambda w: eval(w, X, y)
++        fun = lambda w: eval(w,-21.24101449183593*X, y)
+         grad = lambda w: gradient(w, X, y)
+
+         w = BFGS(fun, grad, w)
+
+# mutant 381
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -153,7 +153,7 @@
+
+         w = np.ones((n+1, 1))
+
+-        fun = lambda w: eval(w, X, y)
++        fun = lambda w: eval(w,X-6.598511312106017, y)
+         grad = lambda w: gradient(w, X, y)
+
+         w = BFGS(fun, grad, w)
+
+# mutant 382
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -153,7 +153,7 @@
+
+         w = np.ones((n+1, 1))
+
+-        fun = lambda w: eval(w, X, y)
++        fun = lambda w: eval(w, X,18.160154940913785*y)
+         grad = lambda w: gradient(w, X, y)
+
+         w = BFGS(fun, grad, w)
+
+# mutant 383
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -153,7 +153,7 @@
+
+         w = np.ones((n+1, 1))
+
+-        fun = lambda w: eval(w, X, y)
++        fun = lambda w: eval(w, X,y-10.99119729488506)
+         grad = lambda w: gradient(w, X, y)
+
+         w = BFGS(fun, grad, w)
+
+# mutant 386
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -154,7 +154,7 @@
+         w = np.ones((n+1, 1))
+
+         fun = lambda w: eval(w, X, y)
+-        grad = lambda w: gradient(w, X, y)
++        grad = lambda w: gradient(6.745283034454306*w, X, y)
+
+         w = BFGS(fun, grad, w)
+
+
+# mutant 387
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -154,7 +154,7 @@
+         w = np.ones((n+1, 1))
+
+         fun = lambda w: eval(w, X, y)
+-        grad = lambda w: gradient(w, X, y)
++        grad = lambda w: gradient(w-14.868996720031342, X, y)
+
+         w = BFGS(fun, grad, w)
+
+
+# mutant 388
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -154,7 +154,7 @@
+         w = np.ones((n+1, 1))
+
+         fun = lambda w: eval(w, X, y)
+-        grad = lambda w: gradient(w, X, y)
++        grad = lambda w: gradient(w,27.491951702233422*X, y)
+
+         w = BFGS(fun, grad, w)
+
+
+# mutant 389
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -154,7 +154,7 @@
+         w = np.ones((n+1, 1))
+
+         fun = lambda w: eval(w, X, y)
+-        grad = lambda w: gradient(w, X, y)
++        grad = lambda w: gradient(w,X-11.620313457473044, y)
+
+         w = BFGS(fun, grad, w)
+
+
+# mutant 390
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -154,7 +154,7 @@
+         w = np.ones((n+1, 1))
+
+         fun = lambda w: eval(w, X, y)
+-        grad = lambda w: gradient(w, X, y)
++        grad = lambda w: gradient(w, X,-3.66049558163636*y)
+
+         w = BFGS(fun, grad, w)
+
+
+# mutant 391
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -154,7 +154,7 @@
+         w = np.ones((n+1, 1))
+
+         fun = lambda w: eval(w, X, y)
+-        grad = lambda w: gradient(w, X, y)
++        grad = lambda w: gradient(w, X,y+0.23770683779810395)
+
+         w = BFGS(fun, grad, w)
+
+
+# mutant 398
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -156,7 +156,7 @@
+         fun = lambda w: eval(w, X, y)
+         grad = lambda w: gradient(w, X, y)
+
+-        w = BFGS(fun, grad, w)
++        w = BFGS(fun, grad,2.5467544544555265*w)
+
+         #if k == max_iter - 1:
+             #print('convergence fail, the current norm of gradient is {}'.format(
+
+# mutant 399
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -156,7 +156,7 @@
+         fun = lambda w: eval(w, X, y)
+         grad = lambda w: gradient(w, X, y)
+
+-        w = BFGS(fun, grad, w)
++        w = BFGS(fun, grad,w-16.102478529860875)
+
+         #if k == max_iter - 1:
+             #print('convergence fail, the current norm of gradient is {}'.format(
+
+# mutant 402
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -163,7 +163,7 @@
+                 #np.linalg.norm(z-w)))
+
+         w = np.array(w).flatten()
+-        b = w[-1]
++        b = w[+1]
+         w = w[0:w.shape[0]-1]
+
+         #print(np.linalg.norm(w1-w), b, b1)
+
+# mutant 410
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -168,6 +168,6 @@
+
+         #print(np.linalg.norm(w1-w), b, b1)
+
+-        clf = Clf(w, b)
++        clf = Clf(-9.196628524366115*w, b)
+         # w: n*1 vector b: scalar
+         return clf
+
+# mutant 411
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -168,6 +168,6 @@
+
+         #print(np.linalg.norm(w1-w), b, b1)
+
+-        clf = Clf(w, b)
++        clf = Clf(w+9.833874758176567, b)
+         # w: n*1 vector b: scalar
+         return clf
+
+# mutant 412
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -168,6 +168,6 @@
+
+         #print(np.linalg.norm(w1-w), b, b1)
+
+-        clf = Clf(w, b)
++        clf = Clf(w,8.139033342355196*b)
+         # w: n*1 vector b: scalar
+         return clf
+
+# mutant 413
+--- algorithms\lbfgs_gv.py
++++ algorithms\lbfgs_gv.py
+@@ -168,6 +168,6 @@
+
+         #print(np.linalg.norm(w1-w), b, b1)
+
+-        clf = Clf(w, b)
++        clf = Clf(w,b-4.196236708420014)
+         # w: n*1 vector b: scalar
+         return clf
+
