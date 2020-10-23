@@ -76,10 +76,11 @@ if __name__ == '__main__':
 	xls_path = '../results/LBFGS.xls'
 	mutant_num = 203
 
-	
+	#21, 26\27, 35, 163-165
 	#mutant的数量自己设定，会写在对应的行，每跑完一个mutant都会在表格相应位置记录下来，所以就算中途程序停止也没问题
 	#比如要跑第10到第20个mutant，则设定for j in range(10,21)
-	for j in range(41, 250):
+	for j in range(76, 77):
+
 		res_list = []
 		feature_list = []
 		single_res_list = []
@@ -92,17 +93,43 @@ if __name__ == '__main__':
 		exec(f_str)
 
 		#calculate error rate of this mutant
-		X_train, y_train, X_test, y_test, feature_num = datasets.create_dataset()
-		clf = lr.fit(X_train, y_train)
-		err, pred, conf = sig_classification(clf.coef_, clf.intercept_, X_test, y_test)
+		try:
+			X_train, y_train, X_test, y_test, feature_num = datasets.create_dataset()
+			clf = lr.fit(X_train, y_train)
+			err, pred, conf = sig_classification(clf.coef_, clf.intercept_, X_test, y_test)
+		except ValueError as e1:
+			continue
+		except IndexError as e3:
+			continue
+		except TypeError as e4:
+			continue
+		else:
+			pass
+		finally:
+			pass
 
 		#test MRs on the mutant
 		test = LinearMRs(lr.fit, datasets.create_dataset, sig_classification,100)
 		for i in range(1, 9):
-			exec('r%s, f%s, s%s = test.MR%s()' %(i, i, i, i))
-			exec('f_str2 = res_list.append(r%s)' %i)
-			exec('feature_list.append(f%s)' %i)
-			exec('single_res_list.append(s%s)' %i)
-			exec('print(r%s)' %i)
-		
+			try:
+				exec('r%s, f%s, s%s = test.MR%s()' %(i, i, i, i))
+				exec('f_str2 = res_list.append(r%s)' %i)
+				exec('feature_list.append(f%s)' %i)
+				exec('single_res_list.append(s%s)' %i)
+				exec('print(r%s)' %i)
+			except BaseException as e1:
+				f_str2 = res_list.append('base_exception_err')
+			except FloatingPointError as e2:
+				f_str2 = res_list.append('floating_point_err')
+			except IndexError as e3:
+				f_str2 = res_list.append('index_err')
+			except ValueError as e4:
+				f_str2 = res_list.append('value_err')
+			except ValueError as e5:
+				f_str2 = res_list.append('type_err')
+			else:
+				pass
+			finally:
+				pass
+				
 		save_result_to_file(xls_path, j+1, res_list, feature_list, single_res_list, err)
