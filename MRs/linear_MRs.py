@@ -350,6 +350,10 @@ class LinearMRs():
             sort2 = np.argsort(test)
             sort3 = np.argsort(-test)
 
+            if np.linalg.norm(w1-w0)< 1e-10 and np.abs(b1-b0)<1e-10:
+            	err_cnt = err_cnt + 1
+            	single_res_list.append(1)
+            	continue
 
             if (sort1 == sort2).all() or (sort1 == sort3).all():
                 # if (sort1 == sort2).all():
@@ -423,6 +427,8 @@ class LinearMRs():
                 
                 #print(np.linalg.norm(w1))
                 #print(yt, tmp1, tmp2, temp)
+	            if np.linalg.norm(w1-w0)< 1e-10 and np.abs(b1-b0)<1e-10:
+	            	continue
                 if yt > 0 and temp < 1e-3:
                     continue
                 elif yt < 0 and temp > -1e-3:
