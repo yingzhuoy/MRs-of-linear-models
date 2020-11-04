@@ -299,8 +299,8 @@ class LinearMRs():
             t0 = np.sum(w * Xt) + b
 
             # initialization
-            pred = []
-            test = []
+            pred = np.array([])
+            test = np.array([])
             num_iter = 30
 
             conf = np.sum(X * w, axis=1) + b
@@ -308,13 +308,14 @@ class LinearMRs():
             partition = int(index.shape[0] / num_iter)-1
             # index = np.arange(X.shape[0])
             # np.random.shuffle(index)
+            flag = True
             for j in range(num_iter):
                 i = index[j * partition]
                 #print('111111')
                 X_train = X.copy()
                 y_train = y.copy()
                 temp = (np.sum(w * X_train[i]) + b) * y_train[i]
-                pred.append(temp)
+                pred = np.append(pred, temp)
                 # pred.append(temp[0])
 
                 X_train[i] = X_train[i] + pert * 1e-2
@@ -325,45 +326,48 @@ class LinearMRs():
 
                 t1 = np.sum(w1 * Xt) + b1
                 temp = (t1 - t0) * (-y_train[i])
-                test.append(temp)
+                test = np.append(test, temp)
                 # test.append(temp[0])
 
-            pred = np.array(pred)
-            test = np.array(test)
+                pred = np.array(pred)
+                test = np.array(test)
 
-            # ========= delete duplicate ==============
-            sort = np.argsort(test)
-            for i in range(sort.shape[0] - 1):
-                if np.abs(test[sort[i+1]] - test[sort[i]]) < 1e-5:
-                    test[sort[i+1]] = test[sort[i]]
-                    pred[sort[i+1]] = pred[sort[i]]
-                else:
+                # ========= delete duplicate ==============
+                sort = np.argsort(test)
+                for i in range(sort.shape[0] - 1):
+                    if np.abs(test[sort[i+1]] - test[sort[i]]) < 1e-5:
+                        test[sort[i+1]] = test[sort[i]]
+                        pred[sort[i+1]] = pred[sort[i]]
+                    else:
+                        continue
+                index1 = np.unique(test, return_index=True)[1]
+                test = [test[index] for index in sorted(index1)]
+                index2 = np.unique(pred, return_index=True)[1]
+                pred = [pred[index] for index in sorted(index2)]
+                test = np.array(test)
+                pred = np.array(pred)
+
+                sort1 = np.argsort(pred)
+                sort2 = np.argsort(test)
+                sort3 = np.argsort(-test)
+                
+                if np.linalg.norm(w1-w) < 1e-12 and np.abs(b1-b) < 1e-15:
+                    print(np.linalg.norm(w1-w), np.abs(b1-b))
+                    flag = False
+                    break
+
+                if (sort1 == sort2).all() or (sort1 == sort3).all():
                     continue
-            index1 = np.unique(test, return_index=True)[1]
-            test = [test[index] for index in sorted(index1)]
-            index2 = np.unique(pred, return_index=True)[1]
-            pred = [pred[index] for index in sorted(index2)]
-            test = np.array(test)
-            pred = np.array(pred)
-
-            sort1 = np.argsort(pred)
-            sort2 = np.argsort(test)
-            sort3 = np.argsort(-test)
-
-            if np.linalg.norm(w1-w0)< 1e-10 and np.abs(b1-b0)<1e-10:
-            	err_cnt = err_cnt + 1
-            	single_res_list.append(1)
-            	continue
-
-            if (sort1 == sort2).all() or (sort1 == sort3).all():
-                # if (sort1 == sort2).all():
-                single_res_list.append(0)
+                else:
+                    flag = False
+                    break
+                    # print(sort1, sort2, sort3)
+            
+            if flag == True:
                 continue
             else:
-                err_cnt = err_cnt + 1
                 single_res_list.append(1)
-                # print(sort1, sort2, sort3)
-                # print('something wrong')
+                err_cnt = err_cnt + 1
         result = err_cnt/self.itr_cnt
         return result, feature_list, single_res_list
 
@@ -427,14 +431,17 @@ class LinearMRs():
                 
                 #print(np.linalg.norm(w1))
                 #print(yt, tmp1, tmp2, temp)
-	            if np.linalg.norm(w1-w0)< 1e-10 and np.abs(b1-b0)<1e-10:
-	            	continue
+                if np.linalg.norm(w1-w) < 1e-12 and np.abs(b1-b) < 1e-15:
+                    flag = True
+                    break
+
                 if yt > 0 and temp < 1e-3:
                     continue
                 elif yt < 0 and temp > -1e-3:
                     continue
                 else:                    
                     flag = True
+                    break
             if flag == False:
                 single_res_list.append(0)
             else:
