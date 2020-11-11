@@ -19,6 +19,7 @@ from algorithms.Logistic_regression.LBFGS import *
 from algorithms.Svm.APG.L1 import *
 from algorithms.Svm.APG.L2 import *
 from algorithms.Svm.SQP.L1 import *
+from algorithms.Svm.SQP.L2 import *
 from algorithms.Svm.ADMM.L1 import *
 from algorithms.Svm.ADMM.L2 import *
 
@@ -52,9 +53,10 @@ def save_result_to_file(file_name, row, res_list, feature_list, single_res_list,
 if __name__ == '__main__':
 
 	#n_train, n_test, n_redundant, n_classes, neg_class(算法是svm时 neg_class = -1, 算法是logreg时， neg_class = 0)
-	'''
+	
 	datasets = CreateDataset(240,60,0,2,-1)
-	lr = IPM_L1_gv()
+	print("SQP_L2_gv()")
+	lr = SQP_L2_gv()
 	X_train, y_train, X_test, y_test, feature_num = datasets.create_dataset()
 	clf = lr.fit(X_train, y_train)
 	err, pred, conf = hyp_classification(clf.coef_, clf.intercept_, X_test, y_test)
@@ -63,20 +65,16 @@ if __name__ == '__main__':
 	print(test.MR1())
 	print(test.MR2())
 	print(test.MR3())
-	print(test.MR4())
+	print(test.MR4()) 
 	print(test.MR5())
 	print(test.MR6())
-	print(test.MR8())
 	print(test.MR7())
-	'''
-	
-	
-	#不同算法对应不同的表格路径，mutant的数量也不相同，自己设定
-	xls_path = '../results/SQP_L1.xls'
+	print(test.MR8())
 
-	#mutant的数量自己设定，会写在对应的行，每跑完一个mutant都会在表格相应位置记录下来，所以就算中途程序停止也没问题
-	#比如要跑第10到第20个mutant，则设定for j in range(10,21)
-	for j in range(1, 30):
+	
+	xls_path = '../results/SQP_L2.xls'
+
+	for j in range(1, 11):
 
 		res_list = []
 		feature_list = []
@@ -85,7 +83,7 @@ if __name__ == '__main__':
 		
 		datasets = CreateDataset(240,60,0,2,-1)
 		#不同算法相应的调用部分要改一下
-		f_str = 'lr = SQP_L1_m%s()' %j
+		f_str = 'lr = SQP_L2_m%s()' %j
 		#f_str = 'lr = SQP_L1_gv()'
 		print(f_str)
 		exec(f_str)

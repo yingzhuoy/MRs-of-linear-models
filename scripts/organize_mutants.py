@@ -16,7 +16,7 @@ def setStyle(horz):
 	return style
 
 
-file_path = os.getcwd()+ '\\'+r'IPM_L1.txt'
+file_path = os.getcwd()+ '\\'+r'SQP_L2.txt'
 p = open(file_path, 'r', encoding='utf-8')
 
 to_modify = []
@@ -62,5 +62,5 @@ for row in range(2, 2 + mutant_num):
 for row in range(2, 2 + mutant_num):
 	worksheet.write(row , 13, to_modify[row-2], setStyle(0x04))
 
-workbook.save(r'..\results\IPM_L1.xls')
+workbook.save(r'..\results\SQP_L2.xls')
 

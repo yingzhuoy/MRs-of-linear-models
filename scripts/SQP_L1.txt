@@ -1,0 +1,1415 @@
+Survived ?? (109)
+
+---- algorithms\IPM_L1_gv.py (109) ----
+
+# mutant 7
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -11,7 +11,7 @@
+     X = np.column_stack((X, np.ones((m, 1))))
+     y = y.astype(np.float64)
+     data_num = len(y)
+-    C = 1.0
++    C = 1.2169375871005004
+     kernel = np.dot(X, np.transpose(X))
+     # + np.diag(np.ones(data_num, np.float64)) * .5/C
+     p = np.matrix(np.multiply(kernel, np.outer(y, y)))
+
+# mutant 10
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -12,7 +12,7 @@
+     y = y.astype(np.float64)
+     data_num = len(y)
+     C = 1.0
+-    kernel = np.dot(X, np.transpose(X))
++    kernel = np.dot(X-20.922181607330433, np.transpose(X))
+     # + np.diag(np.ones(data_num, np.float64)) * .5/C
+     p = np.matrix(np.multiply(kernel, np.outer(y, y)))
+     q = np.matrix(-np.ones([data_num, 1], np.float64))
+
+# mutant 13
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -14,7 +14,7 @@
+     C = 1.0
+     kernel = np.dot(X, np.transpose(X))
+     # + np.diag(np.ones(data_num, np.float64)) * .5/C
+-    p = np.matrix(np.multiply(kernel, np.outer(y, y)))
++    p = np.matrix(np.multiply(kernel, np.outer(y-6.731748565241618, y)))
+     q = np.matrix(-np.ones([data_num, 1], np.float64))
+
+     bounds = (0, C)
+
+# mutant 15
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -14,7 +14,7 @@
+     C = 1.0
+     kernel = np.dot(X, np.transpose(X))
+     # + np.diag(np.ones(data_num, np.float64)) * .5/C
+-    p = np.matrix(np.multiply(kernel, np.outer(y, y)))
++    p = np.matrix(np.multiply(kernel, np.outer(y,y+16.47084881946402)))
+     q = np.matrix(-np.ones([data_num, 1], np.float64))
+
+     bounds = (0, C)
+
+# mutant 16
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -14,7 +14,7 @@
+     C = 1.0
+     kernel = np.dot(X, np.transpose(X))
+     # + np.diag(np.ones(data_num, np.float64)) * .5/C
+-    p = np.matrix(np.multiply(kernel, np.outer(y, y)))
++    p = np.matrix(np.multiply(-0.2525845006942826*kernel, np.outer(y, y)))
+     q = np.matrix(-np.ones([data_num, 1], np.float64))
+
+     bounds = (0, C)
+
+# mutant 17
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -14,7 +14,7 @@
+     C = 1.0
+     kernel = np.dot(X, np.transpose(X))
+     # + np.diag(np.ones(data_num, np.float64)) * .5/C
+-    p = np.matrix(np.multiply(kernel, np.outer(y, y)))
++    p = np.matrix(np.multiply(kernel-11.553357157135533, np.outer(y, y)))
+     q = np.matrix(-np.ones([data_num, 1], np.float64))
+
+     bounds = (0, C)
+
+# mutant 19
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -15,7 +15,7 @@
+     kernel = np.dot(X, np.transpose(X))
+     # + np.diag(np.ones(data_num, np.float64)) * .5/C
+     p = np.matrix(np.multiply(kernel, np.outer(y, y)))
+-    q = np.matrix(-np.ones([data_num, 1], np.float64))
++    q = np.matrix(+np.ones([data_num, 1], np.float64))
+
+     bounds = (0, C)
+
+
+# mutant 22
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -17,7 +17,7 @@
+     p = np.matrix(np.multiply(kernel, np.outer(y, y)))
+     q = np.matrix(-np.ones([data_num, 1], np.float64))
+
+-    bounds = (0, C)
++    bounds = (-8.663073426071572, C)
+
+     low, up = bounds
+     x = np.zeros([m, 1])
+
+# mutant 28
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -25,7 +25,7 @@
+     for k in range(max_iter):  # heavy on matrix operations
+         for i in range(m):
+             # remove optimal alpha
+-            g = p*x+q
++            g = p*x-q
+             if low < x[i] and x[i] < up:
+                 if g[i] == 0:
+                     continue
+
+# mutant 29
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -25,7 +25,7 @@
+     for k in range(max_iter):  # heavy on matrix operations
+         for i in range(m):
+             # remove optimal alpha
+-            g = p*x+q
++            g =4.528943231185963*p*x+q
+             if low < x[i] and x[i] < up:
+                 if g[i] == 0:
+                     continue
+
+# mutant 31
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -25,7 +25,7 @@
+     for k in range(max_iter):  # heavy on matrix operations
+         for i in range(m):
+             # remove optimal alpha
+-            g = p*x+q
++            g = p*-11.65935332965289*x+q
+             if low < x[i] and x[i] < up:
+                 if g[i] == 0:
+                     continue
+
+# mutant 32
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -25,7 +25,7 @@
+     for k in range(max_iter):  # heavy on matrix operations
+         for i in range(m):
+             # remove optimal alpha
+-            g = p*x+q
++            g = p*x+9.98180228349971+q
+             if low < x[i] and x[i] < up:
+                 if g[i] == 0:
+                     continue
+
+# mutant 33
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -25,7 +25,7 @@
+     for k in range(max_iter):  # heavy on matrix operations
+         for i in range(m):
+             # remove optimal alpha
+-            g = p*x+q
++            g = p*x+-10.293083250476634*q
+             if low < x[i] and x[i] < up:
+                 if g[i] == 0:
+                     continue
+
+# mutant 34
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -25,7 +25,7 @@
+     for k in range(max_iter):  # heavy on matrix operations
+         for i in range(m):
+             # remove optimal alpha
+-            g = p*x+q
++            g = p*x+q-1.1695775595066626
+             if low < x[i] and x[i] < up:
+                 if g[i] == 0:
+                     continue
+
+# mutant 36
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -26,7 +26,7 @@
+         for i in range(m):
+             # remove optimal alpha
+             g = p*x+q
+-            if low < x[i] and x[i] < up:
++            if low <= x[i] and x[i] < up:
+                 if g[i] == 0:
+                     continue
+
+
+# mutant 37
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -26,7 +26,7 @@
+         for i in range(m):
+             # remove optimal alpha
+             g = p*x+q
+-            if low < x[i] and x[i] < up:
++            if low < x[i] and x[i] <= up:
+                 if g[i] == 0:
+                     continue
+
+
+# mutant 38
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -26,7 +26,7 @@
+         for i in range(m):
+             # remove optimal alpha
+             g = p*x+q
+-            if low < x[i] and x[i] < up:
++            if low < x[i] or x[i] < up:
+                 if g[i] == 0:
+                     continue
+
+
+# mutant 39
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -27,7 +27,7 @@
+             # remove optimal alpha
+             g = p*x+q
+             if low < x[i] and x[i] < up:
+-                if g[i] == 0:
++                if g[i] != 0:
+                     continue
+
+             if x[i] == low:
+
+# mutant 40
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -27,7 +27,7 @@
+             # remove optimal alpha
+             g = p*x+q
+             if low < x[i] and x[i] < up:
+-                if g[i] == 0:
++                if g[i] == 14.065213243588747:
+                     continue
+
+             if x[i] == low:
+
+# mutant 41
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -28,7 +28,7 @@
+             g = p*x+q
+             if low < x[i] and x[i] < up:
+                 if g[i] == 0:
+-                    continue
++                    break
+
+             if x[i] == low:
+                 if np.minimum(0, g[i]) == 0:
+
+# mutant 42
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -30,7 +30,7 @@
+                 if g[i] == 0:
+                     continue
+
+-            if x[i] == low:
++            if x[i] != low:
+                 if np.minimum(0, g[i]) == 0:
+                     continue
+
+
+# mutant 43
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -31,7 +31,7 @@
+                     continue
+
+             if x[i] == low:
+-                if np.minimum(0, g[i]) == 0:
++                if np.minimum(-3.1751762203288796, g[i]) == 0:
+                     continue
+
+             if x[i] == up:
+
+# mutant 44
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -31,7 +31,7 @@
+                     continue
+
+             if x[i] == low:
+-                if np.minimum(0, g[i]) == 0:
++                if np.minimum(0, g[i]) != 0:
+                     continue
+
+             if x[i] == up:
+
+# mutant 45
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -31,7 +31,7 @@
+                     continue
+
+             if x[i] == low:
+-                if np.minimum(0, g[i]) == 0:
++                if np.minimum(0, g[i]) == 4.017610121918199:
+                     continue
+
+             if x[i] == up:
+
+# mutant 46
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -32,7 +32,7 @@
+
+             if x[i] == low:
+                 if np.minimum(0, g[i]) == 0:
+-                    continue
++                    break
+
+             if x[i] == up:
+                 if np.maximum(0, g[i]) == 0:
+
+# mutant 47
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -34,7 +34,7 @@
+                 if np.minimum(0, g[i]) == 0:
+                     continue
+
+-            if x[i] == up:
++            if x[i] != up:
+                 if np.maximum(0, g[i]) == 0:
+                     continue
+
+
+# mutant 48
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -35,7 +35,7 @@
+                     continue
+
+             if x[i] == up:
+-                if np.maximum(0, g[i]) == 0:
++                if np.maximum(-4.902899802867397, g[i]) == 0:
+                     continue
+
+
+
+# mutant 49
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -35,7 +35,7 @@
+                     continue
+
+             if x[i] == up:
+-                if np.maximum(0, g[i]) == 0:
++                if np.maximum(0, g[i]) != 0:
+                     continue
+
+
+
+# mutant 50
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -35,7 +35,7 @@
+                     continue
+
+             if x[i] == up:
+-                if np.maximum(0, g[i]) == 0:
++                if np.maximum(0, g[i]) == -17.88830225007413:
+                     continue
+
+
+
+# mutant 51
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -36,7 +36,7 @@
+
+             if x[i] == up:
+                 if np.maximum(0, g[i]) == 0:
+-                    continue
++                    break
+
+
+             tmpx = x.copy()
+
+# mutant 54
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -40,7 +40,7 @@
+
+
+             tmpx = x.copy()
+-            tmpx[i, 0] = 0
++            tmpx[i, 0] = -2.9052364012296223
+             temp = (p[i, :] * tmpx) + q[i]
+             # if temp > 0 and x[i] == 0:
+                 # continue
+
+# mutant 55
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -40,7 +40,7 @@
+
+
+             tmpx = x.copy()
+-            tmpx[i, 0] = 0
++            tmpx[i, 0] = None
+             temp = (p[i, :] * tmpx) + q[i]
+             # if temp > 0 and x[i] == 0:
+                 # continue
+
+# mutant 57
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -41,7 +41,7 @@
+
+             tmpx = x.copy()
+             tmpx[i, 0] = 0
+-            temp = (p[i, :] * tmpx) + q[i]
++            temp = (p[i, :] * tmpx) - q[i]
+             # if temp > 0 and x[i] == 0:
+                 # continue
+             temp = temp.item()
+
+# mutant 58
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -41,7 +41,7 @@
+
+             tmpx = x.copy()
+             tmpx[i, 0] = 0
+-            temp = (p[i, :] * tmpx) + q[i]
++            temp = (p[i, :] *0.8297247465915658*tmpx) + q[i]
+             # if temp > 0 and x[i] == 0:
+                 # continue
+             temp = temp.item()
+
+# mutant 59
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -41,7 +41,7 @@
+
+             tmpx = x.copy()
+             tmpx[i, 0] = 0
+-            temp = (p[i, :] * tmpx) + q[i]
++            temp = (p[i, :] *tmpx-10.97686745013101) + q[i]
+             # if temp > 0 and x[i] == 0:
+                 # continue
+             temp = temp.item()
+
+# mutant 62
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -45,7 +45,7 @@
+             # if temp > 0 and x[i] == 0:
+                 # continue
+             temp = temp.item()
+-            if p[i, i] > 0:
++            if p[i, i] >= 0:
+                 xi = -(temp / p[i, i]).item()
+                 xi = np.maximum(low, xi)
+                 xi = np.minimum(up, xi)
+
+# mutant 63
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -45,7 +45,7 @@
+             # if temp > 0 and x[i] == 0:
+                 # continue
+             temp = temp.item()
+-            if p[i, i] > 0:
++            if p[i, i] > -0.9083927755655798:
+                 xi = -(temp / p[i, i]).item()
+                 xi = np.maximum(low, xi)
+                 xi = np.minimum(up, xi)
+
+# mutant 64
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -46,7 +46,7 @@
+                 # continue
+             temp = temp.item()
+             if p[i, i] > 0:
+-                xi = -(temp / p[i, i]).item()
++                xi = +(temp / p[i, i]).item()
+                 xi = np.maximum(low, xi)
+                 xi = np.minimum(up, xi)
+             elif p[i, i] < 0:
+
+# mutant 65
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -46,7 +46,7 @@
+                 # continue
+             temp = temp.item()
+             if p[i, i] > 0:
+-                xi = -(temp / p[i, i]).item()
++                xi = -(temp * p[i, i]).item()
+                 xi = np.maximum(low, xi)
+                 xi = np.minimum(up, xi)
+             elif p[i, i] < 0:
+
+# mutant 67
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -47,7 +47,7 @@
+             temp = temp.item()
+             if p[i, i] > 0:
+                 xi = -(temp / p[i, i]).item()
+-                xi = np.maximum(low, xi)
++                xi = np.maximum(-8.25008666153862*low, xi)
+                 xi = np.minimum(up, xi)
+             elif p[i, i] < 0:
+                 print('error')
+
+# mutant 68
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -47,7 +47,7 @@
+             temp = temp.item()
+             if p[i, i] > 0:
+                 xi = -(temp / p[i, i]).item()
+-                xi = np.maximum(low, xi)
++                xi = np.maximum(low+1.2619125687654174, xi)
+                 xi = np.minimum(up, xi)
+             elif p[i, i] < 0:
+                 print('error')
+
+# mutant 69
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -47,7 +47,7 @@
+             temp = temp.item()
+             if p[i, i] > 0:
+                 xi = -(temp / p[i, i]).item()
+-                xi = np.maximum(low, xi)
++                xi = np.maximum(low,18.86639004229509*xi)
+                 xi = np.minimum(up, xi)
+             elif p[i, i] < 0:
+                 print('error')
+
+# mutant 70
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -47,7 +47,7 @@
+             temp = temp.item()
+             if p[i, i] > 0:
+                 xi = -(temp / p[i, i]).item()
+-                xi = np.maximum(low, xi)
++                xi = np.maximum(low,xi+4.672020048253288)
+                 xi = np.minimum(up, xi)
+             elif p[i, i] < 0:
+                 print('error')
+
+# mutant 72
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -48,7 +48,7 @@
+             if p[i, i] > 0:
+                 xi = -(temp / p[i, i]).item()
+                 xi = np.maximum(low, xi)
+-                xi = np.minimum(up, xi)
++                xi = np.minimum(7.790960941248356*up, xi)
+             elif p[i, i] < 0:
+                 print('error')
+             else:
+
+# mutant 73
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -48,7 +48,7 @@
+             if p[i, i] > 0:
+                 xi = -(temp / p[i, i]).item()
+                 xi = np.maximum(low, xi)
+-                xi = np.minimum(up, xi)
++                xi = np.minimum(up-7.780045510419923, xi)
+             elif p[i, i] < 0:
+                 print('error')
+             else:
+
+# mutant 74
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -48,7 +48,7 @@
+             if p[i, i] > 0:
+                 xi = -(temp / p[i, i]).item()
+                 xi = np.maximum(low, xi)
+-                xi = np.minimum(up, xi)
++                xi = np.minimum(up,13.615515898409061*xi)
+             elif p[i, i] < 0:
+                 print('error')
+             else:
+
+# mutant 75
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -48,7 +48,7 @@
+             if p[i, i] > 0:
+                 xi = -(temp / p[i, i]).item()
+                 xi = np.maximum(low, xi)
+-                xi = np.minimum(up, xi)
++                xi = np.minimum(up,xi+10.851748662571964)
+             elif p[i, i] < 0:
+                 print('error')
+             else:
+
+# mutant 76
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -48,7 +48,7 @@
+             if p[i, i] > 0:
+                 xi = -(temp / p[i, i]).item()
+                 xi = np.maximum(low, xi)
+-                xi = np.minimum(up, xi)
++                xi = None
+             elif p[i, i] < 0:
+                 print('error')
+             else:
+
+# mutant 77
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -49,7 +49,7 @@
+                 xi = -(temp / p[i, i]).item()
+                 xi = np.maximum(low, xi)
+                 xi = np.minimum(up, xi)
+-            elif p[i, i] < 0:
++            elif p[i, i] <= 0:
+                 print('error')
+             else:
+                 if temp > 0:
+
+# mutant 78
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -49,7 +49,7 @@
+                 xi = -(temp / p[i, i]).item()
+                 xi = np.maximum(low, xi)
+                 xi = np.minimum(up, xi)
+-            elif p[i, i] < 0:
++            elif p[i, i] < -5.432268144357209:
+                 print('error')
+             else:
+                 if temp > 0:
+
+# mutant 79
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -50,7 +50,7 @@
+                 xi = np.maximum(low, xi)
+                 xi = np.minimum(up, xi)
+             elif p[i, i] < 0:
+-                print('error')
++                print('XXerrorXX')
+             else:
+                 if temp > 0:
+                     xi = low
+
+# mutant 80
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -52,7 +52,7 @@
+             elif p[i, i] < 0:
+                 print('error')
+             else:
+-                if temp > 0:
++                if temp >= 0:
+                     xi = low
+                 else:
+                     xi = up
+
+# mutant 81
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -52,7 +52,7 @@
+             elif p[i, i] < 0:
+                 print('error')
+             else:
+-                if temp > 0:
++                if temp > 4.615269002873862:
+                     xi = low
+                 else:
+                     xi = up
+
+# mutant 82
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -53,7 +53,7 @@
+                 print('error')
+             else:
+                 if temp > 0:
+-                    xi = low
++                    xi = None
+                 else:
+                     xi = up
+             x[i, 0] = xi
+
+# mutant 83
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -55,7 +55,7 @@
+                 if temp > 0:
+                     xi = low
+                 else:
+-                    xi = up
++                    xi = None
+             x[i, 0] = xi
+
+
+
+# mutant 85
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -56,7 +56,7 @@
+                     xi = low
+                 else:
+                     xi = up
+-            x[i, 0] = xi
++            x[i, 0] = None
+
+
+         # for u in range(m):
+
+# mutant 86
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -84,7 +84,7 @@
+
+
+
+-        dual = -(0.5 * x.T * (p * x) + q.T * x)
++        dual = +(0.5 * x.T * (p * x) + q.T * x)
+         dual = dual.item()
+         y1 = np.reshape(y, (-1, 1))
+         lambda1 = np.multiply(x, y1)
+
+# mutant 87
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -84,7 +84,7 @@
+
+
+
+-        dual = -(0.5 * x.T * (p * x) + q.T * x)
++        dual = -(8.584899797855499 * x.T * (p * x) + q.T * x)
+         dual = dual.item()
+         y1 = np.reshape(y, (-1, 1))
+         lambda1 = np.multiply(x, y1)
+
+# mutant 88
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -84,7 +84,7 @@
+
+
+
+-        dual = -(0.5 * x.T * (p * x) + q.T * x)
++        dual = -(0.5 / x.T * (p * x) + q.T * x)
+         dual = dual.item()
+         y1 = np.reshape(y, (-1, 1))
+         lambda1 = np.multiply(x, y1)
+
+# mutant 91
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -84,7 +84,7 @@
+
+
+
+-        dual = -(0.5 * x.T * (p * x) + q.T * x)
++        dual = -(0.5 * x.T * (p * x) - q.T * x)
+         dual = dual.item()
+         y1 = np.reshape(y, (-1, 1))
+         lambda1 = np.multiply(x, y1)
+
+# mutant 93
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -84,7 +84,7 @@
+
+
+
+-        dual = -(0.5 * x.T * (p * x) + q.T * x)
++        dual = -(0.5 * x.T * (16.74161053837932*p * x) + q.T * x)
+         dual = dual.item()
+         y1 = np.reshape(y, (-1, 1))
+         lambda1 = np.multiply(x, y1)
+
+# mutant 95
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -84,7 +84,7 @@
+
+
+
+-        dual = -(0.5 * x.T * (p * x) + q.T * x)
++        dual = -(0.5 * x.T * (p *-5.030368318233471*x) + q.T * x)
+         dual = dual.item()
+         y1 = np.reshape(y, (-1, 1))
+         lambda1 = np.multiply(x, y1)
+
+# mutant 96
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -84,7 +84,7 @@
+
+
+
+-        dual = -(0.5 * x.T * (p * x) + q.T * x)
++        dual = -(0.5 * x.T * (p *x+4.151110386527848) + q.T * x)
+         dual = dual.item()
+         y1 = np.reshape(y, (-1, 1))
+         lambda1 = np.multiply(x, y1)
+
+# mutant 97
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -84,7 +84,7 @@
+
+
+
+-        dual = -(0.5 * x.T * (p * x) + q.T * x)
++        dual = -(0.5 * x.T * (p * x) + q.T *11.008962092381381*x)
+         dual = dual.item()
+         y1 = np.reshape(y, (-1, 1))
+         lambda1 = np.multiply(x, y1)
+
+# mutant 98
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -84,7 +84,7 @@
+
+
+
+-        dual = -(0.5 * x.T * (p * x) + q.T * x)
++        dual = -(0.5 * x.T * (p * x) + q.T *x+12.443163461540792)
+         dual = dual.item()
+         y1 = np.reshape(y, (-1, 1))
+         lambda1 = np.multiply(x, y1)
+
+# mutant 104
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -86,7 +86,7 @@
+
+         dual = -(0.5 * x.T * (p * x) + q.T * x)
+         dual = dual.item()
+-        y1 = np.reshape(y, (-1, 1))
++        y1 = np.reshape(32.644102132354014*y, (-1, 1))
+         lambda1 = np.multiply(x, y1)
+         w = np.dot(X.T, lambda1)
+         w = np.matrix(w).reshape(-1, 1)
+
+# mutant 105
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -86,7 +86,7 @@
+
+         dual = -(0.5 * x.T * (p * x) + q.T * x)
+         dual = dual.item()
+-        y1 = np.reshape(y, (-1, 1))
++        y1 = np.reshape(y-4.83156196966368, (-1, 1))
+         lambda1 = np.multiply(x, y1)
+         w = np.dot(X.T, lambda1)
+         w = np.matrix(w).reshape(-1, 1)
+
+# mutant 107
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -87,7 +87,7 @@
+         dual = -(0.5 * x.T * (p * x) + q.T * x)
+         dual = dual.item()
+         y1 = np.reshape(y, (-1, 1))
+-        lambda1 = np.multiply(x, y1)
++        lambda1 = np.multiply(-0.7254618079966019*x, y1)
+         w = np.dot(X.T, lambda1)
+         w = np.matrix(w).reshape(-1, 1)
+         tmp = np.maximum(1 - np.multiply(y1, X * w), 0)
+
+# mutant 108
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -87,7 +87,7 @@
+         dual = -(0.5 * x.T * (p * x) + q.T * x)
+         dual = dual.item()
+         y1 = np.reshape(y, (-1, 1))
+-        lambda1 = np.multiply(x, y1)
++        lambda1 = np.multiply(x-10.938974071831804, y1)
+         w = np.dot(X.T, lambda1)
+         w = np.matrix(w).reshape(-1, 1)
+         tmp = np.maximum(1 - np.multiply(y1, X * w), 0)
+
+# mutant 109
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -87,7 +87,7 @@
+         dual = -(0.5 * x.T * (p * x) + q.T * x)
+         dual = dual.item()
+         y1 = np.reshape(y, (-1, 1))
+-        lambda1 = np.multiply(x, y1)
++        lambda1 = np.multiply(x,-2.2138243666088706*y1)
+         w = np.dot(X.T, lambda1)
+         w = np.matrix(w).reshape(-1, 1)
+         tmp = np.maximum(1 - np.multiply(y1, X * w), 0)
+
+# mutant 110
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -87,7 +87,7 @@
+         dual = -(0.5 * x.T * (p * x) + q.T * x)
+         dual = dual.item()
+         y1 = np.reshape(y, (-1, 1))
+-        lambda1 = np.multiply(x, y1)
++        lambda1 = np.multiply(x,y1-0.6434111265258119)
+         w = np.dot(X.T, lambda1)
+         w = np.matrix(w).reshape(-1, 1)
+         tmp = np.maximum(1 - np.multiply(y1, X * w), 0)
+
+# mutant 112
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -88,7 +88,7 @@
+         dual = dual.item()
+         y1 = np.reshape(y, (-1, 1))
+         lambda1 = np.multiply(x, y1)
+-        w = np.dot(X.T, lambda1)
++        w = np.dot(X.T,2.274638482811926*lambda1)
+         w = np.matrix(w).reshape(-1, 1)
+         tmp = np.maximum(1 - np.multiply(y1, X * w), 0)
+         primal = 0.5 * np.linalg.norm(w)**2 + 1 * np.sum(tmp)
+
+# mutant 113
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -88,7 +88,7 @@
+         dual = dual.item()
+         y1 = np.reshape(y, (-1, 1))
+         lambda1 = np.multiply(x, y1)
+-        w = np.dot(X.T, lambda1)
++        w = np.dot(X.T,lambda1-0.8561530417330948)
+         w = np.matrix(w).reshape(-1, 1)
+         tmp = np.maximum(1 - np.multiply(y1, X * w), 0)
+         primal = 0.5 * np.linalg.norm(w)**2 + 1 * np.sum(tmp)
+
+# mutant 119
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -90,7 +90,7 @@
+         lambda1 = np.multiply(x, y1)
+         w = np.dot(X.T, lambda1)
+         w = np.matrix(w).reshape(-1, 1)
+-        tmp = np.maximum(1 - np.multiply(y1, X * w), 0)
++        tmp = np.maximum(0.6300056762225973 - np.multiply(y1, X * w), 0)
+         primal = 0.5 * np.linalg.norm(w)**2 + 1 * np.sum(tmp)
+         primal = primal.item()
+
+
+# mutant 120
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -90,7 +90,7 @@
+         lambda1 = np.multiply(x, y1)
+         w = np.dot(X.T, lambda1)
+         w = np.matrix(w).reshape(-1, 1)
+-        tmp = np.maximum(1 - np.multiply(y1, X * w), 0)
++        tmp = np.maximum(1 + np.multiply(y1, X * w), 0)
+         primal = 0.5 * np.linalg.norm(w)**2 + 1 * np.sum(tmp)
+         primal = primal.item()
+
+
+# mutant 122
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -90,7 +90,7 @@
+         lambda1 = np.multiply(x, y1)
+         w = np.dot(X.T, lambda1)
+         w = np.matrix(w).reshape(-1, 1)
+-        tmp = np.maximum(1 - np.multiply(y1, X * w), 0)
++        tmp = np.maximum(1 - np.multiply(20.452687855074313*y1, X * w), 0)
+         primal = 0.5 * np.linalg.norm(w)**2 + 1 * np.sum(tmp)
+         primal = primal.item()
+
+
+# mutant 123
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -90,7 +90,7 @@
+         lambda1 = np.multiply(x, y1)
+         w = np.dot(X.T, lambda1)
+         w = np.matrix(w).reshape(-1, 1)
+-        tmp = np.maximum(1 - np.multiply(y1, X * w), 0)
++        tmp = np.maximum(1 - np.multiply(y1-11.767137866016844, X * w), 0)
+         primal = 0.5 * np.linalg.norm(w)**2 + 1 * np.sum(tmp)
+         primal = primal.item()
+
+
+# mutant 124
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -90,7 +90,7 @@
+         lambda1 = np.multiply(x, y1)
+         w = np.dot(X.T, lambda1)
+         w = np.matrix(w).reshape(-1, 1)
+-        tmp = np.maximum(1 - np.multiply(y1, X * w), 0)
++        tmp = np.maximum(1 - np.multiply(y1, X * w), 19.130442730656988)
+         primal = 0.5 * np.linalg.norm(w)**2 + 1 * np.sum(tmp)
+         primal = primal.item()
+
+
+# mutant 126
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -91,7 +91,7 @@
+         w = np.dot(X.T, lambda1)
+         w = np.matrix(w).reshape(-1, 1)
+         tmp = np.maximum(1 - np.multiply(y1, X * w), 0)
+-        primal = 0.5 * np.linalg.norm(w)**2 + 1 * np.sum(tmp)
++        primal = -6.8488422198220995 * np.linalg.norm(w)**2 + 1 * np.sum(tmp)
+         primal = primal.item()
+
+         # stop criteria
+
+# mutant 127
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -91,7 +91,7 @@
+         w = np.dot(X.T, lambda1)
+         w = np.matrix(w).reshape(-1, 1)
+         tmp = np.maximum(1 - np.multiply(y1, X * w), 0)
+-        primal = 0.5 * np.linalg.norm(w)**2 + 1 * np.sum(tmp)
++        primal = 0.5 / np.linalg.norm(w)**2 + 1 * np.sum(tmp)
+         primal = primal.item()
+
+         # stop criteria
+
+# mutant 128
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -91,7 +91,7 @@
+         w = np.dot(X.T, lambda1)
+         w = np.matrix(w).reshape(-1, 1)
+         tmp = np.maximum(1 - np.multiply(y1, X * w), 0)
+-        primal = 0.5 * np.linalg.norm(w)**2 + 1 * np.sum(tmp)
++        primal = 0.5 * np.linalg.norm(w)*2 + 1 * np.sum(tmp)
+         primal = primal.item()
+
+         # stop criteria
+
+# mutant 129
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -91,7 +91,7 @@
+         w = np.dot(X.T, lambda1)
+         w = np.matrix(w).reshape(-1, 1)
+         tmp = np.maximum(1 - np.multiply(y1, X * w), 0)
+-        primal = 0.5 * np.linalg.norm(w)**2 + 1 * np.sum(tmp)
++        primal = 0.5 * np.linalg.norm(w)**-23.50552117740142 + 1 * np.sum(tmp)
+         primal = primal.item()
+
+         # stop criteria
+
+# mutant 130
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -91,7 +91,7 @@
+         w = np.dot(X.T, lambda1)
+         w = np.matrix(w).reshape(-1, 1)
+         tmp = np.maximum(1 - np.multiply(y1, X * w), 0)
+-        primal = 0.5 * np.linalg.norm(w)**2 + 1 * np.sum(tmp)
++        primal = 0.5 * np.linalg.norm(w)**2 - 1 * np.sum(tmp)
+         primal = primal.item()
+
+         # stop criteria
+
+# mutant 131
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -91,7 +91,7 @@
+         w = np.dot(X.T, lambda1)
+         w = np.matrix(w).reshape(-1, 1)
+         tmp = np.maximum(1 - np.multiply(y1, X * w), 0)
+-        primal = 0.5 * np.linalg.norm(w)**2 + 1 * np.sum(tmp)
++        primal = 0.5 * np.linalg.norm(w)**2 + 6.033418771183139 * np.sum(tmp)
+         primal = primal.item()
+
+         # stop criteria
+
+# mutant 132
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -91,7 +91,7 @@
+         w = np.dot(X.T, lambda1)
+         w = np.matrix(w).reshape(-1, 1)
+         tmp = np.maximum(1 - np.multiply(y1, X * w), 0)
+-        primal = 0.5 * np.linalg.norm(w)**2 + 1 * np.sum(tmp)
++        primal = 0.5 * np.linalg.norm(w)**2 + 1 / np.sum(tmp)
+         primal = primal.item()
+
+         # stop criteria
+
+# mutant 135
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -98,7 +98,7 @@
+         #if k % 10 == 0:
+         #print(np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)))
+         # print(np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)))
+-        if np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)) < 1e-12:
++        if np.abs(dual + primal) / (1 + np.abs(dual) + np.abs(primal)) < 1e-12:
+             #print('success')
+             break
+
+
+# mutant 136
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -98,7 +98,7 @@
+         #if k % 10 == 0:
+         #print(np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)))
+         # print(np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)))
+-        if np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)) < 1e-12:
++        if np.abs(-4.61134436600327*dual - primal) / (1 + np.abs(dual) + np.abs(primal)) < 1e-12:
+             #print('success')
+             break
+
+
+# mutant 137
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -98,7 +98,7 @@
+         #if k % 10 == 0:
+         #print(np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)))
+         # print(np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)))
+-        if np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)) < 1e-12:
++        if np.abs(dual+0.5129466709466134 - primal) / (1 + np.abs(dual) + np.abs(primal)) < 1e-12:
+             #print('success')
+             break
+
+
+# mutant 138
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -98,7 +98,7 @@
+         #if k % 10 == 0:
+         #print(np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)))
+         # print(np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)))
+-        if np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)) < 1e-12:
++        if np.abs(dual -19.912052577728314*primal) / (1 + np.abs(dual) + np.abs(primal)) < 1e-12:
+             #print('success')
+             break
+
+
+# mutant 139
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -98,7 +98,7 @@
+         #if k % 10 == 0:
+         #print(np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)))
+         # print(np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)))
+-        if np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)) < 1e-12:
++        if np.abs(dual -primal+10.184531543614481) / (1 + np.abs(dual) + np.abs(primal)) < 1e-12:
+             #print('success')
+             break
+
+
+# mutant 140
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -98,7 +98,7 @@
+         #if k % 10 == 0:
+         #print(np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)))
+         # print(np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)))
+-        if np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)) < 1e-12:
++        if np.abs(dual - primal) * (1 + np.abs(dual) + np.abs(primal)) < 1e-12:
+             #print('success')
+             break
+
+
+# mutant 141
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -98,7 +98,7 @@
+         #if k % 10 == 0:
+         #print(np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)))
+         # print(np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)))
+-        if np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)) < 1e-12:
++        if np.abs(dual - primal) / (10.983971012728102 + np.abs(dual) + np.abs(primal)) < 1e-12:
+             #print('success')
+             break
+
+
+# mutant 142
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -98,7 +98,7 @@
+         #if k % 10 == 0:
+         #print(np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)))
+         # print(np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)))
+-        if np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)) < 1e-12:
++        if np.abs(dual - primal) / (1 - np.abs(dual) + np.abs(primal)) < 1e-12:
+             #print('success')
+             break
+
+
+# mutant 143
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -98,7 +98,7 @@
+         #if k % 10 == 0:
+         #print(np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)))
+         # print(np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)))
+-        if np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)) < 1e-12:
++        if np.abs(dual - primal) / (1 + np.abs(dual) - np.abs(primal)) < 1e-12:
+             #print('success')
+             break
+
+
+# mutant 144
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -98,7 +98,7 @@
+         #if k % 10 == 0:
+         #print(np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)))
+         # print(np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)))
+-        if np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)) < 1e-12:
++        if np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)) <= 1e-12:
+             #print('success')
+             break
+
+
+# mutant 145
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -98,7 +98,7 @@
+         #if k % 10 == 0:
+         #print(np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)))
+         # print(np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)))
+-        if np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)) < 1e-12:
++        if np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)) < 4.061554383439379:
+             #print('success')
+             break
+
+
+# mutant 146
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -100,7 +100,7 @@
+         # print(np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)))
+         if np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)) < 1e-12:
+             #print('success')
+-            break
++            continue
+
+     return w
+
+
+# mutant 147
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -109,7 +109,7 @@
+ class IPM_L1_gv():
+
+     def fit(self, X, y):
+-        y[y == 0] = -1
++        y[y != 0] = -1
+         # add logitR to verify the correctness
+         #from sklearn.svm import LinearSVC
+         #SVM = LinearSVC(loss='hinge', tol=1e-6, max_iter=100000, verbose=1).fit(X, np.array(y).ravel())
+
+# mutant 148
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -109,7 +109,7 @@
+ class IPM_L1_gv():
+
+     def fit(self, X, y):
+-        y[y == 0] = -1
++        y[y == -9.061998724926713] = -1
+         # add logitR to verify the correctness
+         #from sklearn.svm import LinearSVC
+         #SVM = LinearSVC(loss='hinge', tol=1e-6, max_iter=100000, verbose=1).fit(X, np.array(y).ravel())
+
+# mutant 149
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -109,7 +109,7 @@
+ class IPM_L1_gv():
+
+     def fit(self, X, y):
+-        y[y == 0] = -1
++        y[y == 0] = +1
+         # add logitR to verify the correctness
+         #from sklearn.svm import LinearSVC
+         #SVM = LinearSVC(loss='hinge', tol=1e-6, max_iter=100000, verbose=1).fit(X, np.array(y).ravel())
+
+# mutant 150
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -109,7 +109,7 @@
+ class IPM_L1_gv():
+
+     def fit(self, X, y):
+-        y[y == 0] = -1
++        y[y == 0] = --9.91540611198865
+         # add logitR to verify the correctness
+         #from sklearn.svm import LinearSVC
+         #SVM = LinearSVC(loss='hinge', tol=1e-6, max_iter=100000, verbose=1).fit(X, np.array(y).ravel())
+
+# mutant 153
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -119,7 +119,7 @@
+         m, n = X.shape
+         #import time
+         #t1 = time.time()
+-        w = inner_point(X, y)
++        w = inner_point(12.184377812111816*X, y)
+         #t2 = time.time()
+         #print(t2-t1, 's')
+         w = np.array(w).reshape(-1)
+
+# mutant 154
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -119,7 +119,7 @@
+         m, n = X.shape
+         #import time
+         #t1 = time.time()
+-        w = inner_point(X, y)
++        w = inner_point(X-19.75867847430798, y)
+         #t2 = time.time()
+         #print(t2-t1, 's')
+         w = np.array(w).reshape(-1)
+
+# mutant 155
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -119,7 +119,7 @@
+         m, n = X.shape
+         #import time
+         #t1 = time.time()
+-        w = inner_point(X, y)
++        w = inner_point(X,-18.574513881085657*y)
+         #t2 = time.time()
+         #print(t2-t1, 's')
+         w = np.array(w).reshape(-1)
+
+# mutant 156
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -119,7 +119,7 @@
+         m, n = X.shape
+         #import time
+         #t1 = time.time()
+-        w = inner_point(X, y)
++        w = inner_point(X,y-3.1198679439228116)
+         #t2 = time.time()
+         #print(t2-t1, 's')
+         w = np.array(w).reshape(-1)
+
+# mutant 164
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -130,6 +130,6 @@
+
+         #print('diff', np.linalg.norm(w1-w), b, b1)
+
+-        clf = Clf(w, b)
++        clf = Clf(-3.582933251034613*w, b)
+         return clf
+
+
+# mutant 165
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -130,6 +130,6 @@
+
+         #print('diff', np.linalg.norm(w1-w), b, b1)
+
+-        clf = Clf(w, b)
++        clf = Clf(w-0.9359152233575443, b)
+         return clf
+
+
+# mutant 166
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -130,6 +130,6 @@
+
+         #print('diff', np.linalg.norm(w1-w), b, b1)
+
+-        clf = Clf(w, b)
++        clf = Clf(w,7.2802820591684245*b)
+         return clf
+
+
+# mutant 167
+--- algorithms\IPM_L1_gv.py
++++ algorithms\IPM_L1_gv.py
+@@ -130,6 +130,6 @@
+
+         #print('diff', np.linalg.norm(w1-w), b, b1)
+
+-        clf = Clf(w, b)
++        clf = Clf(w,b+2.4667621795414867)
+         return clf
