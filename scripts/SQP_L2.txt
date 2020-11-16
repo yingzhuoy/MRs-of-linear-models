@@ -1,12 +1,16 @@
+Survived ?? (141)
+
+---- algorithms\SQP_L2_gv.py (141) ----
+
 # mutant 7
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -11,7 +11,7 @@
+@@ -12,7 +12,7 @@
      X = np.column_stack((X, np.ones((m, 1))))
      y = y.astype(np.float64)
      data_num = len(y)
 -    C = 1.0
-+    C = 2.45305243081926
++    C = -2.307096375931245
      kernel = np.dot(X, np.transpose(X)) + np.diag(np.ones(data_num, np.float64)) * .5/C
      p = np.matrix(np.multiply(kernel, np.outer(y, y)))
      q = np.matrix(-np.ones([data_num, 1], np.float64))
@@ -14,12 +18,12 @@
 # mutant 9
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -12,7 +12,7 @@
+@@ -13,7 +13,7 @@
      y = y.astype(np.float64)
      data_num = len(y)
      C = 1.0
 -    kernel = np.dot(X, np.transpose(X)) + np.diag(np.ones(data_num, np.float64)) * .5/C
-+    kernel = np.dot(8.188184799049775*X, np.transpose(X)) + np.diag(np.ones(data_num, np.float64)) * .5/C
++    kernel = np.dot(13.01599186417635*X, np.transpose(X)) + np.diag(np.ones(data_num, np.float64)) * .5/C
      p = np.matrix(np.multiply(kernel, np.outer(y, y)))
      q = np.matrix(-np.ones([data_num, 1], np.float64))
 
@@ -27,12 +31,12 @@
 # mutant 10
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -12,7 +12,7 @@
+@@ -13,7 +13,7 @@
      y = y.astype(np.float64)
      data_num = len(y)
      C = 1.0
 -    kernel = np.dot(X, np.transpose(X)) + np.diag(np.ones(data_num, np.float64)) * .5/C
-+    kernel = np.dot(X-0.3225736424611241, np.transpose(X)) + np.diag(np.ones(data_num, np.float64)) * .5/C
++    kernel = np.dot(X+4.238789712688529, np.transpose(X)) + np.diag(np.ones(data_num, np.float64)) * .5/C
      p = np.matrix(np.multiply(kernel, np.outer(y, y)))
      q = np.matrix(-np.ones([data_num, 1], np.float64))
 
@@ -40,7 +44,7 @@
 # mutant 11
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -12,7 +12,7 @@
+@@ -13,7 +13,7 @@
      y = y.astype(np.float64)
      data_num = len(y)
      C = 1.0
@@ -53,7 +57,7 @@
 # mutant 14
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -12,7 +12,7 @@
+@@ -13,7 +13,7 @@
      y = y.astype(np.float64)
      data_num = len(y)
      C = 1.0
@@ -66,12 +70,12 @@
 # mutant 15
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -12,7 +12,7 @@
+@@ -13,7 +13,7 @@
      y = y.astype(np.float64)
      data_num = len(y)
      C = 1.0
 -    kernel = np.dot(X, np.transpose(X)) + np.diag(np.ones(data_num, np.float64)) * .5/C
-+    kernel = np.dot(X, np.transpose(X)) + np.diag(np.ones(data_num, np.float64)) * 6.20160468116954/C
++    kernel = np.dot(X, np.transpose(X)) + np.diag(np.ones(data_num, np.float64)) * -3.4732173914006976/C
      p = np.matrix(np.multiply(kernel, np.outer(y, y)))
      q = np.matrix(-np.ones([data_num, 1], np.float64))
 
@@ -79,7 +83,7 @@
 # mutant 16
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -12,7 +12,7 @@
+@@ -13,7 +13,7 @@
      y = y.astype(np.float64)
      data_num = len(y)
      C = 1.0
@@ -92,12 +96,12 @@
 # mutant 17
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -12,7 +12,7 @@
+@@ -13,7 +13,7 @@
      y = y.astype(np.float64)
      data_num = len(y)
      C = 1.0
 -    kernel = np.dot(X, np.transpose(X)) + np.diag(np.ones(data_num, np.float64)) * .5/C
-+    kernel = np.dot(X, np.transpose(X)) + np.diag(np.ones(data_num, np.float64)) * .5/10.934749148645663*C
++    kernel = np.dot(X, np.transpose(X)) + np.diag(np.ones(data_num, np.float64)) * .5/7.073944605820517*C
      p = np.matrix(np.multiply(kernel, np.outer(y, y)))
      q = np.matrix(-np.ones([data_num, 1], np.float64))
 
@@ -105,163 +109,748 @@
 # mutant 18
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -12,7 +12,7 @@
+@@ -13,7 +13,7 @@
      y = y.astype(np.float64)
      data_num = len(y)
      C = 1.0
 -    kernel = np.dot(X, np.transpose(X)) + np.diag(np.ones(data_num, np.float64)) * .5/C
-+    kernel = np.dot(X, np.transpose(X)) + np.diag(np.ones(data_num, np.float64)) * .5/C-0.6134258376224909
++    kernel = np.dot(X, np.transpose(X)) + np.diag(np.ones(data_num, np.float64)) * .5/C+8.692155656663207
      p = np.matrix(np.multiply(kernel, np.outer(y, y)))
      q = np.matrix(-np.ones([data_num, 1], np.float64))
 
 
-# mutant 20
---- algorithms\SQP_L2_gv.py
-+++ algorithms\SQP_L2_gv.py
-@@ -13,7 +13,7 @@
-     data_num = len(y)
-     C = 1.0
-     kernel = np.dot(X, np.transpose(X)) + np.diag(np.ones(data_num, np.float64)) * .5/C
--    p = np.matrix(np.multiply(kernel, np.outer(y, y)))
-+    p = np.matrix(np.multiply(kernel, np.outer(14.564728308746844*y, y)))
-     q = np.matrix(-np.ones([data_num, 1], np.float64))
-
-     bounds = (0, np.inf)
-
 # mutant 21
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -13,7 +13,7 @@
+@@ -14,7 +14,7 @@
      data_num = len(y)
      C = 1.0
      kernel = np.dot(X, np.transpose(X)) + np.diag(np.ones(data_num, np.float64)) * .5/C
 -    p = np.matrix(np.multiply(kernel, np.outer(y, y)))
-+    p = np.matrix(np.multiply(kernel, np.outer(y+4.788459400681306, y)))
++    p = np.matrix(np.multiply(kernel, np.outer(y-7.857371165807663, y)))
      q = np.matrix(-np.ones([data_num, 1], np.float64))
 
-     bounds = (0, np.inf)
 
-# mutant 22
---- algorithms\SQP_L2_gv.py
-+++ algorithms\SQP_L2_gv.py
-@@ -13,7 +13,7 @@
-     data_num = len(y)
-     C = 1.0
-     kernel = np.dot(X, np.transpose(X)) + np.diag(np.ones(data_num, np.float64)) * .5/C
--    p = np.matrix(np.multiply(kernel, np.outer(y, y)))
-+    p = np.matrix(np.multiply(kernel, np.outer(y,9.679762580398958*y)))
-     q = np.matrix(-np.ones([data_num, 1], np.float64))
-
-     bounds = (0, np.inf)
 
 # mutant 23
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -13,7 +13,7 @@
+@@ -14,7 +14,7 @@
      data_num = len(y)
      C = 1.0
      kernel = np.dot(X, np.transpose(X)) + np.diag(np.ones(data_num, np.float64)) * .5/C
 -    p = np.matrix(np.multiply(kernel, np.outer(y, y)))
-+    p = np.matrix(np.multiply(kernel, np.outer(y,y-8.609922035856794)))
++    p = np.matrix(np.multiply(kernel, np.outer(y,y+0.3911953824257072)))
      q = np.matrix(-np.ones([data_num, 1], np.float64))
 
-     bounds = (0, np.inf)
 
-# mutant 24
---- algorithms\SQP_L2_gv.py
-+++ algorithms\SQP_L2_gv.py
-@@ -13,7 +13,7 @@
-     data_num = len(y)
-     C = 1.0
-     kernel = np.dot(X, np.transpose(X)) + np.diag(np.ones(data_num, np.float64)) * .5/C
--    p = np.matrix(np.multiply(kernel, np.outer(y, y)))
-+    p = np.matrix(np.multiply(-13.81566619481643*kernel, np.outer(y, y)))
-     q = np.matrix(-np.ones([data_num, 1], np.float64))
-
-     bounds = (0, np.inf)
 
 # mutant 25
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -13,7 +13,7 @@
+@@ -14,7 +14,7 @@
      data_num = len(y)
      C = 1.0
      kernel = np.dot(X, np.transpose(X)) + np.diag(np.ones(data_num, np.float64)) * .5/C
 -    p = np.matrix(np.multiply(kernel, np.outer(y, y)))
-+    p = np.matrix(np.multiply(kernel+0.26948540060267595, np.outer(y, y)))
++    p = np.matrix(np.multiply(kernel+8.553301901378635, np.outer(y, y)))
      q = np.matrix(-np.ones([data_num, 1], np.float64))
 
-     bounds = (0, np.inf)
+
 
 # mutant 27
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -14,7 +14,7 @@
+@@ -15,7 +15,7 @@
      C = 1.0
      kernel = np.dot(X, np.transpose(X)) + np.diag(np.ones(data_num, np.float64)) * .5/C
      p = np.matrix(np.multiply(kernel, np.outer(y, y)))
 -    q = np.matrix(-np.ones([data_num, 1], np.float64))
 +    q = np.matrix(+np.ones([data_num, 1], np.float64))
 
-     bounds = (0, np.inf)
 
+     bounds = (0, np.inf)
 
 # mutant 30
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -16,7 +16,7 @@
-     p = np.matrix(np.multiply(kernel, np.outer(y, y)))
+@@ -18,7 +18,7 @@
      q = np.matrix(-np.ones([data_num, 1], np.float64))
 
+
 -    bounds = (0, np.inf)
-+    bounds = (-4.835564929044292, np.inf)
++    bounds = (2.5855140612035954, np.inf)
 
      low, up = bounds
-     x = np.zeros([m, 1]) + 0.5
-
-# mutant 34
---- algorithms\SQP_L2_gv.py
-+++ algorithms\SQP_L2_gv.py
-@@ -19,7 +19,7 @@
-     bounds = (0, np.inf)
-
-     low, up = bounds
--    x = np.zeros([m, 1]) + 0.5
-+    x = np.zeros([m, 1]) - 0.5
-
-     for k in range(max_iter):  # heavy on matrix operations
-         for i in range(m):
+     x = np.zeros([m, 1])
 
 # mutant 35
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -19,7 +19,7 @@
-     bounds = (0, np.inf)
+@@ -22,7 +22,7 @@
 
      low, up = bounds
--    x = np.zeros([m, 1]) + 0.5
-+    x = np.zeros([m, 1]) + 14.740575111153175
+     x = np.zeros([m, 1])
+-    l = 0.001
++    l = -1.171066991131906
 
-     for k in range(max_iter):  # heavy on matrix operations
-         for i in range(m):
+     for k in range(5000):  # heavy on matrix operations
+         g0 = p*x + q
 
 # mutant 39
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -24,7 +24,7 @@
-     for k in range(max_iter):  # heavy on matrix operations
-         for i in range(m):
-             tmpx = x.copy()
--            tmpx[i, 0] = 0
-+            tmpx[i, 0] = -12.102936750012134
-             temp = (p[i, :] * tmpx) + q[i]
-             # if temp > 0 and x[i] == 0:
-                 # continue
+@@ -25,7 +25,7 @@
+     l = 0.001
+
+     for k in range(5000):  # heavy on matrix operations
+-        g0 = p*x + q
++        g0 = p*x - q
+         # saving previous x
+         x = x - l * g0
+         x[x < low] = low
 
 # mutant 40
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -24,7 +24,7 @@
+@@ -25,7 +25,7 @@
+     l = 0.001
+
+     for k in range(5000):  # heavy on matrix operations
+-        g0 = p*x + q
++        g0 =-7.297506581680789*p*x + q
+         # saving previous x
+         x = x - l * g0
+         x[x < low] = low
+
+# mutant 42
+--- algorithms\SQP_L2_gv.py
++++ algorithms\SQP_L2_gv.py
+@@ -25,7 +25,7 @@
+     l = 0.001
+
+     for k in range(5000):  # heavy on matrix operations
+-        g0 = p*x + q
++        g0 = p*9.56689389047528*x + q
+         # saving previous x
+         x = x - l * g0
+         x[x < low] = low
+
+# mutant 43
+--- algorithms\SQP_L2_gv.py
++++ algorithms\SQP_L2_gv.py
+@@ -25,7 +25,7 @@
+     l = 0.001
+
+     for k in range(5000):  # heavy on matrix operations
+-        g0 = p*x + q
++        g0 = p*x-6.203075403542727 + q
+         # saving previous x
+         x = x - l * g0
+         x[x < low] = low
+
+# mutant 44
+--- algorithms\SQP_L2_gv.py
++++ algorithms\SQP_L2_gv.py
+@@ -25,7 +25,7 @@
+     l = 0.001
+
+     for k in range(5000):  # heavy on matrix operations
+-        g0 = p*x + q
++        g0 = p*x +3.7197897523324426*q
+         # saving previous x
+         x = x - l * g0
+         x[x < low] = low
+
+# mutant 45
+--- algorithms\SQP_L2_gv.py
++++ algorithms\SQP_L2_gv.py
+@@ -25,7 +25,7 @@
+     l = 0.001
+
+     for k in range(5000):  # heavy on matrix operations
+-        g0 = p*x + q
++        g0 = p*x +q+9.340733134343802
+         # saving previous x
+         x = x - l * g0
+         x[x < low] = low
+
+# mutant 47
+--- algorithms\SQP_L2_gv.py
++++ algorithms\SQP_L2_gv.py
+@@ -27,7 +27,7 @@
+     for k in range(5000):  # heavy on matrix operations
+         g0 = p*x + q
+         # saving previous x
+-        x = x - l * g0
++        x = x + l * g0
+         x[x < low] = low
+         x[x > up] = up
+
+
+# mutant 48
+--- algorithms\SQP_L2_gv.py
++++ algorithms\SQP_L2_gv.py
+@@ -27,7 +27,7 @@
+     for k in range(5000):  # heavy on matrix operations
+         g0 = p*x + q
+         # saving previous x
+-        x = x - l * g0
++        x = x - l / g0
+         x[x < low] = low
+         x[x > up] = up
+
+
+# mutant 49
+--- algorithms\SQP_L2_gv.py
++++ algorithms\SQP_L2_gv.py
+@@ -27,7 +27,7 @@
+     for k in range(5000):  # heavy on matrix operations
+         g0 = p*x + q
+         # saving previous x
+-        x = x - l * g0
++        x =-4.1362563629458755*x - l * g0
+         x[x < low] = low
+         x[x > up] = up
+
+
+# mutant 50
+--- algorithms\SQP_L2_gv.py
++++ algorithms\SQP_L2_gv.py
+@@ -27,7 +27,7 @@
+     for k in range(5000):  # heavy on matrix operations
+         g0 = p*x + q
+         # saving previous x
+-        x = x - l * g0
++        x =x+14.142018931570053 - l * g0
+         x[x < low] = low
+         x[x > up] = up
+
+
+# mutant 51
+--- algorithms\SQP_L2_gv.py
++++ algorithms\SQP_L2_gv.py
+@@ -27,7 +27,7 @@
+     for k in range(5000):  # heavy on matrix operations
+         g0 = p*x + q
+         # saving previous x
+-        x = x - l * g0
++        x = x -7.279316257371637*l * g0
+         x[x < low] = low
+         x[x > up] = up
+
+
+# mutant 52
+--- algorithms\SQP_L2_gv.py
++++ algorithms\SQP_L2_gv.py
+@@ -27,7 +27,7 @@
+     for k in range(5000):  # heavy on matrix operations
+         g0 = p*x + q
+         # saving previous x
+-        x = x - l * g0
++        x = x -l+16.196916401510105 * g0
+         x[x < low] = low
+         x[x > up] = up
+
+
+# mutant 53
+--- algorithms\SQP_L2_gv.py
++++ algorithms\SQP_L2_gv.py
+@@ -27,7 +27,7 @@
+     for k in range(5000):  # heavy on matrix operations
+         g0 = p*x + q
+         # saving previous x
+-        x = x - l * g0
++        x = x - l *-1.4655349427918778*g0
+         x[x < low] = low
+         x[x > up] = up
+
+
+# mutant 54
+--- algorithms\SQP_L2_gv.py
++++ algorithms\SQP_L2_gv.py
+@@ -27,7 +27,7 @@
+     for k in range(5000):  # heavy on matrix operations
+         g0 = p*x + q
+         # saving previous x
+-        x = x - l * g0
++        x = x - l *g0-11.834139583548502
+         x[x < low] = low
+         x[x > up] = up
+
+
+# mutant 56
+--- algorithms\SQP_L2_gv.py
++++ algorithms\SQP_L2_gv.py
+@@ -28,7 +28,7 @@
+         g0 = p*x + q
+         # saving previous x
+         x = x - l * g0
+-        x[x < low] = low
++        x[x <= low] = low
+         x[x > up] = up
+
+
+
+# mutant 57
+--- algorithms\SQP_L2_gv.py
++++ algorithms\SQP_L2_gv.py
+@@ -28,7 +28,7 @@
+         g0 = p*x + q
+         # saving previous x
+         x = x - l * g0
+-        x[x < low] = low
++        x[x < low] = None
+         x[x > up] = up
+
+
+
+# mutant 58
+--- algorithms\SQP_L2_gv.py
++++ algorithms\SQP_L2_gv.py
+@@ -29,7 +29,7 @@
+         # saving previous x
+         x = x - l * g0
+         x[x < low] = low
+-        x[x > up] = up
++        x[x >= up] = up
+
+
+         dual = -(0.5*x.T*(p*x) + q.T*x)
+
+# mutant 59
+--- algorithms\SQP_L2_gv.py
++++ algorithms\SQP_L2_gv.py
+@@ -29,7 +29,7 @@
+         # saving previous x
+         x = x - l * g0
+         x[x < low] = low
+-        x[x > up] = up
++        x[x > up] = None
+
+
+         dual = -(0.5*x.T*(p*x) + q.T*x)
+
+# mutant 60
+--- algorithms\SQP_L2_gv.py
++++ algorithms\SQP_L2_gv.py
+@@ -32,7 +32,7 @@
+         x[x > up] = up
+
+
+-        dual = -(0.5*x.T*(p*x) + q.T*x)
++        dual = +(0.5*x.T*(p*x) + q.T*x)
+         dual = dual.item()
+         y1 = np.reshape(y, (-1, 1))
+         lambda1 = np.multiply(x, y1)
+
+# mutant 61
+--- algorithms\SQP_L2_gv.py
++++ algorithms\SQP_L2_gv.py
+@@ -32,7 +32,7 @@
+         x[x > up] = up
+
+
+-        dual = -(0.5*x.T*(p*x) + q.T*x)
++        dual = -(19.88492421292387*x.T*(p*x) + q.T*x)
+         dual = dual.item()
+         y1 = np.reshape(y, (-1, 1))
+         lambda1 = np.multiply(x, y1)
+
+# mutant 62
+--- algorithms\SQP_L2_gv.py
++++ algorithms\SQP_L2_gv.py
+@@ -32,7 +32,7 @@
+         x[x > up] = up
+
+
+-        dual = -(0.5*x.T*(p*x) + q.T*x)
++        dual = -(0.5/x.T*(p*x) + q.T*x)
+         dual = dual.item()
+         y1 = np.reshape(y, (-1, 1))
+         lambda1 = np.multiply(x, y1)
+
+# mutant 65
+--- algorithms\SQP_L2_gv.py
++++ algorithms\SQP_L2_gv.py
+@@ -32,7 +32,7 @@
+         x[x > up] = up
+
+
+-        dual = -(0.5*x.T*(p*x) + q.T*x)
++        dual = -(0.5*x.T*(p*x) - q.T*x)
+         dual = dual.item()
+         y1 = np.reshape(y, (-1, 1))
+         lambda1 = np.multiply(x, y1)
+
+# mutant 67
+--- algorithms\SQP_L2_gv.py
++++ algorithms\SQP_L2_gv.py
+@@ -32,7 +32,7 @@
+         x[x > up] = up
+
+
+-        dual = -(0.5*x.T*(p*x) + q.T*x)
++        dual = -(0.5*x.T*(-6.873622158037243*p*x) + q.T*x)
+         dual = dual.item()
+         y1 = np.reshape(y, (-1, 1))
+         lambda1 = np.multiply(x, y1)
+
+# mutant 69
+--- algorithms\SQP_L2_gv.py
++++ algorithms\SQP_L2_gv.py
+@@ -32,7 +32,7 @@
+         x[x > up] = up
+
+
+-        dual = -(0.5*x.T*(p*x) + q.T*x)
++        dual = -(0.5*x.T*(p*6.642105528033233*x) + q.T*x)
+         dual = dual.item()
+         y1 = np.reshape(y, (-1, 1))
+         lambda1 = np.multiply(x, y1)
+
+# mutant 70
+--- algorithms\SQP_L2_gv.py
++++ algorithms\SQP_L2_gv.py
+@@ -32,7 +32,7 @@
+         x[x > up] = up
+
+
+-        dual = -(0.5*x.T*(p*x) + q.T*x)
++        dual = -(0.5*x.T*(p*x+7.490379095869097) + q.T*x)
+         dual = dual.item()
+         y1 = np.reshape(y, (-1, 1))
+         lambda1 = np.multiply(x, y1)
+
+# mutant 71
+--- algorithms\SQP_L2_gv.py
++++ algorithms\SQP_L2_gv.py
+@@ -32,7 +32,7 @@
+         x[x > up] = up
+
+
+-        dual = -(0.5*x.T*(p*x) + q.T*x)
++        dual = -(0.5*x.T*(p*x) + q.T*1.528608092194285*x)
+         dual = dual.item()
+         y1 = np.reshape(y, (-1, 1))
+         lambda1 = np.multiply(x, y1)
+
+# mutant 72
+--- algorithms\SQP_L2_gv.py
++++ algorithms\SQP_L2_gv.py
+@@ -32,7 +32,7 @@
+         x[x > up] = up
+
+
+-        dual = -(0.5*x.T*(p*x) + q.T*x)
++        dual = -(0.5*x.T*(p*x) + q.T*x+3.1342097768214483)
+         dual = dual.item()
+         y1 = np.reshape(y, (-1, 1))
+         lambda1 = np.multiply(x, y1)
+
+# mutant 74
+--- algorithms\SQP_L2_gv.py
++++ algorithms\SQP_L2_gv.py
+@@ -33,7 +33,7 @@
+
+
+         dual = -(0.5*x.T*(p*x) + q.T*x)
+-        dual = dual.item()
++        dual = None
+         y1 = np.reshape(y, (-1, 1))
+         lambda1 = np.multiply(x, y1)
+         w = np.dot(X.T, lambda1)
+
+# mutant 78
+--- algorithms\SQP_L2_gv.py
++++ algorithms\SQP_L2_gv.py
+@@ -34,7 +34,7 @@
+
+         dual = -(0.5*x.T*(p*x) + q.T*x)
+         dual = dual.item()
+-        y1 = np.reshape(y, (-1, 1))
++        y1 = np.reshape(-21.60317365907783*y, (-1, 1))
+         lambda1 = np.multiply(x, y1)
+         w = np.dot(X.T, lambda1)
+         w = np.matrix(w).reshape(-1, 1)
+
+# mutant 79
+--- algorithms\SQP_L2_gv.py
++++ algorithms\SQP_L2_gv.py
+@@ -34,7 +34,7 @@
+
+         dual = -(0.5*x.T*(p*x) + q.T*x)
+         dual = dual.item()
+-        y1 = np.reshape(y, (-1, 1))
++        y1 = np.reshape(y+6.272984761865288, (-1, 1))
+         lambda1 = np.multiply(x, y1)
+         w = np.dot(X.T, lambda1)
+         w = np.matrix(w).reshape(-1, 1)
+
+# mutant 81
+--- algorithms\SQP_L2_gv.py
++++ algorithms\SQP_L2_gv.py
+@@ -35,7 +35,7 @@
+         dual = -(0.5*x.T*(p*x) + q.T*x)
+         dual = dual.item()
+         y1 = np.reshape(y, (-1, 1))
+-        lambda1 = np.multiply(x, y1)
++        lambda1 = np.multiply(1.85231062403761*x, y1)
+         w = np.dot(X.T, lambda1)
+         w = np.matrix(w).reshape(-1, 1)
+         tmp = np.maximum(1-np.multiply(y1, X*w),0)
+
+# mutant 82
+--- algorithms\SQP_L2_gv.py
++++ algorithms\SQP_L2_gv.py
+@@ -35,7 +35,7 @@
+         dual = -(0.5*x.T*(p*x) + q.T*x)
+         dual = dual.item()
+         y1 = np.reshape(y, (-1, 1))
+-        lambda1 = np.multiply(x, y1)
++        lambda1 = np.multiply(x+15.781876400436891, y1)
+         w = np.dot(X.T, lambda1)
+         w = np.matrix(w).reshape(-1, 1)
+         tmp = np.maximum(1-np.multiply(y1, X*w),0)
+
+# mutant 83
+--- algorithms\SQP_L2_gv.py
++++ algorithms\SQP_L2_gv.py
+@@ -35,7 +35,7 @@
+         dual = -(0.5*x.T*(p*x) + q.T*x)
+         dual = dual.item()
+         y1 = np.reshape(y, (-1, 1))
+-        lambda1 = np.multiply(x, y1)
++        lambda1 = np.multiply(x,-9.055737441087201*y1)
+         w = np.dot(X.T, lambda1)
+         w = np.matrix(w).reshape(-1, 1)
+         tmp = np.maximum(1-np.multiply(y1, X*w),0)
+
+# mutant 84
+--- algorithms\SQP_L2_gv.py
++++ algorithms\SQP_L2_gv.py
+@@ -35,7 +35,7 @@
+         dual = -(0.5*x.T*(p*x) + q.T*x)
+         dual = dual.item()
+         y1 = np.reshape(y, (-1, 1))
+-        lambda1 = np.multiply(x, y1)
++        lambda1 = np.multiply(x,y1+11.633121069406496)
+         w = np.dot(X.T, lambda1)
+         w = np.matrix(w).reshape(-1, 1)
+         tmp = np.maximum(1-np.multiply(y1, X*w),0)
+
+# mutant 86
+--- algorithms\SQP_L2_gv.py
++++ algorithms\SQP_L2_gv.py
+@@ -36,7 +36,7 @@
+         dual = dual.item()
+         y1 = np.reshape(y, (-1, 1))
+         lambda1 = np.multiply(x, y1)
+-        w = np.dot(X.T, lambda1)
++        w = np.dot(X.T,-0.16147298308808328*lambda1)
+         w = np.matrix(w).reshape(-1, 1)
+         tmp = np.maximum(1-np.multiply(y1, X*w),0)
+         primal = 0.5*np.linalg.norm(w)**2 + 1 * np.sum(tmp)
+
+# mutant 87
+--- algorithms\SQP_L2_gv.py
++++ algorithms\SQP_L2_gv.py
+@@ -36,7 +36,7 @@
+         dual = dual.item()
+         y1 = np.reshape(y, (-1, 1))
+         lambda1 = np.multiply(x, y1)
+-        w = np.dot(X.T, lambda1)
++        w = np.dot(X.T,lambda1-4.945343614754965)
+         w = np.matrix(w).reshape(-1, 1)
+         tmp = np.maximum(1-np.multiply(y1, X*w),0)
+         primal = 0.5*np.linalg.norm(w)**2 + 1 * np.sum(tmp)
+
+# mutant 93
+--- algorithms\SQP_L2_gv.py
++++ algorithms\SQP_L2_gv.py
+@@ -38,7 +38,7 @@
+         lambda1 = np.multiply(x, y1)
+         w = np.dot(X.T, lambda1)
+         w = np.matrix(w).reshape(-1, 1)
+-        tmp = np.maximum(1-np.multiply(y1, X*w),0)
++        tmp = np.maximum(-19.153538720945825-np.multiply(y1, X*w),0)
+         primal = 0.5*np.linalg.norm(w)**2 + 1 * np.sum(tmp)
+         primal = primal.item()
+
+
+# mutant 94
+--- algorithms\SQP_L2_gv.py
++++ algorithms\SQP_L2_gv.py
+@@ -38,7 +38,7 @@
+         lambda1 = np.multiply(x, y1)
+         w = np.dot(X.T, lambda1)
+         w = np.matrix(w).reshape(-1, 1)
+-        tmp = np.maximum(1-np.multiply(y1, X*w),0)
++        tmp = np.maximum(1+np.multiply(y1, X*w),0)
+         primal = 0.5*np.linalg.norm(w)**2 + 1 * np.sum(tmp)
+         primal = primal.item()
+
+
+# mutant 96
+--- algorithms\SQP_L2_gv.py
++++ algorithms\SQP_L2_gv.py
+@@ -38,7 +38,7 @@
+         lambda1 = np.multiply(x, y1)
+         w = np.dot(X.T, lambda1)
+         w = np.matrix(w).reshape(-1, 1)
+-        tmp = np.maximum(1-np.multiply(y1, X*w),0)
++        tmp = np.maximum(1-np.multiply(4.712597718983899*y1, X*w),0)
+         primal = 0.5*np.linalg.norm(w)**2 + 1 * np.sum(tmp)
+         primal = primal.item()
+
+
+# mutant 97
+--- algorithms\SQP_L2_gv.py
++++ algorithms\SQP_L2_gv.py
+@@ -38,7 +38,7 @@
+         lambda1 = np.multiply(x, y1)
+         w = np.dot(X.T, lambda1)
+         w = np.matrix(w).reshape(-1, 1)
+-        tmp = np.maximum(1-np.multiply(y1, X*w),0)
++        tmp = np.maximum(1-np.multiply(y1-3.169209544241994, X*w),0)
+         primal = 0.5*np.linalg.norm(w)**2 + 1 * np.sum(tmp)
+         primal = primal.item()
+
+
+# mutant 98
+--- algorithms\SQP_L2_gv.py
++++ algorithms\SQP_L2_gv.py
+@@ -38,7 +38,7 @@
+         lambda1 = np.multiply(x, y1)
+         w = np.dot(X.T, lambda1)
+         w = np.matrix(w).reshape(-1, 1)
+-        tmp = np.maximum(1-np.multiply(y1, X*w),0)
++        tmp = np.maximum(1-np.multiply(y1, X*w),-6.833480438856093)
+         primal = 0.5*np.linalg.norm(w)**2 + 1 * np.sum(tmp)
+         primal = primal.item()
+
+
+# mutant 100
+--- algorithms\SQP_L2_gv.py
++++ algorithms\SQP_L2_gv.py
+@@ -39,7 +39,7 @@
+         w = np.dot(X.T, lambda1)
+         w = np.matrix(w).reshape(-1, 1)
+         tmp = np.maximum(1-np.multiply(y1, X*w),0)
+-        primal = 0.5*np.linalg.norm(w)**2 + 1 * np.sum(tmp)
++        primal = 15.866047707473795*np.linalg.norm(w)**2 + 1 * np.sum(tmp)
+         primal = primal.item()
+
+         #if k % 10 == 0:
+
+# mutant 101
+--- algorithms\SQP_L2_gv.py
++++ algorithms\SQP_L2_gv.py
+@@ -39,7 +39,7 @@
+         w = np.dot(X.T, lambda1)
+         w = np.matrix(w).reshape(-1, 1)
+         tmp = np.maximum(1-np.multiply(y1, X*w),0)
+-        primal = 0.5*np.linalg.norm(w)**2 + 1 * np.sum(tmp)
++        primal = 0.5/np.linalg.norm(w)**2 + 1 * np.sum(tmp)
+         primal = primal.item()
+
+         #if k % 10 == 0:
+
+# mutant 102
+--- algorithms\SQP_L2_gv.py
++++ algorithms\SQP_L2_gv.py
+@@ -39,7 +39,7 @@
+         w = np.dot(X.T, lambda1)
+         w = np.matrix(w).reshape(-1, 1)
+         tmp = np.maximum(1-np.multiply(y1, X*w),0)
+-        primal = 0.5*np.linalg.norm(w)**2 + 1 * np.sum(tmp)
++        primal = 0.5*np.linalg.norm(w)*2 + 1 * np.sum(tmp)
+         primal = primal.item()
+
+         #if k % 10 == 0:
+
+# mutant 103
+--- algorithms\SQP_L2_gv.py
++++ algorithms\SQP_L2_gv.py
+@@ -39,7 +39,7 @@
+         w = np.dot(X.T, lambda1)
+         w = np.matrix(w).reshape(-1, 1)
+         tmp = np.maximum(1-np.multiply(y1, X*w),0)
+-        primal = 0.5*np.linalg.norm(w)**2 + 1 * np.sum(tmp)
++        primal = 0.5*np.linalg.norm(w)**8.060531112368846 + 1 * np.sum(tmp)
+         primal = primal.item()
+
+         #if k % 10 == 0:
+
+# mutant 104
+--- algorithms\SQP_L2_gv.py
++++ algorithms\SQP_L2_gv.py
+@@ -39,7 +39,7 @@
+         w = np.dot(X.T, lambda1)
+         w = np.matrix(w).reshape(-1, 1)
+         tmp = np.maximum(1-np.multiply(y1, X*w),0)
+-        primal = 0.5*np.linalg.norm(w)**2 + 1 * np.sum(tmp)
++        primal = 0.5*np.linalg.norm(w)**2 - 1 * np.sum(tmp)
+         primal = primal.item()
+
+         #if k % 10 == 0:
+
+# mutant 105
+--- algorithms\SQP_L2_gv.py
++++ algorithms\SQP_L2_gv.py
+@@ -39,7 +39,7 @@
+         w = np.dot(X.T, lambda1)
+         w = np.matrix(w).reshape(-1, 1)
+         tmp = np.maximum(1-np.multiply(y1, X*w),0)
+-        primal = 0.5*np.linalg.norm(w)**2 + 1 * np.sum(tmp)
++        primal = 0.5*np.linalg.norm(w)**2 + 3.9491228058774004 * np.sum(tmp)
+         primal = primal.item()
+
+         #if k % 10 == 0:
+
+# mutant 106
+--- algorithms\SQP_L2_gv.py
++++ algorithms\SQP_L2_gv.py
+@@ -39,7 +39,7 @@
+         w = np.dot(X.T, lambda1)
+         w = np.matrix(w).reshape(-1, 1)
+         tmp = np.maximum(1-np.multiply(y1, X*w),0)
+-        primal = 0.5*np.linalg.norm(w)**2 + 1 * np.sum(tmp)
++        primal = 0.5*np.linalg.norm(w)**2 + 1 / np.sum(tmp)
+         primal = primal.item()
+
+         #if k % 10 == 0:
+
+# mutant 108
+--- algorithms\SQP_L2_gv.py
++++ algorithms\SQP_L2_gv.py
+@@ -40,7 +40,7 @@
+         w = np.matrix(w).reshape(-1, 1)
+         tmp = np.maximum(1-np.multiply(y1, X*w),0)
+         primal = 0.5*np.linalg.norm(w)**2 + 1 * np.sum(tmp)
+-        primal = primal.item()
++        primal = None
+
+         #if k % 10 == 0:
+         #    print('GD:', np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)))
+
+# mutant 111
+--- algorithms\SQP_L2_gv.py
++++ algorithms\SQP_L2_gv.py
+@@ -48,7 +48,7 @@
+     for k in range(max_iter):  # heavy on matrix operations
+         for i in range(m):
+             tmpx = x.copy()
+-            tmpx[i, 0] = 0
++            tmpx[i, 0] = -2.031515571040976
+             temp = (p[i, :] * tmpx) + q[i]
+             # if temp > 0 and x[i] == 0:
+                 # continue
+
+# mutant 112
+--- algorithms\SQP_L2_gv.py
++++ algorithms\SQP_L2_gv.py
+@@ -48,7 +48,7 @@
      for k in range(max_iter):  # heavy on matrix operations
          for i in range(m):
              tmpx = x.copy()
@@ -271,10 +860,10 @@
              # if temp > 0 and x[i] == 0:
                  # continue
 
-# mutant 42
+# mutant 114
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -25,7 +25,7 @@
+@@ -49,7 +49,7 @@
          for i in range(m):
              tmpx = x.copy()
              tmpx[i, 0] = 0
@@ -284,36 +873,36 @@
                  # continue
              temp = temp.item()
 
-# mutant 43
+# mutant 115
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -25,7 +25,7 @@
+@@ -49,7 +49,7 @@
          for i in range(m):
              tmpx = x.copy()
              tmpx[i, 0] = 0
 -            temp = (p[i, :] * tmpx) + q[i]
-+            temp = (p[i, :] *-16.740860656429756*tmpx) + q[i]
++            temp = (p[i, :] *7.108715253123203*tmpx) + q[i]
              # if temp > 0 and x[i] == 0:
                  # continue
              temp = temp.item()
 
-# mutant 44
+# mutant 116
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -25,7 +25,7 @@
+@@ -49,7 +49,7 @@
          for i in range(m):
              tmpx = x.copy()
              tmpx[i, 0] = 0
 -            temp = (p[i, :] * tmpx) + q[i]
-+            temp = (p[i, :] *tmpx+11.96008673633251) + q[i]
++            temp = (p[i, :] *tmpx+12.185417345707066) + q[i]
              # if temp > 0 and x[i] == 0:
                  # continue
              temp = temp.item()
 
-# mutant 47
+# mutant 119
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -29,7 +29,7 @@
+@@ -53,7 +53,7 @@
              # if temp > 0 and x[i] == 0:
                  # continue
              temp = temp.item()
@@ -321,183 +910,144 @@
 +            if p[i, i] >= 0:
                  xi = -(temp / p[i, i]).item()
                  xi = np.maximum(low, xi)
-                 xi = np.minimum(up, xi)
+             elif p[i, i] < 0:
 
-# mutant 49
+# mutant 120
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -30,7 +30,7 @@
+@@ -53,7 +53,7 @@
+             # if temp > 0 and x[i] == 0:
+                 # continue
+             temp = temp.item()
+-            if p[i, i] > 0:
++            if p[i, i] > -4.59180509521547:
+                 xi = -(temp / p[i, i]).item()
+                 xi = np.maximum(low, xi)
+             elif p[i, i] < 0:
+
+# mutant 121
+--- algorithms\SQP_L2_gv.py
++++ algorithms\SQP_L2_gv.py
+@@ -54,7 +54,7 @@
                  # continue
              temp = temp.item()
              if p[i, i] > 0:
 -                xi = -(temp / p[i, i]).item()
 +                xi = +(temp / p[i, i]).item()
                  xi = np.maximum(low, xi)
-                 xi = np.minimum(up, xi)
              elif p[i, i] < 0:
+                 xi = -1
 
-# mutant 50
+# mutant 122
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -30,7 +30,7 @@
+@@ -54,7 +54,7 @@
                  # continue
              temp = temp.item()
              if p[i, i] > 0:
 -                xi = -(temp / p[i, i]).item()
 +                xi = -(temp * p[i, i]).item()
                  xi = np.maximum(low, xi)
-                 xi = np.minimum(up, xi)
              elif p[i, i] < 0:
+                 xi = -1
 
-# mutant 52
+# mutant 124
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -31,7 +31,7 @@
+@@ -55,7 +55,7 @@
              temp = temp.item()
              if p[i, i] > 0:
                  xi = -(temp / p[i, i]).item()
 -                xi = np.maximum(low, xi)
-+                xi = np.maximum(5.6654770381688415*low, xi)
-                 xi = np.minimum(up, xi)
++                xi = np.maximum(-26.08812517964942*low, xi)
              elif p[i, i] < 0:
                  xi = -1
+                 print('error')
 
-# mutant 53
+# mutant 125
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -31,7 +31,7 @@
+@@ -55,7 +55,7 @@
              temp = temp.item()
              if p[i, i] > 0:
                  xi = -(temp / p[i, i]).item()
 -                xi = np.maximum(low, xi)
-+                xi = np.maximum(low-27.28297286078051, xi)
-                 xi = np.minimum(up, xi)
++                xi = np.maximum(low-6.341764494066044, xi)
              elif p[i, i] < 0:
                  xi = -1
+                 print('error')
 
-# mutant 54
+# mutant 126
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -31,7 +31,7 @@
+@@ -55,7 +55,7 @@
              temp = temp.item()
              if p[i, i] > 0:
                  xi = -(temp / p[i, i]).item()
 -                xi = np.maximum(low, xi)
-+                xi = np.maximum(low,-2.3874560162580263*xi)
-                 xi = np.minimum(up, xi)
++                xi = np.maximum(low,-8.0842149838248*xi)
              elif p[i, i] < 0:
                  xi = -1
+                 print('error')
 
-# mutant 55
+# mutant 127
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -31,7 +31,7 @@
+@@ -55,7 +55,7 @@
              temp = temp.item()
              if p[i, i] > 0:
                  xi = -(temp / p[i, i]).item()
 -                xi = np.maximum(low, xi)
-+                xi = np.maximum(low,xi+5.24785628772349)
-                 xi = np.minimum(up, xi)
-             elif p[i, i] < 0:
-                 xi = -1
-
-# mutant 57
---- algorithms\SQP_L2_gv.py
-+++ algorithms\SQP_L2_gv.py
-@@ -32,7 +32,7 @@
-             if p[i, i] > 0:
-                 xi = -(temp / p[i, i]).item()
-                 xi = np.maximum(low, xi)
--                xi = np.minimum(up, xi)
-+                xi = np.minimum(-8.478056210072996*up, xi)
++                xi = np.maximum(low,xi+6.950031265658632)
              elif p[i, i] < 0:
                  xi = -1
                  print('error')
 
-# mutant 58
+# mutant 128
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -32,7 +32,7 @@
+@@ -55,7 +55,7 @@
+             temp = temp.item()
              if p[i, i] > 0:
                  xi = -(temp / p[i, i]).item()
-                 xi = np.maximum(low, xi)
--                xi = np.minimum(up, xi)
-+                xi = np.minimum(up-25.60285826963394, xi)
-             elif p[i, i] < 0:
-                 xi = -1
-                 print('error')
-
-# mutant 59
---- algorithms\SQP_L2_gv.py
-+++ algorithms\SQP_L2_gv.py
-@@ -32,7 +32,7 @@
-             if p[i, i] > 0:
-                 xi = -(temp / p[i, i]).item()
-                 xi = np.maximum(low, xi)
--                xi = np.minimum(up, xi)
-+                xi = np.minimum(up,4.762069719526436*xi)
-             elif p[i, i] < 0:
-                 xi = -1
-                 print('error')
-
-# mutant 60
---- algorithms\SQP_L2_gv.py
-+++ algorithms\SQP_L2_gv.py
-@@ -32,7 +32,7 @@
-             if p[i, i] > 0:
-                 xi = -(temp / p[i, i]).item()
-                 xi = np.maximum(low, xi)
--                xi = np.minimum(up, xi)
-+                xi = np.minimum(up,xi+0.7189620789332823)
-             elif p[i, i] < 0:
-                 xi = -1
-                 print('error')
-
-# mutant 61
---- algorithms\SQP_L2_gv.py
-+++ algorithms\SQP_L2_gv.py
-@@ -32,7 +32,7 @@
-             if p[i, i] > 0:
-                 xi = -(temp / p[i, i]).item()
-                 xi = np.maximum(low, xi)
--                xi = np.minimum(up, xi)
+-                xi = np.maximum(low, xi)
 +                xi = None
              elif p[i, i] < 0:
                  xi = -1
                  print('error')
 
-# mutant 62
+# mutant 129
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -33,7 +33,7 @@
+@@ -56,7 +56,7 @@
+             if p[i, i] > 0:
                  xi = -(temp / p[i, i]).item()
                  xi = np.maximum(low, xi)
-                 xi = np.minimum(up, xi)
 -            elif p[i, i] < 0:
 +            elif p[i, i] <= 0:
                  xi = -1
                  print('error')
              else:
 
-# mutant 63
+# mutant 130
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -33,7 +33,7 @@
+@@ -56,7 +56,7 @@
+             if p[i, i] > 0:
                  xi = -(temp / p[i, i]).item()
                  xi = np.maximum(low, xi)
-                 xi = np.minimum(up, xi)
 -            elif p[i, i] < 0:
-+            elif p[i, i] < -10.414154604874915:
++            elif p[i, i] < 4.837987768483639:
                  xi = -1
                  print('error')
              else:
 
-# mutant 64
+# mutant 131
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -34,7 +34,7 @@
+@@ -57,7 +57,7 @@
+                 xi = -(temp / p[i, i]).item()
                  xi = np.maximum(low, xi)
-                 xi = np.minimum(up, xi)
              elif p[i, i] < 0:
 -                xi = -1
 +                xi = +1
@@ -505,25 +1055,25 @@
              else:
                  if temp > 0:
 
-# mutant 65
+# mutant 132
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -34,7 +34,7 @@
+@@ -57,7 +57,7 @@
+                 xi = -(temp / p[i, i]).item()
                  xi = np.maximum(low, xi)
-                 xi = np.minimum(up, xi)
              elif p[i, i] < 0:
 -                xi = -1
-+                xi = -3.9580331940917115
++                xi = -3.6941923645362387
                  print('error')
              else:
                  if temp > 0:
 
-# mutant 66
+# mutant 133
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -34,7 +34,7 @@
+@@ -57,7 +57,7 @@
+                 xi = -(temp / p[i, i]).item()
                  xi = np.maximum(low, xi)
-                 xi = np.minimum(up, xi)
              elif p[i, i] < 0:
 -                xi = -1
 +                xi = None
@@ -531,11 +1081,11 @@
              else:
                  if temp > 0:
 
-# mutant 67
+# mutant 134
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -35,7 +35,7 @@
-                 xi = np.minimum(up, xi)
+@@ -58,7 +58,7 @@
+                 xi = np.maximum(low, xi)
              elif p[i, i] < 0:
                  xi = -1
 -                print('error')
@@ -544,10 +1094,10 @@
                  if temp > 0:
                      xi = low
 
-# mutant 68
+# mutant 135
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -37,7 +37,7 @@
+@@ -60,7 +60,7 @@
                  xi = -1
                  print('error')
              else:
@@ -557,23 +1107,23 @@
              x[i, 0] = xi
 
 
-# mutant 69
+# mutant 136
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -37,7 +37,7 @@
+@@ -60,7 +60,7 @@
                  xi = -1
                  print('error')
              else:
 -                if temp > 0:
-+                if temp > -10.252516654836185:
++                if temp > 9.860716024798448:
                      xi = low
              x[i, 0] = xi
 
 
-# mutant 70
+# mutant 137
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -38,7 +38,7 @@
+@@ -61,7 +61,7 @@
                  print('error')
              else:
                  if temp > 0:
@@ -583,10 +1133,10 @@
 
 
 
-# mutant 72
+# mutant 139
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -39,7 +39,7 @@
+@@ -62,7 +62,7 @@
              else:
                  if temp > 0:
                      xi = low
@@ -596,10 +1146,10 @@
 
          # for u in range(m):
 
-# mutant 73
+# mutant 140
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -67,7 +67,7 @@
+@@ -88,7 +88,7 @@
 
 
 
@@ -609,23 +1159,23 @@
          y1 = np.reshape(y, (-1, 1))
          lambda1 = np.multiply(x, y1)
 
-# mutant 74
+# mutant 141
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -67,7 +67,7 @@
+@@ -88,7 +88,7 @@
 
 
 
 -        dual = -(0.5 * x.T * (p * x) + q.T * x)
-+        dual = -(-3.5793169570102537 * x.T * (p * x) + q.T * x)
++        dual = -(-13.29703220480451 * x.T * (p * x) + q.T * x)
          dual = dual.item()
          y1 = np.reshape(y, (-1, 1))
          lambda1 = np.multiply(x, y1)
 
-# mutant 75
+# mutant 142
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -67,7 +67,7 @@
+@@ -88,7 +88,7 @@
 
 
 
@@ -635,10 +1185,10 @@
          y1 = np.reshape(y, (-1, 1))
          lambda1 = np.multiply(x, y1)
 
-# mutant 78
+# mutant 145
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -67,7 +67,7 @@
+@@ -88,7 +88,7 @@
 
 
 
@@ -648,192 +1198,192 @@
          y1 = np.reshape(y, (-1, 1))
          lambda1 = np.multiply(x, y1)
 
-# mutant 80
+# mutant 147
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -67,7 +67,7 @@
+@@ -88,7 +88,7 @@
 
 
 
 -        dual = -(0.5 * x.T * (p * x) + q.T * x)
-+        dual = -(0.5 * x.T * (-0.20696161095942633*p * x) + q.T * x)
++        dual = -(0.5 * x.T * (-9.601956271882065*p * x) + q.T * x)
          dual = dual.item()
          y1 = np.reshape(y, (-1, 1))
          lambda1 = np.multiply(x, y1)
 
-# mutant 82
+# mutant 149
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -67,7 +67,7 @@
+@@ -88,7 +88,7 @@
 
 
 
 -        dual = -(0.5 * x.T * (p * x) + q.T * x)
-+        dual = -(0.5 * x.T * (p *-2.47865963121137*x) + q.T * x)
++        dual = -(0.5 * x.T * (p *-6.529240484985102*x) + q.T * x)
          dual = dual.item()
          y1 = np.reshape(y, (-1, 1))
          lambda1 = np.multiply(x, y1)
 
-# mutant 83
+# mutant 150
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -67,7 +67,7 @@
+@@ -88,7 +88,7 @@
 
 
 
 -        dual = -(0.5 * x.T * (p * x) + q.T * x)
-+        dual = -(0.5 * x.T * (p *x+1.5337354896717483) + q.T * x)
++        dual = -(0.5 * x.T * (p *x+14.040539444947754) + q.T * x)
          dual = dual.item()
          y1 = np.reshape(y, (-1, 1))
          lambda1 = np.multiply(x, y1)
 
-# mutant 84
+# mutant 151
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -67,7 +67,7 @@
+@@ -88,7 +88,7 @@
 
 
 
 -        dual = -(0.5 * x.T * (p * x) + q.T * x)
-+        dual = -(0.5 * x.T * (p * x) + q.T *1.9474697841889184*x)
++        dual = -(0.5 * x.T * (p * x) + q.T *-6.3924715615078735*x)
          dual = dual.item()
          y1 = np.reshape(y, (-1, 1))
          lambda1 = np.multiply(x, y1)
 
-# mutant 85
+# mutant 152
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -67,7 +67,7 @@
+@@ -88,7 +88,7 @@
 
 
 
 -        dual = -(0.5 * x.T * (p * x) + q.T * x)
-+        dual = -(0.5 * x.T * (p * x) + q.T *x+12.45244085413822)
++        dual = -(0.5 * x.T * (p * x) + q.T *x-13.110091001296702)
          dual = dual.item()
          y1 = np.reshape(y, (-1, 1))
          lambda1 = np.multiply(x, y1)
 
-# mutant 91
+# mutant 158
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -69,7 +69,7 @@
+@@ -90,7 +90,7 @@
 
          dual = -(0.5 * x.T * (p * x) + q.T * x)
          dual = dual.item()
 -        y1 = np.reshape(y, (-1, 1))
-+        y1 = np.reshape(-3.8998984629054814*y, (-1, 1))
++        y1 = np.reshape(11.10420257768264*y, (-1, 1))
          lambda1 = np.multiply(x, y1)
          w = np.dot(X.T, lambda1)
          w = np.matrix(w).reshape(-1, 1)
 
-# mutant 92
+# mutant 159
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -69,7 +69,7 @@
+@@ -90,7 +90,7 @@
 
          dual = -(0.5 * x.T * (p * x) + q.T * x)
          dual = dual.item()
 -        y1 = np.reshape(y, (-1, 1))
-+        y1 = np.reshape(y+7.468554487381271, (-1, 1))
++        y1 = np.reshape(y+2.1701432372046794, (-1, 1))
          lambda1 = np.multiply(x, y1)
          w = np.dot(X.T, lambda1)
          w = np.matrix(w).reshape(-1, 1)
 
-# mutant 94
+# mutant 161
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -70,7 +70,7 @@
+@@ -91,7 +91,7 @@
          dual = -(0.5 * x.T * (p * x) + q.T * x)
          dual = dual.item()
          y1 = np.reshape(y, (-1, 1))
 -        lambda1 = np.multiply(x, y1)
-+        lambda1 = np.multiply(-0.627931448369925*x, y1)
++        lambda1 = np.multiply(-11.756479077467965*x, y1)
          w = np.dot(X.T, lambda1)
          w = np.matrix(w).reshape(-1, 1)
          tmp = np.maximum(1 - np.multiply(y1, X * w), 0)
 
-# mutant 95
+# mutant 162
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -70,7 +70,7 @@
+@@ -91,7 +91,7 @@
          dual = -(0.5 * x.T * (p * x) + q.T * x)
          dual = dual.item()
          y1 = np.reshape(y, (-1, 1))
 -        lambda1 = np.multiply(x, y1)
-+        lambda1 = np.multiply(x-24.84533761882649, y1)
++        lambda1 = np.multiply(x-2.636886097688613, y1)
          w = np.dot(X.T, lambda1)
          w = np.matrix(w).reshape(-1, 1)
          tmp = np.maximum(1 - np.multiply(y1, X * w), 0)
 
-# mutant 96
+# mutant 163
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -70,7 +70,7 @@
+@@ -91,7 +91,7 @@
          dual = -(0.5 * x.T * (p * x) + q.T * x)
          dual = dual.item()
          y1 = np.reshape(y, (-1, 1))
 -        lambda1 = np.multiply(x, y1)
-+        lambda1 = np.multiply(x,-0.3437382737387449*y1)
++        lambda1 = np.multiply(x,-16.67735898396107*y1)
          w = np.dot(X.T, lambda1)
          w = np.matrix(w).reshape(-1, 1)
          tmp = np.maximum(1 - np.multiply(y1, X * w), 0)
 
-# mutant 97
+# mutant 164
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -70,7 +70,7 @@
+@@ -91,7 +91,7 @@
          dual = -(0.5 * x.T * (p * x) + q.T * x)
          dual = dual.item()
          y1 = np.reshape(y, (-1, 1))
 -        lambda1 = np.multiply(x, y1)
-+        lambda1 = np.multiply(x,y1+6.261913939128244)
++        lambda1 = np.multiply(x,y1+4.9589932462497)
          w = np.dot(X.T, lambda1)
          w = np.matrix(w).reshape(-1, 1)
          tmp = np.maximum(1 - np.multiply(y1, X * w), 0)
 
-# mutant 99
+# mutant 166
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -71,7 +71,7 @@
-         dual = dual.item()
-         y1 = np.reshape(y, (-1, 1))
-         lambda1 = np.multiply(x, y1)
--        w = np.dot(X.T, lambda1)
-+        w = np.dot(X.T,3.764327961604075*lambda1)
-         w = np.matrix(w).reshape(-1, 1)
-         tmp = np.maximum(1 - np.multiply(y1, X * w), 0)
-         primal = 0.5 * np.linalg.norm(w)**2 + 1 * np.sum(np.square(tmp))
-
-# mutant 100
---- algorithms\SQP_L2_gv.py
-+++ algorithms\SQP_L2_gv.py
-@@ -71,7 +71,7 @@
+@@ -92,7 +92,7 @@
          dual = dual.item()
          y1 = np.reshape(y, (-1, 1))
          lambda1 = np.multiply(x, y1)
 -        w = np.dot(X.T, lambda1)
-+        w = np.dot(X.T,lambda1-0.5869465137718951)
++        w = np.dot(X.T,2.4396089033995825*lambda1)
          w = np.matrix(w).reshape(-1, 1)
          tmp = np.maximum(1 - np.multiply(y1, X * w), 0)
          primal = 0.5 * np.linalg.norm(w)**2 + 1 * np.sum(np.square(tmp))
 
-# mutant 106
+# mutant 167
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -73,7 +73,7 @@
+@@ -92,7 +92,7 @@
+         dual = dual.item()
+         y1 = np.reshape(y, (-1, 1))
+         lambda1 = np.multiply(x, y1)
+-        w = np.dot(X.T, lambda1)
++        w = np.dot(X.T,lambda1-7.692647202505691)
+         w = np.matrix(w).reshape(-1, 1)
+         tmp = np.maximum(1 - np.multiply(y1, X * w), 0)
+         primal = 0.5 * np.linalg.norm(w)**2 + 1 * np.sum(np.square(tmp))
+
+# mutant 173
+--- algorithms\SQP_L2_gv.py
++++ algorithms\SQP_L2_gv.py
+@@ -94,7 +94,7 @@
          lambda1 = np.multiply(x, y1)
          w = np.dot(X.T, lambda1)
          w = np.matrix(w).reshape(-1, 1)
 -        tmp = np.maximum(1 - np.multiply(y1, X * w), 0)
-+        tmp = np.maximum(9.1386807313406 - np.multiply(y1, X * w), 0)
++        tmp = np.maximum(2.984088828970541 - np.multiply(y1, X * w), 0)
          primal = 0.5 * np.linalg.norm(w)**2 + 1 * np.sum(np.square(tmp))
          primal = primal.item()
 
 
-# mutant 107
+# mutant 174
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -73,7 +73,7 @@
+@@ -94,7 +94,7 @@
          lambda1 = np.multiply(x, y1)
          w = np.dot(X.T, lambda1)
          w = np.matrix(w).reshape(-1, 1)
@@ -843,62 +1393,62 @@
          primal = primal.item()
 
 
-# mutant 109
+# mutant 176
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -73,7 +73,7 @@
+@@ -94,7 +94,7 @@
          lambda1 = np.multiply(x, y1)
          w = np.dot(X.T, lambda1)
          w = np.matrix(w).reshape(-1, 1)
 -        tmp = np.maximum(1 - np.multiply(y1, X * w), 0)
-+        tmp = np.maximum(1 - np.multiply(1.453175807532452*y1, X * w), 0)
++        tmp = np.maximum(1 - np.multiply(11.418779513267792*y1, X * w), 0)
          primal = 0.5 * np.linalg.norm(w)**2 + 1 * np.sum(np.square(tmp))
          primal = primal.item()
 
 
-# mutant 110
+# mutant 177
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -73,7 +73,7 @@
+@@ -94,7 +94,7 @@
          lambda1 = np.multiply(x, y1)
          w = np.dot(X.T, lambda1)
          w = np.matrix(w).reshape(-1, 1)
 -        tmp = np.maximum(1 - np.multiply(y1, X * w), 0)
-+        tmp = np.maximum(1 - np.multiply(y1+12.127867960472013, X * w), 0)
++        tmp = np.maximum(1 - np.multiply(y1+0.07659289304205885, X * w), 0)
          primal = 0.5 * np.linalg.norm(w)**2 + 1 * np.sum(np.square(tmp))
          primal = primal.item()
 
 
-# mutant 111
+# mutant 178
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -73,7 +73,7 @@
+@@ -94,7 +94,7 @@
          lambda1 = np.multiply(x, y1)
          w = np.dot(X.T, lambda1)
          w = np.matrix(w).reshape(-1, 1)
 -        tmp = np.maximum(1 - np.multiply(y1, X * w), 0)
-+        tmp = np.maximum(1 - np.multiply(y1, X * w), -12.724452531121305)
++        tmp = np.maximum(1 - np.multiply(y1, X * w), 1.1059912216970427)
          primal = 0.5 * np.linalg.norm(w)**2 + 1 * np.sum(np.square(tmp))
          primal = primal.item()
 
 
-# mutant 113
+# mutant 180
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -74,7 +74,7 @@
+@@ -95,7 +95,7 @@
          w = np.dot(X.T, lambda1)
          w = np.matrix(w).reshape(-1, 1)
          tmp = np.maximum(1 - np.multiply(y1, X * w), 0)
 -        primal = 0.5 * np.linalg.norm(w)**2 + 1 * np.sum(np.square(tmp))
-+        primal = 15.175231067571325 * np.linalg.norm(w)**2 + 1 * np.sum(np.square(tmp))
++        primal = 0.5711327596978407 * np.linalg.norm(w)**2 + 1 * np.sum(np.square(tmp))
          primal = primal.item()
 
          # stop criteria
 
-# mutant 114
+# mutant 181
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -74,7 +74,7 @@
+@@ -95,7 +95,7 @@
          w = np.dot(X.T, lambda1)
          w = np.matrix(w).reshape(-1, 1)
          tmp = np.maximum(1 - np.multiply(y1, X * w), 0)
@@ -908,10 +1458,10 @@
 
          # stop criteria
 
-# mutant 115
+# mutant 182
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -74,7 +74,7 @@
+@@ -95,7 +95,7 @@
          w = np.dot(X.T, lambda1)
          w = np.matrix(w).reshape(-1, 1)
          tmp = np.maximum(1 - np.multiply(y1, X * w), 0)
@@ -921,23 +1471,23 @@
 
          # stop criteria
 
-# mutant 116
+# mutant 183
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -74,7 +74,7 @@
+@@ -95,7 +95,7 @@
          w = np.dot(X.T, lambda1)
          w = np.matrix(w).reshape(-1, 1)
          tmp = np.maximum(1 - np.multiply(y1, X * w), 0)
 -        primal = 0.5 * np.linalg.norm(w)**2 + 1 * np.sum(np.square(tmp))
-+        primal = 0.5 * np.linalg.norm(w)**-1.985592171416509 + 1 * np.sum(np.square(tmp))
++        primal = 0.5 * np.linalg.norm(w)**11.140912607530133 + 1 * np.sum(np.square(tmp))
          primal = primal.item()
 
          # stop criteria
 
-# mutant 117
+# mutant 184
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -74,7 +74,7 @@
+@@ -95,7 +95,7 @@
          w = np.dot(X.T, lambda1)
          w = np.matrix(w).reshape(-1, 1)
          tmp = np.maximum(1 - np.multiply(y1, X * w), 0)
@@ -947,23 +1497,23 @@
 
          # stop criteria
 
-# mutant 118
+# mutant 185
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -74,7 +74,7 @@
+@@ -95,7 +95,7 @@
          w = np.dot(X.T, lambda1)
          w = np.matrix(w).reshape(-1, 1)
          tmp = np.maximum(1 - np.multiply(y1, X * w), 0)
 -        primal = 0.5 * np.linalg.norm(w)**2 + 1 * np.sum(np.square(tmp))
-+        primal = 0.5 * np.linalg.norm(w)**2 + 3.4399257481074113 * np.sum(np.square(tmp))
++        primal = 0.5 * np.linalg.norm(w)**2 + 2.803200259640514 * np.sum(np.square(tmp))
          primal = primal.item()
 
          # stop criteria
 
-# mutant 119
+# mutant 186
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -74,7 +74,7 @@
+@@ -95,7 +95,7 @@
          w = np.dot(X.T, lambda1)
          w = np.matrix(w).reshape(-1, 1)
          tmp = np.maximum(1 - np.multiply(y1, X * w), 0)
@@ -973,12 +1523,12 @@
 
          # stop criteria
 
-# mutant 122
+# mutant 189
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -81,7 +81,7 @@
-         # if k % 10 == 0:
-             # print(np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)))
+@@ -102,7 +102,7 @@
+         #if k % 10 == 0:
+         #    print(np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)))
          # print(np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)))
 -        if np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)) < 1e-12:
 +        if np.abs(dual + primal) / (1 + np.abs(dual) + np.abs(primal)) < 1e-12:
@@ -986,64 +1536,64 @@
              break
 
 
-# mutant 123
+# mutant 190
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -81,7 +81,7 @@
-         # if k % 10 == 0:
-             # print(np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)))
+@@ -102,7 +102,7 @@
+         #if k % 10 == 0:
+         #    print(np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)))
          # print(np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)))
 -        if np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)) < 1e-12:
-+        if np.abs(-9.634882210611698*dual - primal) / (1 + np.abs(dual) + np.abs(primal)) < 1e-12:
++        if np.abs(2.0344225273271697*dual - primal) / (1 + np.abs(dual) + np.abs(primal)) < 1e-12:
              #print('success')
              break
 
 
-# mutant 124
+# mutant 191
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -81,7 +81,7 @@
-         # if k % 10 == 0:
-             # print(np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)))
+@@ -102,7 +102,7 @@
+         #if k % 10 == 0:
+         #    print(np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)))
          # print(np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)))
 -        if np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)) < 1e-12:
-+        if np.abs(dual+5.959116059480909 - primal) / (1 + np.abs(dual) + np.abs(primal)) < 1e-12:
++        if np.abs(dual-5.302291789369652 - primal) / (1 + np.abs(dual) + np.abs(primal)) < 1e-12:
              #print('success')
              break
 
 
-# mutant 125
+# mutant 192
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -81,7 +81,7 @@
-         # if k % 10 == 0:
-             # print(np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)))
+@@ -102,7 +102,7 @@
+         #if k % 10 == 0:
+         #    print(np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)))
          # print(np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)))
 -        if np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)) < 1e-12:
-+        if np.abs(dual --29.809497210293365*primal) / (1 + np.abs(dual) + np.abs(primal)) < 1e-12:
++        if np.abs(dual --16.48706381792775*primal) / (1 + np.abs(dual) + np.abs(primal)) < 1e-12:
              #print('success')
              break
 
 
-# mutant 126
+# mutant 193
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -81,7 +81,7 @@
-         # if k % 10 == 0:
-             # print(np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)))
+@@ -102,7 +102,7 @@
+         #if k % 10 == 0:
+         #    print(np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)))
          # print(np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)))
 -        if np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)) < 1e-12:
-+        if np.abs(dual -primal+3.4196472574246233) / (1 + np.abs(dual) + np.abs(primal)) < 1e-12:
++        if np.abs(dual -primal+2.597563827613783) / (1 + np.abs(dual) + np.abs(primal)) < 1e-12:
              #print('success')
              break
 
 
-# mutant 127
+# mutant 194
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -81,7 +81,7 @@
-         # if k % 10 == 0:
-             # print(np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)))
+@@ -102,7 +102,7 @@
+         #if k % 10 == 0:
+         #    print(np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)))
          # print(np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)))
 -        if np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)) < 1e-12:
 +        if np.abs(dual - primal) * (1 + np.abs(dual) + np.abs(primal)) < 1e-12:
@@ -1051,25 +1601,25 @@
              break
 
 
-# mutant 128
+# mutant 195
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -81,7 +81,7 @@
-         # if k % 10 == 0:
-             # print(np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)))
+@@ -102,7 +102,7 @@
+         #if k % 10 == 0:
+         #    print(np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)))
          # print(np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)))
 -        if np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)) < 1e-12:
-+        if np.abs(dual - primal) / (18.090009159084293 + np.abs(dual) + np.abs(primal)) < 1e-12:
++        if np.abs(dual - primal) / (-9.695207555801074 + np.abs(dual) + np.abs(primal)) < 1e-12:
              #print('success')
              break
 
 
-# mutant 129
+# mutant 196
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -81,7 +81,7 @@
-         # if k % 10 == 0:
-             # print(np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)))
+@@ -102,7 +102,7 @@
+         #if k % 10 == 0:
+         #    print(np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)))
          # print(np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)))
 -        if np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)) < 1e-12:
 +        if np.abs(dual - primal) / (1 - np.abs(dual) + np.abs(primal)) < 1e-12:
@@ -1077,12 +1627,12 @@
              break
 
 
-# mutant 130
+# mutant 197
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -81,7 +81,7 @@
-         # if k % 10 == 0:
-             # print(np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)))
+@@ -102,7 +102,7 @@
+         #if k % 10 == 0:
+         #    print(np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)))
          # print(np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)))
 -        if np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)) < 1e-12:
 +        if np.abs(dual - primal) / (1 + np.abs(dual) - np.abs(primal)) < 1e-12:
@@ -1090,12 +1640,12 @@
              break
 
 
-# mutant 131
+# mutant 198
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -81,7 +81,7 @@
-         # if k % 10 == 0:
-             # print(np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)))
+@@ -102,7 +102,7 @@
+         #if k % 10 == 0:
+         #    print(np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)))
          # print(np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)))
 -        if np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)) < 1e-12:
 +        if np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)) <= 1e-12:
@@ -1103,23 +1653,23 @@
              break
 
 
-# mutant 132
+# mutant 199
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -81,7 +81,7 @@
-         # if k % 10 == 0:
-             # print(np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)))
+@@ -102,7 +102,7 @@
+         #if k % 10 == 0:
+         #    print(np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)))
          # print(np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)))
 -        if np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)) < 1e-12:
-+        if np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)) < 6.4923171888335816:
++        if np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)) < -25.749014259230155:
              #print('success')
              break
 
 
-# mutant 133
+# mutant 200
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -83,7 +83,7 @@
+@@ -104,7 +104,7 @@
          # print(np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)))
          if np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)) < 1e-12:
              #print('success')
@@ -1129,157 +1679,157 @@
      return w
 
 
-# mutant 134
+# mutant 201
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -92,7 +92,7 @@
+@@ -113,7 +113,7 @@
  class SQP_L2_gv():
 
      def fit(self, X, y):
 -        y[y == 0] = -1
 +        y[y != 0] = -1
          # add logitR to verify the correctness
-         # from sklearn.svm import LinearSVC
-         # SVM = LinearSVC(loss='squared_hinge', tol=1e-6, max_iter=100000, verbose=0).fit(X, np.array(y).ravel())
+         #from sklearn.svm import LinearSVC
+         #SVM = LinearSVC(loss='squared_hinge', tol=1e-6, max_iter=100000, verbose=0).fit(X, np.array(y).ravel())
 
-# mutant 135
+# mutant 202
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -92,7 +92,7 @@
+@@ -113,7 +113,7 @@
  class SQP_L2_gv():
 
      def fit(self, X, y):
 -        y[y == 0] = -1
-+        y[y == -0.6552249826102298] = -1
++        y[y == 4.966629425704535] = -1
          # add logitR to verify the correctness
-         # from sklearn.svm import LinearSVC
-         # SVM = LinearSVC(loss='squared_hinge', tol=1e-6, max_iter=100000, verbose=0).fit(X, np.array(y).ravel())
+         #from sklearn.svm import LinearSVC
+         #SVM = LinearSVC(loss='squared_hinge', tol=1e-6, max_iter=100000, verbose=0).fit(X, np.array(y).ravel())
 
-# mutant 136
+# mutant 203
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -92,7 +92,7 @@
+@@ -113,7 +113,7 @@
  class SQP_L2_gv():
 
      def fit(self, X, y):
 -        y[y == 0] = -1
 +        y[y == 0] = +1
          # add logitR to verify the correctness
-         # from sklearn.svm import LinearSVC
-         # SVM = LinearSVC(loss='squared_hinge', tol=1e-6, max_iter=100000, verbose=0).fit(X, np.array(y).ravel())
+         #from sklearn.svm import LinearSVC
+         #SVM = LinearSVC(loss='squared_hinge', tol=1e-6, max_iter=100000, verbose=0).fit(X, np.array(y).ravel())
 
-# mutant 137
+# mutant 204
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -92,7 +92,7 @@
+@@ -113,7 +113,7 @@
  class SQP_L2_gv():
 
      def fit(self, X, y):
 -        y[y == 0] = -1
-+        y[y == 0] = -11.09657948353789
++        y[y == 0] = --19.534186486838784
          # add logitR to verify the correctness
-         # from sklearn.svm import LinearSVC
-         # SVM = LinearSVC(loss='squared_hinge', tol=1e-6, max_iter=100000, verbose=0).fit(X, np.array(y).ravel())
+         #from sklearn.svm import LinearSVC
+         #SVM = LinearSVC(loss='squared_hinge', tol=1e-6, max_iter=100000, verbose=0).fit(X, np.array(y).ravel())
 
-# mutant 140
+# mutant 207
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -102,7 +102,7 @@
+@@ -123,7 +123,7 @@
          m, n = X.shape
          #import time
-         #t1 = time.time()
+         # t1 = time.time()
 -        w = inner_point(X, y)
-+        w = inner_point(-16.547588595909875*X, y)
-         #t2 = time.time()
-         #print(t2-t1, 's')
++        w = inner_point(-6.965127576595311*X, y)
+         # t2 = time.time()
+         # print(t2-t1, 's')
          w = np.array(w).reshape(-1)
 
-# mutant 141
+# mutant 208
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -102,7 +102,7 @@
+@@ -123,7 +123,7 @@
          m, n = X.shape
          #import time
-         #t1 = time.time()
+         # t1 = time.time()
 -        w = inner_point(X, y)
-+        w = inner_point(X-10.363669690419986, y)
-         #t2 = time.time()
-         #print(t2-t1, 's')
++        w = inner_point(X-1.323166459049425, y)
+         # t2 = time.time()
+         # print(t2-t1, 's')
          w = np.array(w).reshape(-1)
 
-# mutant 142
+# mutant 209
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -102,7 +102,7 @@
+@@ -123,7 +123,7 @@
          m, n = X.shape
          #import time
-         #t1 = time.time()
+         # t1 = time.time()
 -        w = inner_point(X, y)
-+        w = inner_point(X,1.9015028493451416*y)
-         #t2 = time.time()
-         #print(t2-t1, 's')
++        w = inner_point(X,-10.784917511646873*y)
+         # t2 = time.time()
+         # print(t2-t1, 's')
          w = np.array(w).reshape(-1)
 
-# mutant 143
+# mutant 210
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -102,7 +102,7 @@
+@@ -123,7 +123,7 @@
          m, n = X.shape
          #import time
-         #t1 = time.time()
+         # t1 = time.time()
 -        w = inner_point(X, y)
-+        w = inner_point(X,y-9.22443115070501)
-         #t2 = time.time()
-         #print(t2-t1, 's')
++        w = inner_point(X,y-10.066562865963746)
+         # t2 = time.time()
+         # print(t2-t1, 's')
          w = np.array(w).reshape(-1)
 
-# mutant 151
+# mutant 218
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -113,7 +113,7 @@
+@@ -134,7 +134,7 @@
 
-         # print('diff', np.linalg.norm(w1-w), b, b1)
+         #print('diff', np.linalg.norm(w1-w), b, b1)
 
 -        clf = Clf(w, b)
-+        clf = Clf(-4.641826994101605*w, b)
++        clf = Clf(12.881095131343216*w, b)
          # clf = Clf(w1, b1)
          return clf
 
 
-# mutant 152
+# mutant 219
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -113,7 +113,7 @@
+@@ -134,7 +134,7 @@
 
-         # print('diff', np.linalg.norm(w1-w), b, b1)
+         #print('diff', np.linalg.norm(w1-w), b, b1)
 
 -        clf = Clf(w, b)
-+        clf = Clf(w-5.524973190281571, b)
++        clf = Clf(w-4.4707842245245235, b)
          # clf = Clf(w1, b1)
          return clf
 
 
-# mutant 153
+# mutant 220
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -113,7 +113,7 @@
+@@ -134,7 +134,7 @@
 
-         # print('diff', np.linalg.norm(w1-w), b, b1)
+         #print('diff', np.linalg.norm(w1-w), b, b1)
 
 -        clf = Clf(w, b)
-+        clf = Clf(w,-5.329650583617775*b)
++        clf = Clf(w,-2.0458950316781808*b)
          # clf = Clf(w1, b1)
          return clf
 
 
-# mutant 154
+# mutant 221
 --- algorithms\SQP_L2_gv.py
 +++ algorithms\SQP_L2_gv.py
-@@ -113,7 +113,7 @@
+@@ -134,7 +134,7 @@
 
-         # print('diff', np.linalg.norm(w1-w), b, b1)
+         #print('diff', np.linalg.norm(w1-w), b, b1)
 
 -        clf = Clf(w, b)
-+        clf = Clf(w,b+5.329583132346828)
++        clf = Clf(w,b+2.444284590102396)
          # clf = Clf(w1, b1)
          return clf
