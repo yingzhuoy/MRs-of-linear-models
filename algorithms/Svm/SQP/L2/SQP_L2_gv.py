@@ -21,7 +21,7 @@ def inner_point(X, y, max_iter=5000):
     bounds = (0, np.inf)
     
     low, up = bounds
-    x = np.zeros([m, 1])
+    x = np.zeros([m, 1]) + 1
     l = 0.001
 
     for k in range(5000):  # heavy on matrix operations
@@ -42,7 +42,7 @@ def inner_point(X, y, max_iter=5000):
         primal = 0.5*np.linalg.norm(w)**2 + 1 * np.sum(tmp)
         primal = primal.item()
 
-        if k % 10 == 0:
+        if k % 100 == 0:
             print('GD:', np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)))        
 
     for k in range(max_iter):  # heavy on matrix operations
@@ -99,8 +99,8 @@ def inner_point(X, y, max_iter=5000):
         primal = primal.item()
 
         # stop criteria
-        if k % 10 == 0:
-            print(np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)))
+        if k % 100 == 0:
+            print('CD:', np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)))
         # print(np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)))
         if np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)) < 1e-12:
             #print('success')
