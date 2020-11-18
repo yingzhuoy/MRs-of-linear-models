@@ -7,7 +7,7 @@ Preconditioned Conjugate Gradient Method
 """
 
 
-def inner_point(X, y, max_iter=5000):
+def inner_point(X, y, max_iter=3000):
     m, n = X.shape
     X = np.column_stack((X, np.ones((m, 1))))
     y = y.astype(np.float64)
@@ -21,10 +21,10 @@ def inner_point(X, y, max_iter=5000):
     bounds = (0, np.inf)
     
     low, up = bounds
-    x = np.zeros([m, 1])
+    x = np.random.normal(size=(m, 1))
     l = 0.001
 
-    for k in range(5000):  # heavy on matrix operations
+    for k in range(max_iter):  # heavy on matrix operations
         g0 = p*x + q   
         # saving previous x
         x = x - l * g0
@@ -42,8 +42,8 @@ def inner_point(X, y, max_iter=5000):
         primal = 0.5*np.linalg.norm(w)**2 + 1 * np.sum(tmp)
         primal = primal.item()
 
-        #if k % 10 == 0:
-        #    print('GD:', np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)))        
+        if k % 1000 == 0:
+            print('GD:', np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)))        
 
     for k in range(max_iter):  # heavy on matrix operations
         for i in range(m):
@@ -99,8 +99,8 @@ def inner_point(X, y, max_iter=5000):
         primal = primal.item()
 
         # stop criteria
-        #if k % 10 == 0:
-        #    print(np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)))
+        if k % 1000 == 0:
+            print('CD:', np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)))
         # print(np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)))
         if np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)) < 1e-12:
             #print('success')
@@ -115,9 +115,9 @@ class SQP_L2_gv():
     def fit(self, X, y):
         y[y == 0] = -1
         # add logitR to verify the correctness
-        #from sklearn.svm import LinearSVC
-        #SVM = LinearSVC(loss='squared_hinge', tol=1e-6, max_iter=100000, verbose=0).fit(X, np.array(y).ravel())
-        #w1 = SVM.coef_; b1 = SVM.intercept_
+        from sklearn.svm import LinearSVC
+        SVM = LinearSVC(loss='squared_hinge', tol=1e-6, max_iter=100000, verbose=0).fit(X, np.array(y).ravel())
+        w1 = SVM.coef_; b1 = SVM.intercept_
         # w1 = w1.reshape(-1); b1 = b1[0] 
         #       
         m, n = X.shape
@@ -132,7 +132,7 @@ class SQP_L2_gv():
         b = w[n]
         w = w[0:n]
 
-        #print('diff', np.linalg.norm(w1-w), b, b1)
+        print('diff', np.linalg.norm(w1-w), b, b1)
 
         clf = Clf(w, b)
         # clf = Clf(w1, b1)
