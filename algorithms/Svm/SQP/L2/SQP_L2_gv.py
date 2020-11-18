@@ -7,7 +7,7 @@ Preconditioned Conjugate Gradient Method
 """
 
 
-def inner_point(X, y, max_iter=3000):
+def inner_point(X, y, max_iter=5000):
     m, n = X.shape
     X = np.column_stack((X, np.ones((m, 1))))
     y = y.astype(np.float64)
@@ -45,7 +45,7 @@ def inner_point(X, y, max_iter=3000):
         if k % 1000 == 0:
             print('GD:', np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)))        
 
-    for k in range(max_iter):  # heavy on matrix operations
+    for k in range(max_iter * 10):  # heavy on matrix operations
         for i in range(m):
             tmpx = x.copy()
             tmpx[i, 0] = 0
