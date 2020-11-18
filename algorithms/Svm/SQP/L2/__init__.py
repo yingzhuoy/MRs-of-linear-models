@@ -115,7 +115,3 @@ from algorithms.Svm.SQP.L2.SQP_L2_m113 import SQP_L2_m113
 from algorithms.Svm.SQP.L2.SQP_L2_m114 import SQP_L2_m114
 from algorithms.Svm.SQP.L2.SQP_L2_m115 import SQP_L2_m115
 from algorithms.Svm.SQP.L2.SQP_L2_m116 import SQP_L2_m116
-from algorithms.Svm.SQP.L2.SQP_L2_m117 import SQP_L2_m117
-from algorithms.Svm.SQP.L2.SQP_L2_m118 import SQP_L2_m118
-from algorithms.Svm.SQP.L2.SQP_L2_m119 import SQP_L2_m119
-from algorithms.Svm.SQP.L2.SQP_L2_m120 import SQP_L2_m120

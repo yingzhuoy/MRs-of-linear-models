@@ -42,8 +42,8 @@ def inner_point(X, y, max_iter=5000):
         primal = 0.5*np.linalg.norm(w)**2 + 1 * np.sum(tmp)
         primal = primal.item()
 
-        if k % 1000 == 0:
-            print('GD:', np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)))        
+        #if k % 1000 == 0:
+        #    print('GD:', np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)))        
 
     for k in range(max_iter):  # heavy on matrix operations
         for i in range(m):
@@ -58,7 +58,7 @@ def inner_point(X, y, max_iter=5000):
                 xi = np.maximum(low, xi)
             elif p[i, i] < 0:
                 xi = -1
-                print('error')
+                #print('error')
             else:
                 if temp > 0:
                     xi = low
@@ -99,8 +99,8 @@ def inner_point(X, y, max_iter=5000):
         primal = primal.item()
 
         # stop criteria
-        if k % 1000 == 0:
-            print('CD:', np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)))
+        #if k % 1000 == 0:
+        #    print('CD:', np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)))
         # print(np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)))
         if np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)) < 1e-12:
             #print('success')
@@ -115,24 +115,24 @@ class SQP_L2_gv():
     def fit(self, X, y):
         y[y == 0] = -1
         # add logitR to verify the correctness
-        from sklearn.svm import LinearSVC
-        SVM = LinearSVC(loss='squared_hinge', tol=1e-6, max_iter=100000, verbose=0).fit(X, np.array(y).ravel())
-        w1 = SVM.coef_; b1 = SVM.intercept_
+        #from sklearn.svm import LinearSVC
+        #SVM = LinearSVC(loss='squared_hinge', tol=1e-6, max_iter=100000, verbose=0).fit(X, np.array(y).ravel())
+        #w1 = SVM.coef_; b1 = SVM.intercept_
         # w1 = w1.reshape(-1); b1 = b1[0] 
         #       
         m, n = X.shape
         #import time
-        # t1 = time.time()
+        #t1 = time.time()
         w = inner_point(X, y)
-        # t2 = time.time()
-        # print(t2-t1, 's')
+        #t2 = time.time()
+        #print(t2-t1, 's')
         w = np.array(w).reshape(-1)
 
         # b = np.mean(y1-np.reshape(np.dot(w, np.transpose(X)), [-1, 1]))
         b = w[n]
         w = w[0:n]
 
-        print('diff', np.linalg.norm(w1-w), b, b1)
+        #print('diff', np.linalg.norm(w1-w), b, b1)
 
         clf = Clf(w, b)
         # clf = Clf(w1, b1)

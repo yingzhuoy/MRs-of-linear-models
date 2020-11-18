@@ -21,15 +21,15 @@ def inner_point(X, y, max_iter=5000):
     bounds = (0, np.inf)
     
     low, up = bounds
-    x = np.zeros([m, 1])
+    x = np.random.normal(size=(m, 1))
     l = 0.001
 
-    for k in range(5000):  # heavy on matrix operations
-        g0 = p*x + q   
-        # saving previous x
+    for k in range(max_iter * 5):  # heavy on matrix operations
 #----bug----
-#x = x - l * g0
-        x = x + l * g0
+#g0 = p*x + q
+        g0 = p*x+5.1445192792259355 + q   
+        # saving previous x
+        x = x - l * g0
         x[x < low] = low
         x[x > up] = up
 
@@ -44,7 +44,7 @@ def inner_point(X, y, max_iter=5000):
         primal = 0.5*np.linalg.norm(w)**2 + 1 * np.sum(tmp)
         primal = primal.item()
 
-        #if k % 10 == 0:
+        #if k % 1000 == 0:
         #    print('GD:', np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)))        
 
     for k in range(max_iter):  # heavy on matrix operations
@@ -60,7 +60,7 @@ def inner_point(X, y, max_iter=5000):
                 xi = np.maximum(low, xi)
             elif p[i, i] < 0:
                 xi = -1
-                print('error')
+                #print('error')
             else:
                 if temp > 0:
                     xi = low
@@ -101,8 +101,8 @@ def inner_point(X, y, max_iter=5000):
         primal = primal.item()
 
         # stop criteria
-        #if k % 10 == 0:
-        #    print(np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)))
+        #if k % 1000 == 0:
+        #    print('CD:', np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)))
         # print(np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)))
         if np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)) < 1e-12:
             #print('success')
@@ -124,10 +124,10 @@ class SQP_L2_m20():
         #       
         m, n = X.shape
         #import time
-        # t1 = time.time()
+        #t1 = time.time()
         w = inner_point(X, y)
-        # t2 = time.time()
-        # print(t2-t1, 's')
+        #t2 = time.time()
+        #print(t2-t1, 's')
         w = np.array(w).reshape(-1)
 
         # b = np.mean(y1-np.reshape(np.dot(w, np.transpose(X)), [-1, 1]))
