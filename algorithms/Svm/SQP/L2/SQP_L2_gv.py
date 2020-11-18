@@ -7,7 +7,7 @@ Preconditioned Conjugate Gradient Method
 """
 
 
-def inner_point(X, y, max_iter=3000):
+def inner_point(X, y, max_iter=5000):
     m, n = X.shape
     X = np.column_stack((X, np.ones((m, 1))))
     y = y.astype(np.float64)
@@ -24,7 +24,7 @@ def inner_point(X, y, max_iter=3000):
     x = np.random.normal(size=(m, 1))
     l = 0.001
 
-    for k in range(max_iter):  # heavy on matrix operations
+    for k in range(max_iter * 5):  # heavy on matrix operations
         g0 = p*x + q   
         # saving previous x
         x = x - l * g0

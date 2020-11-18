@@ -352,13 +352,14 @@ class LinearMRs():
                 sort3 = np.argsort(-test)
                 
                 if np.linalg.norm(w1-w) < 1e-12 and np.abs(b1-b) < 1e-15:
-                    print(np.linalg.norm(w1-w), np.abs(b1-b))
+                    print('error', np.linalg.norm(w1-w), np.abs(b1-b))
                     flag = False
                     break
 
                 if (sort1 == sort2).all() or (sort1 == sort3).all():
                     continue
                 else:
+                    print('error')
                     flag = False
                     break
                     # print(sort1, sort2, sort3)
