@@ -24,7 +24,7 @@ def inner_point(X, y, max_iter=5000):
     x = np.random.normal(size=(m, 1))
     l = 0.001
 
-    for k in range(max_iter):  # heavy on matrix operations
+    for k in range(max_iter * 5):  # heavy on matrix operations
         g0 = p*x + q   
         # saving previous x
         x = x - l * g0
@@ -45,7 +45,7 @@ def inner_point(X, y, max_iter=5000):
         if k % 1000 == 0:
             print('GD:', np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)))        
 
-    for k in range(max_iter * 10):  # heavy on matrix operations
+    for k in range(max_iter):  # heavy on matrix operations
         for i in range(m):
             tmpx = x.copy()
             tmpx[i, 0] = 0
