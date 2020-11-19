@@ -47,7 +47,7 @@ def inner_point(X, y, max_iter=5000):
         #if k % 1000 == 0:
         #    print('GD:', np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)))        
 
-    for k in range(max_iter):  # heavy on matrix operations
+    for k in range(500):  # heavy on matrix operations
         for i in range(m):
             tmpx = x.copy()
             tmpx[i, 0] = 0
@@ -123,10 +123,10 @@ class SQP_L2_m3():
         # w1 = w1.reshape(-1); b1 = b1[0] 
         #       
         m, n = X.shape
-        import time
-        t1 = time.time()
+        #import time
+        #t1 = time.time()
         w = inner_point(X, y)
-        t2 = time.time()
+        #t2 = time.time()
         #print(t2-t1, 's')
         w = np.array(w).reshape(-1)
 
