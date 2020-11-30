@@ -1,7 +1,7 @@
 import numpy as np
 from numpy import linalg
 from algorithms.clf import Clf
-import time
+#import time
 """
 Preconditioned Conjugate Gradient Method
 """
@@ -47,7 +47,7 @@ def inner_point(X, y, max_iter=5000):
         #if k % 1000 == 0:
         #    print('GD:', np.abs(dual - primal) / (1 + np.abs(dual) + np.abs(primal)))        
 
-    for k in range(max_iter):  # heavy on matrix operations
+    for k in range(500):  # heavy on matrix operations
         for i in range(m):
             tmpx = x.copy()
             tmpx[i, 0] = 0
