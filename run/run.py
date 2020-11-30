@@ -25,8 +25,17 @@ from algorithms.Svm.ADMM.L2 import *
 
 
 import numpy as np
-np.random.seed(1)
 
+
+def save_result_to_file(file_name, row, column, err):
+	rb = xlrd.open_workbook(file_name)
+	wb = xlutils.copy.copy(rb)
+	ws = wb.get_sheet('Filter1')
+	
+	ws.write(row, column + 9, err)
+
+	wb.save(file_name)
+'''
 def save_result_to_file(file_name, row, res_list, feature_list, single_res_list, err):
 	rb = xlrd.open_workbook(file_name)
 	wb = xlutils.copy.copy(rb)
@@ -49,32 +58,81 @@ def save_result_to_file(file_name, row, res_list, feature_list, single_res_list,
 	ws.write(row, 15, str_single_res)
 
 	wb.save(file_name)
-
+'''
 if __name__ == '__main__':
 
 	#n_train, n_test, n_redundant, n_classes, neg_class(算法是svm时 neg_class = -1, 算法是logreg时， neg_class = 0)
 	
+	import time
+
+	datasets = CreateDataset(240,60,0,2,0)
+	np.random.seed(1)
+	m_time = 0
+	g_time = 0
+	for i in range(10000):
+		X_train, y_train, X_test, y_test, feature_num = datasets.create_dataset()
+		t1 = time.time()
+		lr = GD_m73()
+		lr.fit(X_train, y_train)
+		t2 = time.time()
+		m_time = m_time + t2 - t1
+		#print('m73')
+		#print(t2 - t1)
+
+		t1 = time.time()
+		lr = GD_gv()
+		lr.fit(X_train, y_train)
+		t2 = time.time()
+		g_time = g_time + t2 - t1
+		#print('gv')
+		#print(t2-t1)
+	print(m_time)
+	print(g_time)
+
+
+
+	'''
+	for j in range(3,11):
+		np.random.seed(j)
+		xls_path = '../results/SQP_L2.xls'
+		datasets = CreateDataset(240,60,0,2,-1)
+		X_train, y_train, X_test, y_test, feature_num = datasets.create_dataset()
+		for i in range(1, 117):
+			f_str = 'lr = SQP_L2_m%s()' %i
+			print(f_str)
+			exec(f_str)
+			clf = lr.fit(X_train, y_train)
+			err, pred, conf = hyp_classification(clf.coef_, clf.intercept_, X_test, y_test)
+			save_result_to_file(xls_path, i, j, err)
+
+		lr = SQP_L1_gv()
+		clf = lr.fit(X_train, y_train)
+		err, pred, conf = hyp_classification(clf.coef_, clf.intercept_, X_test, y_test)
+		save_result_to_file(xls_path, 89, j, err)
+	'''
+
+	'''
 	datasets = CreateDataset(240,60,0,2,-1)
 	print("SQP_L2_gv()")
-	lr = SQP_L2_gv()
+	lr = SQP_L2_m91()
 	X_train, y_train, X_test, y_test, feature_num = datasets.create_dataset()
 	clf = lr.fit(X_train, y_train)
 	err, pred, conf = hyp_classification(clf.coef_, clf.intercept_, X_test, y_test)
-	test = LinearMRs(lr.fit, datasets.create_dataset, hyp_classification,30)
+	test = LinearMRs(lr.fit, datasets.create_dataset, hyp_classification,10)
 	print(err)
-	print(test.MR1())
-	print(test.MR2())
-	print(test.MR3())
-	print(test.MR4()) 
-	print(test.MR5())
-	print(test.MR6())
+	#print(test.MR1())
+	#print(test.MR2())
+	#print(test.MR3())
+	#print(test.MR4()) 
+	#print(test.MR5())
+	#print(test.MR6())
 	print(test.MR7())
-	print(test.MR8())
-
-	
+	#print(test.MR8())
+	'''
+	'''
 	xls_path = '../results/SQP_L2.xls'
 
-	for j in range(1, 11):
+	for j in range(96, 101):
 
 		res_list = []
 		feature_list = []
@@ -103,6 +161,7 @@ if __name__ == '__main__':
 			pass
 		finally:
 			pass
+		print(err)
 
 		#test MRs on the mutant
 		test = LinearMRs(lr.fit, datasets.create_dataset, hyp_classification,100)
@@ -129,3 +188,4 @@ if __name__ == '__main__':
 				pass
 				
 		save_result_to_file(xls_path, j+1, res_list, feature_list, single_res_list, err)
+		'''
