@@ -23,6 +23,9 @@ from algorithms.Svm.SQP.L2 import *
 from algorithms.Svm.ADMM.L1 import *
 from algorithms.Svm.ADMM.L2 import *
 
+from real_life_code.LogRes import LogRes
+from real_life_code.StocGradAscent import StocGradAscent
+
 
 import numpy as np
 
@@ -69,25 +72,36 @@ if __name__ == '__main__':
 	np.random.seed(1)
 	m_time = 0
 	g_time = 0
-	for i in range(10000):
+	for i in range(1):
 		X_train, y_train, X_test, y_test, feature_num = datasets.create_dataset()
-		t1 = time.time()
-		lr = GD_m73()
-		lr.fit(X_train, y_train)
-		t2 = time.time()
-		m_time = m_time + t2 - t1
+		lr = LogRes()
+		clf = lr.fit(X_train, y_train)
+		err, pred, conf = hyp_classification(clf.coef_, clf.intercept_, X_test, y_test)
+		print(err)
+		
+		test = LinearMRs(lr.fit, datasets.create_dataset, hyp_classification,100)
+		print(test.MR1())
+		print(test.MR2())
+		print(test.MR3())
+		print(test.MR4()) 
+		print(test.MR5())
+		print(test.MR6())
+		print(test.MR7())
+		print(test.MR8())
+		
+		#m_time = m_time + t2 - t1
 		#print('m73')
 		#print(t2 - t1)
 
-		t1 = time.time()
-		lr = GD_gv()
-		lr.fit(X_train, y_train)
-		t2 = time.time()
-		g_time = g_time + t2 - t1
+		#t1 = time.time()
+		#lr = GD_gv()
+		#lr.fit(X_train, y_train)
+		#t2 = time.time()
+		#g_time = g_time + t2 - t1
 		#print('gv')
 		#print(t2-t1)
-	print(m_time)
-	print(g_time)
+	#print(m_time)
+	#print(g_time)
 
 
 
