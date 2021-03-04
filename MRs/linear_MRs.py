@@ -359,7 +359,7 @@ class LinearMRs():
                 if (sort1 == sort2).all() or (sort1 == sort3).all():
                     continue
                 else:
-                    print('error')
+                    #print('error')
                     flag = False
                     break
                     # print(sort1, sort2, sort3)
