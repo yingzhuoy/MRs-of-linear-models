@@ -29,7 +29,10 @@ from real_life_code.SMOSimple import SMOSimple
 
 
 import numpy as np
+import random
 
+random.seed(1)
+np.random.seed(1)
 
 def save_result_to_file(file_name, row, column, err):
 	rb = xlrd.open_workbook(file_name)
@@ -70,18 +73,19 @@ if __name__ == '__main__':
 	import time
 
 	datasets = CreateDataset(240,60,0,2,0)
-	np.random.seed(1)
+	
 	m_time = 0
 	g_time = 0
 	for i in range(1):
 		X_train, y_train, X_test, y_test, feature_num = datasets.create_dataset()
+		print(X_train.shape)
 		lr = LogRes()
 		clf = lr.fit(X_train, y_train)
 		err, pred, conf = sig_classification(clf.coef_, clf.intercept_, X_test, y_test)
 		print(err)
 		
-		test = LinearMRs(lr.fit, datasets.create_dataset, sig_classification,100)
-		#print(test.MR1())
+		test = LinearMRs(lr.fit, datasets.create_dataset, sig_classification, 1)
+		# print(test.MR1())
 		#print(test.MR2())
 		#print(test.MR3())
 		#print(test.MR4()) 

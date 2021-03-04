@@ -2,7 +2,7 @@ import numpy as np
 import random
 import sklearn
 import sklearn.datasets as ds
-np.random.seed(1)
+# np.random.seed(1)
 
 class CreateDataset:
     """docstring for CreateDataset"""
