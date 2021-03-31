@@ -17,6 +17,8 @@ class LogRes():
 		dataMatrix = np.mat(dataMatIn.copy())										#转换成numpy的mat
 		labelMat = np.mat(classLabels.copy()).transpose()							#转换成numpy的mat,并进行转置
 		labelMat[labelMat == -1] = 0
+		
+		
 		m, n = np.shape(dataMatrix)											#返回dataMatrix的大小。m为行数,n为列数。
 		dataMatrix = np.column_stack((dataMatrix, np.ones((m, 1))))
 		n=n+1
@@ -32,12 +34,12 @@ class LogRes():
 				# print("convergence")
 				# print(k, np.linalg.norm(error), np.linalg.norm(dataMatrix.transpose() * error))
 				break;
-			if k == maxCycles-1:
-				print(np.linalg.norm(dataMatrix.transpose() * error))
+			#if k == maxCycles-1:
+			#	print(np.linalg.norm(dataMatrix.transpose() * error))
 		# print(weights.getA().shape)
 		w = np.array(weights.getA()).flatten()
 		b = w[-1]
 		w = w[0:w.shape[0]-1]
-		print(w, b)
+		#print(w, b)
 		clf = Clf(w, b)
 		return clf												#将矩阵转换为数组，返回权重数组

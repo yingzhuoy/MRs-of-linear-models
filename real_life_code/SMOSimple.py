@@ -1,5 +1,6 @@
 import numpy as np
 import random
+from algorithms.clf import Clf
 
 def selectJrand(i, m):
 	j = i                                 #选择一个不等于i的j
@@ -16,7 +17,8 @@ def clipAlpha(aj,H,L):
 
 def get_w(dataMat, labelMat, alphas):
     alphas, dataMat, labelMat = np.array(alphas), np.array(dataMat), np.array(labelMat)
-    w = np.dot((np.tile(labelMat.reshape(1, -1).T, (1, 2)) * dataMat).T, alphas)
+    m,n = np.shape(dataMat)
+    w = np.dot((np.tile(labelMat.reshape(1, -1).T, (1, n)) * dataMat).T, alphas)
     return w.tolist()
 
 def smoSimple(dataMatIn, classLabels, C, toler, maxIter):
@@ -51,17 +53,17 @@ def smoSimple(dataMatIn, classLabels, C, toler, maxIter):
 				else:
 				    L = max(0, alphas[j] + alphas[i] - C)
 				    H = min(C, alphas[j] + alphas[i])
-				if L==H:#print("L==H"); 
+				if L==H:
 					continue
 				#步骤3：计算eta
 				eta = 2.0 * dataMatrix[i,:]*dataMatrix[j,:].T - dataMatrix[i,:]*dataMatrix[i,:].T - dataMatrix[j,:]*dataMatrix[j,:].T
-				if eta >= 0:#print("eta>=0"); 
+				if eta >= 0:
 					continue
 				#步骤4：更新alpha_j
 				alphas[j] -= labelMat[j]*(Ei - Ej)/eta
 				#步骤5：修剪alpha_j
 				alphas[j] = clipAlpha(alphas[j],H,L)
-				if (abs(alphas[j] - alphaJold) < 0.00001):#print("alpha_j变化太小"); 
+				if (abs(alphas[j] - alphaJold) < 0.00001):
 					continue
 				#步骤6：更新alpha_i
 				alphas[i] += labelMat[j]*labelMat[i]*(alphaJold - alphas[j])
@@ -85,6 +87,6 @@ def smoSimple(dataMatIn, classLabels, C, toler, maxIter):
 class SMOSimple(object):
 	def fit(self, dataMatIn, classLabels):
 		b,alphas = smoSimple(dataMatIn, classLabels, 0.6, 0.001, 40)
-		w = get_w(dataMat, labelMat, alphas)
+		w = get_w(dataMatIn, classLabels, alphas)
 		clf = Clf(w, b)
 		return clf
