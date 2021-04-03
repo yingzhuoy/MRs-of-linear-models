@@ -305,7 +305,7 @@ class LinearMRs():
 
             conf = np.sum(X * w, axis=1) + b
             index = np.argsort(np.abs(conf))
-            partition = int(index.shape[0] / (3*num_iter))-1
+            partition = int(index.shape[0] / (4*num_iter))-1
             # index = np.arange(X.shape[0])
             # np.random.shuffle(index)
             flag = True
@@ -359,12 +359,13 @@ class LinearMRs():
                 if (sort1 == sort2).all() or (sort1 == sort3).all():
                     continue
                 else:
-                    #print('error')
+                    print('error')
+                    print(sort1, sort2, sort3)
                     flag = False
                     break
-                    # print(sort1, sort2, sort3)
             
             if flag == True:
+                print(single_res_list)
                 continue
             else:
                 single_res_list.append(1)
