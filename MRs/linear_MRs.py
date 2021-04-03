@@ -304,12 +304,16 @@ class LinearMRs():
             num_iter = 60
 
             conf = np.sum(X * w, axis=1) + b
+            conf = conf[np.abs(conf) < 1]
             index = np.argsort(np.abs(conf))
-            partition = int(index.shape[0] / (4*num_iter))-1
+            # partition = int(index.shape[0] / (4*num_iter))-1
+            partition = 1
             # index = np.arange(X.shape[0])
             # np.random.shuffle(index)
             flag = True
             for j in range(num_iter):
+                if (j * partition) >= index.shape[0]:
+                    continue
                 i = index[j * partition]
                 # i = index[j]
                 X_train = X.copy()
