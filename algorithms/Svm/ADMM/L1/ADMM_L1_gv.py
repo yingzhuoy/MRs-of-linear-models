@@ -91,7 +91,8 @@ def admm(X, y, max_iter=3000):
 
 
     low, up = bounds    
-    x = np.ones((m,1))
+    # x = np.ones((m,1))
+    x = np.random.normal(size=(m,1)) * 1
     tau = 1.618
     sigma = 1
 
@@ -127,6 +128,9 @@ def admm(X, y, max_iter=3000):
         # stop criteria            
         if np.abs(dual-primal)/(1+np.abs(dual)+np.abs(primal)) < 1e-12:
             break
+
+        if it == max_iter:
+            print('converge fail')
 
         # print(t, np.linalg.norm(gradient))
         # print(np.min(x), np.max(x))

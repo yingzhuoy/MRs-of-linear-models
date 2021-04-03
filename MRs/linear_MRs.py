@@ -301,17 +301,17 @@ class LinearMRs():
             # initialization
             pred = np.array([])
             test = np.array([])
-            num_iter = 30
+            num_iter = 60
 
             conf = np.sum(X * w, axis=1) + b
             index = np.argsort(np.abs(conf))
-            partition = int(index.shape[0] / num_iter)-1
+            partition = int(index.shape[0] / (3*num_iter))-1
             # index = np.arange(X.shape[0])
             # np.random.shuffle(index)
             flag = True
             for j in range(num_iter):
                 i = index[j * partition]
-                #print('111111')
+                # i = index[j]
                 X_train = X.copy()
                 y_train = y.copy()
                 temp = (np.sum(w * X_train[i]) + b) * y_train[i]
