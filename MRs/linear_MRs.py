@@ -292,8 +292,9 @@ class LinearMRs():
             # print(np.linalg.norm(clf.coef_ - clf1.coef_))
 
             pert = np.random.normal(size=Xt.shape)
+            # pert = np.random.uniform(size=Xt.shape)
             pert = pert - np.sum(pert * w)/np.sum(w * w) * w
-            pert = pert / np.linalg.norm(pert)
+            pert =  pert / np.linalg.norm(pert)
 
             # denote original t0
             t0 = np.sum(w * Xt) + b
@@ -304,12 +305,9 @@ class LinearMRs():
             num_iter = 60
 
             conf = np.sum(X * w, axis=1) + b
-            conf = conf[np.abs(conf) < 1]
-            index = np.argsort(np.abs(conf))
-            # partition = int(index.shape[0] / (4*num_iter))-1
-            partition = 1
-            # index = np.arange(X.shape[0])
-            # np.random.shuffle(index)
+            # conf = conf[np.abs(conf) < 1]
+            index = np.argsort(np.abs(conf))  
+            partition = 8
             flag = True
             for j in range(num_iter):
                 if (j * partition) >= index.shape[0]:
